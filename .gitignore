@@ -1,0 +1,14 @@
+#File di sistema
+.settings/*
+target/*
+project/*
+.idea/
+
+.classpath
+.project
+*.iml
+*.log
+
+#File di progetto
+src/main/resources/input.properties
+output/
