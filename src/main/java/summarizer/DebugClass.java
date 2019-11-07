@@ -1,4 +1,4 @@
-package main.java.nlp.summarizer;
+package main.java.summarizer;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

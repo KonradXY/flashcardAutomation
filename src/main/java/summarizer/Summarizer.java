@@ -1,6 +1,4 @@
-package main.java.nlp.summarizer;
-import main.java.nlp.summarizer.Sentence;
-import main.java.nlp.summarizer.SentenceBuilder;
+package main.java.summarizer;
 
 import java.util.ArrayList;
 import java.util.Collections;

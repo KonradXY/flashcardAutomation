@@ -1,4 +1,4 @@
-package main.java.nlp.summarizer;
+package main.java.summarizer;
 
 public class Sentence {
 	private String text;

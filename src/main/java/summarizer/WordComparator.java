@@ -1,6 +1,5 @@
-package main.java.nlp.summarizer;
+package main.java.summarizer;
 
-import main.java.nlp.summarizer.Word;
 
 import java.util.Comparator;
 /**

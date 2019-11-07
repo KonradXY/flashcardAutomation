@@ -1,4 +1,4 @@
-package main.java.nlp.summarizer;
+package main.java.summarizer;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;

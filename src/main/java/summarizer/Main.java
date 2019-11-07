@@ -1,11 +1,7 @@
-package main.java.nlp.summarizer;
+package main.java.summarizer;
 
 import static main.java.utils.Property.*;
 
-import main.java.nlp.summarizer.DebugClass;
-import main.java.nlp.summarizer.SentenceBuilder;
-import main.java.nlp.summarizer.Summarizer;
-import main.java.nlp.summarizer.WordBuilder;
 
 /**
  * @author Piraveen
