@@ -1,0 +1,34 @@
+When it is used the future tense and how it's formed ?
+|
+We will use the futre tense to describe actions that will take place. Most spanish verbs are regular in the future tense and the future tense is formed by adding the appropriate future tense ending to the infinitive, which serves as the verb stem for the future tense.
+endings are: -è, -às, -à, -emos, -èis, -àn
+Irregular verbs in the future tense make a change in the stem rather than the ending. Note that all of the verb ending, except the first person pural (nosotros), take a written accent. Conjugation are:
+
+- hablar -> hablarè, hablaràs, hablarà, hablaremos, hablarèis, hablaràn
+- comer -> comerè, comeràs, comerà, comeremos, comerèis, comeràn
+- vivir -> vivirè, viviràs, vivirà, viviramos, vivirèis, viviràn
+
+|
+
+What are the irregular verbs in the future ? |
+There are twelve very common verbs that are irregular in the future tense. Btw they can be grouped into three categories:
+1) The infinitive stem drops the final vowel of its ending.
+- caber (to fit, have enough room) - yo cabrè
+- haber (to have, auxiliary) - yo habrè
+- poder (to be able to) - yo pdrè
+- querer (to want) - yo querè
+- saber (to know a fact, know how) - yo sabrè
+
+2) The infinitive stem drops the final vowel of its ending and replaces it with the letter d.
+- poner (to put, place) - yo pondrè
+- salir (to leave) - saldrè
+- tener (to have, hold) - to tendrè
+- valer (to be worth) - yo valdrè
+- venir (to come) - yo vendrè
+
+3) The infinitive stem is shortened
+- decir (to say, tell) - yo dirè
+- hacer (to do, make, make out (a check)) - yo harè
+
+Also, some of the irregular verbs in the future have compounds that are irregular in the same way (obtener -> obtendrè).
+Also, the future version of hay is Habrà. Habrà can be used also as an auxiliary verb; in that context, it is always used before a past participle rather than alone. This use of habrà will be covered on the future perfect tense.

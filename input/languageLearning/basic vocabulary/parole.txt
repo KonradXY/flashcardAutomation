@@ -1,0 +1,1312 @@
+actuar to act
+amar to love
+bailar to dance
+caminar to walk
+cantar to sing
+comprar to buy, purchase
+escuchar to listen (to)
+estudiar to study
+ganar to win, earn
+gritar to scream, yell
+hablar to speak, talk
+limpiar to clean
+llegar to arrive
+llevar to carry
+mirar to watch, look (at)
+nadar to swim
+necesitar to need
+pagar to pay (for)
+practicar to practice
+preparar to prepare
+tirar to throw
+tocar to play (a musical instrument); to touch
+tomar to take, drink, sip
+trabajar to work
+bank el banco
+bar la taberna
+branch oi ce la sucursal
+church la iglesia
+company la empresa
+construction site la obra
+drugstore la droguería
+factory la fábrica
+farm la granja
+foundry la fundición
+hospital el hospital
+library la biblioteca
+main oi ce la oi cina principal
+mine la mina
+movie theater el cine
+museum el museo
+oi ce la oi cina
+plant la fábrica
+radio station la emisora
+restaurant el restaurante
+school la escuela
+shoe store la zapatería
+shopping mall la zona comercial
+stadium el estadio
+store la tienda
+sweatshop el taller de trabajo afanoso y poco sueldo
+swimming pool la piscina, la alberca
+theater el teatro
+university la universidad
+vineyard; winery la viña
+warehouse el almacén
+workshop; garage el taller
+accordion el acordeón
+cello el violoncelo
+clarinet el clarinete
+clavichord el clavicordio
+drum el tambor
+l ute la l auta
+guitar la guitarra
+piano el piano
+saxophone el saxofón
+trumpet la trompeta
+tuba la tuba
+vibraphone el vibráfono
+violin el violìn
+aprender to learn
+beber to drink
+comer to eat
+cometer to commit
+comprender to understand, comprehend
+correr to run
+creer to believe
+deber to owe
+esconder to hide
+leer to read
+meter to put
+responder to answer, respond
+romper to break
+suspender to suspend
+vender to sell
+Red meat La carne roja
+bacon el tocino
+beef la carne de vaca
+chop la chuleta
+ham el jamón
+hamburger la hamburguesa
+hot dog el perrito caliente
+kidney (kidneys) el riñón (los riñones)
+lamb el cordero
+lamb chop la chuleta de cordero
+liver el hígado
+meat la carne
+meatballs las albóndigas
+mutton la carne de cordero
+pâté el paté
+pork la carne de cerdo, el cerdo
+pork chop la chuleta de cerdo
+rabbit el conejo
+salami el salami
+sausage la salchicha
+sirloin el solomillo
+steak el i lete
+stew el guiso, el estofado
+veal la (carne de) ternera
+(Poultry) La carne de ave
+capon el capón
+chicken el pollo
+duck el pato
+egg el huevo
+goose el ganso
+pheasant el faisán
+quail la codorniz
+turkey el pavo
+(Seafood) Los mariscos
+anchovy la anchoa
+clam la almeja
+cod el bacalao
+crab el cangrejo
+eel la anguila
+fish (prepared) el pescado
+herring el arenque
+lobster la langosta
+mussel el mejillón
+octopus el pulpo
+oyster la ostra
+salmon el salmón
+sardine la sardina
+scallop la venera
+shelli sh el crustáceo, los mariscos
+shrimp el camarón
+snail el caracol
+squid el calamar
+swordi sh el pez espada
+trout la trucha
+tuna el atún
+(Vegetables) Las verduras
+artichoke la alcachofa
+asparagus el espárrago
+beans las judías, las habas
+beet la remolacha
+broccoli el brócoli, el brécol
+Brussels sprout(s) la col de Bruselas
+cabbage la col, el repollo
+carrot la zanahoria
+caulil ower la colil or
+celery el apio
+corn el maíz
+cucumber el pepino
+eggplant, aubergine la berenjena
+French fries, chips las papas fritas
+garlic el ajo
+leek el puerro
+lentil la lenteja
+lettuce la lechuga
+mushroom el champiñón, el hongo
+onion la cebolla
+parsley el perejil
+pea el guisante
+pepper (red, green) el pimiento (rojo, verde)
+potato la patata, la papa
+pumpkin la calabaza
+radish el rábano
+spinach la espinaca
+tomato el tomate
+turnip el nabo
+watercress el berro
+zucchini el calabacín
+(Grains) Los granos
+amaranth el amaranto
+barley la cebada
+bran el salvado
+bread el pan
+buckwheat el trigo negro
+oat(s) la avena
+rice el arroz
+wheat el trigo
+(Nuts) Las nueces
+Brazil nut la nuez de Brasil
+cashew el anacardo
+chestnut la castaña
+hazelnut, i lbert la avellana
+nut la nuez
+peanut el cacahuete
+walnut la nuez
+(Fruit) Las frutas
+apple la manzana
+apricot el albaricoque
+avocado el aguacate
+banana el plátano
+berry la baya
+blackberry la mora, la zarzamora
+cranberry el arándano
+date el dátil
+i g el higo
+grape la uva
+grapefruit la toronja, el pomelo
+kiwi el kiwi
+lemon el limón
+lime la lima
+melon el melón
+olive la aceituna, el olivo
+orange la naranja
+peach el melocotón
+pear la pera
+pineapple la piña
+plum la ciruela
+pomegranate la granada
+prune la ciruela seca
+raisin la pasa
+raspberry la frambuesa
+rhubarb el ruibarbo
+strawberry la fresa
+tangerine la mandarina
+(Alcoholic drinks) Las bebidas alcohólicas
+beer la cerveza
+brandy el brandy, el coñac
+champagne la champaña
+cocktail el cóctel
+gin la ginebra
+rum el ron
+scotch el escocés
+sherry el (vino de) jerez
+vodka la vodka
+whiskey el whisky
+wine el vino
+(Nonalcoholic drinks) Las bebidas sin alcohol
+cider la cidra
+cof ee el café
+cola la cola
+juice el jugo, el zumo
+lemonade la limonada
+milk la leche
+milkshake el batido, la malteada
+mineral water el agua mineral
+orange juice el jugo de naranja,
+el zumo de naranja
+soda la soda
+tea el té
+tonic el tónico
+water el agua
+(Colors) Los colores
+black negro
+blue azul
+brown café
+gray gris
+green verde
+orange anaranjado
+pink rosado
+purple morado
+red rojo
+white blanco
+yellow amarillo
+attractive atractivo
+average medio
+beautiful bello, hermoso
+blond rubio
+fat gordo
+let -handed zurdo
+lovely lindo
+nice, kind amable, simpático
+old viejo
+plump rechoncho
+pretty bonito
+right-handed diestro
+short bajo
+slender, slim delgado
+small pequeño
+strong fuerte
+tall alto
+thin l aco, delgado
+trendy moderno
+ugly feo
+young joven
+Adjectives frequently used to describe objects
+bad malo
+big grande
+broad ancho
+cheap, inexpensive barato
+clean limpio
+dark oscuro
+dirty sucio
+dry seco
+empty vacío
+expensive caro, costoso
+l at plano
+good bueno
+hard duro
+light (color) claro
+light (weight) ligero
+little, small pequeño
+long largo
+new nuevo
+short (length) corto
+sot , smooth suave
+wonderful, marvelous maravilloso
+absurd absurdo
+circular circular
+comical, funny cómico
+elegant elegante
+fantastic fantástico
+horrible horrible
+magnii cent magníi co
+obvious obvio
+rectangular rectangular
+regular regular
+ridiculous ridículo
+serious serio
+splendid espléndido
+terrible terrible
+abrir to open
+admitir to admit
+asistir (a) to attend
+cubrir to cover
+decidir to decide
+describir to describe
+descubrir to discover
+discutir to argue, discuss
+escribir to write
+existir to exist
+permitir to permit, allow
+recibir to receive
+subir (a) to climb
+sufrir to suf er
+unir to unite, join
+vivir to live
+play group el grupo de juego
+nursery school el preescolar
+kindergarten el jardín de infancia, el kinder
+elementary school la escuela elemental
+middle school la escuela media
+high school la escuela secundaria,
+la escuela preparatoria
+technical school la escuela técnica,
+el colegio técnico
+university la universidad
+further education la formación profesional
+apprenticeship, el aprendiz
+internship boarding school el internado
+art el arte
+biology la biología
+business los negocios
+chemistry la química
+foreign language el idioma extranjero
+geography la geografía
+gymnastics la gimnástica
+history la historia
+law la ley
+linguistics la lingüística
+literature la literatura
+mathematics la matemática,
+las matemáticas
+medicine la medicina
+music la música
+philosophy la i losofía
+physical education la educación física
+physics la física
+psychology la psicología
+science las ciencias
+atlas el atlas
+backpack la mochila
+blackboard la pizarra
+book el libro
+calculator el calculador
+(swivel) chair la silla (giratoria)
+chalk la tiza
+clock el reloj
+computer la computadora
+desk el escritorio
+dictionary el diccionario
+eraser el borrador
+globe el globo
+glue; paste la cola, el pegamento
+ink la tinta
+locker el ropero
+map el mapa
+notebook el cuaderno
+paper el papel
+pen el bolígrafo, la pluma
+pencil el lápiz
+pencil case el lapicero
+ruler la regla
+scissors las tijeras
+tape la cinta
+tape measure la cinta métrica
+art room el salón de arte
+bathroom, restroom el baño, el cuarto de baño
+cafeteria la cafetería
+classroom el salón de clase
+elevator el ascensor
+entryway, foyer la entrada
+gym, gymnasium el gimnasio
+hall el pasillo
+kitchen la cocina
+lab, laboratory el laboratorio
+library la biblioteca
+locker room el vestidor
+(main) office la oficina (principal)
+playground el patio de recreo
+principal’s office la oficina del / de la principal
+stage el escenario
+staircase, stairwell la escalera
+swimming pool la piscina, la alberca
+cook el cocinero / la cocinera
+custodian el custodio / la custodia
+nurse el enfermero / la enfermera
+principal el/la principal
+professor el profesor / la profesora
+secretary el secretario / la secretaria
+social worker el trabajador / la trabajadora social
+student el/la estudiante
+teacher el maestro / la maestra
+teacher’s assistant el/la asistente de
+maestro/maestra
+assignment la tarea
+essay el ensayo
+grade la nota
+homework la tarea
+letter la carta
+quiz la prueba
+report el informe, el reportaje
+report card el reporte de calii caciones
+survey la encuesta
+test el examen
+
+NB: sono arrivato a pag 81 facendo las tiendas (che essendo su due colonne diverse nn me le copia correttamente)
+Las tiendas (Stores)
+STORE ENGLISH EQUIVALENT BASE NOUN ENGLISH EQUIVALENT
+la boletería ticket oi ce el boleto ticket
+la cafetería cof ee shop el café cof ee
+la carnicería butcher shop la carne meat
+la cervecería bar la cerveza beer
+la droguería drugstore la droga drug
+la dulcería candy store el dulce candy
+la especiería spice shop la especia spice
+la ferretería hardware store el hierro iron
+la l oristería l ower shop la l or l ower
+la frutería fruit store, fruit stand la fruta fruit
+la jabonería soap shop el jabón soap
+la joyería jewelry store la joya jewel
+la juguetería toy store el juguete toy
+la lechería milk/dairy store la leche milk
+la librería bookstore el libro book
+la licorería liquor store el licor liquor
+la mueblería furniture store el mueble furniture
+la panadería bakery el pan bread
+la papelería paper/stationery shop el papel paper
+la pastelería pastry shop el pastel pastry, pie
+la peluquería beauty salon el pelo hair
+la pescadería i sh market el pescado i sh
+la platería silversmith’s shop la plata silver
+la pollería poultry shop el pollo chicken
+la relojería watch shop el reloj watch
+la ropería clothing store la ropa clothing
+la sombrería hat shop el sombrero hat
+la tabaquería tobacco shop el tabaco tobacco
+la verdulería produce market las verduras greens, vegetables
+la vinatería wineshop el vino wine
+la zapatería shoe store el zapato shoe
+
+Clothing La ropa
+apron el delantal
+bathrobe la bata
+bikini el bikini
+blazer el saco, la chaqueta
+blouse la blusa
+boot la bota
+bowtie el moño
+bra el sostén
+cap la gorra
+cardigan la rebeca, el cárdigan
+coat el abrigo
+dress el vestido
+girdle la faja
+glove el guante
+hat el sombrero
+jacket la chaqueta
+(blue) jeans el vaquero, los vaqueros,
+los blue jeans
+jumper el yérsey
+lingerie la lencería
+mitten la manopla
+pajamas el/la pijama
+panties las bragas, las braguitas
+pants, slacks, el pantalón,
+trousers los pantalones
+pantyhose las pantimedias
+parka, anorak el anorak, el chubasquero
+raincoat el impermeable
+sandal la sandalia
+scarf la bufanda
+shawl el chal, el mantón
+shirt la camisa
+shoe el zapato
+shorts los pantalones cortos
+skirt la falda
+slip; petticoat las enaguas, la combinación
+slipper la zapatilla
+sneakers los zapatos de lona,
+los zapatos deportivos
+sock(s) el calcetín (los calcetines)
+stocking(s) la(s) media(s)
+suit el traje
+sweater el suéter
+sweatshirt la sudadera
+swimming trunks el bañador, el traje de baño
+swimsuit el traje de baño
+tie la corbata
+tights el panti, las medias
+training shoes las zapatillas de deporte
+T-shirt la camiseta
+turtleneck sweater el suéter de tortuga
+tuxedo el esmoquin
+underpants los calzoncillos
+undershirt la camiseta
+underwear la ropa interior
+vest el chaleco
+(Accessories) Los accesorios
+belt el cinturón
+bracelet la pulsera
+earrings los aretes, los pendientes
+glasses las gafas, las lentes
+handkerchief el pañuelo
+necklace el collar
+purse la bolsa
+ring el anillo
+shoelace el lazo, el cordón
+sunglasses las gafas de sol,
+las lentes de sol
+umbrella el paraguas
+wedding ring la sortija de boda
+(Fabrics and material) Las telas y los materiales
+acrylic el acrílico
+canvas la lona
+cashmere la cachemira, el cachemir
+chenille la felpilla
+chif on el soplillo
+cotton el algodón
+crepe el crespón
+Dacron el dacrón
+denim el dril (de algodón)
+felt la felpa
+gauze la gasa
+leather el cuero, la piel
+linen el lino, el lienzo
+moiré el moaré
+muslin la muselina
+nylon el nilón, el nailon
+paper el papel
+polyester el poliéster
+rayon el rayón
+rubber el caucho, la goma
+satin el raso
+silk la seda
+taf eta el tafetán
+terry cloth la tela de toalla
+tulle el tul
+velvet el terciopelo
+viscose la viscosa
+wool la lana
+(Clothing: parts and decorations) La ropa: las partes y las decoraciones
+bow el lazo
+button el botón
+collar el collar
+cuf el puño
+earrings los aretes, los pendientes
+heel el tacón
+hem el dobladillo
+inseam la costura interior
+pocket el bolsillo
+ribbon la cinta
+sash la faja
+seam la costura
+sleeve la manga
+snap el broche
+strap la correa
+Velcro el velcro
+waistband la pretina
+zipper la cremallera
+abbey la abadía
+amphitheater el ani teatro
+aquarium el acuario
+art gallery la gallería de arte
+castle el castillo
+cathedral la catedral
+chapel la capilla
+church la iglesia
+concert hall la sala de conciertos
+convent el convento
+hotel el hotel
+library la biblioteca
+mansion la mansión
+monastery el monasterio
+museum el museo
+opera (el teatro de) la ópera
+palace el palacio
+stadium el estadio
+store la tienda
+temple el templo
+theater el teatro
+tower la torre
+town hall el ayuntamiento
+arch el arco
+avenue la avenida
+beach la playa
+boulevard el bulevar
+bridge el puente
+catacombs las catacumbas
+cemetery el cementerio
+countryside el campo
+road el camino
+street la calle
+north el norte
+south el sur
+east el este
+west el oeste
+to the north al norte
+to the south al sur
+to the east al este
+to the west al oeste
+northeast el noreste
+northwest el noroeste
+southeast el sureste
+southwest el suroeste
+
+NB: anche qua sono in multicolonna
+aerobics los ejercicios aeróbicos hacer los ejercicios aeróbicos
+archery el tiro con arco tirar el arco
+athletics el atletismo hacer el atletismo
+badminton el bádminton jugar al bádminton
+baseball el béisbol jugar al béisbol
+basketball el baloncesto, el básquetbol jugar al baloncesto, jugar al básquetbol
+bowling los bolos jugar a los bolos
+boxing el boxeo boxear
+cards los naipes jugar a los naipes
+checkers las damas jugar a las damas
+chess el ajedrez jugar al ajedrez
+climbing el montañismo, el alpinismo subir la montaña
+cricket el críquet jugar al críquet
+cycling el ciclismo montar en bicicleta
+diving el buceo en aguas profundas bucear
+exercising los ejercicios hacer ejercicios
+fencing la esgrima hacer esgrima
+i shing la pesquería pescar, ir de pescar
+football el fútbol americano jugar al fútbol americano
+game el juego jugar a un juego
+gymnastics la gimnástica hacer la gimnástica
+handball el balonmano jugar al balonmano
+(ice) hockey el hockey (sobre hielo) jugar al hockey (sobre hielo)
+horse racing las carreras de caballos montar en caballo
+hunting la caza, la cacería cazar
+ice skating el patinaje sobre hielo patinar sobre hielo
+jogging el footing correr, hacer footing
+juggling el juego de manos hacer juegos de mano
+motor racing el automovilismo, correr con coches
+las carreras de coches
+polo el polo jugar al polo
+pool (billiards) el billar jugar al billar
+racing las carreras competir en una carrera
+roller skating el patinaje sobre ruedas patinar sobre ruedas
+rugby el rugby jugar al rugby
+sailing la navegación navegar
+(cross-country) skiing el esquí nórdico esquiar al nórdico
+(downhill) skiing el esquí alpino esquiar al alpino
+(water) skiing el esquí acuático esquiar al acuático
+soccer el fútbol jugar al fútbol
+swimming la natación nadar
+table tennis el tenis de mesa, el ping-pong jugar al ping-pong
+tennis el tenis jugar al tenis
+tenpins el boliche jugar al boliche
+volleyball el voleibol jugar al voleibol
+water polo el polo acuático jugar al polo acuático
+weight training el entrenamiento con pesas levantar pesas
+windsuri ng el windsurf hacer windsurf
+wrestling la lucha libre luchar
+Los asuntos de los deportes (Sports matters)
+El equipo deportivo (Sports equipment)
+arrow la l echa
+ball la pelota, el balón
+baseball glove el guante de béisbol
+bat el bate, la maza, la paleta
+bicycle la bicicleta
+binoculars los prismáticos
+bow el arco
+boxing gloves los guantes de boxeo
+catcher’s mitt el guante del cachear
+exercise bike la bicicleta de ejercicio,
+la bicicleta estática
+i shing rod la caña de pescar
+helmet el casco
+javelin la jabalina
+net la red
+puck el disco, el puck
+shot put el lanzamiento de peso
+skate(s) el patín (los patines)
+ski boots las botas de esquí
+ski poles los bastones de esquí
+skis los esquís
+(hockey) stick el palo (de hockey)
+surb oard la tabla de surf
+tennis racket la raqueta de tenis
+weights las pesas
+Las personas principales en los deportes (Important people in sports)
+athlete el/la atleta
+catcher el/la receptor
+champion el campeón / la campeona
+cheerleader el animador / la animadora
+coach el entrenador / la entrenadora
+goalie el portero / la portera
+loser el perdedor / la perdedora
+manager el/la gerente
+opponent el/la oponente
+owner el dueño / la dueña
+pitcher el tirador / la tiradora,
+el lanzador / la lanzadora
+player el jugador / la jugadora
+quarterback el lanzador / la lanzadora
+referee el árbitro / la árbitra
+team el equipo
+teammate el compañero / la compañera
+de equipo
+trainer el entrenador / la entrenadora,
+el amaestrador /
+la amaestradora
+umpire el árbitro / la árbitra
+winner el ganador / la ganadora
+airplane el avión
+bicycle la bicicleta
+bus el autobús
+boat el barco
+car el coche, el carro
+company car el coche de la empresa,
+el carro de la empresa
+ferry el ferry
+foot el pie
+limousine la limusina
+motorcycle la motocicleta
+rental car el coche alquilado,
+el carro alquilado
+ship el buque
+spaceship la nave espacial
+subway el metro
+taxi el taxi
+train el tren
+trolley el tranvía
+yacht el yate
+to ride a bike montar en bicicleta
+to ride a horse montar en caballo
+hacer el baúl to pack the trunk
+hacer una broma to play a joke
+hacer caso de to pay attention to
+hacer daño a (algo) to harm/damage
+(something)
+hacer la maleta to pack the suitcase
+hacer el papel de to play the role of
+hacer pedazos to smash to pieces
+hacer una pregunta to ask a question
+hacer un viaje to take a trip
+hacer una visita to pay a visit
+
+NB: Altra multi colonna
+hace (mucho) frío it is (very) cold está (muy) nublado it is (very) cloudy
+hace (mucho) calor it is (very) hot está lloviendo it is raining
+hace (mucho) sol it is (very) sunny está nevando it is snowing
+hace (mucho) viento it is (very) windy está lloviznando it is drizzling
+hace fresco it is cool está lluvioso it is rainy
+hace (muy) buen tiempo it is (very) nice out está húmedo it is humid
+hace (muy) mal tiempo it is (very) bad out está seco it is dry
+está tormentoso it is stormy
+avalanche la avalancha
+bad weather el mal tiempo
+blizzard la ventisca, la tempestad
+de nieve
+climate el clima
+cloud la nube
+cold el frío
+cold front el frente frío
+degree el grado
+dreary weather el tiempo gris
+drizzle la llovizna, el chirimiri
+drought la sequía
+fog la niebla
+frost la helada, la escarcha
+gale (of wind) el vendaval, el ventarrón
+hail el granizo
+heat el calor
+heat wave la ola de calor
+high pressure la presión alta
+highest temperature la temperatura máxima
+hurricane el huracán
+ice el hielo
+Indian summer el verano de San Martín
+lightning el relámpago
+low pressure la presión baja
+lowest temperature la temperatura mínima
+mist la bruma
+monsoon el monzón
+moon la luna
+rain la lluvia
+shade la sombra
+shower el chaparrón
+snow la nieve
+snowball la bola de nieve
+snowdrit la ventisca de nieve
+snowfall la nevada
+snowl ake el copo de nieve
+snowman el muñeco de nieve
+snowstorm la tormenta de nieve
+star la estrella
+storm la tormenta
+sun el sol
+sunny day el día de sol
+temperature la temperatura
+thunder el trueno
+thunderbolt el rayo
+thunderstorm la tormenta eléctrica,
+la tormenta de rayos
+tornado, cyclone el ciclón
+torrent el torrente
+tsunami el tsunami
+warm front el frente cálido
+weather el tiempo
+weather conditions las condiciones
+climáticas
+weather forecast el pronóstico del
+tiempo
+wind el viento
+adventure story la historia de aventuras
+anthology la antología
+atlas el atlas
+autobiography la autobiografía
+autograph el autógrafo
+biography la biografía
+book el libro
+children’s literature la literatura infantil
+comic book el libro cómico
+contract el contrato
+cookbook el libro de cocina
+detective story la novela policíaca
+diary el diario
+dictionary el diccionario
+document el documento
+encyclopedia la enciclopedia
+epic poem el poema épico
+essay el ensayo
+fable la fábula
+fairy tale el cuento de hadas
+feminist novel la novela feminista
+i ction la i cción, la narrativa
+Greek tragedy la tragedia griega
+hardback el libro de tapa dura
+horror story la historia de terror,
+el cuento de terror
+introduction la introducción
+letter la carta
+magazine la revista
+manual el manual
+map el mapa
+memoirs las memorias
+mystery el misterio
+myth el mito
+narrative la narrativa
+newspaper el periódico
+noni ction la literatura no novelesca
+note la nota
+novel la novela
+page la página
+paperback el libro en rústica
+paragraph el párrafo
+picaresque novel la novela picaresca
+poem el poema
+poetry la poesía
+prose la prosa
+quote la cita
+reference book el libro de consulta
+restoration comedy la comedia de
+la restauración
+rhyme la rima
+romance la novela de romance,
+el idilio amoroso
+satire la sátira
+satirical poem el poema satírico
+science i ction la historia de ciencia
+i cción
+short story el cuento corto,
+la historia corta
+spy story la historia de espionaje
+story el cuento, la historia
+table la tabla
+tabloid el tabloide,
+el periodicucho
+teenage i ction la literatura juvenil
+text el texto
+textbook el libro de texto
+thesaurus el tesoro léxico
+title el título
+travel book el libro de viajes
+verse el verso
+war novel la novela de guerra
+VOCABULARIO
+Clases de libros y cosas de leer (Types of books and things to read)
+Las personas en las bellas cartas (People involved in the written word)
+author el autor / la autora
+columnist el/la columnista
+commentator el comentador /
+la comentadora,
+el/la comentarista
+editor el editor / la editora
+essayist el/la ensayista
+minstrel el juglar / la juglara
+narrator el narrador /
+la narradora
+newspaper writer el/la periodista
+playwright el dramaturgo /
+la dramaturga
+poet el/la poeta
+publisher el publicador /
+la publicadora
+translator el traductor /
+la traductora
+writer el escritor / la escritora
+accountant el/la contable, el contador / la contadora
+actor el actor
+actress la actriz
+actuary el actuario / la actuaria de seguros
+agent el/la agente
+(television) announcer el presentador / la presentadora (de televisión)
+architect el arquitecto / la arquitecta
+artist el/la artista
+baker el panadero / la panadera
+banker el banquero / la banquera
+bookseller el librero / la librera
+brewer el cervecero / la cervecera
+bricklayer, mason el/la albañil
+builder el constructor / la constructora
+bus driver el conductor / la conductora de autobuses
+businessperson el hombre / la mujer de negocios, el/la negociante
+butcher el carnicero / la carnicera
+buyer el encargado / la encargada de compras
+camera operator el camarógrafo / la camarógrafa
+caretaker el/la vigilante, el/la conserje
+carpenter el carpintero / la carpintera
+caterer el abastecedor / la abastecedora de comidas
+chauf eur, driver el/la chofer
+chemist el químico / la química
+civil servant el funcionario / la funcionaria
+cleaner el limpiador / la limpiadora
+clerk el/la oi cinista
+computer programmer el programador / la programadora de computadoras
+cook el cocinero / la cocinera
+counselor el consejero / la consejera
+custodian, janitor el/la conserje, el custodio / la custodia
+customs oi cer el/la agente de aduanas
+dancer el/la bailante, el/la danzante
+decorator el decorador / la decoradora
+dentist el/la dentista
+deputy el diputado / la diputada
+doctor el doctor / la doctora, el médico / la médica
+drat sperson el/la delineante
+driver el conductor / la conductora
+driving teacher el profesor / la profesora de conducir
+editor el editor / la editora, el redactor / la redactora
+electrician el/la electricista
+engineer el ingeniero / la ingeniera
+farmer el granjero / la granjera
+i rei ghter el bombero / la bombera
+i sherman/i sherwoman el pescador / la pescadora
+i shmonger el pescadero / la pescadera
+l ight attendant el/la auxiliar de vuelo
+l orist el l orero / la l orera
+foreman/forewoman el/la capataz
+garbage collector el basurero / la basurera
+gardener el jardinero / la jardinera
+greengrocer el verdulero / la verdulera
+grocer el tendero / la tendera de comestibles
+guide el/la guía
+hairdresser el peluquero / la peluquera
+industrialist el/la industrial
+insurance agent el/la agente de seguros
+interpreter el/la intérprete
+jeweler el joyero / la joyera
+journalist el/la periodista
+judge el/la juez
+laborer el obrero / la obrera, el trabajador / la trabajadora
+lawyer, attorney el abogado / la abogada
+librarian el bibliotecario / la bibliotecaria
+mail carrier, letter carrier el cartero / la cartera
+manager el director / la directora
+manufacturer el/la fabricante
+mechanic el mecánico / la mecánica
+metalworker el obrero metalúrgico / la obrera metalúrgica
+midwife la comadrona
+miner el minero / la minera
+minister el ministro / la ministra
+model el/la modelo
+mover el empleado / la empleada de la mudanza
+movie star la estrella de cine
+movie/i lm director el director / la directora de cine
+musician el/la músico
+newspaperman/ el/la periodista
+newspaperwoman
+newsperson; anchor el noticiero / la noticiera
+nurse el enfermero / la enfermera
+oi ce worker el/la oi cinista
+oi cer el/la oi cial
+optician el óptico / la óptica
+painter el pintor / la pintora
+pharmacist el farmacéutico / la farmacéutica
+photographer el fotógrafo / la fotógrafa
+physician el médico / la médica, el doctor / la doctora
+physicist el físico / la física
+pilot el/la piloto
+plasterer el yesero / la yesera
+plumber el fontanero / la fontanera, el plomero / la plomera
+poet el poeta / la poetisa
+policeman el policía
+policewoman la mujer policía
+politician el político / la política
+priest el sacerdote
+printer el impresor / la impresora
+producer el productor / la productora
+professor el profesor / la profesora
+psychiatrist el/la psiquiatra
+psychologist el psicólogo / la psicóloga
+publisher el publicador / la publicadora, el editor / la editora
+real estate agent el/la agente de bienes raíces
+receptionist el/la recepcionista
+reporter el reportero / la reportera
+representative el/la representante
+researcher el investigador / la investigadora
+sailor el marinero / la marinera, el/la marino
+salesperson el dependiente / la dependienta
+scientist el cientíi co / la cientíi ca
+sculptor el escultor / la escultora
+secretary el secretario / la secretaria
+senator el senador / la senadora
+servant el sirviente / la sirvienta, el criado / la criada
+serviceman/ el/la militar
+servicewoman
+singer el/la cantante
+social worker el trabajador / la trabajadora social
+soldier el/la soldado
+spy el/la espía
+stewardess la azafata
+stockbroker el/la agente de bolsa
+storekeeper, shopkeeper el tendero / la tendera
+student el/la estudiante
+surgeon el cirujano / la cirujana
+surveyor el topógrafo / la topógrafa
+tax agent el/la agente de impuestos
+taxi driver el/la taxista
+teacher el maestro / la maestra
+technician el técnico / la técnica
+tobacconist el tabaquero / la tabaquera
+translator el traductor / la traductora
+travel agent el/la agente de viajes
+truck driver el camionero / la camionera
+typist el mecanógrafo / la mecanógrafa
+undertaker, mortician el director / la directora de pompas fúnebres
+veterinarian el veterinario / la veterinaria
+waiter el camarero / la camarera, el mesero / la mesera
+winegrower el vinicultor / la vinicultora
+writer el escritor / la escritora
+air conditioner el aire acondicionador
+antenna la antena
+balcony el balcón
+baseboard el rodapié, la cenefa
+blind la persiana
+boiler, furnace la caldera
+brick el ladrillo
+burglar alarm la alarma antirrobo
+ceiling el techo
+(electrical) cord el cordón (de la luz)
+curtain la cortina
+doorknob, el puño, el tirador (de puerta)
+(door) handle
+doormat el felpudo, la estera
+drain el desagüe
+electrical outlet el enchufe
+electricity la electricidad
+elevator el ascensor
+extension cord el cable, el cordón
+(de la luz)
+fan el ventilador, el abanico
+i re alarm la alarma de incendio
+i re extinguisher el extintor de incendio
+i replace la chimenea
+l oor el suelo
+garbage can el basurero, el cubo de
+basura
+garbage disposal la trituradora
+gas el gas
+ground l oor la planta baja, el primer
+piso
+handle (door) el puño
+handle (drawer) el tirador, la manija
+handle (pitcher) el asa ( f.), el asidero
+hearth el hogar
+heating system la calefacción
+key la llave
+keyhole el ojo de la cerradura
+lamp la lámpara
+lampshade la pantalla de lámpara
+lever la palanca
+light la luz
+light switch el interruptor
+lightbulb la bombilla
+lock la cerradura
+log el leño
+logs, i rewood la leña
+mailbox el buzón
+mantelpiece la repisa (de chimenea)
+mat la estera, la esterilla
+mezzanine l oor la mezzanina, el entresuelo
+passageway el pasillo
+pipe la pipa
+plug (electrical) el enchufe
+plug, stopper el tapón
+roof el tejado, el techo
+shelf el estante
+shutters las contraventanas
+skylight el tragaluz, la claraboya
+staircase, stairs la escalera
+step el peldaño, el escalón,
+la grada
+terrace la terraza
+tile (bathroom) el azulejo
+tile ( l oor) la baldosa
+tile (roof ) la teja
+toilet el inodoro, el retrete
+trash can el cubo de basura
+tray la bandeja
+view la vista, el panorama
+wastepaper basket la papelera, la cesta
+window la ventana
+windowpane el vidrio, el cristal
+windowsill el alféizar, el antepecho
+wire el alambre
+wiring el alambrado
+wood la madera
+to ask a question hacer una pregunta
+to blow soplar
+to buy comprar
+to call llamar
+to give dar
+to pay pagar
+to pour echar
+to remind, remember recordar
+to say, tell decir
+to send enviar, mandar
+to sing cantar
+to throw tirar
+to write escribir
+
+NB: multicolonna
+la cafetera cof eepot el café cof ee
+la cajonera chest of drawers el cajón drawer
+la caldera soup kettle el caldo broth, soup
+la carbonera coal bin el carbón coal
+la cartera briefcase la carta letter
+la coctelera cocktail shaker el cóctel cocktail
+la cucarachera cockroach trap la cucaracha cockroach
+la cuchillera knife case, scabbard el cuchillo knife
+la chocolatera chocolate pot el chocolate chocolate
+la ensaladera salad bowl la ensalada salad
+la gasolinera gas station la gasolina gasoline
+la guantera glove compartment el guante glove
+la jabonera soap dish el jabón soap
+la joyera jewelry box la joya jewel
+la lechera milk pitcher la leche milk
+la leñera woodshed, woodbin la leña i rewood
+la licorera liquor case/cabinet el licor liquor
+la panera breadbasket el pan bread
+la papelera wastebasket el papel paper
+la pecera i shbowl, aquarium el pez i sh
+la perrera dog kennel, dog pound el perro dog
+la polvera powder case, compact el polvo powder
+la ponchera punch bowl el ponche punch
+la pulsera bracelet el pulso pulse
+la ratonera mousetrap el ratón mouse
+la salsera gravy boat la salsa gravy, sauce
+la sombrerera hatbox el sombrero hat
+la sopera soup tureen la sopa soup
+la tetera teapot el té tea
+la tortera baking pan la torta cake
+el ali letero pincushion el ali ler pin
+el arenillero sandbox la arena sand
+el azucarero sugar bowl el azúcar sugar
+el basurero garbage can la basura garbage
+el cenicero ashtray la ceniza ash
+el cerillero matchbox el cerillo match
+el cervecero set of beer mugs la cerveza beer
+el cochero garage el coche car
+el costurero sewing basket la costura sewing
+el cucharero spoon rack la cuchara spoon
+el l orero vase, l owerpot la l or l ower
+el gatero cat carrier el gato cat
+el harinero l our bin/canister la harina l our
+el helero glacier el hielo ice
+el hormiguero anthill la hormiga ant
+el lapicero pencil case/holder el lápiz pencil
+el llavero key ring la llave key
+el mantequero butter dish la mantequilla butter
+el paragüero umbrella stand el paraguas umbrella
+el pastillero pillbox la pastilla pill, tablet
+el pimentero pepper mill/shaker la pimienta pepper
+el ropero locker, wardrobe la ropa clothing
+el salero saltcellar la sal salt
+el servilletero napkin ring la servilleta napkin
+el toallero towel rack la toalla towel
+
+achy, sore dolorido
+bad, lousy mal
+clumsy torpe
+dizzy vertiginoso
+drunk borracho
+empty vacío
+full lleno
+healthy sano
+hurt, injured dañado
+itchy, mangy, scabby sarnoso
+miserable, rotten miserable
+relaxed relajado
+seasick mareado
+sick, ill enfermo
+so-so así así
+sober sobrio
+tired cansado
+(very) well, okay, i ne (muy) bien
+wide awake, alert alerta
+bald calvo
+big, large grande
+broken roto
+clean limpio
+dark oscuro
+dirty sucio
+dusty polvoriento
+fat gordo
+furry peludo
+grotesque grotesco
+light, bright claro
+little, small pequeño
+pretty bonito
+ridiculous ridículo
+scary, frightening espantoso
+shiny lustroso
+short bajo
+slim, thin delgado
+tall alto
+tidy, neat, arranged arreglado
+ugly feo
+alive, living, live vivo
+arranged, settled arreglado
+broken roto
+burned quemado
+clean limpio
+cold (to the touch) frío
+completed completo
+cooked, baked cocido
+crooked, twisted torcido
+dead muerto
+dirty, messy sucio
+dried, dry seco
+l at llano
+full, i lled lleno
+hot (to the touch), heated caliente
+kneeling de rodillas
+moldy mohoso
+planted plantado
+ready listo
+repaired, i xed reparado
+rusty oxidado
+seated, sitting down sentado
+standing de pie
+washed lavado
+wet mojado
+wrinkled arrugado
+above, over sobre
+at, to a
+behind atrás (de), detrás de
+facing frente a
+far from lejos de
+from de
+in en
+in front (of) enfrente (de)
+inside adentro
+inside of dentro de
+near (to) cerca (de)
+next to, next door to al lado de
+on en
+on top (of) encima (de)
+outside afuera
+outside (of) fuera (de)
+to the let (of) a la izquierda (de)
+to the right (of) a la derecha (de)
+under debajo de
+underneath, downstairs abajo
+up, upstairs arriba
+with con
+with me conmigo
+with you (informal sing.) contigo
+without sin
+
+SONO ARRIVATO A PAGINA 172 (considerando che devo rifattorizzare tutta la lista fino ad ora ...)
+
+
+
+NB: coniugazione dei verbi:
+oler to smell huelo hueles huele olemos oléis huelen

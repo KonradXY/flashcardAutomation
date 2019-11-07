@@ -1,0 +1,184 @@
+20-1
+1. I hope that she speaks with me tomorrow.
+2. I want you to eat the bread.
+3. He wants me to write a letter.
+4. We pray that you are well.
+5. They [m.] want us to do it.
+6. She hopes that you can come to the party.
+7. They [f.] suggest that you do it.
+8. I insist that you all work.
+9. He requests that we be here at nine o’clock.
+10. Why do you request that I do it?
+11. I prefer that we not leave the house until five o’clock.
+12. She hopes that you know her.
+13. We insist that you eat with us.
+14. Do you want me to count the money?
+15. They [m.] suggest that we put the papers in the cabinet (el gabinete).
+|
+20-3
+1. I doubt that she eats in that restaurant.
+2. I don’t suppose that you’ll tell me his name.
+3. They [m.] don’t believe that he plays the piano.
+4. She isn’t sure that the coffee is ready.
+5. We don’t think that the Vikings will win the game.
+6. He is not convinced that I need so much money.
+7. Why don’t you believe that we know him?
+8. We aren’t convinced that the moon (la luna) is made (ser) of green cheese.
+9. He doubts that they [m.] know the answer.
+10. She isn’t sure that we always tell the truth.
+11. Why aren’t you convinced that I am always right (tener razón)?
+12. It doesn’t seem that he wants to be here.
+13. I’m not sure that you can read this.
+14. He doesn’t believe that I’m his cousin.
+15. I don’t imagine that you believe my story (la historia).
+|
+20-5
+1. I’m happy that you’re so (tan) tall.
+2. He’s sad that she’s a dishonest person.
+3. We’re delighted (encantado) that you can come to our party.
+4. They [m.] are angry that their team won’t win the tournament (el torneo).
+5. You’re disgusted (indignado) that our team will lose every game.
+6. I’m frustrated that she’s always late.
+7. She’s anxious (ansioso) that you’ll fail (reprobar) the test.
+8. I’m worried that they’ll [m.] tell me more lies (la mentira).
+9. She’s worried that I’ll reveal (revelar) the truth about her.
+10. He’s sad that she’s with another man.
+|
+20-6
+1. It’s better that we eat in the kitchen.
+2. It’s necessary for you to call them tomorrow.
+3. It’s preferable that you buy the eggs by the dozen (por docenas).
+4. It’s unlikely that they’ll be ready by five o’clock.
+5. It’s advisable that you [formal] have an attorney (el abogado) with you.
+6. It’s important that no one know that secret.
+7. It may be that Alice doesn’t work here anymore (ya no).
+8. It’s ridiculous that so many politicians (el político) don’t tell the truth.
+9. It’s impossible for me to be in two places at the same time (al mismo tiempo).
+10. It’s incredible that he speaks twelve languages (el idioma).
+11. It’s a shame that ice cream has so many calories (la caloría).
+12. If only (Ojalá) Jane wouldn’t sing at (en) the wedding (la boda).
+13. It’s fantastic that we don’t have to sit next to (al lado de) them [m.].
+14. It may be that Steven isn’t what (lo que) he says he is.
+15. It’s impossible for me to remain (quedarse) in this room one more minute.
+|
+20-8
+1. I won’t eat until I’m hungry.
+2. I’ll write you a note so that you remember to buy milk.
+3. You’ll feel (sentirse) better after you take this medicine.
+4. He won’t marry (casarse con) a woman unless she’s rich.
+5. You all can’t hunt (cazar) unless you have a license (la licencia).
+6. I’ll dry the dishes while you wash them.
+7. The priest can’t baptize (bautizar) the baby before the godparents (los padrinos) arrive.
+8. The game’s not over (acabarse) till it’s over.
+9. I’ll believe it when I see it.
+10. He’s going to read this book another time in case we have a quiz (la prueba).
+11. He won’t eat anything unless he has a napkin (la servilleta) on his lap (el regazo).
+12. Every week, I save (ahorrar) fifty dollars so that I have enough money for my vacation.
+13. She’ll never be happy until she knows how to conjugate (conjugar) verbs.
+14. You should brush your teeth before we leave for the dentist’s office (el consultorio del dentista).
+15. I can’t wear these pants until I lose (perder) ten pounds.
+|
+20-10
+1. We’re looking for a house that has three bedrooms.
+2. She wants a dog that doesn’t bark (ladrar).
+3. Is there anyone here who can play the guitar?
+4. I need a maid (la criada) who washes (limpiar) windows.
+5. Is there anybody in the world who knows how to express (expresarse) himself clearly?
+6. I’m looking for a cat that doesn’t scratch (arañar) the furniture (los muebles).
+7. Where can I buy a shirt that isn’t polyester (el poliéster)?
+8. There isn’t anyone here who can help you.
+9. For his birthday this year he wants a parrot (el loro) that speaks three languages.
+10. I want to live in a city where there isn’t any crime (el crimen).
+|
+20-12
+1. Maybe he has the money.
+2. Perhaps we can go.
+3. Maybe they [m.] live here.
+4. Perhaps you know him.
+5. Maybe they’ll [m.] buy the house today.
+6. Perhaps we are lost (perdido).
+7. Maybe he isn’t the smartest person in the world.
+8. Perhaps you all shouldn’t drink this milk.
+9. Maybe the politician isn’t telling the truth.
+10. Perhaps the cat has only eight lives.
+|
+20-14
+1. Even if Jane cooks, I won’t stay (quedarse).
+2. Although they [m.] may want to watch television, we won’t let (dejar) them.
+3. Even if you yell (gritar) at me, I won’t change my mind (cambiar de idea).
+4. Although he may think he’s a genius (el genio), everyone knows that he isn’t.
+5. Even if you offer the policeman a thousand dollars, he’ll still (todavía) give you a ticket
+(la multa).
+6. Although we may be ignorant of (ignorar) the candidates, we still have the right (el derecho)
+to vote.
+7. Even if you put the cat in the basement, Barbara will still sneeze (estornudar).
+8. Although you all may feel sick, you still have to take the test.
+9. Even if you wind your watch (dar cuerda al reloj) fifty times, it will never work.
+10. Although he may smile (sonreír) all the time, inside (en su interior) he is evil (malo).
+11. Even if I know the answer, I won’t tell you.
+12. Although you all [formal] may think I’m crazy, I know that I’m right.
+|
+RISPOSTE
+20-1 1. Espero que ella hable conmigo mañana. 2. Quiero que comas el pan. 3. Él quiere que yo escriba una
+carta. 4. Rogamos que estés bien. 5. Ellos quieren que lo hagamos. 6. Ella espera que puedas venir
+a la fiesta. 7. Ellas sugieren que tú lo hagas. 8. Insisto en que trabajéis. 9. Él pide que estemos aquí
+a las nueve. 10. ¿Por qué pides que yo lo haga? 11. Prefiero que no salgamos de casa hasta las cinco.
+12. Ella espera que la conozcas. 13. Insistimos en que comas con nosotros. 14. ¿Quieres que yo cuente
+el dinero? 15. Ellos sugieren que pongamos los papeles en el gabinete.
+|
+20-3 1. Dudo que ella coma en ese restaurante. 2. No supongo que me digas su nombre. 3. Ellos no creen que
+él toque el piano. 4. Ella no está segura de que el café esté listo. 5. No pensamos que los Vikings ganen
+el partido. 6. Él no está convencido de que yo necesite tanto dinero. 7. ¿Por qué no crees que lo
+conozcamos? 8. No estamos convencidos de que la luna sea de queso verde. 9. Él duda que ellos sepan
+la respuesta. 10. Ella no está segura de que siempre digamos la verdad. 11. ¿Por qué no estás convencido/
+convencida de que yo siempre tenga razón? 12. No parece que él quiera estar aquí. 13. No estoy seguro/
+segura de que puedas leer esto. 14. Él no cree que yo sea su primo/prima. 15. No me imagino que creas
+mi historia.
+|
+20-5 1. Estoy feliz que seas tan alto/alta. 2. Él está triste que ella sea una persona deshonesta. 3. Estamos
+encantados que puedas venir a nuestra fiesta. 4. Ellos están enojados que su equipo no gane el torneo.
+5. Estás indignado que nuestro equipo pierda cada juego. 6. Estoy frustrado/frustrada que ella siempre esté
+tarde. 7. Ella está ansiosa que suspendas el examen. 8. Estoy preocupado/preocupada que ellos me digan
+más mentiras. 9. Ella está preocupada que yo revele la verdad acerca de ella. 10. Él está triste que ella esté
+con otro hombre.
+|
+20-6 1. Es mejor que comamos en la cocina. 2. Es necesario que les llames mañana. 3. Es preferible que compres
+los huevos por docenas. 4. Es improbable que estén listos para las cinco. 5. Conviene que tenga un abogado
+con usted. 6. Es importante que nadie sepa ese secreto. 7. Puede ser que Alicia ya no trabaje aquí.
+8. Es ridículo que tantos políticos no digan la verdad. 9. Es imposible que yo esté en dos lugares al mismo
+tiempo. 10. Es increíble que él hable doce idiomas. 11. Es una lástima que el helado tenga tantas calorías.
+12. Ojalá que Juana no cante en la boda. 13. Es fantástico que no tengamos que sentarnos al lado de ellos.
+14. Puede ser que Esteban no sea lo que dice que es. 15. Es imposible que me quede en este cuarto por
+un minuto más.
+|
+20-8 1. No comeré hasta que tenga hambre. 2. Te escribiré una nota para que recuerdes comprar leche.
+3. Te sentirás mejor después (de) que tomes esta medicina. 4. Él no se casará con una mujer a menos que
+sea rica. 5. No podéis cazar a menos que tengáis una licencia. 6. Secaré los platos mientras que los laves.
+7. El sacerdote no puede bautizar al bebé antes (de) que lleguen los padrinos. 8. El juego no se acaba hasta
+que se acabe. 9. Lo creeré cuando lo vea. 10. Él va a leer este libro otra vez en caso de que tengamos una
+prueba. 11. Él no comerá nada a menos que tenga una servilleta en el regazo. 12. Cada semana ahorro
+cincuenta dólares para que tenga suficiente dinero para mis vacaciones. 13. Ella nunca estará feliz hasta
+que sepa conjugar los verbos. 14. Debes cepillarte los dientes antes (de) que salgamos para la consulta
+del dentista. 15. No podré llevar estos pantalones hasta que pierda diez libras.
+|
+20-10 1. Buscamos una casa que tenga tres dormitorios. 2. Ella quiere un perro que no ladre. 3. ¿Hay alguien aquí
+que pueda tocar la guitarra? 4. Necesito una criada que limpie las ventanas. 5. ¿Hay alguien en el mundo
+que sepa expresarse claramente? 6. Busco un gato que no arañe los muebles. 7. ¿Dónde puedo comprar una
+camisa que no sea de poliéster? 8. No hay nadie aquí que pueda ayudarte. 9. Para su cumpleaños este año
+él quiere un loro que hable tres idiomas. 10. Quiero vivir en una ciudad donde no haya crimen.
+|
+20-12 1. Quizá [or Tal vez or Acaso] él tenga el dinero. 2. Quizá [or Tal vez or Acaso] podamos ir. 3. Quizá
+[or Tal vez or Acaso] ellos vivan aquí. 4. Quizá [or Tal vez or Acaso] lo conozcas. 5. Quizá [or Tal vez
+or Acaso] ellos compren la casa hoy. 6. Quizá [or Tal vez or Acaso] estemos perdidos. 7. Quizá [or Tal vez
+or Acaso] él no sea la persona más inteligente del mundo. 8. Quizá [or Tal vez or Acaso] no debáis beber
+esta leche. 9. Quizá [or Tal vez or Acaso] el político no diga la verdad. 10. Quizá [or Tal vez or Acaso]
+el gato tenga sólo ocho vidas.
+|
+20-14 1. Aunque Juana cocine, no me quedaré. 2. Aunque quieran mirar la televisión, no los dejaremos.
+3. Aunque me grites, no cambiaré mi idea. 4. Aunque él piense que es un genio, todo el mundo sabe que
+no lo es. 5. Aunque le ofrezcas mil dólares al policía, todavía te dará una multa. 6. Aunque ignoremos
+los candidatos, todavía tenemos el derecho de votar. 7. Aunque pongas el gato en el sótano, Bárbara todavía
+estornudará. 8. Aunque os sintáis enfermos, todavía tenéis que tomar el examen. 9. Aunque des cuerda
+al reloj cincuenta veces, nunca funcionará. 10. Aunque él sonría todo el tiempo, en su interior es malo.
+11. Aunque (yo) sepa la respuesta, no te la diré. 12. Aunque piensen que estoy loco/loca, sé que tengo razón.
+|

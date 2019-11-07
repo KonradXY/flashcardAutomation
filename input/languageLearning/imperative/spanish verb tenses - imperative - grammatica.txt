@@ -1,0 +1,73 @@
+What is the imperative and how it's formed ? |
+The imperative deals with a single aspect of the language - giving commands. We call the imperative a mood rather than a tense, because commands do not vary according to time as the tenses do. The only time frame involved in a command is "now".
+For the tu pronoun we have this rule:
+- tu commands - drop the s from the second person singular: habla ! Come ! Vive !
+
+A regular negative command is formed as follows:
+1) Begin with the present tense first person singular (yo) form of the verb.
+2) remove the -o ending. This is called the "yo stem".
+3) For -ar verbs add -es. For -er and -ir verbs add -as (hablo -> no hables, como -> no comas, escribo -> no escribas).
+NB: when the yo form ends in -oy such as in estar, the -oy is removed to form the "yo stem".
+|
+Which are the standard ortographic (spelling) changes ? |
+Before the letter e, the following orthographic changes come into play.
+- c > qu (No tocas el piano -> No toques el piano !)
+- g > gu (No juegas al beisbol -> No jueges al beisbol !)
+- z > c (No comiezas -> No comiences !)
+|
+Which are the irregular tu commands ? |
+infin  affir    neg
+decir   di    no digas
+hacer   haz   no hagas
+ir      ve    no vayas
+poner   pon   no pongas
+salir   sal   no salgas
+ser     sé    no seas
+tener   ten   no tengas
+venir   ven   no vengas
+|
+Which are the rules for commands with object pronouns ? |
+With an affirmative command, the object pronoun(s) are attached directly to the end of the verb in its imperative form (Estudialo, Traemelo, Deme el libro).
+When two object pronouns are involved, remember the RID rule: Reflexive, Indirect, Direct. (Dimelo, Damelas, Compratelo, Daselo).
+With a negative command, the object pronoun precede the verb in its imperative form. The object pronoun is independent of the verb. When there are two object pronouns, the RID rule applies (No me mires, No le des el dinero, No lo pongas alli)
+|
+Which are the rules for usted commands ? |
+Regular usted commands have a single form for both affirmative and negative commands: Starting from the yo stem you add:
+- for -ar verbs add -e (hable)
+- for -er and -ir verbs add -a (coma, escriba)
+NB: when the yo form ends in -oy such as in estar, --oy is removed to form the yo stem.
+NB: both estar and dar have thir-person usted command forms that would be identical to other words with the same spelling. Therefore the command forms carry an accent mark to distinguish them (dè as distinct from de (from, of); estè as distinct from este (this)).
+Also, there are only three irregular usted commands: (ir -> Vaya!, saber -> Sepa !, ser -> Sea !)
+|
+Which are the rules for ustedes commands ? |
+Ustedes commands are nearly identical to usted commands, the only difference being an n added to the end for the plural form. The same form is used for both affirmative and negative commands. That is true for all verbs, whether regular or irregular (Hablen, No coman, escriban, vayanse, sepanlo, sean amables).
+|
+Which are the rules for the vosotros commands ? |
+A regular affirmative vosotros command is formed by simply dropping the r from the infinitive and adding the letter d. This is true for all verbs except reflexives. (Trabajad, bebed, escribid, sabedlo, decidmelo, traednos la foto, sed simpaticos, idos).
+The affirmative vosotros command for a reflexive verb is formed by attaching the reflexive pronoun directly to the same stem. No d is added to the stem before attaching the pronoun. (Levantaos, acostaos, sentaos, callaos). The informal vosotros command is used only in Spain.
+Regular negative vosotros commands are formed as follows:
+-ar verbs -> add -èis to the "yo stem" (no trabajèis, no me lo digàis)
+-er and -ir verbs -> add -àis to the "yo stem" (no bebàis, no nos traigàis nada, no escribàis, no se lo deis).
+Note that the negative vosotros command of ir, saber and ser mirror that of the usted commands for these verbs: (no vayàis conmigo, no sepàis todo, no seàis antipaticos)
+For negative vosotros commands, setm-changing -ir verbs show stem changes of e > i and o > u (No pidàis, No sirvàis, No sigàis, No durmàis, no os muràis, No repitàis).
+|
+Which are the rule for nosotros commands ? |
+Both affirmative and negative nosotros commands generally translate as "let's" statements in english. Starting from the "yo stem" form:
+- -ar verbs -> add -emos (hablemos)
+- -er and -ir verbs -> add -amos (comamos, escribamos).
+
+- Stem changin verbs - except stem changing -ir verbs - do not change in the nosotros form (contemos el dinero, pensemos, movamos los muebles, volvamos).
+- Stem-changing -ir vebrs show the following changes in nosotros:
+  - o > ue verbs -> o changes to u (durmamos)
+  - e > ie verbs -> e changes to i (mintamos)
+  - e > i verbs -> e changes to i (pidamos)
+- Verbs ending with -car, -gar and -zar make the necessary standad orthographic changes where needed (c > qu, g > gu, z > c) (toquemos el piano, paguemos la cuenta, comencemos)
+- With reflexive verbs, drop the s of the conjugated verb before adding nos (levantemonos, sentemonos, acostemonos).
+To form a negative nosotros command just add no before the verb (no trabajemos, no volemos, no nos banemos).
+
+There are only three verbs with irregular nosotros commands (though ir has both reflexive and noreflexive forms). Note that ir has different affirmative and negative forms:
+ir -> vamos - no vayamos
+irse -> vamonos no nos vayamos
+saber -> sepamos, no sepamos
+ser -> seamos - no seamos
+|

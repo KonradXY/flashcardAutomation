@@ -1,0 +1,113 @@
+When is used the imperfect subjunctive and how it's formed ? |
+The imperfect subjunctive is used in the same situations as the present subjunctive—
+when there is an aspect of uncertainty, after certain expressions, and after
+certain words (such as “perhaps,” “maybe,” and “even if ”). However, the time
+frame is in the past rather than in the present.
+In the study of the indicative tenses, we distinguish between the preterite and
+the imperfect tenses in the past. This distinction is not an issue in the subjunctive
+mood, where the imperfect subjunctive refers to actions in the imagined or hypothetical
+past
+
+Formation:
+1) The base of the imperfect subjunctive is what remains after the -ron ending is
+dropped from the third-person plural of the preterite tense. This is the base for all
+forms of the imperfect subjunctive. (hablaron -> habla-; comiero -> comie- ; tuvierion -> tuvie-)
+2) To this base add either of the following sets of ending
+  - (-ra, -ras -a -ramos -rais -ran)
+  - (-se -ses -se -semos -seis -sen)
+
+Of these two sets of ending which may be used interchangebly, the -ra endings are more commonly used and these are the ending that are shown in the examples. Below is the full conjugation of hablar in the imperfect subjunctive:
+  hablar -> hablara hablaras hablara hablaramos hablarais hablaron
+
+|
+What are the main uses of the imperfect subjunctive ? |
+- Main clause in the past. When the main clause is in the past and the subjunctive is required, use the imperfect subjunctive
+in the subordinate clause. (Ella querìa que yo hablara en espanol, fue terrible que estuvieramos enfermos)
+
+- Main clause in the present with a subordinate clause in the past. When the main clause is in the present tense and requires the subjunctive, but the verb in
+the main clause refers to an action in the past, the subordinate clause is in the imperfect
+subjunctive. (Ella espera que yo no gastara todo el dinero, siento que no conoscieramos a Mateo)
+
+- Hypothetical if-clauses in the past. Most if-clauses in the past fall under the heading “hypothetical” and are therefore, at best, presumptive,
+which leads straight into the domain of the subjunctive. Consider the sentence “If I
+were taller, I would play basketball.” My being taller is clearly hypothetical, and therefore the verb
+“were” is in the subjunctive.
+A few important points regarding this type of sentence follow.
+◆ A subordinate if-clause in the past is very often linked with a main clause in the conditional
+indicative. For example, consider the sentence “If I were taller (if-clause in the past), I would
+play basketball (conditional indicative).”
+Jugaría al básquetbol, si yo fuera más alto. I would play basketball, if I were taller.
+Recibirías buenas notas si estudiaras. You would get good grades if you studied.
+Yo no iría si fuera tú. I wouldn’t go if I were you.
+¿Te quedarías si hubiera un incendio? Would you stay if there were a fire?
+◆ Only hypothetical if-clauses in the past are in the subjunctive. If the intent is to elicit true information
+(and therefore they are not hypothetical), the clause remains in the indicative. Consider
+the sentence Pregunté a Juan si él sabía la respuesta (“I asked John if he knew the
+answer”).
+There are two indications that the conjugated form of saber remains in the indicative:
+(1) The information is clearly verifiable (because all you have to do is ask John), and (2) the
+main clause (Pregunté a Juan) is in the preterite, not the conditional.
+◆ If-clauses in the present do not take the subjunctive: Si Juan tiene el dinero, te pagará (“If
+John has the money, he will pay you”). If-clauses in the present are usually followed by either
+the present or the future indicative.
+
+- As if and as though clauses. The verb in a subordinate clause that begins with “as if ” or “as though” (como si) is in the imperfect
+subjunctive. The main clause can be in the present, the past, or the conditional tense. (Te ves como si fueras culpable, actuabamos como si estuvieramos efermos).
+
+|
+
+How works the subjunctive imperfect with querer and poder ? |
+The verbs querer (“to want”) and poder (“to be able to, can”) operate in a unique manner within
+the framework of the imperfect subjunctive. Each verb takes on a special meaning when used in
+the main clause of a sentence. Consider the following two sentences, each spoken in a
+restaurant.
+I want a cup of coffee.
+I would like a cup of coffee.
+The first sentence is direct and brusque and, if spoken with great emphasis, could sound rude. The
+second sentence, merely by changing “want” to “would like,” has a softened effect and makes the
+speaker appear more civil.
+At first glance, the second sentence appears to be in the conditional. However, the conditional
+tense is used to tell what would happen if a certain condition were met, for example, “I
+would like a cup of coffee if I hadn’t already drunk ten cups this morning.” But that is not the
+speaker’s intent here. He clearly wants a cup of coffee and he also wants to appear reasonably
+courteous, so he changes “want” to “would like” and probably gets better service as a result! To
+achieve this same sort of gallantry in Spanish, you need only to use querer in the imperfect
+subjunctive.
+Yo quisiera una taza de café.
+¿Quisieras leer mi diario?
+
+- A similar situation occurs with the verb poder. Consider the following
+inquiries.
+Can you wash the windows?
+Will you wash the windows?
+Could you wash the windows? or Would you wash the windows?
+The first inquiry is in the present tense, and it implies that the speaker wants to know if the addressee
+has the talent required to wash windows. The second inquiry is in the future tense, and it
+is a request—spoken directly and with enough emphasis, it could be considered pushy. The third
+inquiry (also a request) appears to be in the conditional, and it would be in the conditional if the
+question were actually “Could you wash the windows if your hands weren’t broken?” But this
+speaker isn’t seeking information, but rather someone to perform an onerous task.
+In English, either “could” or “would” might be used with a slightly ingratiating tone, and
+probably with an added “please.” In Spanish, the speaker begins with Si (“If ”) plus the imperfect
+subjunctive form of poder, followed by the conditional form of the verb referring to whatever the
+speaker wants done.
+¿Si pudieras, limpiarías las ventanas?
+¿Si pudieras, te sentarías, por favor?
+
+- querer meaning “to wish”
+The other specialized use of querer (“to want”) in the imperfect subjunctive is the context in
+which it means “to wish.” To form wish-filled sentences, use querer in the imperfect subjunctive
+in the main clause, and when there is no change of subject (“I wish that I had a million dollars”),
+follow the conjugated querer with an infinitive.
+Yo quisiera tener un millón de dólares. Quisieramos conocer a mas personas.
+
+In such sentences, if there is a change of subject (“I wish that you were here”), the imperfect
+subjunctive form of querer is followed by que and the imperfect subjunctive form of the
+second verb.
+Yo quisiera que estuvieras aquí.
+Quisiéramos que él nos llamara.
+Quisieras que no lloviera.
+Quisierais que Juan estuviera aquí.
+Ella quisiera que hubiera comida en la casa.
+Quisieran que yo tuviera un coche.
+|

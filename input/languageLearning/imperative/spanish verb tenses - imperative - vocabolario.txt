@@ -1,0 +1,246 @@
+19-1
+1. Study!
+2. Work!
+3. Look!
+4. Listen!
+5. Read!
+6. Run!
+7. Walk!
+8. Dance!
+9. Write!
+10. Decide!
+11. Sell!
+12. Pay!
+13. Suffer!
+14. Count!
+15. Fly!
+16. Begin!
+17. Think!
+18. Sleep!
+19. Continue!
+20. Confess!
+|
+19-2
+1. Don’t look!
+2. Don’t sing!
+3. Don’t study!
+4. Don’t run!
+5. Don’t think!
+6. Don’t drink the water!
+7. Don’t arrive late!
+8. Don’t practice now!
+9. Don’t pay the bill!
+10. Don’t organize the papers!
+11. Don’t read my diary!
+12. Don’t dance on the table!
+13. Don’t open the windows!
+14. Don’t admit anything!
+15. Don’t believe anything!
+|
+19-3
+1. Put the book here!
+2. Tell the truth!
+3. Make the bed!
+4. Leave the house!
+5. Come to the kitchen!
+6. Be kind!
+7. Go to the living room!
+8. Have the money by tomorrow!
+9. Don’t put the shoes on the table!
+10. Don’t say anything!
+11. Don’t make the beds!
+12. Don’t leave now!
+13. Don’t come tomorrow!
+14. Don’t be selfish!
+15. Don’t go shopping today!
+16. Don’t have animals in the house!
+|
+19-4
+1. Buy it [m.]!
+2. Sell it [f.]!
+3. Sit down!
+4. Go to bed!
+5. Take a bath!
+6. Tell me a story!
+7. Put it [m.] here!
+8. Go away!
+9. Put them [f.] there!
+10. Leave us alone!
+11. Tell it [m.] to us!
+12. Write it [f.] to me!
+13. Sing it [f.] to her!
+14. Buy it [m.] for me!
+15. Do it [m.] for yourself!
+|
+19-5
+1. Don’t read it [m.]!
+2. Don’t drink it [f.]!
+3. Don’t kiss it [m.]!
+4. Don’t tell me lies!
+5. Don’t lie to me!
+6. Don’t go away!
+7. Don’t stand up!
+8. Don’t take a shower!
+9. Don’t go to bed!
+10. Don’t hate me!
+11. Don’t give it [f.] to him!
+12. Don’t tell it [m.] to them!
+13. Don’t sell it [m.] to us!
+14. Don’t read it [m.] to me!
+15. Don’t sing it [f.] to her!
+|
+19-6
+1. (ud.) Sing!
+2. (ud.) Sell!
+3. (ud.) Count!
+4. (ud.) Pay!
+5. (ud.) Run!
+6. (ud.) Do it!
+7. (ud.) Play the piano!
+8. (ud.) Read it!
+9. (ud.) Bring it here!
+10. (ud.) Stand up!
+11. (ud.) Give it to me!
+12. (ud.) Tell it to me!
+13. (ud.)  tell me a lie!
+14. (ud.) Don’t wait for us!
+15. (ud.) Don’t rob the bank!
+16. (ud.) Give me the money!
+17. (ud.) Sit down!
+18. (ud.) Put it there!
+19. (ud.) Don’t do it!
+20. (ud.) Tell him a story!
+|
+19-7
+1. (ud.) Go away!
+2. (ud.) Know it [m.]!
+3. (ud.) Be good!
+4. (ud.)  Don’t go away!
+5. (ud.) Don’t be bad [f.]!
+6. (ud.)  Don’t go to the party!
+7. (ud.)  Know everything for tomorrow!
+8. (ud.)  Go to the front of the room!
+|
+19-8
+1. (uds.) Work!
+2. (uds.) Think!
+3. (uds.)  Don’t do that!
+4. (uds.) Don’t leave!
+5. (uds.)  Sit down!
+6. (uds.)  Put them [m.] here!
+7. (uds.) Don’t tell me anything!
+8. (uds.)  Play the piano!
+9. (uds.)  Play baseball!
+10. (uds.)  Bring me the food!
+11. (uds.)  Tell him the secret!
+12. (uds.) Don’t go away angry [f.]!
+13. (uds.) Go to bed!
+14. (uds.) Wash your hands!
+15. (uds.) Brush your teeth!
+|
+19-9
+1. (vosotros) Fly!
+2. (vosotros) Return!
+3. (vosotros) Come!
+4. (vosotros) Stop!
+5. (vosotros)  Run!
+6. (vosotros)  Boil the water!
+7. (vosotros) Sleep!
+8. (vosotros)  Read it [m.]!
+9. (vosotros) Go to the store!
+10. (vosotros)  Put it [f.] in the house!
+11. (vosotros)  Do us a favor!
+12. (vosotros)  Arrive at ten o’clock!
+|
+19-10
+1. (vosotros) Don’t eat!
+2. (vosotros) Don’t speak!
+3. (vosotros) Don’t play here!
+4. (vosotros) Don’t sing!
+5. (vosotros) Don’t sleep in the park!
+6. (vosotros) Don’t boil the water!
+7. (vosotros) Don’t fall asleep!
+8. (vosotros)  Don’t leave!
+9. (vosotros) Don’t take the money!
+10. (vosotros)  Don’t follow me!
+11. (vosotros) Don’t go to bed!
+12. (vosotros)  Don’t go away!
+|
+19-11
+1. (nosotros) Let’s study!
+2. (nosotros) Let’s walk!
+3. (nosotros)  Let’s not study!
+4. (nosotros) Let’s not eat!
+5. (nosotros) Let’s sell the car!
+6. (nosotros) Let’s do something!
+7. (nosotros)  Let’s not do anything!
+8. (nosotros)  Let’s eat lunch!
+9. (nosotros)  Let’s put the dog outside!
+10. (nosotros)  Let’s sing to them!
+11. (nosotros) Let’s not lie!
+12. (nosotros) Let’s not begin now!
+13. (nosotros)  Let’s tell the truth!
+14. (nosotros)  Let’s not say anything!
+15. (nosotros) Let’s buy it [m.]!
+|
+19-12
+1. (nosotros) Let’s know everything!
+2. (nosotros) Let’s be kind!
+3. (nosotros) Let’s not go to the party!
+4. (nosotros) Let’s go away tonight!
+5. (nosotros) Let’s not be cowards (el cobarde)!
+6. (nosotros) Let’s go to the movies tomorrow!
+7. (nosotros) Let’s be honest people!
+8. (nosotros) Let’s not go away this afternoon
+|
+RISPOSTE
+19-1 1. ¡Estudia! 2. ¡Trabaja! 3. ¡Mira! 4. ¡Escucha! 5. ¡Lee! 6. ¡Corre! 7. ¡Anda! or ¡Camina!
+8. ¡Baila! 9. ¡Escribe! 10. ¡Decide! 11. ¡Vende! 12. ¡Paga! 13. ¡Sufre! 14. ¡Cuenta! 15. ¡Vuela!
+16. ¡Comienza! or ¡Empieza! 17. ¡Piensa! 18. ¡Duerme! 19. ¡Sigue! or ¡Continúa! 20. ¡Confiesa!
+|
+19-2 1. ¡No mires! 2. ¡No cantes! 3. ¡No estudies! 4. ¡No corras! 5. ¡No pienses! 6. ¡No bebas el agua!
+7. ¡No llegues tarde! 8. ¡No practiques ahora! 9. ¡No pagues la cuenta! 10. ¡No organices los papeles!
+11. ¡No leas mi diario! 12. ¡No bailes en la mesa! 13. ¡No abras las ventanas! 14. ¡No admitas nada!
+15. ¡No creas nada!
+|
+19-3 1. ¡Pon el libro aquí! 2. ¡Di la verdad! 3. ¡Haz la cama! 4. ¡Sal de la casa! 5. ¡Ven a la cocina!
+6. ¡Sé amable! 7. ¡Ve a la sala! 8. ¡Ten el dinero para mañana! 9. ¡No pongas los zapatos en la mesa!
+10. ¡No digas nada! 11. ¡No hagas las camas! 12. ¡No salgas ahora! 13. ¡No vengas mañana! 14. ¡No seas
+egoísta! 15. ¡No vayas de compras hoy! 16. ¡No tengas animales en la casa!
+|
+19-4 1. ¡Cómpralo! 2. ¡Véndela! 3. ¡Siéntate! 4. ¡Acuéstate! 5. ¡Báñate! 6. ¡Dime un cuento! 7. ¡Ponlo aquí!
+8. ¡Vete! 9. ¡Ponlas allí! 10. ¡Déjanos en paz! 11. ¡Dínoslo! 12. ¡Escríbemela! 13. ¡Cántasela!
+14. ¡Cómpramelo! 15. ¡Háztelo!
+|
+19-5 1. ¡No lo leas! 2. ¡No la bebas! 3. ¡No lo beses! 4. ¡No me digas mentiras! 5. ¡No me mientas!
+6. ¡No te vayas! 7. ¡No te levantes! 8. ¡No te duches! 9. ¡No te acuestes! 10. ¡No me odies!
+11. ¡No se la des! 12. ¡No se lo digas! 13. ¡No nos lo vendas! 14. ¡No me lo leas! 15. ¡No se la cantes!
+|
+19-6 1. ¡Cante! 2. ¡Venda! 3. ¡Cuente! 4. ¡Pague! 5. ¡Corra! 6. ¡Hágalo! 7. ¡Toque el piano! 8. ¡Léalo!
+9. ¡Tráigalo aquí! 10. ¡Levántese! 11. ¡Démelo! 12. ¡Dígamelo! 13. ¡No me diga una mentira!
+14. ¡No nos espere! 15. ¡No robe el banco! 16. ¡Deme el dinero! 17. ¡Siéntese! 18. ¡Póngalo allí!
+19. ¡No lo haga! 20. ¡Dígale un cuento!
+|
+19-7 1. ¡Váyase! 2. ¡Sépalo! 3. ¡Sea bueno! 4. ¡No se vaya! 5. ¡No sea mala! 6. ¡No vaya a la fiesta!
+7. ¡Sepa todo para mañana! 8. ¡Vaya al frente de la sala!
+|
+19-8 1. ¡Trabajen! 2. ¡Piensen! 3. ¡No hagan eso! 4. ¡No salgan! 5. ¡Siéntense! 6. ¡Pónganlos aquí!
+7. ¡No me digan nada! 8. ¡Toquen el piano! 9. ¡Jueguen al béisbol! 10. ¡Tráiganme la comida!
+11. ¡Díganle el secreto! 12. ¡No se vayan enojadas! 13. ¡Acuéstense! 14. ¡Lávense las manos!
+15. ¡Cepíllense los dientes!
+|
+19-9 1. ¡Volad! 2. ¡Volved! 3. ¡Venid! 4. ¡Paraos! 5. ¡Corred! 6. ¡Hervid el agua! 7. ¡Dormid!
+8. ¡Leedlo! 9. ¡Id a la tienda! 10. ¡Ponedla en la casa! 11. ¡Hacednos un favor! 12. ¡Llegad a las diez!
+|
+19-10 1. ¡No comáis! 2. ¡No habléis! 3. ¡No juguéis aquí! 4. ¡No cantéis! 5. ¡No durmáis en el parque!
+6. ¡No hirváis el agua! 7. ¡No os durmáis! 8. ¡No salgáis! 9. ¡No toméis el dinero! 10. ¡No me sigáis!
+11. ¡No os acostéis! 12. ¡No os vayáis!
+|
+19-11 1. ¡Estudiemos! 2. ¡Caminemos! 3. ¡No estudiemos! 4. ¡No comamos! 5. ¡Vendamos el coche!
+6. ¡Hagamos algo! 7. ¡No hagamos nada! 8. ¡Almorcemos! 9. ¡Pongamos el perro afuera!
+10. ¡Cantémosles! 11. ¡No mintamos! 12. ¡No comencemos ahora! 13. ¡Digamos la verdad!
+14. ¡No digamos nada! 15. ¡Comprémoslo!
+|
+19-12 1. ¡Sepamos todo! 2. ¡Seamos amables! 3. ¡No vayamos a la fiesta! 4. ¡Vámonos esta noche!
+5. ¡No seamos cobardes! 6. ¡Vamos al cine mañana! 7. ¡Seamos personas honradas! 8. ¡No nos vayamos
+esta tarde!

@@ -1,0 +1,33 @@
+what is the conditional and how it is expessed ? |
+The conditional tense expresses the feeling of future uncertainty, generally translated as english "would" + VERB. The inherent feature of the conditional tense is that some condition is not being met, but if it were met, a certain action would take place.
+Most verbs are regular in the conditional tense. In fact, the future and the conditional tenses share the same irregular verbs. For conditional forms of regular verbs, the infinitive itself is the stem and the appropriate tense ending is added to the infinitive. Below are the verb endings for the conditional tense.
+ia, ias, ia, iamos, iais, ian
+
+Below are the full conjugation of hablar, comer and vivir in the conditional tense:
+- hablar -> hablarìa, hablarìas, hablarìa, hablarìamos, hablaìais, hablarìan.
+- comer -> comerìa, comerìas, comerìa, comerìamos, comerìais, comerìan.
+- vivir -> vivirìa, vivirìas, vivirìa, vivirìamos, vivirìais, vivirìan.
+|
+What are the irregular verbs in the conditional and how they are conjugated ? |
+The twelve verbs that are irregular in the future are also irregular in the conditional, and in the same way. The verbs ending are the same but each of these twelve verbs shows a change in the stem. They are grouped to make learning them easier, because there are patterns to how the infinitive stem changes.
+
+Group 1
+caber (to fit, have enough room) -> yo cabría
+haber (to have (auxiliary)) -> yo habría
+poder (to be able to) -> yo podría
+querer (to want) -> yo querría
+saber (to know a fact, know how) -> yo sabría
+
+Group 2
+poner (to put, place) -> yo pondría
+salir (to leave) -> yo saldría
+tener (to have, hold) -> yo tendría
+valer (to be worth) -> yo valdría
+venir (to come) -> yo vendría
+
+Group 3
+decir (to say, tell) -> yo diría
+hacer (to do, make, make out (a check)) -> yo haría
+
+Also some of the irregular verbs in the conditional have compounds that are irregular in the same way. (obtener, rehacer, etc.)
+|

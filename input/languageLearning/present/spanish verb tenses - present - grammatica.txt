@@ -1,0 +1,56 @@
+Explain when to use the verb "ser" | The first difference is "ser" is used in enduring situations and "estar" is used in short term situations. Anyway use "ser" when: - 1) talking about familial and selected relationships. (ellos son mis padres, tù eres mi amigo) - 2) Talking about physical attributes (yo soy alto) - 3) Personality characteristics (ella es amable, ustedes son còmicos) - 4) Possession (la casa es mìa, nada aquì es tuyo) - 5) Express Profession/Jobs (Ustedes son estudiantes) - 6) To identify anithing (èsta es una frase, casablanca es una pelìcula, èstos son calcetines/socks/) - 7) To express date and time (hoy es el catorce de julio, Què hora es?, Son las tres de la manana) - 8) Nationality (yo soy francès, tu eres cubano) - 9) Natural color. This is a bit tricky because color can take either ser or estar. If the color is permanent (like the grass is green) use ser. However if the grass is not green (say, after a drought) use "estar)" (la leche es blanca, mi casa es verde y amarilla/yellow). |
+
+Explain when to use estar | To express: - 1) Location (donde estàs tu?, yo estoy en el comedor). - 2) Mood (yo estoy feliz, ellos estàn tristes, vosotros estàis enojados, ella està de buen/mal humor) - 3) Physical condition (ella està bien, estamos enfermos, ellos estàn cansados) - 4) Result of action (use estar to express the condition of something or someone after an action has been completed. For example if you just sat dawn it means that you are seated. Even being dead, which is about as enduring as it gets, takes estar, for it is the result of having lived. Estoy sentado/I'm seated, Estàs de pie/you're standing, ella està de rodillas/she is kneeling, la mosta està muerta, estos televisores estàn rotos/broken). - 5) Unnatural color or condition (el cielo està gris, esta nieve està amarilla, las manos estàn sucias/dirty, èl està feo con esos pantalones/he is ufly in those pants). - 6) Going from the general to the particular (if you like coffee then you would agree that el cafè es la bebida de los dioses/gods, and you would use ser to express this absolute truth. This does not mean, however, that every individual cup  of coffee in the world is wonderful. So, when referring to a specific cup of coffee, use estar: este cafè està muy bueno, este cafè està malìsimo, estas papas fritas estàn riquìsimas/delicious).; |
+
+explain when to use the verb "tener" | the verb tener is used when: - 1) to show possession (tengo un perro) - 2) To say age (cuàntos anos tienes tu? yo tengo ventinueve anos) - 3) In idiomatic expressions (tener hambre, tener sed, tener miedo, tener orgullo, tener suerte, tener prisa, tener razòn, etc) - 4) To show obligation (the pattern is: tener que - tengo que practicar el piano, tenemos que comer esta carne? tenèis que limpiar la casa); |
+explain when to use/not use the personal a | the personal a is: - 1) NOT used with the verbs ser, tener or hay (juan es profesor, tengo dos hermanos, hay chicos en la casa). - 2) NOT USED when the direct object is an unspecified person (necesito una secretaria bilingue, busco un amigo leal) - 3) USED when the direct object is a pet, as well as with other animals with whom you have personal relationships. You DON'T USE the personal a with animals not related to you (amo a mi preciosa gata, odios las termitas). - 4) in a complex question that requres the personal a, place the a before the interrogative (A quièn miras?, A quièn amas?) - 5) When there is a series of direct objects that take the personal a, each one requires a personal a (veo a Juan, a Maria, a Miguel, etc.) - 6) hen the personal a precedes the definite article el, these contract to form al (veo al chico, ella ama al hombre); |
+
+Explain the difference between saber and conocer | Saber means to know information It can be used in the following formulas: - 1) Saber que - to kow that (sè que su nombre es Juan, Sabes que ella està embarazada?, ellos no saben que los vemos). - 2) Saber + INFINITIVE - to know how to do something (sè leer, no sè cocinar, sabemos esquiar, èl sabe escribir bien), Conocer is used to express familiarity with a person, a place, a thing or a particular field of learning. The key ord here is familiarity. It can be used in the following formulas: - 1) Conocer + a - to know a person (conozco a Pablo, lo conocemos) - 2) Conocer + location - to know a place (conozco puerto rico, ella conoce Londres, las aranas conocen bien mi sòtano/spiders know my basement well) - 3) Conocer + NOUN - to know (be familiar with) a thing, be well versed in an area (mi mecànico conoce bien los motores alemanes, el fotògrafo conoce las càmaras japonesas, juanito conoce los libro del Dr. Seuss); |
+
+What are the stem-changing pattern which cause the verb to change in all forms except the plurals nosotros and vosotros? | These are the patterns: - o > ue (contar, mover, dormir), - e > ie (cerrar, perder, hervir), - e > i (seguir, repetir), - infinitives ending with -uir not preceded by g (the change with a y: huir -> huyo, destruir -> destruyo), this is done for a more fluent pronounciation of the spanish words; |
+
+What are the stem-changing patterns which cause the verb to change just in the first person singular coniugation ? | These are the patterns: - infinitives ending with -cer and preceded by a vowel - c > z (conocer, parecer), - infinitives ending with -ucir - c > z (producir, traducir), - infinitives ending with -cer or -cir preceded by a consonant - c > z (ejercer, zurcir), - infinitives ending with -ger or -gir - g > j (with -egir there is also the e > i) (coger, corregir (e > i)) - infinitives ending with -aer - aigo (caer, traer), - infinitives ending with -guir (they ends with go instead of guo - distinguir -> distingo, seguir (e > i) -> sigo); This is done in order to mantain the same sound of the verbs when conjugated (try yourself); |
+
+Explain some properties of reflexives verbs| There are some important things to know before working with reflexive verbs: 1) Many are stem-changing and they are conjugated like their nonreflexive counterparts. 2) Many involve the mention of a body part or parts, for example cepillarse. In spanish the definit article rather than the possesive adjective is typically used before the name of a body part (me cepillo el pelo, te lavas el pelo), 3) Nearly all verbs in the language can be either reflexive or nonreflextive. However certain actions are usually reflexive due to the nature of the action. 4) There are verbs which have different meaning when in reflexive/non-reflexive conjugation: irse (go away), comerse (eat hastily), morirse (to pass away); |
+
+Explain when to use the present progressive in spanish and how it's formed | the present progessive in spanish is used just to descibe an action in this exact moment. The form is the auxiliary ESTAR conjugated + the present participles of the verb. Regularly formed present participles are: -ar verbs -> -ando (hablando, estudiando, trabajando) -er verbs -> -iendo (comiendo, bebiendo, vendiendo), -ir verbs -> -iendo (abriendo, sufriendo, escribiendo) For most verbs, the verb stem does not change, however, with stem-changing -ir verbs, the present participle shows a stem change as well, for example mentir/mintiendo, dormir/dormiendo, pedir/pidiendo; |
+
+Explain what are the irregularly formed present participles in spanish | -er and -ir verbs whose stem ends in a vowel (for example, leer or influir) require that the participle ending is -yendo: the y replaces the ie, to avoid having three vowels in a row. The stem-changing also applies. ; |
+
+Explain when is used the object pronouns with the present progressive in spanish | When a verb in the present progressive takes an object or objects, they are attached directly to the present participle. When there are two objects remember the RID rule: Reflextive, Indirect, Direct. This is the only order in which object pronouns can appear. (està hacièndomelos -  he's making them for me, està compràndoselo - she is buying it for herself); |
+
+Coniuga il verbo dar | (to give) doy, das, da, damos, dais, dan|
+Coniuga il verbo poder| (to be able to) puedo, puedes, puede, podemos, podèis, pueden|
+Coniuga il verbo poner| (to put) pongo, pones, pone, ponemos, ponèis, ponen|
+Coniuga il verbo hacer| (to make, to do) hago, haces, hace, hacemos, hacèis, hacen|
+Coniuga il verbo querer| (to want) quiero, quieres, quiere, queremos, querèis, quieren|
+Coniuga il verbo salir| (to leave) salgo, sales, sale, salimos, salìs, salen|
+Coniuga il verbo jugar| (to play) juego, juegas, juega, jugamos, jugaìs, juegan|
+Coniuga il verbo decir | (to say) digo, dices, dice, decimos, decìs, dicen|
+Coniuga il verbo ir | (to go) voy, vas, va, vamos, vais, van|
+Coniuga il verbo oìr | (to hear) oigo, oyes, oye, oìmos, oìs, oyen|
+Coniuga il verbo ser | (to be) soy, eres, es, somos, sois, son|
+Coniuga il verbo tener | (to have) tengo, tienes, tiene, tenemos, teneìs, tienen|
+Coniuga il verbo venir | (to come) vengo, vienes, viene, venimos, venìs, vienen|
+Coniuga il verbo coger | (to catch, grab) cojo, coges, coge, cogemos cogìis, cogen|
+Coniuga il verbo exigir | (to demand) exijo, exiges, exige, exigimos, exigis, exigen|
+Coniuga il verbo estar | (to be) estoy, estàs, està, estamos, estàis, estàn|
+Coniuga il verbo ver | (to see) veo, ves, ve, vemos, veis, ven|
+coniuga il verbo contar| (to count o > ue) cuento, cuentas, cuenta, contamos contàis, cuentan|
+coniuga il verbo cerrar| (to close e > ie) cierro, cierras, cierra, cerramos cerràis, cierran|
+Coniuga il verbo conocer | (to know be familiar with) conozco, conoces, conoce, conocemos, conocèis, conocen|
+Coniuga il verbo parecer| (to seem) parezco, pareces, parece, parecemos, parecèis, parecen|
+coniuga il verbo traducir| (to translate - c > z) traduzco, traduces, traduce, traducimos, traducìs, traducen|
+coniuga il verbo ejercer| (to exert, exercise) ejerzo, ejerces, ejerce, ejercemos, ejercèis, ejercen|
+coniuga il verbo zurcir| (to mend) zurzo, zurces, zurce, zurcimos, zurcis, zurcen|
+coniuga il verbo coger| (to catch,seize, grab) cojo, coges, coge, cogemos, cogèis, cogen|
+coniuga il verbo corregir| (to correct - e > i) corrijo, corriges, corrige, corregimos, corregis, corrigen|
+coniuga il verbo caer| (to fall) caigo, caes, cae, caemos, caèis, caen|
+coniuga il verbo traer| (to bring) traigo, traes, trae, traemos, traèis, traen|
+coniuga il verbo huir| (to flee, run away) huyo, huyes, huye, huimos, huis, huyen|
+coniuga il verbo destruir| (to destroy) destruyo, destruyes, destruye, destruimos, destruis, destruyen|
+coniuga il verbo distinguir| (to distinguish) distingo, distungues, distingue, distinguimos, distinguis, distinguen|
+coniuga il verbo seguir| (to follow - e > i ) sigo, sigues, sigue, seguimos, seguis, siguen|
+what are the spanish reflexive pronouns ? me, te, se, nos, os, se|
+coniuga il verbo bañarse| (to take a bath) me baño, te bañas, se baña, nos bañamos, os bañais, se bañan|
+coniuga il verbo sentarse| (to sit down - e > ie) me siento, te sientas, se sienta, nos sentamos, os sentàis, se sientan|

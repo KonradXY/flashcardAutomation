@@ -1,0 +1,40 @@
+What is the present subjunctive e how is formed ? |
+The subjunctive mood can be defined in terms of the situations in which it is used,
+often described as fitting into these eight categories.
+1 Desire (I hope that you are happy, I suggest that you buy the red car ..)
+2 Ignorance (I doubt that he lives here, I don't think that she knows my name)
+3 Emotional statement or comment (I'm happy that you're the president)
+4 Impersonal opinion (It's great that you can dance so well, It's terrible that we have to wait)
+5 Uncompleted action (We'll eat after we wash our hands, I'll feel better when I sit down)
+6 Vague or indefinite antecedent (I need an assistant who is punctual, He wants a wife who cooks as well as his mother)
+7 “Perhaps” and “maybe” (Perhaps she'll call us tonight, maybe he has the money).
+8 “Even if ” (Even if he knows, he won't tell us)
+
+The formation of the present subjunctive works as this: there are 3 steps involved:
+1) Begin with the yo form of the present indicative (hablo, como, vivo, conozco, tengo)
+2) remove the -o
+3) add the following endings:
+  -ar verbs (-e -es -e -emos -èis -en)
+  -er verbs (-a -as -a -amos -àis -an)
+  -ir verbs (-a -as -a -amos -àis -an)
+
+Below are the full conjugation in the present subjunctive for some verbs:
+hablar -> hable hables hable hablemos hablèis hablen
+comer -> coma comas coma comamos comàis coman
+vivir -> viva vivas viva vivamos vivàis vivan
+
+NB: Note that there is no stem change in the nosotros or vosotros forms of any of the verbs above. In stem-changing -ir verbs however the present subjunctive shows the following chages in the stem of the nosotros and vosotros forms:
+- o > ue verbs -> the o changes to u -> dormir (durmamos, durmàis)
+- e > ie verbs -> the e changes to i -> mentir (mintamos, mantàis)
+- e > i verbs -> the e chages to i -> pedir (pidamos, pidàis)
+|
+
+What are the irregular verbs in the present subjunctive ? |
+There are six verbs that do not follow the patterns described above. Below are the full conjugations in the present subjunctive for these six irregular verbs.
+- dar (dè des dè demos deis den)
+- estar (estè estès estè estemos estèis, estèn)
+- haber (haya hayas haya hayamos hayàis hayan)
+- ir (vaya vayas vaya vayamos vayàis vayan)
+- saber (sepa sepas sepa sepamos sepàis sepan)
+- ser (sea seas sea seamos seàis sean)
+|
