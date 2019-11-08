@@ -33,13 +33,9 @@ public class WebCrawlerLauncher {
 	private static final String ES_STOPWORDS 	= INPUT_DIR + WEB_CRAWLER_DIR + "stopwords-es.txt";
 	private static final String OUTPUT_FILE 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
 
-	@Inject	private final ReversoSpanishCrawler reversoCrawler;
-	@Inject	private final WordReferenceCrawler wordReferenceCrawler;
+	private static final ReversoSpanishCrawler reversoCrawler = new ReversoSpanishCrawler();
+	private static final WordReferenceCrawler wordReferenceCrawler = new WordReferenceCrawler();
 
-	public WebCrawlerLauncher(final ReversoSpanishCrawler reversoCrawler, final WordReferenceCrawler wordReferenceCrawler) {
-		this.reversoCrawler = reversoCrawler;
-		this.wordReferenceCrawler = wordReferenceCrawler;
-	}
 
 	public static void main(String[] args) throws Exception {
 
