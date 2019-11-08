@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IParser;
+import main.java.contracts.IParser;
 
 public class SimpleParser implements IParser {
  

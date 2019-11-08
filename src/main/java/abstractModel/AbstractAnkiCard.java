@@ -3,8 +3,8 @@ package main.java.abstractModel;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 
-import static main.java.abstractModel.IParser.NEW_LINE;
-import static main.java.abstractModel.IParser.TAB;
+import static main.java.contracts.IParser.NEW_LINE;
+import static main.java.contracts.IParser.TAB;
 
 import java.util.Map;
 

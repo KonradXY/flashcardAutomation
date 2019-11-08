@@ -1,5 +1,6 @@
 package main.java.webcrawlers;
 
+import com.google.inject.Inject;
 import main.java.abstractModel.AbstractAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 import main.java.netutilities.CertificateManager;
@@ -7,13 +8,11 @@ import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,9 +32,14 @@ public class WebCrawlerLauncher {
 	private static final String INPUT_FILE  	= INPUT_DIR + WEB_CRAWLER_DIR + "2000_parole_lista_2.txt";
 	private static final String ES_STOPWORDS 	= INPUT_DIR + WEB_CRAWLER_DIR + "stopwords-es.txt";
 	private static final String OUTPUT_FILE 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
-	
-	private static ReversoSpanishCrawler reversoCrawler = new ReversoSpanishCrawler();
-	private static WordReferenceCrawler wordReferenceCrawler = new WordReferenceCrawler();
+
+	@Inject	private final ReversoSpanishCrawler reversoCrawler;
+	@Inject	private final WordReferenceCrawler wordReferenceCrawler;
+
+	public WebCrawlerLauncher(final ReversoSpanishCrawler reversoCrawler, final WordReferenceCrawler wordReferenceCrawler) {
+		this.reversoCrawler = reversoCrawler;
+		this.wordReferenceCrawler = wordReferenceCrawler;
+	}
 
 	public static void main(String[] args) throws Exception {
 
@@ -47,7 +51,6 @@ public class WebCrawlerLauncher {
 		log.info("Start crawling");
 
 		List<String> wordList = getWordListFromFile(INPUT_FILE);
-//		List<String> wordList = Arrays.asList("alrededor", "hermoso", "feo");
 
 		int numWords = 0;
 

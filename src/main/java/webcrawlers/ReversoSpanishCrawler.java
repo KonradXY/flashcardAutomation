@@ -1,5 +1,6 @@
 package main.java.webcrawlers;
 
+import com.google.inject.Singleton;
 import main.java.abstractModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
@@ -11,13 +12,10 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static main.java.utils.WebCrawlerProperties.ESP_ITA_URL;
@@ -25,12 +23,10 @@ import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
 import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
 import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 
-public class ReversoSpanishCrawler extends AbstractCrawler {
+@Singleton
+public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
-	private static Document doc;
 	private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
-
-	private static final int TIMEOUT = 1000 * TIMEOUT_SEC;
 
 	private static final String EXAMPLES_ID = "examples-content";
 	private static final String TRANSLATION_CONTENT_ID = "translations-content";

@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IParser;
+import main.java.contracts.IParser;
 import main.java.languageLearningModel.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 

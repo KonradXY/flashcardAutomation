@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+import main.java.contracts.IReader;
 import org.apache.log4j.Logger;
 
 import main.java.strategy.ReadingStrategy;

@@ -12,9 +12,8 @@ import org.apache.log4j.Logger;
 
 import main.java.abstractModel.AbstractAnkiCard;
 import main.java.abstractModel.AbstractReader;
-import main.java.abstractModel.IParser;
-import main.java.abstractModel.IPrinter;
-import main.java.utils.Property;
+import main.java.contracts.IParser;
+import main.java.contracts.IPrinter;
 
 public class Launcher {
 

@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IPrinter;
+import main.java.contracts.IPrinter;
 
 public class SimplePrinter implements IPrinter {
 

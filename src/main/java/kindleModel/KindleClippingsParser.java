@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IParser;
+import main.java.contracts.IParser;
 
 public class KindleClippingsParser implements IParser {
 

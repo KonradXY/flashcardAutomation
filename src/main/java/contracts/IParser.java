@@ -1,4 +1,6 @@
-package main.java.abstractModel;
+package main.java.contracts;
+
+import main.java.abstractModel.AbstractAnkiCard;
 
 import java.nio.file.Path;
 import java.util.List;

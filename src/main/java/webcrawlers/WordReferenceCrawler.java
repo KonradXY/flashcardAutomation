@@ -2,7 +2,6 @@ package main.java.webcrawlers;
 
 import static main.java.utils.WebCrawlerProperties.*;
 
-import main.java.abstractModel.AbstractAnkiCard;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
@@ -11,28 +10,23 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class WordReferenceCrawler extends AbstractCrawler {
+public class WordReferenceCrawler extends AbstractWebCrawler {
 
-    private static int TIMEOUT = 1000*TIMEOUT_SEC;
     private final static Logger log = Logger.getLogger(WordReferenceCrawler.class);
 
     public Map<String, String> getWordDefinitions(String word) {
 
 
         try {
-            Document doc = Jsoup.parse(getDefinitionUrl(word), TIMEOUT);
+            doc = Jsoup.parse(getDefinitionUrl(word), TIMEOUT);
 
             Element article = doc.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.
             Elements li = article.getElementsByTag("li");

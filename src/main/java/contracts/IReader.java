@@ -1,4 +1,4 @@
-package main.java.abstractModel;
+package main.java.contracts;
 
 import java.nio.file.Path;
 import java.util.function.Predicate;

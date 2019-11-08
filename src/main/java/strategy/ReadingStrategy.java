@@ -1,6 +1,6 @@
 package main.java.strategy;
 
-import main.java.abstractModel.IParser;
+import main.java.contracts.IParser;
 
 public enum ReadingStrategy {
 

@@ -1,15 +1,21 @@
 package main.java.webcrawlers;
 
 import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class AbstractCrawler {
+import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 
-    private final static Logger log = Logger.getLogger(AbstractCrawler.class);
+public class AbstractWebCrawler {
+
+    private final static Logger log = Logger.getLogger(AbstractWebCrawler.class);
+    public static final int TIMEOUT = 1000 * TIMEOUT_SEC;
+
+    protected Document doc;
 
     protected URL getUrlFromString(String host, String input) throws MalformedURLException {
         URL urlToScrape = null;

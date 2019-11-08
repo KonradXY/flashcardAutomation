@@ -1,7 +1,7 @@
 package main.java.evernoteModel;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IParser;
+import main.java.contracts.IParser;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.utils.Property;
 import org.apache.log4j.Logger;

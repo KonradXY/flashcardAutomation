@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.IPrinter;
+import main.java.contracts.IPrinter;
 
 public class KindleClippingPrinter implements IPrinter {
 
