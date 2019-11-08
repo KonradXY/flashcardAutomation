@@ -1,6 +1,5 @@
 package main.java.webcrawlers;
 
-import com.google.inject.Singleton;
 import main.java.abstractModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
@@ -21,9 +20,8 @@ import java.util.stream.Collectors;
 import static main.java.utils.WebCrawlerProperties.ESP_ITA_URL;
 import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
 import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
-import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 
-@Singleton
+
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);

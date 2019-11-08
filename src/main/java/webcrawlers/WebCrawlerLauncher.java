@@ -1,6 +1,5 @@
 package main.java.webcrawlers;
 
-import com.google.inject.Inject;
 import main.java.abstractModel.AbstractAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 import main.java.netutilities.CertificateManager;

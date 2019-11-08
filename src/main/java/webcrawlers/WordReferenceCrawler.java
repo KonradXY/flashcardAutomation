@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
 public class WordReferenceCrawler extends AbstractWebCrawler {
 
     private final static Logger log = Logger.getLogger(WordReferenceCrawler.class);
