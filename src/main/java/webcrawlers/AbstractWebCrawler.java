@@ -1,14 +1,14 @@
 package main.java.webcrawlers;
 
-import org.apache.log4j.Logger;
-import org.jsoup.nodes.Document;
+import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
 
 public class AbstractWebCrawler {
 

@@ -12,3 +12,4 @@ project/*
 #File di progetto
 src/main/resources/input.properties
 output/
+/target/

@@ -1,13 +1,7 @@
 package main.java.webcrawlers;
 
-import static main.java.utils.WebCrawlerProperties.*;
-
-import org.apache.log4j.Logger;
-import org.jsoup.HttpStatusException;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import static main.java.utils.WebCrawlerProperties.ESP_DEF;
+import static main.java.utils.WebCrawlerProperties.ESP_SINON;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -18,7 +12,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
+import org.jsoup.HttpStatusException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WordReferenceCrawler extends AbstractWebCrawler {
 
     private final static Logger log = Logger.getLogger(WordReferenceCrawler.class);

@@ -1,14 +1,8 @@
 package main.java.webcrawlers;
 
-import main.java.abstractModel.AbstractAnkiCard;
-import main.java.baseModel.SimpleAnkiCard;
-import main.java.modelDecorator.CardDecorator;
-import org.apache.log4j.Logger;
-import org.jsoup.HttpStatusException;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import static main.java.utils.WebCrawlerProperties.ESP_ITA_URL;
+import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
+import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -17,11 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static main.java.utils.WebCrawlerProperties.ESP_ITA_URL;
-import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
-import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
+import org.apache.log4j.Logger;
+import org.jsoup.HttpStatusException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
+import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.SimpleAnkiCard;
+import main.java.modelDecorator.CardDecorator;
 
+@Component
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
