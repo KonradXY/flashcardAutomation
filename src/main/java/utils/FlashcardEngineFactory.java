@@ -14,9 +14,9 @@ import static main.java.utils.Property.OUTPUT_DIR;
 
 import org.apache.log4j.Logger;
 
-import main.java.abstractModel.AbstractReader;
 import main.java.baseModel.SimpleParser;
 import main.java.baseModel.SimplePrinter;
+import main.java.baseModel.SimpleReader;
 import main.java.evernoteModel.EvernoteHtmlParser;
 import main.java.kindleModel.KindleClippingPrinter;
 import main.java.kindleModel.KindleClippingsParser;
@@ -69,22 +69,22 @@ public class FlashcardEngineFactory {
 	}
 
 	private static void buildDefaultEngine() {
-		reader = new AbstractReader(ReadingStrategy.GENERAL);
+		reader = new SimpleReader(ReadingStrategy.GENERAL);
 		parser = new SimpleParser();
 		printer = new SimplePrinter();
 	}
 	private static void buildEvernoteEngine() {
-		reader = new AbstractReader(ReadingStrategy.EVERNOTE);
+		reader = new SimpleReader(ReadingStrategy.EVERNOTE);
 		parser = new EvernoteHtmlParser();
 		printer = new SimplePrinter();
 	}
 	private static void buildKindleEngine() {
-		reader = new AbstractReader(ReadingStrategy.KINDLE);
+		reader = new SimpleReader(ReadingStrategy.KINDLE);
 		parser = new KindleClippingsParser();
 		printer = new KindleClippingPrinter();
 	}
 	private static void buildLanguageLearningEngine() {
-		reader = new AbstractReader(ReadingStrategy.LANGUAGE_LEARNING);
+		reader = new SimpleReader(ReadingStrategy.LANGUAGE_LEARNING);
 		parser = new LanguageLearningParser();
 		printer = new LanguageLearningPrinter();
 	}

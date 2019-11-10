@@ -3,9 +3,11 @@ package main.java.kindleModel;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.AbstractAnkiCard;
 
 public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<KindleAnkiCard>{
+	
+	// TODO - rivedere meglio il model perchè forse un po' confusionario
 	
 	public static Pattern timePattern = Pattern.compile("\\d\\d:\\d\\d:\\d\\d");
 //			Pattern.compile("[0-9]");
@@ -56,8 +58,8 @@ public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<Kindl
 		this.dataAggiunta = inputLine.substring(idxPosizione+1, idxContent);
 		this.content = inputLine.substring(idxContent);
 		
-		this.front = this.title;
-		this.back = this.content;
+		this.frontHtml.appendText(this.title);
+		this.backHtml.appendText(this.content);
 		
 		return this;
 		

@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.AbstractAnkiCard;
 import main.java.contracts.IParser;
 import main.java.languageLearningModel.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
@@ -46,7 +46,7 @@ public class LanguageLearningParser implements IParser {
 	}
 	
 	private void addParsedGrammaticaCard(List<AbstractAnkiCard> cardList, String grammaticaInput) {
-		String[] splitted = grammaticaInput.split(INPUT_SEPARATOR);
+		String[] splitted = grammaticaInput.split(PIPE_SEPARATOR);
 		int length = (splitted.length%2 == 0 ? splitted.length : splitted.length -1);
 		for (int i = 0; i < length; i+=2) {
 			cardList.add(new LanguageLearningAnkiCard(splitted[i], splitted[i+1], PracticeMakesPerfectEnum.GRAMMATICA));
@@ -66,11 +66,11 @@ public class LanguageLearningParser implements IParser {
 		String qa[] = parseDomandeRisposte(input);
 
 		Map<String, String> domandeMap = new HashMap<>();
-		Stream.of(splitString(qa[DOMANDE_INDEX], IParser.INPUT_SEPARATOR)).forEach(
+		Stream.of(splitString(qa[DOMANDE_INDEX], IParser.PIPE_SEPARATOR)).forEach(
 				it -> addExcercise(it, domandeMap));
 
 		Map<String, String> risposteMap = new HashMap<>();
-		Stream.of(splitString(qa[1], IParser.INPUT_SEPARATOR)).forEach(
+		Stream.of(splitString(qa[1], IParser.PIPE_SEPARATOR)).forEach(
 				it -> addExcercise(it, risposteMap));
 
 		for (String domKey : domandeMap.keySet()) {
@@ -94,11 +94,11 @@ public class LanguageLearningParser implements IParser {
 
 		String qa[] = parseDomandeRisposte(input);
 
-		Stream.of(splitString(qa[0], IParser.INPUT_SEPARATOR)).forEach(it -> {
+		Stream.of(splitString(qa[0], IParser.PIPE_SEPARATOR)).forEach(it -> {
 			addNestedExcercise(it, domandeMap);
 		});
 
-		Stream.of(splitString(qa[1], IParser.INPUT_SEPARATOR)).forEach(it -> {
+		Stream.of(splitString(qa[1], IParser.PIPE_SEPARATOR)).forEach(it -> {
 			addNestedExcercise(it, risposteMap);
 		});
 

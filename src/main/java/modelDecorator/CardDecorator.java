@@ -1,9 +1,10 @@
 package main.java.modelDecorator;
 
-import main.java.abstractModel.AbstractAnkiCard;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
+
+import main.java.baseModel.AbstractAnkiCard;
 
 import java.util.List;
 import java.util.Map;

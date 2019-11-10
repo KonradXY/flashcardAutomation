@@ -13,13 +13,13 @@ public enum ReadingStrategy {
 	KINDLE {
 		@Override
 		public String formatLine(String input) {
-			return input.replace("\n", "").trim();
+			return IParser.replaceNewLines(input);
 		}
 	},
 	LANGUAGE_LEARNING {
 		@Override
 		public String formatLine(String input) {
-			return input + IParser.NEW_LINE_HTML;
+			return input + IParser.NEW_LINE;
 		}
 	},
 	EVERNOTE {

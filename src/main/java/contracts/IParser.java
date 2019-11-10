@@ -1,15 +1,15 @@
 package main.java.contracts;
 
-import main.java.abstractModel.AbstractAnkiCard;
-
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import main.java.baseModel.AbstractAnkiCard;
+
 public interface IParser {
 	
-	public static String INPUT_SEPARATOR = "\\|";
+	public static String PIPE_SEPARATOR = "\\|";
 	public static String TAB = "\t";
 	public static String NEW_LINE_HTML = "<br>";
 	public static String NEW_LINE = "\n";
@@ -36,6 +36,6 @@ public interface IParser {
 		return HTML_OPEN + input + HTML_CLOSE;
 	}
 
-	public default String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}
-	public default String replaceWhitespaces(String input) { return input.replace(" ", "");}
+	public static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}
+	public static String replaceWhitespaces(String input) { return input.replace(" ", "");}
 }

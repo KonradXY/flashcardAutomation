@@ -1,7 +1,7 @@
 package main.java.evernoteModel;
 
-import main.java.abstractModel.AbstractAnkiCard;
 import main.java.contracts.IParser;
+import main.java.baseModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.utils.Property;
 import org.apache.log4j.Logger;
@@ -55,8 +55,8 @@ public class EvernoteHtmlParser implements IParser {
             AbstractAnkiCard card = parseCardFromTBody(tbody);
             formatFrontAndBack(card, title);
 
-            // FIXME
-            if (card.getValue().length() > MAX_SIZE_CARD) {
+            // FIXME - esiste una size massima per le flashcard. Vedere una soluzione 
+            if (card.getValue().text().length() > MAX_SIZE_CARD) {
                 log.info("Card exceed max size ! ");
                 continue;
             }
@@ -73,17 +73,17 @@ public class EvernoteHtmlParser implements IParser {
 
     private void formatFrontPart(AbstractAnkiCard card, String title) {
 
-        if (!card.getKey().contains("D:"))
+        if (!card.getKey().text().contains("D:"))
             throw new RuntimeException("Errore. Nella carta non e' presente il simbolo - D: - ");
 
         int firstIndex = title.lastIndexOf("\\") + 1;
         String titleCard = title.substring(firstIndex);
-        card.setKey(card.getKey().replace("D:", titleCard));
+        card.setKey(card.getKey().text().replace("D:", titleCard));
 
     }
 
     private void formatBackPart(AbstractAnkiCard card) {
-        card.setValue(card.getValue().replace("R:", ""));
+        card.setValue(card.getValue().text().replace("R:", ""));
     }
 
     private String parseTitleFromFilename(Path filePath) {
@@ -104,7 +104,7 @@ public class EvernoteHtmlParser implements IParser {
         for (Element div : elem.getElementsByTag("div"))
             formatNodeElement(div);
 
-        return replaceNewLines(elem.toString());
+        return IParser.replaceNewLines(elem.toString());
     }
 
     private Element formatNodeElement(Element elem) {
@@ -164,7 +164,7 @@ public class EvernoteHtmlParser implements IParser {
         String fileName = filePath.toString();
         int firstIndex = fileName.lastIndexOf("/")+1;
         int lastIndex = fileName.lastIndexOf(".");
-        String firstString = replaceWhitespaces(fileName.substring(firstIndex, lastIndex)).replace("input","output"); // <<--- FIXME
+        String firstString = IParser.replaceWhitespaces(fileName.substring(firstIndex, lastIndex)).replace("input","output"); // <<--- FIXME
 
         log.info("firstString " + firstString);
         return firstString;
@@ -180,7 +180,7 @@ public class EvernoteHtmlParser implements IParser {
         last = imgName.lastIndexOf(".");
         imgTitle += imgName.substring(first,last);
 
-        imgTitle = replaceWhitespaces(imgTitle + ".jpg");
+        imgTitle = IParser.replaceWhitespaces(imgTitle + ".jpg");
         imgTitle = deleteSquareBrackets(imgTitle);
 
         return imgTitle;

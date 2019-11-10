@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.AbstractAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
 @Component
@@ -37,12 +37,14 @@ public class LanguageLearningMediator {
 		this.wordReferenceBean = wordReferenceCrawler;
 	}
 	
+	
+	// Questo metodo mi crea le flashcard col webcrawler nell'unico stile che ho pensato. 
+	// TODO - rinominare il metodo in modo da renderlo piu' parlante. Fare un secondo metodo per l'intenzione che ho. 
 	public void parse(String inputFile, String outputFile) throws Exception {
-		List<String> wordList = getWordListFromFile(inputFile);
 
 		int numWords = 0;
-
-
+		List<String> wordList = getWordListFromFile(inputFile);
+		
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
 
 			for (String word : wordList) {
@@ -73,7 +75,7 @@ public class LanguageLearningMediator {
 	private void writeCards(List<AbstractAnkiCard> cards, BufferedWriter bos)throws IOException {
 		for (AbstractAnkiCard card : cards) {
 			if (!card.getFrontHtml().text().trim().isEmpty())
-				bos.write(card.toElementString());
+				bos.write(card.toString());
 		}
 
 		bos.flush();

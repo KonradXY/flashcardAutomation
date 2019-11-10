@@ -1,9 +1,9 @@
 package main.java.contracts;
 
-import main.java.abstractModel.AbstractAnkiCard;
-
 import java.io.IOException;
 import java.util.List;
+
+import main.java.baseModel.AbstractAnkiCard;
 
 public interface IPrinter {
 

@@ -1,4 +1,4 @@
-package main.java.abstractModel;
+package main.java.baseModel;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -15,14 +15,14 @@ import org.apache.log4j.Logger;
 import main.java.contracts.IReader;
 import main.java.strategy.ReadingStrategy;
 
-public class AbstractReader {
+public class SimpleReader {
 
-	private static final Logger log = Logger.getLogger(AbstractReader.class);
+	private static final Logger log = Logger.getLogger(SimpleReader.class);
 	private static int fileCounter = 0;
 
 	public final ReadingStrategy reader;
 
-	public AbstractReader(ReadingStrategy strategy) {
+	public SimpleReader(ReadingStrategy strategy) {
 		this.reader = strategy;
 	}
 

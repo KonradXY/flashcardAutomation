@@ -2,7 +2,7 @@ package main.java.languageLearningModel;
 
 import java.util.function.Predicate;
 
-import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.AbstractAnkiCard;
 
 public class LanguageLearningAnkiCard extends AbstractAnkiCard {
 

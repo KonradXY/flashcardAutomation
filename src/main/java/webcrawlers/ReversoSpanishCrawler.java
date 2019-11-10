@@ -19,7 +19,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Component;
 
-import main.java.abstractModel.AbstractAnkiCard;
+import main.java.baseModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 

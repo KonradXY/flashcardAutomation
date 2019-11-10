@@ -10,8 +10,8 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.AbstractReader;
+import main.java.baseModel.AbstractAnkiCard;
+import main.java.baseModel.SimpleReader;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 
@@ -22,7 +22,7 @@ public class Launcher {
 	public static String inputContent;
 	public static String outputContent;
 
-	public static AbstractReader reader;
+	public static SimpleReader reader;
 	public static IParser parser;
 	public static IPrinter printer;
 

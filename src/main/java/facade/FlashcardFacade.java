@@ -9,8 +9,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import main.java.abstractModel.AbstractAnkiCard;
-import main.java.abstractModel.AbstractReader;
+import main.java.baseModel.AbstractAnkiCard;
+import main.java.baseModel.SimpleReader;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.utils.FlashcardEngineFactory;
@@ -20,7 +20,7 @@ public class FlashcardFacade {
 	
 	private final FlashcardEngineFactory flashcardEngineFactory;
 	
-	private AbstractReader reader;
+	private SimpleReader reader;
 	private IParser parser;
 	private IPrinter printer;
 	
