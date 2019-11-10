@@ -7,14 +7,9 @@ public interface IReader {
 	
 	public String formatLine(String input);
 
+	public static Predicate<Path> isParseable = (IReader::checkParsability);
 	
-	
-	//***** concrete methods
-	public static boolean isParseable(Path p) {
-		return checkParsability(p);
-	}
-
-	public static Predicate<Path> isParseable = (it -> checkParsability(it));
+	public static boolean isParseable(Path p) { return checkParsability(p); }
 	
 	public static boolean checkParsability(Path p) {
 		String path = p.toString().trim();

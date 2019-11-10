@@ -8,15 +8,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
-import main.java.contracts.IReader;
 import org.apache.log4j.Logger;
 
+import main.java.contracts.IReader;
 import main.java.strategy.ReadingStrategy;
 
 public class AbstractReader {
-
-
 
 	private static final Logger log = Logger.getLogger(AbstractReader.class);
 	private static int fileCounter = 0;
@@ -41,17 +40,15 @@ public class AbstractReader {
 	private void readContent(Map<Path, String> contentMap, Path filePath) {
 		try {
 			if (!Files.isDirectory(filePath)) {
-				if (IReader.isParseable(filePath)) {
-					addEntryToMap(contentMap, filePath); 
-					log.info("lettura file: " + filePath);
-					fileCounter++;
-				}
+				Stream.of(filePath)
+						.filter(IReader::isParseable)
+						.forEach(it -> addEntryToMap(contentMap, it));
 				return;
 			}
 		
 			Files.walk(filePath)
 				.filter(p -> !p.equals(filePath))
-				.sorted() 	// fare un comparator custom per sta roba
+				.sorted() 	// TODO - fare un comparator custom per sta roba
 				.forEach(path -> readContent(contentMap, path));
 		
 		} catch (IOException ex) {
@@ -60,16 +57,22 @@ public class AbstractReader {
 
 	}
 
-	private void addEntryToMap(Map<Path, String> mapInput, Path pathFile) throws IOException {
+	private void addEntryToMap(Map<Path, String> mapInput, Path pathFile) {
+		
+		log.info("lettura file: " + pathFile);
+
 		StringBuilder sb = new StringBuilder();
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), "UTF-8"))) {
 			br.lines().forEach(str -> sb.append(formatLine(str)));
+			fileCounter++;
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
 
 		mapInput.put(pathFile, sb.toString());
 	}
 
-	public String formatLine(String input) {
+	private String formatLine(String input) {
 		return reader.format(input); 
 	}
 

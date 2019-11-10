@@ -17,7 +17,7 @@ import main.java.contracts.IPrinter;
 
 public class Launcher {
 
-	private final static Logger logger = Logger.getLogger(Launcher.class);
+	private final static Logger log = Logger.getLogger(Launcher.class);
 	
 	public static String inputContent;
 	public static String outputContent;
@@ -36,7 +36,7 @@ public class Launcher {
 
 			buildFlashcards();
 			
-			logger.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis()-timeSpent)/1000 + " sec");
+			log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis()-timeSpent)/1000 + " sec");
 			
 		} catch (Exception ex) {
 			throw new RuntimeException(ex);
