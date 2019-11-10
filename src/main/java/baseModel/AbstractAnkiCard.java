@@ -28,6 +28,7 @@ public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
 	}
 
 	public AbstractAnkiCard(String front, String back) {
+		// TODO - questo ha ancora meno senso 
 		this.frontHtml = new Element(divTag, "");
 		this.backHtml = new Element(divTag, "");
 

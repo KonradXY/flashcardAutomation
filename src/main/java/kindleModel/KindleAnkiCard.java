@@ -12,12 +12,7 @@ public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<Kindl
 	public static Pattern timePattern = Pattern.compile("\\d\\d:\\d\\d:\\d\\d");
 //			Pattern.compile("[0-9]");
 	
-	// kindle gestisce i clipping tra segnalibri ed evidenziazioni. Le
-	// evidenziazioni (che sono quelle che mi servono) non hanno la pagina
-	// all'interno dei dati. Comunque mantengo il campo chissa' mi possa servire
-	
 	private String title;
-//	private String pagina;
 	private String posizione;
 	private String dataAggiunta;
 	private String content;
@@ -28,13 +23,11 @@ public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<Kindl
 	}
 	
 	public String getTitle() { return title; }
-//	public String getPagina() { return pagina; }
 	public String getPosizione() { return posizione; }
 	public String getDataAggiunta() { return dataAggiunta; }
 	public String getContent() { return content; }
 
 	public void setTitle(String title) { this.title = title; }
-//	public void setPagina(String pagina) { this.pagina = pagina; }
 	public void setPosizione(String posizione) { this.posizione = posizione; }
 	public void setDataAggiunta(String dataAggiunta) { this.dataAggiunta = dataAggiunta; }
 	public void setContent(String content) { this.content = content; }
@@ -67,11 +60,9 @@ public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<Kindl
 	
 	@Override
 	public int compareTo(KindleAnkiCard otherCard) {
-		
 		int compare = 0;
 		compare = this.title.compareTo(otherCard.getTitle());
 		if (compare != 0) return compare;
-		
 		return 0;
 	}
 

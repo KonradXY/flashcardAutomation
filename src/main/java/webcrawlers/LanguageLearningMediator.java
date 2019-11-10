@@ -1,5 +1,8 @@
 package main.java.webcrawlers;
 
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.OUTPUT_DIR;
+import static main.java.utils.Property.WEB_CRAWLER_DIR;
 import static main.java.utils.WebCrawlerProperties.LOG_COUNTER;
 import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
 import static main.java.utils.WebCrawlerProperties.TIME_SLEEP;
@@ -72,7 +75,7 @@ public class LanguageLearningMediator {
 	}
 	
 	
-	private void writeCards(List<AbstractAnkiCard> cards, BufferedWriter bos)throws IOException {
+	private void writeCards(List<AbstractAnkiCard> cards, BufferedWriter bos) throws IOException {
 		for (AbstractAnkiCard card : cards) {
 			if (!card.getFrontHtml().text().trim().isEmpty())
 				bos.write(card.toString());
@@ -85,7 +88,7 @@ public class LanguageLearningMediator {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
 		List<String> wordsList = br.lines()
 				.map(String::trim)
-				.limit(1)
+				.limit(1)	// TODO - eliminare !
 				.collect(Collectors.toList());
 		br.close();
 		return wordsList;

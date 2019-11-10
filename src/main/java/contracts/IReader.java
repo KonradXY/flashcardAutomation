@@ -1,11 +1,13 @@
 package main.java.contracts;
 
+import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public interface IReader {
 	
-	public String formatLine(String input);
+	public Map<Path, String> readFile(Path... pathFiles) throws IOException;
 
 	public static Predicate<Path> isParseable = (IReader::checkParsability);
 	

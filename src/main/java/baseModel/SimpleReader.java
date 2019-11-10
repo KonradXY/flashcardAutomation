@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
 import main.java.contracts.IReader;
 import main.java.strategy.ReadingStrategy;
 
-public class SimpleReader {
+public class SimpleReader implements IReader {
 
 	private static final Logger log = Logger.getLogger(SimpleReader.class);
 	private static int fileCounter = 0;
@@ -26,6 +26,7 @@ public class SimpleReader {
 		this.reader = strategy;
 	}
 
+	@Override
 	public Map<Path, String> readFile(Path... pathFiles) throws IOException {
 		Map<Path, String> map = new HashMap<>();
 		for (int i = 0; i < pathFiles.length; i++) {

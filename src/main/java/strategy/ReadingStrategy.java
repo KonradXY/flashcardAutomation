@@ -19,7 +19,7 @@ public enum ReadingStrategy {
 	LANGUAGE_LEARNING {
 		@Override
 		public String formatLine(String input) {
-			return input + IParser.NEW_LINE;
+			return input + IParser.NEW_LINE;	// TODO - questo e' il pezzo che prima mi faceva il br. aggiustare sta roba. 
 		}
 	},
 	EVERNOTE {
