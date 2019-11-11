@@ -149,7 +149,7 @@ public class LanguageLearningMediator {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
 		List<String> wordsList = br.lines()
 				.map(String::trim)
-				.limit(5)	// TODO - eliminare !
+//				.limit(5)
 				.collect(Collectors.toList());
 		br.close();
 		return wordsList;
