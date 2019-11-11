@@ -4,6 +4,7 @@ import static main.java.utils.WebCrawlerProperties.ESP_DEF;
 import static main.java.utils.WebCrawlerProperties.ESP_SINON;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
@@ -29,7 +30,7 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
 
 
         try {
-            doc = Jsoup.parse(getDefinitionUrl(word), TIMEOUT);
+            doc = Jsoup.connect(getDefinitionUrlAsString(word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
 
             Element article = doc.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.
             Elements li = article.getElementsByTag("li");
@@ -77,6 +78,10 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
 
     private URL getDefinitionUrl(String input) throws MalformedURLException {
         return getUrlFromString(ESP_DEF, input);
+    }
+
+    private String getDefinitionUrlAsString(String input) throws UnsupportedEncodingException {
+        return getUrlAsString(ESP_DEF, input);
     }
 
 

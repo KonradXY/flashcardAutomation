@@ -131,12 +131,12 @@ public class LanguageLearningMediator {
 
 	private String checkMostCloseWord(String text, String word) {
 		String[] words = text.split(" ");
-		double maxDistance = 0;
+		int minDistance = 0;
 		int index = 0;
 		for (int i = 0; i < words.length; i++) {
-			double distance = LevenshteinDistance.getDefaultInstance().apply(word, words[i]);
-			if (distance > maxDistance){
-				maxDistance = distance;
+			int distance = LevenshteinDistance.getDefaultInstance().apply(word, words[i]);
+			if (distance < minDistance){
+				minDistance = distance;
 				index = i;
 			}
 		}

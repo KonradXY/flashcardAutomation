@@ -40,8 +40,7 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 		List<AbstractAnkiCard> cardList = new ArrayList<>();
 
 		try {
-			URL urlToScrape = getUrlFromString(ESP_ITA_URL,word);
-			doc = Jsoup.parse(urlToScrape, TIMEOUT);
+			doc = Jsoup.connect(getUrlAsString(ESP_ITA_URL,word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
 
 			String listaSinonimi = getPossibiliTraduzioni(doc);
 
