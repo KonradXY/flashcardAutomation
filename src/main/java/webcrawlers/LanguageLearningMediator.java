@@ -59,12 +59,8 @@ public class LanguageLearningMediator {
 				}
 
 				writeCards(cards, bos);
-				numWords++;
 
-				if (numWords % LOG_COUNTER == 0) {
-					log.info("Numero di esempi parsati: " + numWords * NUM_EXAMPLES);
-				}
-
+				logNumberOfWords(numWords++);
 				Thread.sleep(TIME_SLEEP);
 			}
 		}
@@ -77,30 +73,29 @@ public class LanguageLearningMediator {
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
 
 			for (String word : wordList) {
-				Map<String, String> clozeMap = createClozeMap(wordReferenceCrawler.getWordDefinitions(word), word);
+				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinitions(word);
+				Map<String, String> clozeMap = createClozeMap(originalMap, word);
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-					AbstractAnkiCard card = createClozeAnkiCard(cloze.getValue(), word, cloze.getKey());
-					CardDecorator.addSinonimiToBack(card, synonims);
+					AbstractAnkiCard card = createClozeAnkiCard(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
 					bos.write(card.toString());
-					numWords++;
 				}
 
-				if (numWords % LOG_COUNTER == 0) {
-					log.info("Numero di esempi parsati: " + numWords * NUM_EXAMPLES);
-				}
+				logNumberOfWords(numWords++);
 
 				Thread.sleep(TIME_SLEEP);
 			}
 		}
 	}
 
-	private AbstractAnkiCard createClozeAnkiCard(String clozeText, String word, String wordDefinition) {
+	private AbstractAnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition, List<String> synonims) {
 		AbstractAnkiCard card = new SimpleAnkiCard();
 		CardDecorator.addTranslationToFront(card, clozeText);
 		CardDecorator.addWordLearnedToBack(card, word);
+		CardDecorator.addContenutoToBack(card, originalValue);
 		CardDecorator.addContenutoToBack(card, wordDefinition);
+		CardDecorator.addSinonimiToBack(card, synonims);
 		return card;
 	}
 
@@ -124,12 +119,12 @@ public class LanguageLearningMediator {
 
 
 	private String clozifyWord(String text, String word) {
-		String wordToBeClozed = checkMostCloseWord(text, word);
+		String wordToBeClozed = getMostCloseWord(text, word);
 		String cloze = CharBuffer.allocate(wordToBeClozed.length()).toString().replace('\0','_');
 		return text.replace(wordToBeClozed, cloze);
 	}
 
-	private String checkMostCloseWord(String text, String word) {
+	private String getMostCloseWord(String text, String word) {
 		String[] words = text.split(" ");
 		int minDistance = 0;
 		int index = 0;
@@ -164,10 +159,17 @@ public class LanguageLearningMediator {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
 		List<String> wordsList = br.lines()
 				.map(String::trim)
-//				.limit(5)
+				.limit(5)
 				.collect(Collectors.toList());
 		br.close();
 		return wordsList;
+	}
+
+
+	private void logNumberOfWords(int number) {
+		if (number % LOG_COUNTER == 0) {
+			log.info("Numero di esempi parsati: " + number * NUM_EXAMPLES);
+		}
 	}
 
 
