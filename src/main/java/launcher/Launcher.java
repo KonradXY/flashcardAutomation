@@ -38,14 +38,14 @@ public class Launcher {
 		if (args != null) {
 			String inputArg = args[0].toLowerCase();
 			if (inputArg.contains("webcrawling")) {
-				log.info("launching webcrawling mode");
+				log.info(" ====>>> launching webcrawling mode");
 				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "2000_parole_lista_2.txt";
 				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
 				buildFlashCardsFromWeb(ctx, inputFile, outputFile);
 			}
 			else if (inputArg.contains("clozecrawling")) {
 				// TODO - sta roba va a finire all'interno del build properties (che finisce all'interno del main praticamente -> in questo caso il mediator si pone all'interno del parsing ma dovrei studiarmela meglio come cosa
-				log.info("launching cloeCrawling mode");
+				log.info(" ====>>> launching clozeCrawling mode");
 				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "2000_parole_lista_2.txt";
 				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
 				buildClozeFlashcardsFromWeb(ctx, inputFile, outputFile);

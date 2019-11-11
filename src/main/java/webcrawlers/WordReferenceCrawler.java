@@ -42,7 +42,8 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
             }
             return defMap;
 
-
+        } catch (NullPointerException npex) {
+            log.error("NullPointer: " + npex);
         } catch (MalformedURLException | HttpStatusException ex) {
             log.error("Error while scraping: " + ex);
         } catch (IOException ioEx) {
@@ -51,13 +52,6 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
 
         return Collections.EMPTY_MAP;
     }
-
-    public Map<String, String> getClozeDefinitions(String word) {
-        Map<String, String> clozeMap = getWordDefinitions(word);
-        return clozeMap;
-    }
-
-
 
     public List<String> getWordSynonims(String word) {
 

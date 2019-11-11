@@ -14,11 +14,11 @@ import java.io.OutputStreamWriter;
 import java.nio.CharBuffer;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import main.java.baseModel.SimpleAnkiCard;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,13 +32,13 @@ public class LanguageLearningMediator {
 	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
 	
 	private final ReversoSpanishCrawler reversoCrawler; 
-	private final WordReferenceCrawler wordReferenceBean;
+	private final WordReferenceCrawler wordReferenceCrawler;
 	
 	public LanguageLearningMediator(
 			@Autowired ReversoSpanishCrawler reversoCrawler,
 			@Autowired WordReferenceCrawler wordReferenceCrawler ) {
 		this.reversoCrawler = reversoCrawler;
-		this.wordReferenceBean = wordReferenceCrawler;
+		this.wordReferenceCrawler = wordReferenceCrawler;
 	}
 
 	public void createFlashcard(String inputFile, String outputFile) throws Exception {
@@ -48,8 +48,8 @@ public class LanguageLearningMediator {
 
 			for (String word : wordList) {
 
-				Map<String, String> definizioniMap = wordReferenceBean.getWordDefinitions(word);
-				List<String> synonims = wordReferenceBean.getWordSynonims(word);
+				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitions(word);
+				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				List<AbstractAnkiCard> cards = reversoCrawler.getExamplesFromWord(word);
 
@@ -77,8 +77,8 @@ public class LanguageLearningMediator {
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
 
 			for (String word : wordList) {
-				Map<String, String> clozeMap = createClozeMap(wordReferenceBean.getClozeDefinitions(word), word);
-				List<String> synonims = wordReferenceBean.getWordSynonims(word);
+				Map<String, String> clozeMap = createClozeMap(wordReferenceCrawler.getWordDefinitions(word), word);
+				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
 					AbstractAnkiCard card = createClozeAnkiCard(cloze.getValue(), word, cloze.getKey());
@@ -110,7 +110,6 @@ public class LanguageLearningMediator {
 								.filter(valueNotEmpty)
 								.map(it -> clozifyText(it, word))
 								.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-
 		return clozeMap;
 	}
 	
@@ -125,8 +124,24 @@ public class LanguageLearningMediator {
 
 
 	private String clozifyWord(String text, String word) {
-		String cloze = CharBuffer.allocate(word.length()).toString().replace('\0','_');
-		return text.replace(word, cloze);
+		String wordToBeClozed = checkMostCloseWord(text, word);
+		String cloze = CharBuffer.allocate(wordToBeClozed.length()).toString().replace('\0','_');
+		return text.replace(wordToBeClozed, cloze);
+	}
+
+	private String checkMostCloseWord(String text, String word) {
+		String[] words = text.split(" ");
+		double maxDistance = 0;
+		int index = 0;
+		for (int i = 0; i < words.length; i++) {
+			double distance = LevenshteinDistance.getDefaultInstance().apply(word, words[i]);
+			if (distance > maxDistance){
+				maxDistance = distance;
+				index = i;
+			}
+		}
+
+		return words[index];
 	}
 
 	private void writeCards(List<AbstractAnkiCard> cards, BufferedWriter bos) throws IOException {
