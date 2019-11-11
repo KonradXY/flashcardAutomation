@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.CharBuffer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -101,11 +103,11 @@ public class LanguageLearningMediator {
 
 
 	private Map<String, String> createClozeMap(Map<String, String> map, String word) {
-		Map<String, String> clozeMap = map.entrySet().stream()
-								.filter(valueNotEmpty)
-								.map(it -> clozifyText(it, word))
-								.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-		return clozeMap;
+		Map<String, String> clozeMap = map.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+		return 	clozeMap.entrySet().stream()
+					.filter(valueNotEmpty)
+					.map(it -> clozifyText(it, word))
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 	}
 	
 	private Predicate<Map.Entry<String, String>> valueNotEmpty = (it -> !it.getValue().trim().isEmpty());
