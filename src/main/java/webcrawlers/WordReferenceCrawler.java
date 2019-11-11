@@ -52,6 +52,13 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
         return Collections.EMPTY_MAP;
     }
 
+    public Map<String, String> getClozeDefinitions(String word) {
+        Map<String, String> clozeMap = getWordDefinitions(word);
+        return clozeMap;
+    }
+
+
+
     public List<String> getWordSynonims(String word) {
 
         try {
