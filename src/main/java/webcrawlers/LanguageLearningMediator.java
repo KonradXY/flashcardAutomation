@@ -123,9 +123,9 @@ public class LanguageLearningMediator {
 	private String clozifyWord(String text, String word) {
 		String wordToBeClozed = getMostCloseWord(text, word);
 		int charBuffer = (wordToBeClozed.length() > 2 ? wordToBeClozed.length() -2 : 2);
-		String cloze = CharBuffer.allocate(charBuffer).toString().replace('\0','_');
-		cloze = word.charAt(0) +  cloze + word.charAt(word.length()-1);
-		return text.replace(wordToBeClozed, cloze);
+		String clozeChar = CharBuffer.allocate(charBuffer).toString().replace('\0','_');
+		clozeChar = wordToBeClozed.charAt(0) +  clozeChar + wordToBeClozed.charAt(wordToBeClozed.length()-1);
+		return text.replace(wordToBeClozed, clozeChar);
 	}
 
 	private String getMostCloseWord(String text, String word) {
