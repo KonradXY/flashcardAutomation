@@ -8,12 +8,12 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import main.java.config.GuiceApplicationModule;
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import main.java.baseModel.SimpleReader;
-import main.java.config.SpringConfig;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.facade.FlashcardFacade;
@@ -29,11 +29,15 @@ public class Launcher {
 	public static IParser parser;
 	public static IPrinter printer;
 
+
+
 	public static void main(String[] args) {
 		
 		long timeSpent = System.currentTimeMillis();
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 		log.info("... Inizio creazione flashcard ...");
+
+		Injector injector = Guice.createInjector(new GuiceApplicationModule());
+		FlashcardFacade facade = injector.getInstance(FlashcardFacade.class);
 
 		if (args != null) {
 			String inputArg = args[0].toLowerCase();
@@ -41,17 +45,17 @@ public class Launcher {
 				log.info(" ====>>> launching webcrawling mode");
 				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
 				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
-				buildFlashCardsFromWeb(ctx, inputFile, outputFile);
+				buildFlashCardsFromWeb(inputFile, outputFile, facade);
 			}
 			else if (inputArg.contains("clozecrawling")) {
 				// TODO - sta roba va a finire all'interno del build properties (che finisce all'interno del main praticamente -> in questo caso il mediator si pone all'interno del parsing ma dovrei studiarmela meglio come cosa
 				log.info(" ====>>> launching clozeCrawling mode");
 				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
 				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
-				buildClozeFlashcardsFromWeb(ctx, inputFile, outputFile);
+				buildClozeFlashcardsFromWeb(inputFile, outputFile, facade);
 			}
 		else {
-				buildFlashcardsFromFile(args);
+				buildFlashcardsFromFile(args, facade);
 			}
 
 		}
@@ -61,27 +65,27 @@ public class Launcher {
 
 	}
 	
-	private static void buildFlashcardsFromFile(String[] args) {
+	private static void buildFlashcardsFromFile(String[] args, FlashcardFacade facade) {
 		try {
 			Path input = Paths.get(inputContent);
 			Path output = Paths.get(outputContent);
-			FlashcardFacade.buildFlashcardsFromTextFile(input, output, args);
+			facade.buildFlashcardsFromTextFile(input, output, args);
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
 	}
 	
-	private static void buildFlashCardsFromWeb(ApplicationContext ctx, String inputFile, String outputFile) {
+	private static void buildFlashCardsFromWeb(String inputFile, String outputFile, FlashcardFacade facade) {
 		try {
-			FlashcardFacade.buildFlashcardsFromWeb(ctx, inputFile, outputFile);
+			facade.buildFlashcardsFromWeb(inputFile, outputFile);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	private static void buildClozeFlashcardsFromWeb(ApplicationContext ctx, String input, String output) {
+	private static void buildClozeFlashcardsFromWeb(String input, String output, FlashcardFacade facade) {
 		try {
-			FlashcardFacade.buildClozeFlashcardsFromWeb(ctx, input, output);
+			facade.buildClozeFlashcardsFromWeb(input, output);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

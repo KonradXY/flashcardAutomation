@@ -12,33 +12,30 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.CharBuffer;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import com.google.inject.Inject;
 import main.java.baseModel.SimpleAnkiCard;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import main.java.baseModel.AbstractAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
-@Component
 public class LanguageLearningMediator {
-	
+
 	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
 	
 	private final ReversoSpanishCrawler reversoCrawler; 
 	private final WordReferenceCrawler wordReferenceCrawler;
-	
+
+	@Inject
 	public LanguageLearningMediator(
-			@Autowired ReversoSpanishCrawler reversoCrawler,
-			@Autowired WordReferenceCrawler wordReferenceCrawler ) {
+			 ReversoSpanishCrawler reversoCrawler,
+			 WordReferenceCrawler wordReferenceCrawler ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
 	}

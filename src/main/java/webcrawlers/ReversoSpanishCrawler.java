@@ -6,24 +6,23 @@ import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.google.inject.Singleton;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.stereotype.Component;
 
 import main.java.baseModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
-@Component
+@Singleton
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
