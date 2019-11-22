@@ -39,8 +39,8 @@ public class LanguageLearningPrinter implements IPrinter {
 		} 
 	}
 	
-	private void checkOutputFolder(Path destPath) throws IOException {
-		Path folderPath = destPath.getParent();
+	private void checkOutputFolder(Path filePath) throws IOException {
+		Path folderPath = filePath.getParent();
 		if (Files.notExists(folderPath))
 			Files.createDirectories(folderPath);
 	}
