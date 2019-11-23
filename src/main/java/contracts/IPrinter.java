@@ -1,6 +1,8 @@
 package main.java.contracts;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 import main.java.baseModel.AbstractAnkiCard;
@@ -8,6 +10,16 @@ import main.java.baseModel.AbstractAnkiCard;
 public interface IPrinter {
 
 	public void printFile(String destPath, List<AbstractAnkiCard> input) throws IOException;
-	
-	
+
+	default void checkOutputFolder(Path filePath) {
+		try {
+			Path folderPath = filePath.getParent();
+			System.out.println("FOLDER PATH: " + folderPath);
+			if (Files.notExists(folderPath) || !Files.isDirectory(folderPath))
+				Files.createDirectories(folderPath);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
 }
