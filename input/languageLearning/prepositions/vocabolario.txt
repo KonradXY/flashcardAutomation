@@ -501,6 +501,23 @@ RISPOSTE
 7. a. These creams are for allergies. Destination: Allergies are a figurative destination. b. These allergies are because of the creams. Motivation: Tells why the allergies exist
 8. a. In my opinion, this soup is spoiled (or bad). Standard: Personal opinion b. Because of me this soup is spoiled (or bad). Motivation: Tells why the soup has gone bad
 |
+17.1
+1. Agradezco todo.
+2. ¿Qué buscas? Busco mis anteojos.
+3. ¿Dónde debemos colgar nuestros abrigos?
+4. Me gusta escuchar la música clásica.
+5. Puedes apagar las luces porque nos acostamos (or vamos a acostarnos) ahora.
+6. La niñera recoge los juguetes.
+7. Él borra todos sus errores.
+8. Esta noche Carlota va a salir con Guillermo. Está muy ilusionada.
+9. Yo siempre saco la basura. Tú debes sacar la basura de vez en cuando.
+10. El abogado entrega la evidencia al juez.
+11. Los trapos empapan el aceite.
+12. El cartero siempre pisa las rosas.
+13. Necesito más dinero. Voy a pedir un aumento mañana.
+14. ¿Por cuánto tiempo tenemos que esperar el autobús?
+15. Puedes encender las luces aquí y apagar las luces allá.
+|
 17.2
 1. Vamos a conducir (or manejar) a Vermont en vez de (or en lugar de) volar.
 2. Antes de comprar los huevos, debes mirar dentro del cartón.
@@ -531,6 +548,23 @@ RISPOSTE
 13. En esta sección del libro, aprendemos a usar los verbos que toman la preposición a.
 14. Algunos atletas se acostumbran a recibir y a gastar mucho dinero.
 15. Ricardo no se dispone a darnos nada hoy. No está de humor.
+|
+17.4
+1. Puedes contar conmigo, pero, ¿puedo contar contigo?
+2. Cada miércoles, me encuentro con Kay para cenar y (para) conversar.
+3. En la película Spiderman, Peter Parker (Spiderman) sale con Mary Jane Watson.
+4. Me asusto con la oscuridad durante una tormenta.
+5. Es trágico, pero a veces una persona necesita romper con su familia.
+6. El egoísta sueña con ser famoso, popular y rico.
+7. No me asocio con compañías que venden tabaco.
+8. De vez en cuando me equivoco con las personas.
+9. Siempre nos divertimos con nuestros vecinos.
+10. Ella se enfada (or se enoja) conmigo cuando llego tarde.
+11. José no se trata con la familia de su esposa.
+12. Si limpias la bañera con Brillo, vas a dañarla.
+13. De vez en cuando me doy con alguien que verdaderamente me inspira.
+14. Si Juan no tiene cuidado, va a tropezarse con la pared.
+15. Los domingos por la mañana, me contento a menudo con zumo (or jugo) de naranja y el periódico.
 |
 17.5
 1. Él siempre se olvida de tomar su medicina.

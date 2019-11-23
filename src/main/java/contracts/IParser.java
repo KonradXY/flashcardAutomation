@@ -24,7 +24,7 @@ public interface IParser {
 	public static final int DOMANDE_INDEX = 0;
 	public static final int RISPOSTE_INDEX = 1;
 
-	public static Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\-[0-9]");
+	public static Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\.[0-9]");
 	public static Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
 	public static String QA_SEPARATOR = "RISPOSTE";	
 

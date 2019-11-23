@@ -15,7 +15,7 @@ import main.java.contracts.IPrinter;
 
 public class LanguageLearningPrinter implements IPrinter {
 
-	private final static String nameFile = "languageExcerciseParsed.txt";
+	private final String nameFile = "languageExcerciseParsed.txt";
 	
 	@Override
 	public void printFile(String destFolderPath, List<AbstractAnkiCard> input) throws IOException {
@@ -39,7 +39,7 @@ public class LanguageLearningPrinter implements IPrinter {
 	
 	private void checkOutputFolder(Path filePath) throws IOException {
 		Path folderPath = filePath.getParent();
-		if (Files.notExists(folderPath))
+		if (Files.notExists(folderPath) || !Files.isDirectory(folderPath))
 			Files.createDirectories(folderPath);
 	}
 

@@ -106,12 +106,12 @@ public class LanguageLearningParser implements IParser {
 		for (String domKey : domandeMap.keySet()) {
 			checkKeyMap(domKey, risposteMap);
 
-			for (String innerKey : domandeMap.get(domKey).keySet()) {
-				checkKeyMap(innerKey, risposteMap.get(domKey));
+			for (String innerDomKey : domandeMap.get(domKey).keySet()) {
+				checkKeyMap(innerDomKey, risposteMap.get(domKey));
 
 				card = new LanguageLearningAnkiCard(
-						domandeMap.get(domKey).get(innerKey),
-						risposteMap.get(domKey).get(innerKey),
+						domandeMap.get(domKey).get(innerDomKey),
+						risposteMap.get(domKey).get(innerDomKey),
 						cardKind);
 				listCard.add(card);
 			}
@@ -166,7 +166,7 @@ public class LanguageLearningParser implements IParser {
 	
 	private <K, V> void checkKeyMap(K key, Map<K, V> map) {
 		if (!map.containsKey(key))
-			throw new RuntimeException("key not found in map ! Key: " + key);
+			throw new RuntimeException("Chiave non trovata ! - Key: " + key);
 	}
 	
 	private String[] parseDomandeRisposte(String input) {
