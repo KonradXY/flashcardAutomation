@@ -13,6 +13,8 @@ public class EngineBuilder {
 	
 	public AbstractAnkiEngine createTextEngine(String[] inputParam) {
 
+		if (inputParam == null) throw new RuntimeException("Inserire parametro !");
+		
 		AbstractAnkiEngine ankiModel;
 		String input = inputParam[0];
 		switch(input) {
