@@ -7,7 +7,9 @@ public enum ReadingStrategy {
 	GENERAL {
 		@Override
 		public String formatLine(String input) {
-			return input;
+			if (input.trim().endsWith(IParser.PIPE_SEPARATOR))
+				return input;
+			return input + IParser.REGULAR_PIPE;
 		}
 	},
 	KINDLE {

@@ -9,6 +9,7 @@ import main.java.baseModel.AbstractAnkiCard;
 
 public interface IParser {
 	
+	public static String REGULAR_PIPE = "|";
 	public static String PIPE_SEPARATOR = "\\|";
 	public static String TAB = "\t";
 	public static String NEW_LINE_HTML = "<br>";

@@ -21,7 +21,8 @@ public class SimpleParser implements IParser {
 			String[] splitted = text.split(PIPE_SEPARATOR);
 			int length = (splitted.length%2 == 0 ? splitted.length : splitted.length -1);
 			for (int i = 0; i < length; i+=2) {
-				ankiCards.add(new SimpleAnkiCard(splitted[i], splitted[i+1]));
+				ankiCards.add(new SimpleAnkiCard(splitted[i+SIMPLE_PARSER_ENG_FIELD], 
+												 splitted[i+SIMPLE_PARSER_ESP_FIELD]));
 			}
 		}
 		return ankiCards;
