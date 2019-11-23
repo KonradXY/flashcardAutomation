@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 import main.java.baseModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleReader;
-import main.java.config.SpringConfig;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.netutilities.CertificateManager;
@@ -42,7 +39,12 @@ public class FlashcardFacade {
 		LanguageLearningMediator languageLearningMediator = ctx.getBean(LanguageLearningMediator.class);
 
 		CertificateManager.doTrustToCertificates();
-		languageLearningMediator.parse(inputFile, outputFile);
-		
+		languageLearningMediator.createFlashcard(inputFile, outputFile);
+	}
+
+	public static void buildClozeFlashcardsFromWeb(ApplicationContext ctx, String inputfile, String outputFile) throws Exception {
+		LanguageLearningMediator languageLearningMediator = ctx.getBean(LanguageLearningMediator.class);
+		CertificateManager.doTrustToCertificates();
+		languageLearningMediator.createClozeFlashcards(inputfile, outputFile);
 	}
 }

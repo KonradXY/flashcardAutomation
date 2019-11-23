@@ -50,8 +50,10 @@ public class CardDecorator {
     private static Element getDefinizioneTag()          { return getUnorderedListTag().addClass("definizioni");}
 
 
-    // TODO <-- secondo me sto facendo troppe indirezioni qua dentro.
+    // TODO <-- secondo me sto facendo troppe indirezioni qua dentro. Inoltre i metodi non sono generici. Dovrei rinominarli !
     public static void addWordLearnedToFront(AbstractAnkiCard card, String text)    { addWordLearned(card.getFrontHtml(), text); }
+    public static void addWordLearnedToBack(AbstractAnkiCard card, String text)    { addWordLearned(card.getBackHtml(), text); }
+
     public static void addTranslationToFront(AbstractAnkiCard card, String text)    { addTranslationToCard(text, card.getFrontHtml()); }
     public static void addParoleTradotteToBack(AbstractAnkiCard card, String text)  { addParoleTradotte(text, card.getBackHtml()); }
     public static void addContenutoToBack(AbstractAnkiCard card, String text)       { addContenutoToCard(card.getBackHtml(), text); }

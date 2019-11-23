@@ -32,16 +32,30 @@ public class Launcher {
 	public static void main(String[] args) {
 		
 		long timeSpent = System.currentTimeMillis();
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 		log.info("... Inizio creazione flashcard ...");
 
-		if (args != null && args[0].contains("webcrawler")) {
-			String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "2000_parole_lista_2.txt";
-			String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
-			buildFlashCardsFromWeb(inputFile, outputFile);
+		if (args != null) {
+			String inputArg = args[0].toLowerCase();
+			if (inputArg.contains("webcrawling")) {
+				log.info(" ====>>> launching webcrawling mode");
+				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
+				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
+				buildFlashCardsFromWeb(ctx, inputFile, outputFile);
+			}
+			else if (inputArg.contains("clozecrawling")) {
+				// TODO - sta roba va a finire all'interno del build properties (che finisce all'interno del main praticamente -> in questo caso il mediator si pone all'interno del parsing ma dovrei studiarmela meglio come cosa
+				log.info(" ====>>> launching clozeCrawling mode");
+				String inputFile  	= INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
+				String outputFile 	= OUTPUT_DIR+ WEB_CRAWLER_DIR + "scrapedList.txt";
+				buildClozeFlashcardsFromWeb(ctx, inputFile, outputFile);
+			}
+		else {
+				buildFlashcardsFromFile(args);
+			}
+
 		}
-		else { 
-			buildFlashcardsFromFile(args);
-		}
+
 
 		log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis()-timeSpent)/1000 + " sec");
 
@@ -57,10 +71,17 @@ public class Launcher {
 		}
 	}
 	
-	private static void buildFlashCardsFromWeb(String inputFile, String outputFile) {
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+	private static void buildFlashCardsFromWeb(ApplicationContext ctx, String inputFile, String outputFile) {
 		try {
 			FlashcardFacade.buildFlashcardsFromWeb(ctx, inputFile, outputFile);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	private static void buildClozeFlashcardsFromWeb(ApplicationContext ctx, String input, String output) {
+		try {
+			FlashcardFacade.buildClozeFlashcardsFromWeb(ctx, input, output);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
