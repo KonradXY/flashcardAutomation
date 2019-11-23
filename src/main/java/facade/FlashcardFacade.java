@@ -6,9 +6,8 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
+import com.google.inject.Inject;
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 
 import main.java.baseModel.AbstractAnkiCard;
 import main.java.baseModel.SimpleReader;
@@ -18,7 +17,6 @@ import main.java.netutilities.CertificateManager;
 import main.java.utils.FlashcardEngineFactory;
 import main.java.webcrawlers.LanguageLearningMediator;
 
-@Component
 public class FlashcardFacade {
 	
 	private static final Logger log = Logger.getLogger(FlashcardFacade.class);
@@ -26,24 +24,28 @@ public class FlashcardFacade {
 	public static SimpleReader reader;
 	public static IParser parser;
 	public static IPrinter printer;
+
+	private final LanguageLearningMediator languageLearningMediator;
+
+	@Inject
+	public FlashcardFacade(LanguageLearningMediator languageLearningMediator) {
+		this.languageLearningMediator = languageLearningMediator;
+	}
 	
 	
-	public static void buildFlashcardsFromTextFile(Path inputContent, Path outputContent, String[] args) throws IOException {
+	public void buildFlashcardsFromTextFile(Path inputContent, Path outputContent, String[] args) throws IOException {
 		FlashcardEngineFactory.buildFlashcardEngine(args);
 		Map<Path, String> input = reader.readFile(inputContent);
 		List<AbstractAnkiCard> parsedAnkiCards = parser.parseToAnkiFlashcard(input);
 		printer.printFile(outputContent.toString(), parsedAnkiCards);
 	}
 	
-	public static void buildFlashcardsFromWeb(ApplicationContext ctx, String inputFile, String outputFile) throws Exception {
-		LanguageLearningMediator languageLearningMediator = ctx.getBean(LanguageLearningMediator.class);
-
+	public void buildFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
 		languageLearningMediator.createFlashcard(inputFile, outputFile);
 	}
 
-	public static void buildClozeFlashcardsFromWeb(ApplicationContext ctx, String inputfile, String outputFile) throws Exception {
-		LanguageLearningMediator languageLearningMediator = ctx.getBean(LanguageLearningMediator.class);
+	public void buildClozeFlashcardsFromWeb(String inputfile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
 		languageLearningMediator.createClozeFlashcards(inputfile, outputFile);
 	}
