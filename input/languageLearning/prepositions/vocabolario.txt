@@ -1,0 +1,596 @@
+15.1
+1. He always talks about his girlfriend.
+2. I prefer coffee with milk and sugar.
+3. He prefers tea without sugar.
+4. Don Quijote is the best novel in the world, according to José.
+5. In addition to flowers, her boyfriend gives her candy (los dulces) on every date (la cita).
+6. The director’s back (la espalda) is against the wall.
+7. This book is about George Washington.
+8. They don’t write much about their problems.
+9. Do you want pizza with meat (la carne) or without meat?
+10. I like everything here except the shoes.
+11. His thesis (la tesis) is about the art of Rome.
+12. According to Julia, her friends know nothing about classical music.
+13. I want everything against the wall, except the podium (el podio).
+14. You have to serve the drinks (la bebida) in addition to the food.
+15. The library doesn’t have anything about the history of the pizza.
+|
+15.2
+1. There is a book on top of the table.
+2. John is to the right of me, and Felipe is to the left of Elena.
+3. Do you live next door to our restaurant?
+4. Every spring we plant (sembrar) flowers in front of the house.
+5. We need more light (la iluminación) above the paintings (el cuadro).
+6. People (la gente) across the country watch (mirar) the Olympics (los juegos olímpicos) on television.
+7. My favorite song is “Close to You.”
+8. Many people want to live far from the airport (el aeropuerto).
+9. Do you know that there is a tiger (el tigre) under your bed?
+10. Why are there so many (tanto) dogs outside your house?
+11. Who is in the kitchen with Dinah?
+12. What do you have inside your mouth?
+13. He works at the bank.
+14. They are in the bank.
+15. There isn’t anything on television tonight.
+16. There is nothing between us.
+17. Who is behind you?
+18. The play (la obra) is in the theater.
+|
+15.3
+1. Es muy romántico caminar (a lo largo de | de lado) la playa.
+2. No puedo ver (hacia adelante | más allá de) las estrellas.
+3. Para hacer  todos los días, Jorge corre diez veces (hacia atrás | alrededor de) la pista (track).
+4. El coche pasa (por | de lado) el túnel.
+5. Para ir a Canadá, necesitas conducir (por | hacia) el norte.
+6. No quiero andar en bicicleta (a lo largo de | hacia adelante) la autopista. Es demasiado peligroso.
+7. Si tú vas (hacia | alrededor de) el este, en dos o tres cuadras (blocks) vas a ver la tienda que buscas.
+8. El ladrón (robber) buscó (alrededor de | por) la casa hasta encontrar el oro.
+9. Los niños no deben ir (más allá de | de lado) este punto.
+10. En el juego “Sillas musicales,” caminamos (más allá de | alrededor de) las sillas
+|
+15.4
+1. I run around the lake every morning.
+2. Do you walk along the boulevard (el bulevar) ?
+3. The detective searches throughout the house.
+4. He’s always looking toward his goals (la meta).
+5. Superman can fly (volar) through the air.
+6. Every evening they walk through the mall (el centro comercial).
+7. If you look beyond that tree, you can see the roller coaster (la montaña rusa).
+8. Do you want to walk around the block (la cuadra) with me?
+9. You can’t go beyond the end (el final) of this block.
+10. We can drive (conducir) toward the river and then walk along the path (la senda).
+11. Nancy Kerrigan can skate (patinar) forward and backward.
+12. Superman can fly, but he doesn’t fly backwards.
+|
+15.6
+1. Because of this cold (el resfriado),I can’t go to the movies with my friends.
+2. I’m reading a book by John Steinbeck.
+3. This book is for you [pl., formal].
+4. Greetings (all the way) from Cancún!
+5. We’re going to the mall (el centro comercial). Do you want to go with us?
+6. These pearls (la perla) are from Japan.
+7. All my friends from college (la universidad) are here.
+8. What do they want from me?
+9. I don’t have anything for you.
+10. He calls me all the way from Germany (Alemania) every week.
+11. Because of her attitude (la actitud) and bitterness (la amargura), she has no friends.
+12. The novel Les Miserables is by Victor Hugo.
+13. We are marching (marchar) to Pretoria.
+14. One of them is going to win (ganar) the grand prize (el premio gordo) !
+15. I’m tired, and for this reason (razón) I’m going to take a nap (dormir una siesta).
+|
+15.7
+1. Comemos el postre (dessert) (antes de | después de) la comida.
+2. Hay muchos anuncios (commercials) (durante | por) el programa de televisión.
+3. La temporada (season) de béisbol es de abril (desde | hasta) octubre.
+4. (Antes de | Por) un partido de béisbol, cantamos el himno nacional.
+5. Juan ha vivido (has lived) en California (por | desde) 1981.
+6. Muchas personas trabajan de lunes (a | durante) viernes.
+7. Tenemos que lavar los platos (antes de | después de) la cena.
+8. No es cortés hablar (antes de | durante) la película.
+9. Es importante limpiar la casa (durante | antes de) la fiesta.
+10. Muchos consultorios (offices) de dentista tocan música (hasta | durante) el día.
+11. El senador está en una reunión, pero va a regresar a la oficina (antes de | después de) estar allí.
+12. Se pueden oír las noticias (por | hasta) las mañanas.
+|
+15.8
+1. You don’t have to be here until tomorrow.
+2. I need to clean the garage before winter.
+3. It’s cold, isn’t it (¿no?) ? Yes. Since Tuesday.
+4. Some people believe that ghosts (el fantasma) live after death (la muerte).
+5. After dinner, we always wash the dishes.
+6. What do you want to do during our break (el descanso) ?
+7. What do you usually do in the afternoon?
+8. What do you want to do before the dance (el baile) ?
+9. We usually talk during the commercials (el anuncio).
+10. He’s going to work here until March.
+11. Don’t you have milk? No. Not since Saturday.
+12. They work from Monday to Friday.
+13. We can watch the movie and go to the restaurant after seeing it.
+14. I always chop (picar) the onions before cooking them.
+|
+16.2
+1. This house is perfectfor us.
+2. We need a new tablefor the dining room.
+3. For some people, it isn’t important to have a car.
+4. These shoes arefor dancing the tango.
+5. You have to read this bookby Thursday.
+6. He watches televisionto avoid (evitar) his problems.
+7. I’m leavingfor Africa tomorrow.
+8. I’m studyingto be a magician (el mago).
+9. He’s very polite (cortés) for a teenager (el adolescente).
+10. Can you write the letterby Tuesday?
+11. This food isfor the cat.
+12. For him, winter is wonderful, but for me, summer is the best season (la estación).
+13. She works a lotin order to get (sacar) good grades.
+14. What time do you leavefor work (el trabajo) ?
+15. These apples are notfor eating.
+|
+16.4
+1. We go to schoolby bus.
+2. You can have those shoesfor ten dollars.
+3. He has at least twenty cats.
+4. When I travel, I always walk through the city and I investigate (investigar) everything.
+5. We read the newspaperfor thirty minutes every morning.
+6. Juanita is sick today. Can you workfor her?
+7. I’m going to the supermarketfor milk, butter, and eggs.
+8. Every Monday night he watches football (el fútbol americano) on television.
+9. Because of her allergies (las alergias),she can’t touch the cat.
+10. Thanksfor nothing.
+11. For giving so much (tanto) to others, she deserves (merecer) a medal (la medalla).
+12. Ninetyper cent of all the dentists say that this toothpaste (la pasta de dientes) is horrible.
+13. He comesby my house now and then (de vez en cuando).
+14. I only have admiration (la estimación) for you.
+15. I now understand the differences between por and para for the first time.
+16. You can send me the contracts (el contrato) by fax.
+|
+16.5
+1. Tengo algunas cosas [por/para] ti.
+2. Juan es muy humilde (modest) [por/para] un hombre tan inteligente y rico.
+3. Gracias [por/para] los mapas. Puedo usarlos en mi viaje a España.
+4. Cada día Mitch practica el clarinete [por/para] una hora.
+5. Cuando visito un museo, siempre camino [por/para] todas las galerías.
+6. El concierto comienza a las ocho. Quiero llegar al teatro [por/para] las siete y media.
+7. Los juguetes de Mattel son [por/para] niños.
+8. Yo tomo café [por/para] la mañana y [por/para] la tarde, pero nunca [por/para]la noche.
+9. Estas toallas (towels) son [por/para] el baño principal.
+10. Batman y Robin siempre viajan [por/para] Batmobile, y nunca [por/para] autobús.
+11. Este restaurante es demasiado costoso. ¡Veinte dólares una [por/para] ensalada es ridículo!
+12. ¿Estás listo (ready)? Salimos [por/para] la biblioteca ahora.
+13. Tengo hambre. ¿Hay un restaurante [por/para] aquí?
+14. No hay clases hoy y nada está abierto [por/para] la nieve.
+15. Me abono (subscribe) a dos periódicos [por/para] saber las noticias del mundo.
+16. Cuando la actriz principal está enferma, su suplente (understudy) se presenta [por/para] ella.
+17. Me cepillo los dientes más o menos cinco veces [por/para] día.
+18. El dentista cree que debemos cepillarnos los dientes lo [por/para] menos dos veces al día.
+19. Martín cree que el sistema métrico es el mejor, pero [por/para] mí, prefiero pies y pulgadas.
+20. Antes de la fiesta, vamos [por/para] la tienda a comprar unos refrescos.
+21. Siento nada menos que (nothing but) disgusto [por/para] ellos.
+22. Uso e-mail  [por/para]escribir notas a mis colegas.
+23. No tenemos ni luces ni electricidad  [por/para]no pagar la cuenta de utilidades a tiempo.
+24. John Phillips Sousa es famoso  [por/para]sus marchas.
+25. Cada día hablo con mi esposo  [por/para]teléfono.
+26. Después de veinte años, [por/para]fin Carlota ganó la lotería.
+27. Comemos [por/para] vivir.
+28. Vamos a tener una fiesta el sábado [por/para] la noche.
+29. Solamente el treinta [por/para] ciento de los médicos recomiendan esta medicina.
+30. Ustedes tienen que terminar el proyecto [por/para] finales del mes.
+|
+16.6
+1. a. Puedes tener mi camisa para tu falda. b. Puedes tener mi camisa por tu falda.
+2. a. Vamos para su casa esta noche. b. Vamos por su casa esta noche.
+3. a. Tengo muchas muestras (samples) de champú y jabón para el viaje. b. Tengo muchas muestras de champú y jabón por el viaje.
+4. a. Martín y Dorotea tienen muchos regalos para Daisy y para Lily. b. Martín y Dorotea tienen mucho amor por Daisy y por Lily.
+5. a. Judith baila para Twyla. b. Judith baila por Twyla.
+6. a. Conducimos para el parque. b. Conducimos por el parque.
+7. a. Estas cremas son para las alergias. b. Estas alergias son por las cremas.
+8. a. Para mí, esta sopa está mala. b. Por mí, esta sopa está mala.
+|
+17.1
+1. I am grateful for everything.
+2. What are you looking for? I’m looking for my glasses (los anteojos).
+3. Where should we hang up our coats (el abrigo) ?
+4. I like to listen to classical music (la música clásica).
+5. You can turn off the lights because we’re going to bed now.
+6. The babysitter (la niñera) picks up the toys (el juguete).
+7. He crosses out all his mistakes (el error).
+8. Tonight Carlota is going to go out with Guillermo. She is very excited (ilusionado).
+9. I always take out the garbage (la basura). You should take out the garbage once in a while (de vez en cuando).
+10. The lawyer hands over the evidence (la evidencia) to the judge (el juez).
+11. The rags (el trapo) soak up the oil (el aceite).
+12. The mail carrier (el cartero) always steps on my roses.
+13. I need more money. I’m going to ask for a raise (el aumento) tomorrow.
+14. How long (¿Por cuánto tiempo?) do we have to wait for the bus?
+15. You can turn on the lights here and turn off the lights over there (allá).
+|
+17.2
+1. We’re going to drive to Vermont instead of flying.
+2. Before buying the eggs, you should look inside the carton (el cartón).
+3. I always feel better after exercising (hacer ).
+4. Besides being able to fly, Superman can see through (a través de) walls (la pared).
+5. I’m thinking about writing a novel.
+6. In order to get (llegar) to the bank, you should turn (doblar) right on Park Avenue.
+7. Do you want to swim instead of playing golf?
+8. She always eats ten tacos after swimming.
+9. What do you have to do before leaving?
+10. I’m going to a lecture (la conferencia) about using computers.
+11. In addition to boiling (hervir) water, this stove (la estufa) can boil milk!
+12. John has to take three more (otras tres) classes in order to graduate (graduarse).
+|
+17.3
+1. This sounds like a lie to me.
+2. She bursts out crying (llorar) every time she remembers the pain (el dolor) of her childhood (la niñez).
+3. He’s going to quit his job, because his company (la compañía) is going to begin to downsize (recortar el personal).
+4. Sooner or later (tarde o temprano), you have to resign yourself to the fact (el hecho de) that some people are not honest (honrado).
+5. You can’t force us to do anything that we don’t want to do.
+6. Benjamín winds his watch every day at nine o’clock in the morning.
+7. Mrs. Dalí encourages her children to study the fine arts (las bellas artes).
+8. In this house, we sit down to eat dinner (cenar) at seven o’clock sharp (en punto).
+9. What time do we get on the train?
+10. This frog tastes like a toad (el sapo).
+11. Mateo says that snake meat (la carne de culebra) tastes like chicken.
+12. Oscar Wilde says that he can resist everything but (salvo) temptation (la tentación).
+13. In this section of the book, we learn how to use verbs that take (tomar) the preposition a.
+14. Some athletes (el atleta) become used to receiving and spending (gastar) lots of money.
+15. Richard is not disposed to giving us anything today. He is not in the mood (de humor).
+|
+17.4
+1. You can count on me, but can I count on you?
+2. Every Wednesday, I meet up with Kay (in order) to eat dinner (cenar) and to converse.
+3. In the movie Spiderman, Peter Parker (Spiderman) dates Mary Jane Watson.
+4. I become afraid of the dark (la oscuridad) during a storm (la tormenta).
+5. It’s tragic, but sometimes (a veces) a person needs to break off relations with his/her family.
+6. The egomaniac (el egoísta) dreams of being famous, popular, and rich.
+7. I don’t associate with companies that sell tobacco (el tabaco).
+8. Now and then (de vez en cuando) I am mistaken about people (la persona).
+9. We always have a good time with our neighbors (el vecino).
+10. She gets angry at me when I am late (llegar tarde).
+11. José has no dealings with his wife’s family.
+12. If you clean the bathtub (la bañera) with Brillo, you’re going to damage (dañar) it.
+13. Now and then I come upon someone who truly (verdaderamente) inspires (inspirar) me.
+14. If Juan isn’t careful (no tener cuidado),he’s going to bump into the wall.
+15. On Sunday mornings, I often content myself with orange juice and the newspaper.
+|
+17.5
+1. He always forgets to take his medicine.
+2. This sofa serves as a comfortable (cómodo) bed.
+3. We have to finish cleaning the house by four thirty.
+4. Every day I get rid of at least (por lo menos) one thing because I don’t like clutter (el desorden).
+5. She always complains about working so much (tanto).
+6. I marvel at people who can dance well.
+7. I’m in charge of cooking, and you’re in charge of serving the meals.
+8. I often forget a person’s name, but I never forget his face.
+9. You should get away from dangerous people.
+10. I have just read a wonderful article (el artículo) in the newspaper.
+11. Don’t we have orange juice? I’m dying of thirst (la sed).
+12. Who’s going to take care of your house next week?
+13. They’re talking about moving (mudarse) to Omaha next year.
+14. I don’t like to be with him because he always speaks ill (mal) of other people.
+15. There are people who take advantage of others without remorse (remordimiento).
+|
+17.6
+1. Some people persist in exercising (hacer ) even (aun) when they’re sick.
+2. María takes pleasure in playing the guitar at parties.
+3. First I think about food, and then I think about eating something.
+4. Every day we should reflect on something good in (de) this world.
+5. At the end (A finales) of the month, Marcos always finds himself in a jam (el apuro).
+6. When the police arrive, the thief consents to go with them peacefully (pacíficamente).
+7. People who gossip (chismear) involve themselves in other people’s lives.
+8. Juan and María agree to consult a psychiatrist (el psiquiatra).
+9. Every year I agree to contribute (donar) to the Cancer Society.
+10. You shouldn’t get involved in their problems.
+11. I’m not thinking about anything now.
+12. My sister never takes the trouble to telephone (llamar por teléfono).
+13. I am very interested in international politics (la política internacional).
+14. It takes me one hour to drive to the stadium (el estadio) from here.
+15. For exercise, the children ride bicycles.
+|
+17.7
+1. Usually it’s very late when I sit down to study.
+2. Martha Stewart says that many things in the garbage can (la basura) serve as decorations in the house.
+3. Are you ready to leave? Yes, we’re ready to leave.
+4. We’re about to eat lunch (almorzar).
+5. I want to work for another company.
+6. Do you want to stay to watch the news (las noticias) with me?
+7. This film is of no use.
+8. Every January, many people strive to lose weight (perder peso).
+9. Melissa needs at least (por lo menos) two hours in order to prepare herself for her date (la cita).
+10. Bjorn is preparing himself to find a new job, because he works for a real brute (el bruto).
+|
+17.8
+1. Harold worries about losing his teeth and his hair.
+2. In the novel Anna Karenina, Levin struggles always to do the right thing (lo correcto).
+3. The people (el pueblo) of Argentina shouldn’t cry for Evita.
+4. I worry a lot about you.
+5. Many people are offended by the waste (el desperdicio) of food in restaurants.
+6. I’m dying to see your new hairdo (el peinado).
+7. In this office, we classify everything by size (el tamaño).
+8. Usually a gymnast (el gimnasta) ends by doing something spectacular (espectacular).
+9. They always opt for swimming in the river.
+10. When I have a choice (la elección) between two movies, I usually opt for the one that has the better reviews (la reseña).
+11. Laura is impatient to move (mudarse) to another part of the country.
+12. Many lawyers plead on behalf of a guilty (culpable) person.
+13. We give you thanks for telling us the truth.
+14. I always classify my books alphabetically (orden alfabético).
+15. She always votes for the less attractive candidate.
+|
+RISPOSTE
+15.1
+1. Él siempre habla acerca de su novia.
+2. Prefiero el café con leche y azúcar.
+3. Él prefiere el té sin azúcar.
+4. Don Quijote es la mejor novela del mundo, según José.
+5. Además de flores, su novio le da dulces en cada cita.
+6. La espalda del director está contra la pared.
+7. Este libro es sobre George Washington.
+8. Ellos no escriben mucho acerca de sus problemas.
+9. ¿Quieres la pizza con carne o sin carne?
+10. Me gusta todo aquí excepto (or salvo or menos) los zapatos.
+11. Su tesis es sobre el arte de Roma.
+12. Según Julia, sus amigos no saben nada acerca de la música clásica.
+13. Quiero todo contra la pared, menos (or salvo or excepto) el podio.
+14. Tienes que servir las bebidas además de la comida.
+15. La biblioteca no tiene nada sobre la historia de la pizza.
+|
+15.2
+1. Hay un libro encima de la mesa.
+2. Juan está a la derecha de mí y Felipe está a la izquierda de Elena.
+3. ¿Vives al lado de nuestro restaurante?
+4. Cada primavera sembramos flores delante de la casa.
+5. Necesitamos más iluminación sobre los cuadros.
+6. La gente a través del país mira los juegos olímpicos en la televisión.
+7. Mi canción favorita es “Cerca de ti.”
+8. Muchas personas quieren (or Mucha gente quiere) vivir lejos del aeropuerto.
+9. ¿Sabes que hay un tigre debajo de tu cama?
+10. ¿Por qué hay tantos perros fuera de tu casa?
+11. ¿Quién está en la cocina con Dinah?
+12. ¿Qué tienes dentro de la boca?
+13. Él trabaja en el banco.
+14. Ellos están en el banco.
+15. No hay nada en la televisión esta noche.
+16. No hay nada entre nosotros.
+17. ¿Quién está detrás de ti?
+18. La obra es en el teatro.
+|
+15.3
+1. a lo largo de
+2. más allá de
+3. alrededor de
+4. por
+5. hacia
+6. a lo largo de
+7. hacia
+8. por
+9. más allá de
+10. alrededor de
+|
+15.4
+1. Corro alrededor del lago cada mañana.
+2. ¿Caminas (or Andas) a lo largo del bulevar?
+3. El detective busca por la casa.
+4. Él siempre mira hacia sus metas.
+5. Superman puede volar por el aire.
+6. Cada noche, caminan (or andan) por el centro comercial.
+7. Si miras más allá de ese árbol, puedes ver la montaña rusa.
+8. ¿Quieres caminar (or andar) alrededor de la cuadra conmigo?
+9. No puedes ir más allá del final de esta cuadra.
+10. Podemos conducir hacia el río y después caminar (or andar) a lo largo de la senda.
+11. Nancy Kerrigan puede patinar hacia adelante y hacia atrás.
+12. Superman puede volar, pero no vuela hacia atrás.
+|
+15.6
+1. A causa de (or Por) este resfriado, no puedo ir al cine con mis amigos.
+2. Leo (or Estoy leyendo) un libro de (or por) John Steinbeck.
+3. Este libro es para ustedes.
+4. ¡Saludos desde Cancún!
+5. Vamos al centro comercial. ¿Quieres ir con nosotros?
+6. Estas perlas son de Japón.
+7. Todos mis amigos de la universidad están aquí.
+8. ¿Qué quieren de mí?
+9. No tengo nada para ti.
+10. Él me llama desde Alemania cada semana.
+11. Por (or A causa de) su actitud y amargura, ella no tiene amigos.
+12. La novela Les Miserables es por (or de) Victor Hugo.
+13. Marchamos (or Estamos marchando) a Pretoria.
+14. ¡Uno de ellos va a ganar el premio gordo!
+15. Estoy cansado/cansada, y por esta razón voy a dormir una siesta.
+|
+15.7
+1. después de
+2. durante
+3. hasta
+4. Antes de
+5. desde
+6. a
+7. después de
+8. durante
+9. antes de
+10. durante
+11. después de
+12. por
+|
+15.8
+1. No tienes que estar aquí hasta mañana.
+2. Necesito limpiar el garaje antes del invierno.
+3. Hace frío, ¿no? Sí. Desde el martes.
+4. Algunas personas creen que los fantasmas viven después de la muerte.
+5. Después de la cena, siempre lavamos los platos.
+6. ¿Qué quieres hacer durante nuestro descanso?
+7. Usualmente, ¿qué haces por la tarde?
+8. ¿Qué quieres hacer antes del baile?
+9. Usualmente hablamos durante los anuncios.
+10. Él va a trabajar aquí hasta marzo.
+11. ¿No tienes leche? No. No desde el sábado.
+12. Ellos trabajan de lunes a viernes.
+13. Podemos mirar la película e ir al restaurante después de mirarla.
+14. Siempre pico las cebollas antes de cocinarlas.
+|
+16.2
+1. Esta casa es perfecta para nosotros.
+2. Necesitamos una mesa nueva para el comedor.
+3. Para algunas personas, no es importante tener un coche.
+4. Estos zapatos son para bailar el tango.
+5. Tienes que leer este libro para el jueves.
+6. Él mira la televisión para evitar sus problemas.
+7. Salgo para África mañana.
+8. Estudio para mago.
+9. Él es muy cortés para un adolescente.
+10. ¿Puedes escribir la carta para el martes?
+11. Esta comida es para el gato.
+12. Para él, el invierno es maravilloso, pero para mí, el verano es la mejor estación.
+13. Ella trabaja mucho para sacar buenas notas.
+14. ¿A qué hora sales para el trabajo?
+15. Estas manzanas no son para comer.
+|
+16.4
+1. Vamos a la escuela (or al colegio) por autobús.
+2. Puedes tener esos zapatos por diez dólares.
+3. Él tiene por lo menos veinte gatos.
+4. Cuando viajo, siempre camino por la ciudad e investigo todo.
+5. Leemos el periódico por treinta minutos cada mañana.
+6. Juanita está enferma hoy. ¿Puedes trabajar por ella?
+7. Voy al supermercado por leche, mantequilla y huevos.
+8. Cada lunes por la noche él mira (el) fútbol americano en la televisión.
+9. Por sus alergias, no puede tocar el gato.
+10. Gracias por nada.
+11. Por dar tanto a los otros (or a los demás), ella merece una medalla.
+12. El noventa por ciento de todos los dentistas dicen que esta pasta de dientes es horrible.
+13. Él viene por mi casa de vez en cuando.
+14. Sólo tengo estimación por ti.
+15. Ahora entiendo las diferencias entre por y para por primera vez.
+16. Puedes enviarme los contratos por fax.
+|
+16.5
+1. para, recipient of an item or action
+2. para, comparison to a certain standard
+3. por, expresses thanks
+4. por, duration of time
+5. por, indicates motion, through, around
+6. para, time limit of an action
+7. para, recipient of an item or action
+8. por, por, por, used before periods of the 24-hour day
+9. para, destination
+10. por, por, means of transportation
+11. por, expresses exchange, price
+12. para, expresses final destination
+13. por, idiomatic expression
+14. por, tells why something is a certain way
+15. para, in order to do something
+16. por, on behalf of
+17. por, expresses per
+18. por, idiomatic expression
+19. para, expresses an opinion
+20. por, shows point of temporary stop
+21. por, shows emotion
+22. para, in order to do something, for the purpose of
+23. por, expresses “because of”
+24. por, tells why something is a certain way
+25. por, expresses means of information
+26. por, idiomatic expression
+27. para, in order to
+28. por, used before periods in the 24-hour day
+29. por, expresses per
+30. para, time limit of an action
+|
+16.6
+1. a. You can have my shirt for your skirt. Destination: Figuratively, “to go with” b. You can have my shirt for your skirt. Substitution: An equal exchange
+2. a. We’re going to their house tonight. Destination: The implication is that we will stay for a while. b. We’re going by their house tonight. Movement: The implication is that their house is a temporary stop.
+3. a. I have lots of shampoo and soap samples for the trip. Deadline: The trip is in the future. b. I have lots of shampoo and soap samples because of the trip. Motivation: “Because of”
+4. a. Martin and Dorothy have many gifts for Daisy and for Lily. Destination: Recipient of an action—The gifts are for them. b. Martin and Dorothy have a lot of love for Daisy and for Lily. Emotions: Tells of their feelings
+5. a. Judith dances for Twyla. Destination: Twyla is the recipient of Judith’s dancing. b. Judith dances for Twyla. Substitution: Judith is dancing on behalf of Twyla, who can’t dance for some reason.
+6. a. We’re driving to the park. Destination: The park is our final destination. b. We’re driving through (or throughout) the park. Movement: We’re moving in (or within) an area.
+7. a. These creams are for allergies. Destination: Allergies are a figurative destination. b. These allergies are because of the creams. Motivation: Tells why the allergies exist
+8. a. In my opinion, this soup is spoiled (or bad). Standard: Personal opinion b. Because of me this soup is spoiled (or bad). Motivation: Tells why the soup has gone bad
+|
+17.2
+1. Vamos a conducir (or manejar) a Vermont en vez de (or en lugar de) volar.
+2. Antes de comprar los huevos, debes mirar dentro del cartón.
+3. Siempre me siento mejor después de hacer ejercicio.
+4. Además de poder volar, Superman puede ver a través de las paredes.
+5. Pienso en escribir una novela.
+6. Para llegar al banco, debes doblar a la derecha en la avenida Park.
+7. ¿Quieres nadar en vez de (or en lugar de) jugar al golf?
+8. Ella siempre come diez tacos después de nadar.
+9. ¿Qué tienes que hacer antes de salir?
+10. Voy a una conferencia sobre usar computadoras.
+11. ¡Además de hervir el agua, esta estufa puede hervir la leche!
+12. John tiene que tomar otras tres clases para graduarse.
+|
+17.3
+1. Esto me suena a mentira.
+2. Ella rompe a llorar cada vez que recuerda el dolor de su niñez.
+3. Él va a renunciar a su trabajo porque su compañía va a empezar a recortar el personal.
+4. Tarde o temprano, tienes que resignarte al hecho de que algunas personas no son honradas.
+5. No puedes obligarnos a hacer nada que no queremos hacer.
+6. Benjamín da cuerda a su reloj cada día a las nueve de la mañana.
+7. La Sra. Dalí anima a sus hijos a estudiar las bellas artes.
+8. En esta casa nos sentamos a cenar a las siete en punto.
+9. ¿A qué hora subimos al tren?
+10. Esta rana sabe a un sapo.
+11. Mateo dice que la carne de culebra sabe a pollo.
+12. Oscar Wilde dice que puede resistirse a todo salvo a la tentación.
+13. En esta sección del libro, aprendemos a usar los verbos que toman la preposición a.
+14. Algunos atletas se acostumbran a recibir y a gastar mucho dinero.
+15. Ricardo no se dispone a darnos nada hoy. No está de humor.
+|
+17.5
+1. Él siempre se olvida de tomar su medicina.
+2. Este sofá sirve de una cama cómoda.
+3. Tenemos que terminar de limpiar la casa para las cuatro y media.
+4. Cada día me libro de una cosa por lo menos porque no me gusta el desorden.
+5. Ella siempre se queja de trabajar tanto.
+6. Me maravillo de las personas que pueden bailar bien.
+7. Estoy encargado/encargada de cocinar y (tú) estás encargado/encargada de servir las comidas.
+8. Con frecuencia me olvido del nombre de una persona, pero nunca me olvido de la cara.
+9. Debes alejarte de personas peligrosas.
+10. Acabo de leer un artículo maravilloso en el periódico.
+11. ¿No tenemos jugo de naranja? Me muero de sed.
+12. ¿Quién va a cuidar de tu casa la semana que viene?
+13. Ellos hablan de mudarse a Omaha el año que viene.
+14. No me gusta estar con él porque siempre habla mal de otras personas.
+15. Hay personas que abusan de otros (or de los demás) sin remordimiento.
+|
+17.6
+1. Algunas personas persisten en hacer ejercicio aun cuando están enfermas.
+2. María se complace en tocar la guitarra en las fiestas.
+3. Primero pienso en la comida y después pienso en comer algo.
+4. Cada día debemos reflexionar en algo bueno de este mundo.
+5. A finales del mes, Marcos siempre se ve en un apuro.
+6. Cuando llega la policía, el ladrón consiente en ir con ellos pacíficamente.
+7. Las personas que chismean se meten en la vida de otras personas.
+8. Juan y María quedan (or convienen) en consultar a un psiquiatra.
+9. Cada año quedo en donar dinero a la Sociedad de Cáncer.
+10. No debes meterte en sus problemas.
+11. No estoy pensando (or pienso) en nada ahora.
+12. Mi hermana nunca se molesta en llamar por teléfono.
+13. Me intereso mucho en la política internacional.
+14. Tardo una hora en conducir (or manejar) al estadio de aquí.
+15. Para hacer ejercicio, los niños montan en bicicleta.
+|
+17.7
+1. Usualmente es muy tarde cuando me siento para estudiar.
+2. Martha Stewart dice que muchas cosas en la basura sirven para decoraciones en la casa.
+3. ¿Están listos/listas para salir (or irse)? Sí, estamos listos/listas para salir (or irnos).
+4. Estamos para almorzar.
+5. Quiero trabajar para otra compañía.
+6. ¿Quieres quedarte para mirar las noticias conmigo?
+7. Esta película no sirve para nada.
+8. Cada enero muchas personas trabajan para perder peso.
+9. Melissa necesita por lo menos dos horas para prepararse para una cita.
+10. Bjorn se prepara para encontrar un nuevo trabajo porque trabaja para un verdadero bruto.
+|
+17.8
+1. Harold se preocupa por perder los dientes y el pelo.
+2. En Anna Karenina, Levin lucha siempre por hacer lo correcto.
+3. El pueblo de Argentina no debe llorar por Evita.
+4. Yo miro (or me preocupo) mucho por ti.
+5. Muchas personas se ofenden por el desperdicio de comida en los restaurantes.
+6. Me muero por ver tu nuevo peinado.
+7. En esta oficina, clasificamos todo por tamaño.
+8. Usualmente un gimnasta termina por hacer algo espectacular.
+9. Ellos siempre optan por nadar en el río.
+10. Cuando tengo una elección entre dos películas, usualmente opto por la que tiene las mejores reseñas.
+11. Laura se impacienta por mudarse a otra parte del país.
+12. Muchos abogados abogan por una persona culpable.
+13. Te damos (las) gracias por decirnos la verdad.
+14. Yo siempre clasifico mis libros por orden alfabético.
+15. Ella siempre vota por el candidato menos atractivo.

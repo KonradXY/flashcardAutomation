@@ -1,0 +1,277 @@
+2.2
+1. Whom [sing.] do you love?
+2. Whom [sing.] do you see (ver) ?
+3. Whom [sing.] are you watching (mirar) ?
+4. Whom [pl.] are you watching?
+5. For whom [sing.] are you looking (buscar) ?
+6. For whom [pl.] are you looking?
+7. To whom [sing.] do you listen?
+8. To whom [pl.] do you listen?
+9. Whom [sing.] do you know (conocer) ?
+10. Whom [pl.] do you know?
+|
+2.3
+1. Whose car is this? (Of whom is this car?)
+2. Whose keys (la llave) are on the table? (Of whom are the keys that are on the table?)
+3. Whose [pl.] cars are dirty? (Of whom are the cars that are dirty?)
+4. Whose [pl.] children [f.] are reading these books? (Of whom are the children that are reading these books?)
+5. Whose cat is drinking (beber) the milk? (Of whom is the cat that is drinking the milk?)
+6. Whose neighbors (el vecino) live in the blue house? (Of whom are the neighbors that live in the blue house?)
+7. Whose [pl.] students are the most intelligent? (Of whom are the most intelligent students?)
+8. Whose car doesn’t run (funcionar) ? (Of whom is the car that doesn’t run?)
+9. Whose coat is this? (Of whom is this coat?)
+10. Whose parrot (el loro) speaks Italian? (Of whom is the parrot that speaks Italian?)
+11. Whose [pl.] CDs (el disco compacto) are these? (Of whom are these CDs?)
+12. Whose backpack (la mochila) is that? (Of whom is that backpack?)
+|
+2.4
+1. Which book is more (más) interesting?
+2. Which actor is more popular?
+3. Which girl (la chica) is your cousin?
+4. Which food has more fat (la grasa) ?
+5. Which store sells more clothing?
+6. Which do you eat more, chicken (el pollo) or fish (el pescado) ?
+7. Which is more popular?
+8. Which ones do you wear more?
+9. Which shoes do you wear more?
+10. Which hat is more comfortable (cómodo) ?
+11. Which of the hats is more comfortable?
+12. Which program (el programa) do you watch?
+13. Which [pl.] of the new programs do you watch?
+14. Which ones do you watch?
+|
+3.1
+1. He has a book for me.
+2. I have a gift for you.
+3. What do you have for me?
+4. The table is from her.
+5. I buy my books from them.
+6. He is in front of it [m.].
+7. You are behind him.
+8. He lives near me.
+9. The carpet (la alfombra) is underneath us [f.].
+10. He lives near you [pl.].
+11. He writes a book about her.
+12. We walk behind them.
+13. She dances to the right of me.
+14. They work to the left of you.
+15. The food is in front of us.
+|
+3.2
+1. I’m with you [sing., informal].
+2. You [sing., formal] are with me.
+3. She’s with him.
+4. He’s with her.
+5. I work with you [sing., informal] now.
+6. They live with me.
+7. Does she study with you [sing., informal] ?
+8. Who lives with you [pl., formal] ?
+9. Why don’t you [sing., informal) dance with him?
+10. I want to speak with you [sing., formal].
+11. He lives with us.
+12. She always takes the keys (la llave) with her.
+13. They [m.] never take the keys with them.
+14. Martin is with me.
+15. Why don’t you [sing., formal] take the umbrella (el paraguas) with you?
+16. Why don’t they [f.] take the umbrella with them?
+|
+3.3
+1. There are twenty people here, including you and me.
+2. According to her, money can buy happiness (la felicidad).
+3. Between you, me, and the grand piano (el piano de cola), this painting is ghastly (espantoso).
+4. I think (creer) that everybody (todo el mundo) speaks French here, except me.
+5. Between us and them, we have enough (suficiente) money.
+6. Everyone (todos) here is outraged (escandalizado),including me.
+7. Everyone in the neighborhood (la vecindad) has a swimming pool (la piscina), except us.
+8. We are in a lot of trouble (tener muchas dificultades),according to me.
+9. Everybody is ready (listo), except you [sing., formal].
+10. According to them, it is possible to live on Mars (Marte).
+|
+3.4
+1. I buy the car for (para) myself.
+2. He does everything for (para) himself.
+3. They do everything by (por) themselves.
+4. She hurts (perjudicar a) herself when she tells a lie (la mentira).
+5. You [pl., informal] only (sólo) hurt yourselves.
+6. I write notes (la nota) to myself in order to (para) remember (recordar) the things that I need to do.
+7. You should have time for (para) yourself every day.
+8. She always buys a gift for herself on her birthday.
+9. When I travel, I send my purchases (la compra) to myself through the mail (por correo).
+10. You [sing., formal] can’t sell your house to yourself. It’s ridiculous!
+|
+4.2
+1. The cat is mine. The cats are mine.
+2. The snake (la culebra) is yours. The snakes are yours.
+3. The bird (el pájaro) is hers. The birds are hers.
+4. The monkey (el mono) is his. The monkeys are his.
+5. The giraffe (la jirafa) is ours. The giraffes are ours.
+6. The pig (el cerdo) is theirs. The pigs are theirs.
+7. The spider (la araña) is mine. The spiders are mine.
+8. The horse (el caballo) is yours. The horses are yours.
+9. The butterfly (la mariposa) is hers. The butterflies are hers.
+10. The elephant (el elefante) is ours. The elephants are ours.
+|
+4.3
+1. A friend [m.] of mine works here.
+2. A friend [f.] of mine lives here.
+3. Some friends [m.] of mine have a cabin (la cabaña) in Canada.
+4. A friend [f.] of his studies Spanish.
+5. I work with a friend [f.] of yours.
+6. A colleague (el colega) of ours speaks German (alemán) and Gaelic (gaélico).
+7. They don’t want to speak with him, because he is an enemy (el enemigo) of theirs.
+8. A friend [m.] of yours is a friend of mine.
+9. Those paintings (la pintura) of his are fascinating (encantador).
+10. A cousin [f.] of ours is a princess (la princesa) in Europe (Europa).
+|
+4.4
+1. Their house is dirty (sucio), but ours is clean (limpio).
+2. Her books are in the kitchen, and mine are in the dining room.
+3. He keeps (guardar) his money in the bank, but I keep mine in the mattress (el colchón).
+4. His cousins live in Hollywood, and hers live in Seattle.
+5. Our dog is a collie (el perro pastor), and hers is a poodle (el perro de lana).
+6. Her jewels (la joya) are fake (la imitación), but mine are real (auténtico).
+7. They buy their food in the supermarket (el supermercado), but we grow (cultivar) ours.
+8. His attorney (el abogado) works for a big firm (la firma).Ours has an office in a basement.
+9. It’s my life. It isn’t yours.
+10. You [pl., informal] have your problems (el problema),and I have mine.
+|
+4.5
+1. Their house is bigger than mine.
+2. My house isn’t as big as theirs.
+3. Her clothing is more expensive than mine.
+4. Your [pl., informal] jewels (la joya) are more elegant than ours.
+5. Her ferret (el hurón) isn’t as friendly (amable) as ours.
+6. His thermos (el termo) isn’t as full (lleno) as mine.
+7. María’s report (el reportaje) is more interesting than his.
+8. Juan’s car is newer than yours [sing., formal].
+9. Her envelopes (el sobre) are prettier than mine. I’m going to buy a box (la caja).
+10. Their hammers (el martillo) aren’t as heavy (pesado) as yours [sing., informal].
+|
+4.6
+1. Your [sing., informal] car is better than mine.
+2. Their chairs are better than ours.
+3. My painting is worse than his.
+4. Elena’s furniture (los muebles) is worse than his.
+5. Your [sing., formal] friend is older than mine.
+6. My grandparents are older than yours [sing., informal].
+7. Our son is younger than yours [pl., informal].
+8. Our goldfish (la carpa dorada) are younger than theirs.
+9. Julia’s paella is better than mine.
+10. Beethoven’s music (la música) is better than hers.
+|
+5.1
+1. This book is mine, but that one is his.
+2. This house is pretty, but that (one) is prettier.
+3. These shoes are mine, and those are his.
+4. These chairs are hers, and those are mine.
+5. That boy over there is my neighbor (el vecino) and this (boy) is my son.
+6. These women are my neighbors, but those (women) over there are from some other (otro) city.
+7. That car is John’s, and that one over there is mine.
+8. Those magazines are terrible, but these are much better.
+9. This telephone works (funcionar),but that one (over there) never works.
+10. These programs (el programa) are terrible, but those are even (aún) worse.
+|
+5.2
+1. This is great!
+2. What is this?
+3. That is a crime (el crimen).
+4. I never do that.
+5. This is a sin (el pecado).
+6. What is happening (pasar) with that (thing far away)?
+7. That is why you [sing., informal] should vote.
+8. This is why I shouldn’t smoke.
+9. Who says that?
+10. Who writes this?
+|
+6.1
+1. How many cars do you have? I have one.
+2. How many houses do you have? I have one.
+3. How many cookies do you want? I want ten.
+4. How many hamburgers do you [pl., formal] want? Jane wants two and I want one.
+5. How many people are there in your family? There are three.
+6. He has seven dogs, but I only have six.
+7. He sees many stars (la estrella) in the sky (el cielo),but I see only one.
+8. Maria knows (conocer) all these paintings (la pintura),but we know only one.
+9. I only have one telephone, but one is better than nothing.
+10. How many cards (el naipe) do you want? I want one.
+|
+6.3
+1. I live in the second house on the left (a la izquierda),and Miguel lives in the sixth.
+2. Who lives in the eighth house? I don’t know, but Marcos lives in the seventh.
+3. My car is the third (one) on the right (a la derecha),and Ricardo’s car is the fourth (one).
+4. The Bible says that Adam (Adán) is the first person and that Eve (Eva) is the second.
+5. The first movie (la película) is always better than (mejor que) the second.
+6. The actor’s third movie is better than the fourth.
+7. His fifth book is more interesting than the sixth.
+8. In Spain, the first day of the week is Monday, and the seventh is Sunday.
+9. The eighth month is August, the ninth is September, and the tenth is October.
+10. The first puzzle (el enigma) is harder (más difícil) than the second.
+11. Today is the first (day) of April.
+12. The first time (la vez) is always better than the second, the third, and so on (y así sucesivamente).
+|
+7.1
+1. He buys new cars, but I always buy used ones.
+2. She prefers tall men, but I prefer short ones.
+3. They want the easy question, but we want the difficult one.
+4. She thinks that the blond (rubio) man is handsome, but I prefer the brown-haired (moreno) one.
+5. The blue fountain pen is yours, but the green one is mine.
+6. Every client (el cliente) wants to buy a luxury (de lujo) car, but buys the compact one.
+7. More people buy the gray carpet (la alfombra), because the white (one) is always dirty (sucio).
+8. The two dresses are beautiful, but the long (largo) one is more elegant.
+9. He puts the big lamps (la lámpara) in the living room and the small ones in the bedroom.
+10. The big glass (la copa) is for the red wine, and the small one is for the white (wine).
+|
+7.2
+1. Some people live in the city, and some (of them) live in the country (el campo).
+2. Seventy percent (el por ciento) of ________ the dentists use this toothbrush (el cepillo de dientes), and the rest (of them) use a stick (el palo).
+3. I can’t decide which is the better dishwasher (el lavaplatos).I like them both.
+4. I never go shopping (ir de compras) with her. She buys everything. It’s dangerous (peligroso).
+5. Diego likes parties. He’s always the last (one) to leave (en salir).
+6. My husband drinks milk all the time. Therefore (por eso),I buy a lot (of it) every week.
+7. I have several Spanish books. Do you want one?
+8. Esmeralda loves (encantar) shoes. She has lots (of them).
+9. In the meetings (la reunión),a few people talk all the time, and the majority (of them) suffer in silence.
+10. Marcia receives all the presents, and poor little (pobrecita) Jan doesn’t receive a single one.
+11. We have lots of salad. Do you want more (of it)?
+12. Usually, thousands (el mil) of people come to the ceremony, but this year there are obviously (obviamente) fewer.
+13. The students are going on a field trip (de excursión). Each one has a backpack (la mochila).
+14. Each girl (la chica) has a pencil, but several (of them) don’t have paper.
+15. I’m going to order (pedir) another milkshake (el batido).Do you want another (one), too?
+|
+7.3
+1. Often (a menudo) the youngest [m.] wears used clothing.
+2. Everybody thinks that this is brilliant.
+3. Nobody is going to eat this. It’s moldy (mohoso) !
+4. Someone is in the kitchen with Dinah.
+5. Our favorite customer (la cliente) is she who spends (gastar) all her money on cosmetics (los cosméticos) and clothing.
+6. In the books of Harry Potter, Hermione is the oldest and Harry is the youngest of the three main characters (el personaje).
+7. For these positions (el puesto), those who want to work ten hours a day (al día) can request (pedir) an interview (la entrevista).
+8. Many psychologists (el psicólogo) study the differences between the oldest (child) and the youngest (child) in the family.
+9. Oscar Wilde writes that a cynic (el cínico) is he who knows the price (el precio) of everything and the value (el valor) of nothing.
+10. Everyone suffers from time to time (de vez en cuando), and the majority are stronger for (por) the experience.
+11. Everybody is here, but some (of them) don’t know anybody.
+12. Juan and Mateo live together, but neither (one) has a television set (el televisor).
+13. Anybody can wear these pants.
+14. Ramón gives advice (dar consejos) to anyone.
+15. There is a party tonight. Any [pl.] of you can go with me.
+|
+7.4
+1. Do you have anything for (para) me?
+2. Of all the things in the world, the best is love.
+3. It doesn’t matter (no importa) if I wear blue jeans (los blue-jeans). She always wears the same (thing).
+4. Which one do they want? Whatever. It doesn’t matter.
+5. It’s wonderful when you [pl., formal] dance. The best is when you dance the mambo.
+6. The service (el servicio) and the ambience (el ambiente) here are terrible. But the worst is the food.
+7. He never brings anything to a party, but he always eats and drinks everything.
+8. The worst (thing) in a relationship (la relación) is not to be able to trust (tener confianza en) the other person.
+9. Some people think that he’s very wise (sabio),but the truth is that he always says the same thing.
+10. I don’t know anything about (acerca de) this.
+11. Any one of these cars is good for (para) the winter.
+12. These books are interesting. You can read any one of them.
+13. Any one of these three is okay.
+14. Any [pl.] of these are okay.
+|
+
+
+2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 4.2, 4.3, 4.4, 4.5, 4.6
+5.1, 5.2, 6.1, 6.3, 7.1, 7.2, 7.3, 7.4, 
