@@ -1,5 +1,7 @@
 package main.java.baseModel;
 
+import static main.java.utils.Property.*;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ import main.java.contracts.IParser;
  * Classe utilizzata per il parsing di file csv (l'input separator e' il pipe)
  */
 public class SimpleParser implements IParser {
- 
+	
 	@Override
 	public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
 		List<AbstractAnkiCard> ankiCards = new ArrayList<>();

@@ -15,6 +15,9 @@ public class Property {
 	public static String WEB_CRAWLER_DIR = getWebCrawlerDir();
 	public static String TXT_INPUTDIR = getTxtInputDir();
 	public static String GENERIC_DIR = getGenericDir();
+	
+	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();
+	public static int SIMPLE_PARSER_ENG_FIELD = getSimpleParserEngField();
 
 	private static final String propDir = "src/main/resources/input.properties";
 	private static Properties prop;
@@ -50,7 +53,18 @@ public class Property {
 	private static String getGenericDir() {
 		return getProperties().getProperty("generic.dir");
 	}
+	
+	private static int getSimpleParserEspField() {
+		return Integer.parseInt(getProperties().getProperty("simpleparser.engField"));
+	}
+	
+	private static int getSimpleParserEngField() {
+		return Integer.parseInt(getProperties().getProperty("simpleparser.espField"));
+	}
 
+	
+	
+	
 	private static Properties getProperties() {
 		try {
 			if (prop == null) {

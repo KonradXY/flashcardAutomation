@@ -1,7 +1,5 @@
 package main.java.launcher;
 
-import static main.java.utils.Property.INPUT_DIR;
-import static main.java.utils.Property.OUTPUT_DIR;
 import static main.java.utils.Property.WEB_CRAWLER_DIR;
 
 import java.io.IOException;
@@ -26,8 +24,7 @@ public class Launcher {
 		Injector injector = Guice.createInjector(new AnkiApplicationModule());
 		FlashcardFacade facade = injector.getInstance(FlashcardFacade.class);
 
-		if (args == null) throw new RuntimeException("Errore necessari dei parametri ! (Da sistemare !)");
-		
+		if (args.length == 0) args = new String[] {"default"};
 		String inputArg = args[0].toLowerCase();
 		
 		// TODO - tutto sto pezzo deve andare all'interno dell'engineBuilder
