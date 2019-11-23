@@ -1,43 +1,44 @@
 package main.java.facade;
 
-
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-import com.google.inject.Inject;
 import org.apache.log4j.Logger;
 
+import com.google.inject.Inject;
+
 import main.java.baseModel.AbstractAnkiCard;
-import main.java.baseModel.SimpleReader;
-import main.java.contracts.IParser;
-import main.java.contracts.IPrinter;
+import main.java.factory.AbstractAnkiEngine;
+import main.java.factory.EngineBuilder;
 import main.java.netutilities.CertificateManager;
-import main.java.utils.FlashcardEngineFactory;
 import main.java.webcrawlers.LanguageLearningMediator;
 
 public class FlashcardFacade {
 	
 	private static final Logger log = Logger.getLogger(FlashcardFacade.class);
 	
-	public static SimpleReader reader;
-	public static IParser parser;
-	public static IPrinter printer;
-
+	private final EngineBuilder engineBuilder;
 	private final LanguageLearningMediator languageLearningMediator;
+	private AbstractAnkiEngine ankiModel;
+	
 
+	
 	@Inject
-	public FlashcardFacade(LanguageLearningMediator languageLearningMediator) {
+	public FlashcardFacade(EngineBuilder engineBuilder, LanguageLearningMediator languageLearningMediator) {
+		this.engineBuilder = engineBuilder;
 		this.languageLearningMediator = languageLearningMediator;
 	}
 	
-	
-	public void buildFlashcardsFromTextFile(Path inputContent, Path outputContent, String[] args) throws IOException {
-		FlashcardEngineFactory.buildFlashcardEngine(args);
-		Map<Path, String> input = reader.readFile(inputContent);
-		List<AbstractAnkiCard> parsedAnkiCards = parser.parseToAnkiFlashcard(input);
-		printer.printFile(outputContent.toString(), parsedAnkiCards);
+	public void buildFlashcardsFromTextFile(String[] args) throws IOException {
+		ankiModel = engineBuilder.createTextEngine(args);
+		Path inputFile = Paths.get(ankiModel.getInputContent());
+		Path output = Paths.get(ankiModel.getOutputContent());
+		Map<Path, String> input = ankiModel.getReader().readFile(inputFile);
+		List<AbstractAnkiCard> parsedAnkiCards = ankiModel.getParser().parseToAnkiFlashcard(input);
+		ankiModel.getPrinter().printFile(output.toString(), parsedAnkiCards);
 	}
 	
 	public void buildFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {

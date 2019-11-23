@@ -1,7 +1,5 @@
 package main.java.languageLearningModel;
 
-import static main.java.launcher.Launcher.outputContent;
-
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,7 +19,7 @@ public class LanguageLearningPrinter implements IPrinter {
 	
 	@Override
 	public void printFile(String destFolderPath, List<AbstractAnkiCard> input) throws IOException {
-		printAnkiCard(outputContent+nameFile, input);
+		printAnkiCard(destFolderPath + nameFile, input);
 	}
 	
 	private void printAnkiCard(String destPath, List<AbstractAnkiCard> input) throws IOException  {

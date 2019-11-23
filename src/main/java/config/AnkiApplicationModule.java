@@ -2,7 +2,7 @@ package main.java.config;
 
 import com.google.inject.AbstractModule;
 
-public class GuiceApplicationModule extends AbstractModule {
+public class AnkiApplicationModule extends AbstractModule {
 
 
     @Override
