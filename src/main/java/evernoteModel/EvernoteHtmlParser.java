@@ -73,19 +73,19 @@ public class EvernoteHtmlParser implements IParser {
 
     private void formatFrontPart(AbstractAnkiCard card, String title) {
 
-        if (!card.getKey().text().contains("D:"))
-            throw new RuntimeException("Errore. Nella carta non e' presente il simbolo 'D:' ");
+//        if (!card.getKey().text().contains("D:"))
+//            throw new RuntimeException("Errore. Nella carta non e' presente il simbolo 'D:' ");
 
-        int firstIndex = title.lastIndexOf("\\") + 1;
-        String titleCard = title.substring(firstIndex);
-        card.setKey(card.getKey().text().replace("D:", titleCard));
+//        int firstIndex = title.lastIndexOf("\\") + 1;
+//        String titleCard = title.substring(firstIndex);
+//        card.setKey(card.getKey().text().replace("D:", titleCard));
 
     }
 
     private void formatBackPart(AbstractAnkiCard card) {
-        if (card.getValue().text().contains("R:"))
-            throw new RuntimeException("Errore. nella carta non è presente il simbolo 'R:' ");
-        card.setValue(card.getValue().text().replace("R:", ""));
+//        if (card.getValue().text().contains("R:"))
+//            throw new RuntimeException("Errore. nella carta non è presente il simbolo 'R:' ");
+//        card.setValue(card.getValue().text().replace("R:", ""));
     }
 
     private String parseTitleFromFilename(Path filePath) {

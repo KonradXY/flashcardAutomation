@@ -13,7 +13,7 @@ public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
 	public static final String FRONT = "front";
 	public static final String BACK = "back";
 
-	private final static Tag divTag = Tag.valueOf("div");
+	protected final static Tag divTag = Tag.valueOf("div");
 
 	protected Element frontHtml;
 	protected Element backHtml;
