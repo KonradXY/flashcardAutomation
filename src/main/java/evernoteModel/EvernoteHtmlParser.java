@@ -33,7 +33,7 @@ public class EvernoteHtmlParser implements IParser {
     private static final String FONT_SIZE = "font-size: 10pt";
 
     @Override
-    public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {    
+    public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
         List<AbstractAnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
             cardList.addAll(parseEvernoteCardTableFromFile(entry.getKey(), entry.getValue()));
@@ -57,7 +57,7 @@ public class EvernoteHtmlParser implements IParser {
 
             // FIXME - esiste una size massima per le flashcard. Vedere una soluzione 
             if (card.getValue().text().length() > MAX_SIZE_CARD) {
-                log.info("Card exceed max size ! ");
+                log.info("Card exceded max size ! ");
                 continue;
             }
 
@@ -74,7 +74,7 @@ public class EvernoteHtmlParser implements IParser {
     private void formatFrontPart(AbstractAnkiCard card, String title) {
 
         if (!card.getKey().text().contains("D:"))
-            throw new RuntimeException("Errore. Nella carta non e' presente il simbolo - D: - ");
+            throw new RuntimeException("Errore. Nella carta non e' presente il simbolo 'D:' ");
 
         int firstIndex = title.lastIndexOf("\\") + 1;
         String titleCard = title.substring(firstIndex);
@@ -83,6 +83,8 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     private void formatBackPart(AbstractAnkiCard card) {
+        if (card.getValue().text().contains("R:"))
+            throw new RuntimeException("Errore. nella carta non è presente il simbolo 'R:' ");
         card.setValue(card.getValue().text().replace("R:", ""));
     }
 
@@ -97,7 +99,7 @@ public class EvernoteHtmlParser implements IParser {
         Elements content = tbody.getElementsByTag("tr");
         String cardFront = formatRowContent(content.get(0));
         String cardBack = formatRowContent(content.get(1));
-        return new SimpleAnkiCard(cardFront, cardBack);
+        return new EvernoteAnkiCard(cardFront, cardBack);
     }
 
     private String formatRowContent(Element elem) {
