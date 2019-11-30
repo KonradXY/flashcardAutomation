@@ -2,9 +2,9 @@ package main.java.strategy;
 
 import main.java.contracts.IParser;
 
-public enum ReadingStrategy {
+public enum FormatStrategy {
 
-	GENERAL {
+	ADD_PIPE {
 		@Override
 		public String formatLine(String input) {
 			if (input.trim().endsWith(IParser.PIPE_SEPARATOR))
@@ -12,19 +12,19 @@ public enum ReadingStrategy {
 			return input + IParser.REGULAR_PIPE;
 		}
 	},
-	KINDLE {
+	REPLACE_NEW_LINES {
 		@Override
 		public String formatLine(String input) {
 			return IParser.replaceNewLines(input);
 		}
 	},
-	LANGUAGE_LEARNING {
+	ADD_NEW_LINE {
 		@Override
 		public String formatLine(String input) {
 			return input + IParser.NEW_LINE;
 		}
 	}, // TODO - questo e' il pezzo che prima mi faceva il br. aggiustare sta roba.
-	EVERNOTE {
+	NO_FORMAT {
 		@Override
 		public String formatLine(String input) {
 			return input;

@@ -13,16 +13,17 @@ import java.util.stream.Stream;
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IReader;
-import main.java.strategy.ReadingStrategy;
+import main.java.strategy.FormatStrategy;
 
 public class SimpleReader implements IReader {
 
 	private static final Logger log = Logger.getLogger(SimpleReader.class);
-	private static int fileCounter = 0;
 
-	public final ReadingStrategy reader;
+	private final FormatStrategy reader;
+	
+	private int fileCounter = 0;
 
-	public SimpleReader(ReadingStrategy strategy) {
+	public SimpleReader(FormatStrategy strategy) {
 		this.reader = strategy;
 	}
 
@@ -59,12 +60,10 @@ public class SimpleReader implements IReader {
 	}
 
 	private void addEntryToMap(Map<Path, String> mapInput, Path pathFile) {
-		
 		log.info("lettura file: " + pathFile);
-
 		StringBuilder sb = new StringBuilder();
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), "UTF-8"))) {
-			br.lines().forEach(str -> sb.append(formatLine(str)));
+			br.lines().forEach(str -> sb.append(formatLine(str + "\n")));
 			fileCounter++;
 		} catch (IOException ex) {
 			ex.printStackTrace();
