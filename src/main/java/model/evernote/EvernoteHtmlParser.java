@@ -27,11 +27,25 @@ public class EvernoteHtmlParser implements IParser {
 
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
 
+    // TODO - tutta sta roba deve andare all'interno del card decorator !
     private static final String MARGIN = "margin", AUTO = "auto";
     private static final String ALIGN = "align", LEFT = "left";
     private static final String TEXT_ALIGN = "text-align";
     private static final String FONT_STYLE = "font style";
     private static final String FONT_SIZE = "font-size: 10pt";
+    
+    private Path imgInputContent;
+    
+    public EvernoteHtmlParser() { }
+    public EvernoteHtmlParser(Path imgInputContent) {
+    	this.imgInputContent = imgInputContent;
+    }
+    
+    public void setImgInputContent(Path imgContent) {this.imgInputContent = imgContent;}
+    public Path getImgInputContent() {
+    	if (imgInputContent == null) return Paths.get(Property.OUTPUT_DIR+Property.EVERNOTE_DIR);
+    	return imgInputContent;
+    }
 
     @Override
     public List<AbstractAnkiCard> parse(Map<Path, String> input) {
@@ -108,7 +122,7 @@ public class EvernoteHtmlParser implements IParser {
             imgTitle = img.attr("src");
             source = currDir.resolve(imgTitle);
             String titleImage = getTitleForImage(fileName, imgTitle);
-            dest = Paths.get(Property.OUTPUT_DIR+Property.EVERNOTE_DIR).resolve(titleImage);
+            dest = getImgInputContent().resolve(titleImage);
             copyFile(source, dest);
             img.attr("src", getTitleForImage(fileName, imgTitle));
         }
