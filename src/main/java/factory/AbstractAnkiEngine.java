@@ -1,6 +1,12 @@
 package main.java.factory;
 
-import static main.java.utils.Property.*;
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.OUTPUT_DIR;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Map;
 
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
@@ -31,6 +37,20 @@ public abstract class AbstractAnkiEngine {
 	
 	
 	public abstract void buildEngine();
+	
+	
+	public Map<Path, String> read() {
+		return read(Paths.get(getInputDestination()));
+	}
+	
+	public Map<Path, String> read(Path file) {
+		try {
+			return this.getReader().readFile(file);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	
 	
 	public IReader getReader() 						{ return reader; }
 	public IParser getParser() 						{ return parser; }

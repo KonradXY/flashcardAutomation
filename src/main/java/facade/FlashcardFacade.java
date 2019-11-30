@@ -18,8 +18,6 @@ import main.java.webcrawlers.LanguageLearningMediator;
 
 public class FlashcardFacade {
 	
-	private static final Logger log = Logger.getLogger(FlashcardFacade.class);
-	
 	private final EngineBuilder engineBuilder;
 	private final LanguageLearningMediator languageLearningMediator;
 	private AbstractAnkiEngine ankiModel;
@@ -36,7 +34,7 @@ public class FlashcardFacade {
 		ankiModel = engineBuilder.createTextEngine(args);
 		Path inputFile = Paths.get(ankiModel.getInputDestination());
 		Path output = Paths.get(ankiModel.getOutputDestination());
-		Map<Path, String> input = ankiModel.getReader().readFile(inputFile);
+		Map<Path, String> input = ankiModel.read(inputFile);
 		List<AbstractAnkiCard> parsedAnkiCards = ankiModel.getParser().parseToAnkiFlashcard(input);
 		ankiModel.getPrinter().printFile(output.toString(), parsedAnkiCards);
 	}
