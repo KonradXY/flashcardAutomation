@@ -10,9 +10,9 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
 
-import main.java.baseModel.AbstractAnkiCard;
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
+import main.java.model.AbstractAnkiCard;
 import main.java.netutilities.CertificateManager;
 import main.java.webcrawlers.LanguageLearningMediator;
 

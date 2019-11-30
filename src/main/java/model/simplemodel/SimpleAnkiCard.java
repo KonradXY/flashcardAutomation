@@ -1,4 +1,6 @@
-package main.java.baseModel;
+package main.java.model.simplemodel;
+
+import main.java.model.AbstractAnkiCard;
 
 public class SimpleAnkiCard extends AbstractAnkiCard {
 

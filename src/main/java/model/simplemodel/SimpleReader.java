@@ -1,4 +1,4 @@
-package main.java.baseModel;
+package main.java.model.simplemodel;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

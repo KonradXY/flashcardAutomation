@@ -2,9 +2,9 @@ package main.java.factory;
 
 import static main.java.utils.Property.KINDLE_DIR;
 
-import main.java.baseModel.SimpleReader;
-import main.java.kindleModel.KindleClippingPrinter;
-import main.java.kindleModel.KindleClippingsParser;
+import main.java.model.kindleModel.KindleClippingPrinter;
+import main.java.model.kindleModel.KindleClippingsParser;
+import main.java.model.simplemodel.SimpleReader;
 import main.java.strategy.FormatStrategy;
 
 public class KindleEngine extends AbstractAnkiEngine {

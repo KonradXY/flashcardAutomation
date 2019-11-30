@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import main.java.baseModel.SimpleParser;
-import main.java.baseModel.SimplePrinter;
-import main.java.baseModel.SimpleReader;
-import main.java.evernoteModel.EvernoteHtmlParser;
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
-import main.java.kindleModel.KindleClippingPrinter;
-import main.java.kindleModel.KindleClippingsParser;
-import main.java.languageLearningModel.LanguageLearningParser;
-import main.java.languageLearningModel.LanguageLearningPrinter;
+import main.java.model.evernoteModel.EvernoteHtmlParser;
+import main.java.model.kindleModel.KindleClippingPrinter;
+import main.java.model.kindleModel.KindleClippingsParser;
+import main.java.model.languageLearningModel.LanguageLearningParser;
+import main.java.model.languageLearningModel.LanguageLearningPrinter;
+import main.java.model.simplemodel.SimpleParser;
+import main.java.model.simplemodel.SimplePrinter;
+import main.java.model.simplemodel.SimpleReader;
 
 class EngineBuilderTest {
 

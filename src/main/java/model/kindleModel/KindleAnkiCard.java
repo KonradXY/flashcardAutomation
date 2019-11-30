@@ -1,9 +1,9 @@
-package main.java.kindleModel;
+package main.java.model.kindleModel;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import main.java.baseModel.AbstractAnkiCard;
+import main.java.model.AbstractAnkiCard;
 
 public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<KindleAnkiCard>{
 	

@@ -1,4 +1,4 @@
-package main.java.kindleModel;
+package main.java.model.kindleModel;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import main.java.baseModel.AbstractAnkiCard;
 import main.java.contracts.IParser;
+import main.java.model.AbstractAnkiCard;
 
 public class KindleClippingsParser implements IParser {
 

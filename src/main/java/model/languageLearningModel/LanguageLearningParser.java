@@ -1,4 +1,4 @@
-package main.java.languageLearningModel;
+package main.java.model.languageLearningModel;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import main.java.baseModel.AbstractAnkiCard;
 import main.java.contracts.IParser;
-import main.java.languageLearningModel.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
+import main.java.model.AbstractAnkiCard;
+import main.java.model.languageLearningModel.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 
 public class LanguageLearningParser implements IParser {

@@ -18,8 +18,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.java.baseModel.AbstractAnkiCard;
-import main.java.baseModel.SimpleAnkiCard;
+import main.java.model.AbstractAnkiCard;
+import main.java.model.simplemodel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
 @Singleton

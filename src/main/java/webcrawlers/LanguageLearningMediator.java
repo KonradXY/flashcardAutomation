@@ -18,11 +18,12 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.inject.Inject;
-import main.java.baseModel.SimpleAnkiCard;
+
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 
-import main.java.baseModel.AbstractAnkiCard;
+import main.java.model.AbstractAnkiCard;
+import main.java.model.simplemodel.SimpleAnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
 public class LanguageLearningMediator {

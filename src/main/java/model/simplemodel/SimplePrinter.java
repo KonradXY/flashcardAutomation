@@ -1,4 +1,4 @@
-package main.java.baseModel;
+package main.java.model.simplemodel;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import main.java.contracts.IPrinter;
+import main.java.model.AbstractAnkiCard;
 
 public class SimplePrinter implements IPrinter {
 

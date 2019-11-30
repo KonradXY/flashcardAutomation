@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import main.java.baseModel.AbstractAnkiCard;
+import main.java.model.AbstractAnkiCard;
 
 public interface IParser {
 	

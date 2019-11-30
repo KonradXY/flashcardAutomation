@@ -1,4 +1,4 @@
-package main.java.kindleModel;
+package main.java.model.kindleModel;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import main.java.baseModel.AbstractAnkiCard;
 import main.java.contracts.IPrinter;
+import main.java.model.AbstractAnkiCard;
 
 public class KindleClippingPrinter implements IPrinter {
 

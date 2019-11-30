@@ -1,4 +1,4 @@
-package main.java.baseModel;
+package main.java.model.simplemodel;
 
 import static main.java.utils.Property.*;
 
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import main.java.contracts.IParser;
+import main.java.model.AbstractAnkiCard;
 
 /*
  * Classe utilizzata per il parsing di file csv (l'input separator e' il pipe)

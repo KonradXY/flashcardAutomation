@@ -1,8 +1,9 @@
-package main.java.evernoteModel;
+package main.java.model.evernoteModel;
 
-import main.java.baseModel.AbstractAnkiCard;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
+
+import main.java.model.AbstractAnkiCard;
 
 import static main.java.contracts.IParser.NEW_LINE;
 import static main.java.contracts.IParser.TAB;

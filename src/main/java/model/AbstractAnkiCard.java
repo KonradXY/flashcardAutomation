@@ -1,4 +1,4 @@
-package main.java.baseModel;
+package main.java.model;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;

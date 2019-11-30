@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import main.java.baseModel.AbstractAnkiCard;
+import main.java.model.AbstractAnkiCard;
 
 public interface IPrinter {
 

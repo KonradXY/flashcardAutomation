@@ -16,8 +16,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-import main.java.baseModel.SimpleReader;
 import main.java.contracts.IReader;
+import main.java.model.simplemodel.SimpleReader;
 
 
 @RunWith(JUnitPlatform.class)

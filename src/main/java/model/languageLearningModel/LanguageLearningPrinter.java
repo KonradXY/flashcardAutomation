@@ -1,4 +1,4 @@
-package main.java.languageLearningModel;
+package main.java.model.languageLearningModel;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import main.java.baseModel.AbstractAnkiCard;
 import main.java.contracts.IPrinter;
+import main.java.model.AbstractAnkiCard;
 
 public class LanguageLearningPrinter implements IPrinter {
 

@@ -2,9 +2,9 @@ package main.java.factory;
 
 import static main.java.utils.Property.LANGUAGE_LEARNING_DIR;
 
-import main.java.baseModel.SimpleReader;
-import main.java.languageLearningModel.LanguageLearningParser;
-import main.java.languageLearningModel.LanguageLearningPrinter;
+import main.java.model.languageLearningModel.LanguageLearningParser;
+import main.java.model.languageLearningModel.LanguageLearningPrinter;
+import main.java.model.simplemodel.SimpleReader;
 import main.java.strategy.FormatStrategy;
 
 public class LanguageLearningEngine extends AbstractAnkiEngine {
