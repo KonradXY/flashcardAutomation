@@ -7,13 +7,25 @@ import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 
 public abstract class AbstractAnkiEngine {
-
+	
 	protected IReader reader;
 	protected IParser parser;
 	protected IPrinter printer;
 	
-	protected String inputContent = INPUT_DIR;
-	protected String outputContent = OUTPUT_DIR;
+	protected String inputContent;
+	protected String outputContent;
+
+	protected AbstractAnkiEngine() {
+		this.inputContent = INPUT_DIR;
+		this.outputContent = OUTPUT_DIR;
+	}
+	
+	protected AbstractAnkiEngine(String input, String output) {
+		this();
+		this.inputContent += input;
+		this.outputContent += output;
+	}
+	
 	
 	public abstract void buildEngine();
 	

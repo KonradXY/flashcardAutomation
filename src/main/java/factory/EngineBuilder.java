@@ -1,5 +1,7 @@
 package main.java.factory;
 
+import static main.java.utils.Property.*;
+
 import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
@@ -18,11 +20,11 @@ public class EngineBuilder {
 		AbstractAnkiEngine ankiModel;
 		String input = inputParam[0];
 		switch(input) {
-			case "evernote": 			ankiModel = new EvernoteEngine(); break;
-			case "kindle": 	 			ankiModel = new KindleEngine();   break;
-			case "languageLearning": 	ankiModel = new LanguageLearningEngine(); break;
+			case "evernote": 			ankiModel = new EvernoteEngine(EVERNOTE_DIR, EVERNOTE_DIR + "evernoteParsed.txt"); break;
+			case "kindle": 	 			ankiModel = new KindleEngine(KINDLE_DIR, KINDLE_DIR);   break;
+			case "languageLearning": 	ankiModel = new LanguageLearningEngine(LANGUAGE_LEARNING_DIR, LANGUAGE_LEARNING_DIR); break;
 			// TODO - introdurre web e cloze come modelli
-			default : 					ankiModel = new DefaultEngine(); break;
+			default : 					ankiModel = new DefaultEngine(GENERIC_DIR, GENERIC_DIR); break;
 		}
 		
 		ankiModel.buildEngine();

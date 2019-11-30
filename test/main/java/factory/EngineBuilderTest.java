@@ -1,4 +1,4 @@
-package main.test.factory;
+package main.java.factory;
 
 import static main.java.utils.Property.EVERNOTE_DIR;
 import static main.java.utils.Property.GENERIC_DIR;
@@ -19,7 +19,7 @@ import main.java.model.kindle.KindleClippingsParser;
 import main.java.model.languageLearning.LanguageLearningParser;
 import main.java.model.languageLearning.LanguageLearningPrinter;
 import main.java.model.simplemodel.SimpleParser;
-import main.java.model.simplemodel.SimplePrinter;
+import main.java.model.simplemodel.TextFileWriter;
 
 class EngineBuilderTest {
 
@@ -34,7 +34,7 @@ class EngineBuilderTest {
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), SimpleParser.class);
-		assertEquals(ankiEngine.getPrinter().getClass(), SimplePrinter.class);
+		assertEquals(ankiEngine.getPrinter().getClass(), TextFileWriter.class);
 		
 		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + GENERIC_DIR );
 		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + GENERIC_DIR);
@@ -47,7 +47,7 @@ class EngineBuilderTest {
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
-		assertEquals(ankiEngine.getPrinter().getClass(), SimplePrinter.class);
+		assertEquals(ankiEngine.getPrinter().getClass(), TextFileWriter.class);
 		
 		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + EVERNOTE_DIR);
 		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + EVERNOTE_DIR + "evernoteParsed.txt");	// TODO <-- questo e' da eliminare !

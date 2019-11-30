@@ -9,12 +9,13 @@ public class Property {
 
 	public static String OUTPUT_DIR = getOutputDir();
 	public static String INPUT_DIR = getInputDir();
-	public static String EVERNOTE_DIR = getEvernoteFolder();
-	public static String KINDLE_DIR = getKindleDir();
-	public static String LANGUAGE_LEARNING_DIR = getLanguageLearningDir();
-	public static String WEB_CRAWLER_DIR = getWebCrawlerDir();
-	public static String TXT_INPUTDIR = getTxtInputDir();
-	public static String GENERIC_DIR = getGenericDir();
+	
+	public static final String LANGUAGE_LEARNING_DIR = "languageLearning/prepositions/";
+	public static final String EVERNOTE_DIR = "evernote/";
+	public static final String KINDLE_DIR = "kindle/";
+	public static final String WEB_CRAWLER_DIR = "webcrawler/";
+	public static final String TXT_INPUTDIR = "txtSummarize/";
+	public static final String GENERIC_DIR = "generic/parole.txt";
 	
 	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();
 	public static int SIMPLE_PARSER_ENG_FIELD = getSimpleParserEngField();
@@ -30,30 +31,6 @@ public class Property {
 		return getProperties().getProperty("output.dir");
 	}
 
-	private static String getEvernoteFolder() {
-		return getProperties().getProperty("evernote.dir");
-	}
-
-	private static String getKindleDir() {
-		return getProperties().getProperty("kindle.dir");
-	}
-
-	private static String getLanguageLearningDir() {
-		return getProperties().getProperty("languageLearning.dir");
-	}
-
-	private static String getWebCrawlerDir() {
-		return getProperties().getProperty("webcrawler.dir");
-	}
-
-	private static String getTxtInputDir() {
-		return getProperties().getProperty("txtinput.dir");
-	}
-
-	private static String getGenericDir() {
-		return getProperties().getProperty("generic.dir");
-	}
-	
 	private static int getSimpleParserEspField() {
 		return Integer.parseInt(getProperties().getProperty("simpleparser.engField"));
 	}

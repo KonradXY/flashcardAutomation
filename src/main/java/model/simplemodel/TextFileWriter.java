@@ -10,7 +10,7 @@ import java.util.List;
 import main.java.contracts.IPrinter;
 import main.java.model.AbstractAnkiCard;
 
-public class SimplePrinter implements IPrinter {
+public class TextFileWriter implements IPrinter {
 
 	@Override  
 	public void printFile(String destPath, List<AbstractAnkiCard> input) {
