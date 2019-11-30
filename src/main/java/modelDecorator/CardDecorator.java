@@ -6,6 +6,7 @@ import org.jsoup.parser.Tag;
 
 import main.java.model.AbstractAnkiCard;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -145,7 +146,12 @@ public class CardDecorator {
     }
 
     private static void removeStyleAttribute(Element elem) {
-        elem.removeAttr("style");
+        removeUselessAttributes(elem, "style");
+    }
+    
+    private static void removeUselessAttributes(Element elem, String... attrs) {
+    	for (String attr : Arrays.asList(attrs))
+    		elem.removeAttr(attr);
     }
 
 }

@@ -1,13 +1,13 @@
 package main.java.model;
 
-import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
-
 import static main.java.contracts.IParser.NEW_LINE;
 import static main.java.contracts.IParser.TAB;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Map;
+
+import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
+import org.jsoup.select.Elements;
 
 public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
 
@@ -28,6 +28,18 @@ public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
 		this();
 		this.addTextContentToFront(front);
 		this.addTextContentToBack(back);
+	}
+	
+	public AbstractAnkiCard(Element front, Element back) {
+		this();
+		this.addElementToFront(front);
+		this.addElementToBack(back);
+	}
+	
+	public AbstractAnkiCard(Elements front, Elements back) {
+		this();
+		front.forEach(it -> this.addElementToFront(it));
+		back.forEach(it -> this.addElementToBack(it));
 	}
 
 

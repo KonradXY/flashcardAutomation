@@ -21,33 +21,35 @@ import main.java.model.AbstractAnkiCard;
 class EvernoteHtmlParserTest {
 	
 	private static final String emptyCardValueFront = 
-			"<div class=\"front\">   "
-				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">   "
-			+ "D:&nbsp; &nbsp;  "
-				+ "</div>"
-			+ "</div>";
-	
+			"<div class=\"front\"> "
+					+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+						+ "D:&nbsp; &nbsp; "
+					+ "</div>"
+				+ "</div>";
 	private static final String emptyCardValueBack = 
-			"<div class=\"back\">   "
-				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">   "						
-					+ "R:&nbsp; &nbsp;  "
+			"<div class=\"back\"> "
+				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+					+ "R:&nbsp; &nbsp; "
 				+ "</div>"
 			+ "</div>";
 	
 	private static final String emptyCardValue = emptyCardValueFront + "\t" + emptyCardValueBack + "\n";
 
 	private static final String imgCardValueFront = 
-			"<div class=\"front\">   "
-					+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">   "
-						+ "D:&nbsp; &nbsp;immagine  "
-					+ "</div>"
-			+ "</div>";
-	private static final String imgCardValueBack = 
-			"<div class=\"back\">   "
-				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">   "
-					+ "R:&nbsp; &nbsp;   <img src=\"testevernotedownload.jpg\" type=\"image/png\" data-filename=\"download.png\">  "
+			"<div class=\"front\"> "
+				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+					+ "D:&nbsp; &nbsp;immagine "
 				+ "</div>"
-			+ "</div>";
+			+ "</div>" ;
+			
+			
+	
+	private static final String imgCardValueBack = 
+		 	"<div class=\"back\"> "
+		 		+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+		 			+ "R:&nbsp; &nbsp;  <img src=\"testevernotedownload.jpg\" type=\"image/png\" data-filename=\"download.png\"> "
+		 		+ "</div>"
+		 	+ "</div>";
 	
 	private static final String imgCardValue = imgCardValueFront + "\t" + imgCardValueBack + "\n";
 	
@@ -96,8 +98,8 @@ class EvernoteHtmlParserTest {
 			imgCard = cardList.get(1);
 		}
 		
-		assertEquals(emptyCardValue, emptyCard.toString());
-		assertEquals(imgCardValue, imgCard.toString());
+		assertEquals(emptyCardValue.trim(), emptyCard.toString().trim());
+		assertEquals(imgCardValue.trim(), imgCard.toString().trim());
 		assertTrue(Files.exists(imgPath));
 
 		Files.delete(imgPath);

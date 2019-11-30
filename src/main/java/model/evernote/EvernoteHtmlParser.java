@@ -82,16 +82,17 @@ public class EvernoteHtmlParser implements IParser {
 
     private AbstractAnkiCard parseCardFromTBody(Element tbody) {
         Elements content = tbody.getElementsByTag("tr");
-        String cardFront = formatRowContent(content.get(0));
-        String cardBack = formatRowContent(content.get(1));
-        return new EvernoteAnkiCard(cardFront, cardBack);
+        Elements frontElements = getContentFromTrTag(content.get(0));
+        Elements backElements = getContentFromTrTag(content.get(1));
+        return new AbstractAnkiCard(frontElements, backElements);
     }
 
-    private String formatRowContent(Element elem) {
-        for (Element div : elem.getElementsByTag("div"))
-            formatNodeElement(div);
-
-        return IParser.replaceNewLines(elem.toString());
+	// TODO - disacoppiare la formattazione degli element con la creazione del
+	// contenuto (trovare un sistema comodo per poterlo fare)
+    private Elements getContentFromTrTag(Element elem) {
+    	Elements elements = elem.getElementsByTag("div");
+    	for (Element e : elements) formatNodeElement(e);
+    	return elements;
     }
 
     private Element formatNodeElement(Element elem) {
