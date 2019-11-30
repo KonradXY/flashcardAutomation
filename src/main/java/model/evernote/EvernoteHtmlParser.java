@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +18,7 @@ import org.jsoup.select.Elements;
 
 import main.java.contracts.IParser;
 import main.java.model.AbstractAnkiCard;
+import main.java.modelDecorator.CardDecorator;
 import main.java.utils.Property;
 
 public class EvernoteHtmlParser implements IParser {
@@ -27,13 +27,6 @@ public class EvernoteHtmlParser implements IParser {
 
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
 
-    // TODO - tutta sta roba deve andare all'interno del card decorator !
-    private static final String MARGIN = "margin", AUTO = "auto";
-    private static final String ALIGN = "align", LEFT = "left";
-    private static final String TEXT_ALIGN = "text-align";
-    private static final String FONT_STYLE = "font style";
-    private static final String FONT_SIZE = "font-size: 10pt";
-    
     private Path imgInputContent;
     
     public EvernoteHtmlParser() { }
@@ -91,21 +84,8 @@ public class EvernoteHtmlParser implements IParser {
 	// contenuto (trovare un sistema comodo per poterlo fare)
     private Elements getContentFromTrTag(Element elem) {
     	Elements elements = elem.getElementsByTag("div");
-    	for (Element e : elements) formatNodeElement(e);
+    	for (Element e : elements) CardDecorator.applyStandardFormat(e);
     	return elements;
-    }
-
-    private Element formatNodeElement(Element elem) {
-        removeUselessAttrs(elem, "style");
-        return elem.attr(ALIGN, LEFT)
-                .attr(TEXT_ALIGN, LEFT)
-                .attr(FONT_STYLE, FONT_SIZE)
-                .attr(MARGIN, AUTO);
-    }
-
-    private void removeUselessAttrs(Element elem, String... attrs) {
-        for (String attr : Arrays.asList(attrs)) 
-        	elem.removeAttr(attr);
     }
 
     public void formatImageTags(Path fileName, Document doc) {
