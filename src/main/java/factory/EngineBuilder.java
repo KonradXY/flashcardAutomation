@@ -21,6 +21,7 @@ public class EngineBuilder {
 			case "evernote": 			ankiModel = new EvernoteEngine(); break;
 			case "kindle": 	 			ankiModel = new KindleEngine();   break;
 			case "languageLearning": 	ankiModel = new LanguageLearningEngine(); break;
+			// TODO - introdurre web e cloze come modelli
 			default : 					ankiModel = new DefaultEngine(); break;
 		}
 		

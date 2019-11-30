@@ -15,20 +15,27 @@ import main.java.model.AbstractAnkiCard;
  */
 public class SimpleParser implements IParser {
 	
-	@Override
+	@Override	// TODO - vedere se riesco a fare qualcosa con le stream perche' e' un po' illegibile
 	public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
 		List<AbstractAnkiCard> ankiCards = new ArrayList<>();
 		for (String text : input.values()) {
-			String[] splitted = text.split(PIPE_SEPARATOR);
-			int length = (splitted.length%2 == 0 ? splitted.length : splitted.length -1);
+			String[] splittedText = text.split(PIPE_SEPARATOR);
+			
+			if (entriesAreNotEven(splittedText))
+				throw new RuntimeException("Le entry non sono pari ! Controllare che ogni carta abbia due facce !");
+			
+			int length = (splittedText.length%2 == 0 ? splittedText.length : splittedText.length -1);
 			for (int i = 0; i < length; i+=2) {
-				ankiCards.add(new SimpleAnkiCard(splitted[i+SIMPLE_PARSER_ENG_FIELD], 
-												 splitted[i+SIMPLE_PARSER_ESP_FIELD]));
+				ankiCards.add(new SimpleAnkiCard(splittedText[i+SIMPLE_PARSER_ENG_FIELD], 
+												 splittedText[i+SIMPLE_PARSER_ESP_FIELD]));
 			}
 		}
 		return ankiCards;
 	}
 	
+	private boolean entriesAreNotEven(String[] entries) {
+		return entries.length%2 != 0;
+	}
 
 
 
