@@ -12,51 +12,43 @@ public abstract class AbstractAnkiEngine {
 	protected IParser parser;
 	protected IPrinter printer;
 	
+	protected String inputDir;
+	protected String outputDir;
+	
 	protected String inputContent;
 	protected String outputContent;
 
 	protected AbstractAnkiEngine() {
-		this.inputContent = INPUT_DIR;
-		this.outputContent = OUTPUT_DIR;
+		this.inputDir = INPUT_DIR;
+		this.outputDir = OUTPUT_DIR;
 	}
 	
 	protected AbstractAnkiEngine(String input, String output) {
 		this();
-		this.inputContent += input;
-		this.outputContent += output;
+		this.inputContent  = input;
+		this.outputContent = output;
 	}
 	
 	
 	public abstract void buildEngine();
 	
-	public IReader getReader() {
-		return reader;
-	}
-	public void setReader(IReader reader) {
-		this.reader = reader;
-	}
-	public IParser getParser() {
-		return parser;
-	}
-	public void setParser(IParser parser) {
-		this.parser = parser;
-	}
-	public IPrinter getPrinter() {
-		return printer;
-	}
-	public void setPrinter(IPrinter printer) {
-		this.printer = printer;
-	}
-	public String getInputContent() {
-		return inputContent;
-	}
-	public void setInputContent(String inputContent) {
-		this.inputContent = inputContent;
-	}
-	public String getOutputContent() {
-		return outputContent;
-	}
-	public void setOutputContent(String outputContent) {
-		this.outputContent = outputContent;
-	}
+	public IReader getReader() 						{ return reader; }
+	public IParser getParser() 						{ return parser; }
+	public IPrinter getPrinter() 					{ return printer; }
+
+	public void setReader(IReader reader) 			{ this.reader = reader; }
+	public void setParser(IParser parser) 			{ this.parser = parser; }
+	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
+	
+	public String getInputDestination()				{ return inputDir + inputContent; }
+	public String getOutputDestination() 			{ return outputDir + outputContent; }
+	public String getInputDir() 					{ return inputDir;}
+	public String getOutputDir() 					{ return outputDir; }
+	public String getInputContent()					{ return inputContent; }
+	public String getOutputContent()				{ return outputContent; }
+	
+	public void setInputDir(String inputContent) 	{ this.inputDir = inputContent; }
+	public void setOutputDir(String outputDir) 		{ this.outputDir = outputDir; }
+	public void setInputContent(String content)		{ this.inputContent = content; }
+	public void setOutputContent(String content) 	{ this.outputContent = content; }
 }

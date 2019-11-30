@@ -34,8 +34,8 @@ public class FlashcardFacade {
 	
 	public void buildFlashcardsFromTextFile(String[] args) throws IOException {
 		ankiModel = engineBuilder.createTextEngine(args);
-		Path inputFile = Paths.get(ankiModel.getInputContent());
-		Path output = Paths.get(ankiModel.getOutputContent());
+		Path inputFile = Paths.get(ankiModel.getInputDestination());
+		Path output = Paths.get(ankiModel.getOutputDestination());
 		Map<Path, String> input = ankiModel.getReader().readFile(inputFile);
 		List<AbstractAnkiCard> parsedAnkiCards = ankiModel.getParser().parseToAnkiFlashcard(input);
 		ankiModel.getPrinter().printFile(output.toString(), parsedAnkiCards);

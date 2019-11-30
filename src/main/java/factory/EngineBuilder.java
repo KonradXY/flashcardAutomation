@@ -29,8 +29,8 @@ public class EngineBuilder {
 		
 		ankiModel.buildEngine();
 
-		log.info("Cartella di input: " + ankiModel.getInputContent());
-		log.info("Cartella di output: " + ankiModel.getOutputContent());
+		log.info("Cartella di input: " + ankiModel.getInputDestination());
+		log.info("Cartella di output: " + ankiModel.getOutputDestination());
 		
 		return ankiModel;
 	}

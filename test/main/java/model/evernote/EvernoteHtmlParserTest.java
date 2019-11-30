@@ -1,10 +1,9 @@
 package main.java.model.evernote; 
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.google.inject.Guice;
@@ -20,6 +19,11 @@ class EvernoteHtmlParserTest {
 	private final Injector injector = Guice.createInjector(new AnkiApplicationModule());
 	private final AbstractAnkiEngine evernoteEngine = injector.getInstance(EvernoteEngine.class);
 
+	@BeforeAll
+	public static void setup() {
+			
+	}
+	
 	@Test
 	void test() {
 		evernoteEngine.buildEngine();

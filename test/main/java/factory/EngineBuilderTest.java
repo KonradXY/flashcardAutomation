@@ -36,8 +36,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), SimpleParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFileWriter.class);
 		
-		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + GENERIC_DIR );
-		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + GENERIC_DIR);
+		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + GENERIC_DIR );
+		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + GENERIC_DIR);
 	}
 	
 	@Test
@@ -49,8 +49,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFileWriter.class);
 		
-		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + EVERNOTE_DIR);
-		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + EVERNOTE_DIR + "evernoteParsed.txt");	// TODO <-- questo e' da eliminare !
+		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + EVERNOTE_DIR);
+		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + EVERNOTE_DIR + "evernoteParsed.txt");	// TODO <-- questo e' da eliminare !
 	}
 	
 	@Test
@@ -62,8 +62,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), KindleClippingsParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), KindleClippingPrinter.class);
 		
-		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + KINDLE_DIR);
-		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + KINDLE_DIR);
+		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + KINDLE_DIR);
+		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + KINDLE_DIR);
 	}
 	
 	@Test
@@ -75,8 +75,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), LanguageLearningPrinter.class);
 		
-		assertEquals(ankiEngine.getInputContent(), INPUT_DIR + LANGUAGE_LEARNING_DIR);
-		assertEquals(ankiEngine.getOutputContent(), OUTPUT_DIR + LANGUAGE_LEARNING_DIR);
+		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + LANGUAGE_LEARNING_DIR);
+		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + LANGUAGE_LEARNING_DIR);
 	}
 
 }
