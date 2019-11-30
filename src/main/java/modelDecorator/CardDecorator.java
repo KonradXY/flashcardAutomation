@@ -51,13 +51,13 @@ public class CardDecorator {
 
 
     // TODO <-- secondo me sto facendo troppe indirezioni qua dentro. Inoltre i metodi non sono generici. Dovrei rinominarli !
-    public static void addWordLearnedToFront(AbstractAnkiCard card, String text)    { addWordLearned(card.getFrontHtml(), text); }
-    public static void addWordLearnedToBack(AbstractAnkiCard card, String text)    { addWordLearned(card.getBackHtml(), text); }
+    public static void addWordLearnedToFront(AbstractAnkiCard card, String text)    { addWordLearned(card.getFront(), text); }
+    public static void addWordLearnedToBack(AbstractAnkiCard card, String text)    { addWordLearned(card.getBack(), text); }
 
-    public static void addTranslationToFront(AbstractAnkiCard card, String text)    { addTranslationToCard(text, card.getFrontHtml()); }
-    public static void addParoleTradotteToBack(AbstractAnkiCard card, String text)  { addParoleTradotte(text, card.getBackHtml()); }
-    public static void addContenutoToBack(AbstractAnkiCard card, String text)       { addContenutoToCard(card.getBackHtml(), text); }
-    public static void addAudioToBack(AbstractAnkiCard card, String audio)          { addAudio(audio, card.getBackHtml()); }
+    public static void addTranslationToFront(AbstractAnkiCard card, String text)    { addTranslationToCard(text, card.getFront()); }
+    public static void addParoleTradotteToBack(AbstractAnkiCard card, String text)  { addParoleTradotte(text, card.getBack()); }
+    public static void addContenutoToBack(AbstractAnkiCard card, String text)       { addContenutoToCard(card.getBack(), text); }
+    public static void addAudioToBack(AbstractAnkiCard card, String audio)          { addAudio(audio, card.getBack()); }
 
     public static void addSinonimiToBack(AbstractAnkiCard card, List<String> sinonimi) {
         if (sinonimi.isEmpty())
@@ -69,9 +69,9 @@ public class CardDecorator {
         }
         applyStandardFormatRecursively(listaSinonimi);
 
-        card.getBackHtml().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBackHtml().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Sinonimi")));
-        card.getBackHtml().appendChild(listaSinonimi);
+        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+        card.getBack().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Sinonimi")));
+        card.getBack().appendChild(listaSinonimi);
 
     }
 
@@ -86,9 +86,9 @@ public class CardDecorator {
         }
         applyStandardFormatRecursively(definizioniList);
 
-        card.getBackHtml().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBackHtml().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Definizioni")));
-        card.getBackHtml().appendChild(definizioniList);
+        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+        card.getBack().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Definizioni")));
+        card.getBack().appendChild(definizioniList);
 
     }
 

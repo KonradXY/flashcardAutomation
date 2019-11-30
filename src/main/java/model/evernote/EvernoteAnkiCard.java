@@ -17,14 +17,14 @@ public class EvernoteAnkiCard extends AbstractAnkiCard {
     }
 
     public EvernoteAnkiCard(String front, String back) {
-        this.frontHtml = new Element(divTag, "").addClass(FRONT).append(front);
-        this.backHtml = new Element(divTag, "").addClass(BACK).append(back);
+        this.front = new Element(divTag, "").addClass(FRONT).append(front);
+        this.back = new Element(divTag, "").addClass(BACK).append(back);
     }
 
     @Override
     public String toString() {
-        return frontHtml.toString().replace("\n", "") + TAB
-                + backHtml.toString().replace("\n", "") + NEW_LINE;
+        return front.toString().replace("\n", "") + TAB
+                + back.toString().replace("\n", "") + NEW_LINE;
     }
 
 

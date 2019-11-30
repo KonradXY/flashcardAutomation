@@ -150,7 +150,7 @@ public class LanguageLearningMediator {
 	}
 
 	private void writeCard(AbstractAnkiCard card, BufferedWriter bos) throws IOException {
-		if (!card.getFrontHtml().text().trim().isEmpty()) {
+		if (!card.getFront().text().trim().isEmpty()) {
 			bos.write(card.toString());
 			bos.flush();
 		}

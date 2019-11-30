@@ -51,8 +51,8 @@ public class KindleAnkiCard extends AbstractAnkiCard implements Comparable<Kindl
 		this.dataAggiunta = inputLine.substring(idxPosizione+1, idxContent);
 		this.content = inputLine.substring(idxContent);
 		
-		this.frontHtml.appendText(this.title);
-		this.backHtml.appendText(this.content);
+		this.front.appendText(this.title);
+		this.back.appendText(this.content);
 		
 		return this;
 		

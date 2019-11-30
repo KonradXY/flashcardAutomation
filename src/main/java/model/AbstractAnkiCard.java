@@ -6,64 +6,70 @@ import org.jsoup.parser.Tag;
 import static main.java.contracts.IParser.NEW_LINE;
 import static main.java.contracts.IParser.TAB;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
 
-	public static final String FRONT = "front";
-	public static final String BACK = "back";
+	protected static final String FRONT = "front";
+	protected static final String BACK = "back";
 
 	protected final static Tag divTag = Tag.valueOf("div");
 
-	protected Element frontHtml;
-	protected Element backHtml;
+	protected Element front;
+	protected Element back;
 
 	public AbstractAnkiCard() {
-		// TODO - questo in teoria non ha senso. Verificare meglio !
-		this.frontHtml = new Element(divTag, "");
-		this.backHtml = new Element(divTag, "");
-
-		this.frontHtml.appendChild(new Element(divTag, "").addClass(FRONT));
-		this.backHtml.appendChild(new Element(divTag, "").addClass(BACK));
+		this.front = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(FRONT));
+		this.back = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(BACK));
 	}
 
 	public AbstractAnkiCard(String front, String back) {
-		// TODO - questo ha ancora meno senso 
-		this.frontHtml = new Element(divTag, "");
-		this.backHtml = new Element(divTag, "");
-
-		this.frontHtml.appendChild(new Element(divTag, "").addClass(FRONT));
-		this.backHtml.appendChild(new Element(divTag, "").addClass(BACK));
-		
-		this.frontHtml.appendText(front);
-		this.backHtml.appendText(back);
+		this();
+		this.addTextContentToFront(front);
+		this.addTextContentToBack(back);
 	}
 
-	@Override public Element getKey()   { return frontHtml; }
-	@Override public Element getValue() { return backHtml; }
-	@Override public Element setValue(Element value) { this.backHtml = value; return this.backHtml; }
 
-	public Element setValue(String value) { this.backHtml.appendText(value); return this.backHtml; }
-	
-	public void setKey(Element key) { this.frontHtml = key ; }
-	public void setKey(String key)  {this.frontHtml.appendText(key); }
+	@Override public Element getKey()   { return getFront(); }
+	@Override public Element getValue() { return getBack(); }
+	@Override public Element setValue(Element value) { this.back = value; return this.back; }
 
-	public Element getFrontHtml() { return frontHtml.getElementsByClass(FRONT).get(0); }
-	public Element getBackHtml()  { return backHtml.getElementsByClass(BACK).get(0); }
+	public Element getFront() { return front.getElementsByClass(FRONT).get(0); }
+	public Element getBack()  { return back.getElementsByClass(BACK).get(0); }
 
-	public void setBackHtml(Element backHtml) { this.backHtml = backHtml; }
-	public void setFrontHtml(Element frontHtml) { this.frontHtml = frontHtml; }
+	public void setKey(Element key) 		{ this.front = key ; }
+	public void setKey(String key)  		{ this.front.appendText(key); }
+	public Element setValue(String value) 	{ this.back.appendText(value); return this.back; }
+
+	public void setBackHtml(Element backHtml) 	{ this.back = backHtml; }
+	public void setFrontHtml(Element frontHtml) { this.front = frontHtml; }
+
+
+	public boolean isCardEmpty() {
+		return (front.text()+back.text()).trim().equals("");
+	}
+
+	public void addTextContentToFront(String content) {
+		this.getFront().appendText(content);
+	}
+
+	public void addTextContentToBack(String content) {
+		this.getBack().appendText(content);
+	}
+
+	public void addElementToFront(Element elem) {
+		this.getFront().appendChild(elem.clone());
+	}
+
+	public void addElementToBack(Element elem) {
+		this.getBack().appendChild(elem.clone());
+	}
 
 	@Override
 	public String toString() {
-		return frontHtml.html().replace("\n", "") + TAB 
-				+ backHtml.html().replace("\n", "") + NEW_LINE;
+		return getFront().toString().replace("\n", "") + TAB 
+				+ getBack().toString().replace("\n", "") + NEW_LINE;
 	}
-
-	public boolean isCardEmpty() {
-		return (frontHtml.text()+backHtml.text()).trim().equals("");
-	}
-
-
 
 }
