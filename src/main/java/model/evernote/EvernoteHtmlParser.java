@@ -34,7 +34,9 @@ public class EvernoteHtmlParser implements IParser {
     	this.imgInputContent = imgInputContent;
     }
     
-    public void setImgInputContent(Path imgContent) {this.imgInputContent = imgContent;}
+    public void setImgInputContent(Path imgContent) {
+    	this.imgInputContent = imgContent;
+    }
     public Path getImgInputContent() {
     	if (imgInputContent == null) return Paths.get(Property.OUTPUT_DIR+Property.EVERNOTE_DIR);
     	return imgInputContent;
