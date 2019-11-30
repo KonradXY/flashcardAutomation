@@ -50,7 +50,6 @@ public class TextFileReader implements IReader {
 		
 			Files.walk(filePath)
 				.filter(p -> !p.equals(filePath))
-				.peek(System.out::println)
 				.sorted() 	// TODO - fare un comparator custom per sta roba
 				.forEach(path -> readContent(contentMap, path));
 		
@@ -61,16 +60,18 @@ public class TextFileReader implements IReader {
 	}
 
 	private void addEntryToMap(Map<Path, String> mapInput, Path pathFile) {
-		log.info("lettura file: " + pathFile);
-		StringBuilder sb = new StringBuilder();
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), "UTF-8"))) {
-			br.lines().forEach(str -> sb.append(formatLine(str + "\n")));
-			fileCounter++;
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		}
+		if (!mapInput.containsKey(pathFile)) {
+			log.info("lettura file: " + pathFile);
+			StringBuilder sb = new StringBuilder();
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), "UTF-8"))) {
+				br.lines().forEach(str -> sb.append(formatLine(str + "\n")));
+				fileCounter++;
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
 
-		mapInput.put(pathFile, sb.toString());
+			mapInput.put(pathFile, sb.toString());
+		}
 	}
 
 	private String formatLine(String input) {
