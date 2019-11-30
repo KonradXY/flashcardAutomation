@@ -1,9 +1,10 @@
 package main.java.factory;
 
+import static main.java.utils.Property.*;
+
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
-import main.java.utils.Property;
 
 public abstract class AbstractAnkiEngine {
 
@@ -11,8 +12,8 @@ public abstract class AbstractAnkiEngine {
 	protected IParser parser;
 	protected IPrinter printer;
 	
-	protected String inputContent = Property.INPUT_DIR;
-	protected String outputContent = Property.OUTPUT_DIR;
+	protected String inputContent = INPUT_DIR;
+	protected String outputContent = OUTPUT_DIR;
 	
 	public abstract void buildEngine();
 	

@@ -14,7 +14,6 @@ public interface IPrinter {
 	default void checkOutputFolder(Path filePath) {
 		try {
 			Path folderPath = filePath.getParent();
-			System.out.println("FOLDER PATH: " + folderPath);
 			if (Files.notExists(folderPath) || !Files.isDirectory(folderPath))
 				Files.createDirectories(folderPath);
 		} catch (IOException ex) {
