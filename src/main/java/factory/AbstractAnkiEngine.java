@@ -6,11 +6,13 @@ import static main.java.utils.Property.OUTPUT_DIR;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Map;
 
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
+import main.java.model.AbstractAnkiCard;
 
 public abstract class AbstractAnkiEngine {
 	
@@ -38,14 +40,36 @@ public abstract class AbstractAnkiEngine {
 	
 	public abstract void buildEngine();
 	
+	public void createFlashcards() {
+		Map<Path, String> contentRead = this.read();
+		List<AbstractAnkiCard> cardList = this.parse(contentRead);
+		this.print(cardList);
+	}
+	
 	
 	public Map<Path, String> read() {
 		return read(Paths.get(getInputDestination()));
 	}
+	public List<AbstractAnkiCard> parse(Map<Path, String> content) {
+		return this.getParser().parse(content);
+	}
+	public void print(List<AbstractAnkiCard> cardList) {
+		this.print(cardList, this.getOutputDestination());
+	}
+	
+
 	
 	public Map<Path, String> read(Path file) {
 		try {
 			return this.getReader().readFile(file);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	
+	public void print(List<AbstractAnkiCard> cardList, String destPath) {
+		try {
+			this.getPrinter().printFile(destPath, cardList);
 		} catch (IOException ex) {
 			throw new RuntimeException(ex);
 		}

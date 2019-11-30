@@ -16,7 +16,7 @@ import main.java.model.AbstractAnkiCard;
 public class SimpleParser implements IParser {
 	
 	@Override	// TODO - vedere se riesco a fare qualcosa con le stream perche' e' un po' illegibile
-	public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
+	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
 		List<AbstractAnkiCard> ankiCards = new ArrayList<>();
 		for (String text : input.values()) {
 			String[] splittedText = text.split(PIPE_SEPARATOR);

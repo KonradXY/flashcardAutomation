@@ -18,7 +18,7 @@ public class LanguageLearningParser implements IParser {
 
 	
 	@Override
-	public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
+	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
 		List<AbstractAnkiCard> cardList = new ArrayList<>();
 
 		for (Map.Entry<Path, String> file : input.entrySet()) {

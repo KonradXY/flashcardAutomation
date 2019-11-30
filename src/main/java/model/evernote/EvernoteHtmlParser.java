@@ -33,7 +33,7 @@ public class EvernoteHtmlParser implements IParser {
     private static final String FONT_SIZE = "font-size: 10pt";
 
     @Override
-    public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
+    public List<AbstractAnkiCard> parse(Map<Path, String> input) {
         List<AbstractAnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
             cardList.addAll(parseEvernoteCardTableFromFile(entry.getKey(), entry.getValue()));

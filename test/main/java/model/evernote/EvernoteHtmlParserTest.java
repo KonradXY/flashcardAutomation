@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EvernoteEngine;
+import main.java.model.AbstractAnkiCard;
 
 class EvernoteHtmlParserTest {
 	
@@ -35,15 +37,16 @@ class EvernoteHtmlParserTest {
 		assertTrue(content.containsKey(testFilePath));
 	}
 	
-	@Test 
-	void testEvernoteEngineParsing() {
-		fail("not implemented yet");
-	}
+//	@Test 
+//	void testEvernoteEngineParsing() {
+//		fail("not implemented yet");
+//	}
 	
 	@Test
 	void testEvernoteEnginePrinting() throws IOException {
-		Map<Path, String> content = evernoteEngine.getReader().readFile(testFilePath);
-		
+		Map<Path, String> content = evernoteEngine.read(testFilePath);
+		List<AbstractAnkiCard> cardList = evernoteEngine.parse(content);
+		evernoteEngine.print(cardList, testFileDir+"outputtest.txt");
 	}
 
 }

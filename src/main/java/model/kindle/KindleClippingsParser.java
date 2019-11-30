@@ -15,7 +15,7 @@ public class KindleClippingsParser implements IParser {
 	private final String kindleKey = "evidenziazione";
 	
 	@Override
-	public List<AbstractAnkiCard> parseToAnkiFlashcard(Map<Path, String> input) {
+	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
 
 		String[] values;
 		List<AbstractAnkiCard> ankiCardList = new ArrayList<>();

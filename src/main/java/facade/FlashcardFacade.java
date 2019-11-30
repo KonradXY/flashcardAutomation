@@ -30,13 +30,9 @@ public class FlashcardFacade {
 		this.languageLearningMediator = languageLearningMediator;
 	}
 	
-	public void buildFlashcardsFromTextFile(String[] args) throws IOException {
+	public void buildFlashcardsFromTextFile(String[] args) {
 		ankiModel = engineBuilder.createTextEngine(args);
-		Path inputFile = Paths.get(ankiModel.getInputDestination());
-		Path output = Paths.get(ankiModel.getOutputDestination());
-		Map<Path, String> input = ankiModel.read(inputFile);
-		List<AbstractAnkiCard> parsedAnkiCards = ankiModel.getParser().parseToAnkiFlashcard(input);
-		ankiModel.getPrinter().printFile(output.toString(), parsedAnkiCards);
+		ankiModel.createFlashcards();
 	}
 	
 	public void buildFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {

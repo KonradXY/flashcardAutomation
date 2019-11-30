@@ -44,19 +44,11 @@ public class Launcher {
 
 		else {
 			log.info(" ====>>> launching parsing from file ");
-			buildFlashcardsFromFile(args, facade);
+			facade.buildFlashcardsFromTextFile(args);
 		}
 
 		log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis()-timeSpent)/1000 + " sec");
 
-	}
-
-	private static void buildFlashcardsFromFile(String[] args, FlashcardFacade facade) {
-		try {
-			facade.buildFlashcardsFromTextFile(args);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		}
 	}
 
 	private static void buildFlashCardsFromWeb(String inputFile, String outputFile, FlashcardFacade facade) {
