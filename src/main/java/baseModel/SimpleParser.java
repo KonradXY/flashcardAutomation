@@ -27,7 +27,7 @@ public class SimpleParser implements IParser {
 		}
 		return ankiCards;
 	}
-
+	
 
 
 
