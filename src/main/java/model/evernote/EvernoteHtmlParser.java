@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -49,11 +50,9 @@ public class EvernoteHtmlParser implements IParser {
 
     private List<AbstractAnkiCard> createCards(Document doc, Path fileName) {
         List<AbstractAnkiCard> cardList = new ArrayList<>();
-        String title = parseTitleFromFilename(fileName);
 
         for (Element tbody : doc.getElementsByTag("tbody")) {
             AbstractAnkiCard card = parseCardFromTBody(tbody);
-            formatFrontAndBack(card, title);
 
             // FIXME - esiste una size massima per le flashcard. Vedere una soluzione 
             if (card.getValue().text().length() > MAX_SIZE_CARD) {
@@ -66,34 +65,6 @@ public class EvernoteHtmlParser implements IParser {
         return cardList;
     }
 
-    private void formatFrontAndBack(AbstractAnkiCard card, String title) {
-        formatFrontPart(card, title);
-        formatBackPart(card);
-    }
-
-    private void formatFrontPart(AbstractAnkiCard card, String title) {
-
-//        if (!card.getKey().text().contains("D:"))
-//            throw new RuntimeException("Errore. Nella carta non e' presente il simbolo 'D:' ");
-
-//        int firstIndex = title.lastIndexOf("\\") + 1;
-//        String titleCard = title.substring(firstIndex);
-//        card.setKey(card.getKey().text().replace("D:", titleCard));
-
-    }
-
-    private void formatBackPart(AbstractAnkiCard card) {
-//        if (card.getValue().text().contains("R:"))
-//            throw new RuntimeException("Errore. nella carta non è presente il simbolo 'R:' ");
-//        card.setValue(card.getValue().text().replace("R:", ""));
-    }
-
-    private String parseTitleFromFilename(Path filePath) {
-    	String fileName = filePath.toString();
-        int firstIndex = fileName.lastIndexOf("/")+1;
-        int lastIndex = fileName.lastIndexOf(".")+1;
-        return fileName.substring(firstIndex, lastIndex);
-    }
 
     private AbstractAnkiCard parseCardFromTBody(Element tbody) {
         Elements content = tbody.getElementsByTag("tr");
@@ -110,15 +81,16 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     private Element formatNodeElement(Element elem) {
-        removeUselessAttrs(elem);
+        removeUselessAttrs(elem, "style");
         return elem.attr(ALIGN, LEFT)
                 .attr(TEXT_ALIGN, LEFT)
                 .attr(FONT_STYLE, FONT_SIZE)
                 .attr(MARGIN, AUTO);
     }
 
-    private void removeUselessAttrs(Element elem) {
-        elem.removeAttr("style");
+    private void removeUselessAttrs(Element elem, String... attrs) {
+        for (String attr : Arrays.asList(attrs)) 
+        	elem.removeAttr(attr);
     }
 
     public void formatImageTags(Path fileName, Document doc) {
@@ -152,7 +124,7 @@ public class EvernoteHtmlParser implements IParser {
 
         try {
             Files.copy(src, dest, StandardCopyOption.REPLACE_EXISTING);
-        }catch (IOException ex) {
+        } catch (IOException ex) {
             throw new RuntimeException("Error while copying file: " + ex);
         }
 
