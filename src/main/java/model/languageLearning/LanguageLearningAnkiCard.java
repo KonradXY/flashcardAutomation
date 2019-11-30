@@ -1,4 +1,4 @@
-package main.java.model.languageLearningModel;
+package main.java.model.languageLearning;
 
 import java.util.function.Predicate;
 

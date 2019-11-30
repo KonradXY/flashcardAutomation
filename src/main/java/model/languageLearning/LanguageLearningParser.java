@@ -1,4 +1,4 @@
-package main.java.model.languageLearningModel;
+package main.java.model.languageLearning;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 import main.java.contracts.IParser;
 import main.java.model.AbstractAnkiCard;
-import main.java.model.languageLearningModel.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
+import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 
 public class LanguageLearningParser implements IParser {

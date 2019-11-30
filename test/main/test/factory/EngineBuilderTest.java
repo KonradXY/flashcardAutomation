@@ -12,14 +12,14 @@ import org.junit.jupiter.api.Test;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
-import main.java.model.evernoteModel.EvernoteHtmlParser;
-import main.java.model.kindleModel.KindleClippingPrinter;
-import main.java.model.kindleModel.KindleClippingsParser;
-import main.java.model.languageLearningModel.LanguageLearningParser;
-import main.java.model.languageLearningModel.LanguageLearningPrinter;
+import main.java.model.TextFileReader;
+import main.java.model.evernote.EvernoteHtmlParser;
+import main.java.model.kindle.KindleClippingPrinter;
+import main.java.model.kindle.KindleClippingsParser;
+import main.java.model.languageLearning.LanguageLearningParser;
+import main.java.model.languageLearning.LanguageLearningPrinter;
 import main.java.model.simplemodel.SimpleParser;
 import main.java.model.simplemodel.SimplePrinter;
-import main.java.model.simplemodel.SimpleReader;
 
 class EngineBuilderTest {
 
@@ -32,7 +32,7 @@ class EngineBuilderTest {
 		args = new String[]{""};
 		ankiEngine = builder.createTextEngine(args);
 		
-		assertEquals(ankiEngine.getReader().getClass(), SimpleReader.class);
+		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), SimpleParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), SimplePrinter.class);
 		
@@ -45,7 +45,7 @@ class EngineBuilderTest {
 		args = new String[]{"evernote"};
 		ankiEngine = builder.createTextEngine(args);
 		
-		assertEquals(ankiEngine.getReader().getClass(), SimpleReader.class);
+		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), SimplePrinter.class);
 		
@@ -58,7 +58,7 @@ class EngineBuilderTest {
 		args = new String[]{"kindle"};
 		ankiEngine = builder.createTextEngine(args);
 		
-		assertEquals(ankiEngine.getReader().getClass(), SimpleReader.class);
+		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), KindleClippingsParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), KindleClippingPrinter.class);
 		
@@ -71,7 +71,7 @@ class EngineBuilderTest {
 		args = new String[]{"languageLearning"};
 		ankiEngine = builder.createTextEngine(args);
 		
-		assertEquals(ankiEngine.getReader().getClass(), SimpleReader.class);
+		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), LanguageLearningPrinter.class);
 		

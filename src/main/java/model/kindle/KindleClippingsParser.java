@@ -1,4 +1,4 @@
-package main.java.model.kindleModel;
+package main.java.model.kindle;
 
 import java.nio.file.Path;
 import java.util.ArrayList;

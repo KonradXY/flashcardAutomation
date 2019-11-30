@@ -1,4 +1,4 @@
-package main.java.model.evernoteModel;
+package main.java.model.evernote;
 
 import main.java.contracts.IParser;
 import main.java.model.AbstractAnkiCard;

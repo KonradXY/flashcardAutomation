@@ -1,4 +1,4 @@
-package main.java.model.evernoteModel;
+package main.java.model.evernote;
 
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;

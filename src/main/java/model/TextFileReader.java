@@ -1,4 +1,4 @@
-package main.java.model.simplemodel;
+package main.java.model;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -15,15 +15,15 @@ import org.apache.log4j.Logger;
 import main.java.contracts.IReader;
 import main.java.strategy.FormatStrategy;
 
-public class SimpleReader implements IReader {
+public class TextFileReader implements IReader {
 
-	private static final Logger log = Logger.getLogger(SimpleReader.class);
+	private static final Logger log = Logger.getLogger(TextFileReader.class);
 
 	private final FormatStrategy reader;
 	
 	private int fileCounter = 0;
 
-	public SimpleReader(FormatStrategy strategy) {
+	public TextFileReader(FormatStrategy strategy) {
 		this.reader = strategy;
 	}
 
@@ -50,6 +50,7 @@ public class SimpleReader implements IReader {
 		
 			Files.walk(filePath)
 				.filter(p -> !p.equals(filePath))
+				.peek(System.out::println)
 				.sorted() 	// TODO - fare un comparator custom per sta roba
 				.forEach(path -> readContent(contentMap, path));
 		

@@ -2,9 +2,9 @@ package main.java.factory;
 
 import static main.java.utils.Property.KINDLE_DIR;
 
-import main.java.model.kindleModel.KindleClippingPrinter;
-import main.java.model.kindleModel.KindleClippingsParser;
-import main.java.model.simplemodel.SimpleReader;
+import main.java.model.TextFileReader;
+import main.java.model.kindle.KindleClippingPrinter;
+import main.java.model.kindle.KindleClippingsParser;
 import main.java.strategy.FormatStrategy;
 
 public class KindleEngine extends AbstractAnkiEngine {
@@ -13,7 +13,7 @@ public class KindleEngine extends AbstractAnkiEngine {
 		inputContent  += KINDLE_DIR;
 		outputContent += KINDLE_DIR;
 		
-		reader = new SimpleReader(FormatStrategy.REPLACE_NEW_LINES);
+		reader = new TextFileReader(FormatStrategy.REPLACE_NEW_LINES);
 		parser = new KindleClippingsParser();
 		printer = new KindleClippingPrinter();
 	}

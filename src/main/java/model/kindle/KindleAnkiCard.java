@@ -1,4 +1,4 @@
-package main.java.model.kindleModel;
+package main.java.model.kindle;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
