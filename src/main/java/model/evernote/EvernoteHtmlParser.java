@@ -1,15 +1,5 @@
 package main.java.model.evernote;
 
-import main.java.contracts.IParser;
-import main.java.model.AbstractAnkiCard;
-import main.java.model.simplemodel.SimpleAnkiCard;
-import main.java.utils.Property;
-import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,6 +9,16 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import main.java.contracts.IParser;
+import main.java.model.AbstractAnkiCard;
+import main.java.utils.Property;
 
 public class EvernoteHtmlParser implements IParser {
 
@@ -156,20 +156,6 @@ public class EvernoteHtmlParser implements IParser {
             throw new RuntimeException("Error while copying file: " + ex);
         }
 
-    }
-
-    private String createTitleForImage(Path filePath, String imgName) {
-        return getPathForImage(filePath)+getTitleForImage(filePath, imgName);
-    }
-
-    private String getPathForImage(Path filePath) {
-        String fileName = filePath.toString();
-        int firstIndex = fileName.lastIndexOf("/")+1;
-        int lastIndex = fileName.lastIndexOf(".");
-        String firstString = IParser.replaceWhitespaces(fileName.substring(firstIndex, lastIndex)).replace("input","output"); // <<--- FIXME
-
-        log.info("firstString " + firstString);
-        return firstString;
     }
 
     private String getTitleForImage(Path filePath, String imgName) {
