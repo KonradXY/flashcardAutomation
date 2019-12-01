@@ -70,7 +70,7 @@ public class EvernoteHtmlParser implements IParser {
 
     // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
     private boolean cardExceedMaxSize(AnkiCard card) {
-    	boolean check = card.getValue().text().length() > MAX_SIZE_CARD;
+    	boolean check = card.getBack().text().length() > MAX_SIZE_CARD;
     	if (check) log.info("Card exceded max size ! ");
     	return check;
     }

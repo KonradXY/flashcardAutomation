@@ -47,8 +47,8 @@ public class KindleClippingPrinter implements IPrinter {
 
 			try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8"))) {
 				for (KindleAnkiCard ankiCard : entryAnkiMap.getValue()) {
-					bw.write(cardIndex++ + ". " + ankiCard.getKey()+"|");
-					bw.write(ankiCard.getValue()+"\n\n");
+					bw.write(cardIndex++ + ". " + ankiCard.getTitle()+"|");
+					bw.write(ankiCard.getBack()+"\n\n");
 				}
 			}
 		}

@@ -37,10 +37,6 @@ public class AnkiCard implements IAnkiCard  {
 	}
 
 
-	@Override public Element getKey()   { return getFront(); }
-	@Override public Element getValue() { return getBack(); }
-	@Override public Element setValue(Element value) { this.back = value; return this.back; }
-
 	public Element getFront() { return front.getElementsByClass(FRONT).get(0); }
 	public Element getBack()  { return back.getElementsByClass(BACK).get(0); }
 
