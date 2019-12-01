@@ -9,6 +9,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -53,19 +54,16 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     private List<AnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
-        Document doc = Jsoup.parse(htmlContent);
-        formatImageTags(fileName, doc);
-        return createCards(doc, fileName);
+        Document htmlDoc = Jsoup.parse(htmlContent);
+        formatImageTags(fileName, htmlDoc);
+        return createCards(htmlDoc, fileName);
     }
 
     private List<AnkiCard> createCards(Document doc, Path fileName) {
-        List<AnkiCard> cardList = new ArrayList<>();
-        for (Element tbody : doc.getElementsByTag("tbody")) {
-            AnkiCard card = parseCardFromTBody(tbody);
-            if (cardExceedMaxSize(card)) continue;
-            cardList.add(card);
-        }
-        return cardList;
+       return  doc.getElementsByTag("tbody").stream()
+        	.map(tbody -> parseCardFromTBody(tbody))
+        	.filter(card -> !cardExceedMaxSize(card))
+        	.collect(Collectors.toList());
     }
 
     // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
