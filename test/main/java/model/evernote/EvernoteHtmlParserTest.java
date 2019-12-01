@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EvernoteEngine;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 class EvernoteHtmlParserTest {
 	
@@ -85,11 +85,11 @@ class EvernoteHtmlParserTest {
 	@Test 
 	void testEvernoteEngineParsing() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		List<AbstractAnkiCard> cardList = evernoteEngine.parse(content);
+		List<AnkiCard> cardList = evernoteEngine.parse(content);
 		
 		assertEquals(2, cardList.size());
 		
-		AbstractAnkiCard emptyCard, imgCard;
+		AnkiCard emptyCard, imgCard;
 		if (cardList.get(0).toString().length() > cardList.get(1).toString().length()) {
 			emptyCard = cardList.get(1);
 			imgCard = cardList.get(0);
@@ -108,7 +108,7 @@ class EvernoteHtmlParserTest {
 	@Test
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		List<AbstractAnkiCard> cardList = evernoteEngine.parse(content);
+		List<AnkiCard> cardList = evernoteEngine.parse(content);
 		evernoteEngine.print(cardList, outputFile);
 		
 		assertTrue(Files.exists(outputTestFile));

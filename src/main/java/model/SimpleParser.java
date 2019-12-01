@@ -1,4 +1,4 @@
-package main.java.model.simplemodel;
+package main.java.model;
 
 import static main.java.utils.Property.*;
 
@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import main.java.contracts.IParser;
-import main.java.model.AbstractAnkiCard;
 
 /*
  * Classe utilizzata per il parsing di file csv (l'input separator e' il pipe)
@@ -16,8 +15,8 @@ import main.java.model.AbstractAnkiCard;
 public class SimpleParser implements IParser {
 	
 	@Override	// TODO - vedere se riesco a fare qualcosa con le stream perche' e' un po' illegibile
-	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
-		List<AbstractAnkiCard> ankiCards = new ArrayList<>();
+	public List<AnkiCard> parse(Map<Path, String> input) {
+		List<AnkiCard> ankiCards = new ArrayList<>();
 		for (String text : input.values()) {
 			String[] splittedText = text.split(PIPE_SEPARATOR);
 			
@@ -26,7 +25,7 @@ public class SimpleParser implements IParser {
 			
 			int length = (splittedText.length%2 == 0 ? splittedText.length : splittedText.length -1);
 			for (int i = 0; i < length; i+=2) {
-				ankiCards.add(new SimpleAnkiCard(splittedText[i+SIMPLE_PARSER_ENG_FIELD], 
+				ankiCards.add(new AnkiCard(splittedText[i+SIMPLE_PARSER_ENG_FIELD], 
 												 splittedText[i+SIMPLE_PARSER_ESP_FIELD]));
 			}
 		}

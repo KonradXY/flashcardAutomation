@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import main.java.contracts.IParser;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 public class KindleClippingsParser implements IParser {
 
@@ -15,10 +15,10 @@ public class KindleClippingsParser implements IParser {
 	private final String kindleKey = "evidenziazione";
 	
 	@Override
-	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
+	public List<AnkiCard> parse(Map<Path, String> input) {
 
 		String[] values;
-		List<AbstractAnkiCard> ankiCardList = new ArrayList<>();
+		List<AnkiCard> ankiCardList = new ArrayList<>();
 		for (Map.Entry<Path, String> clipping : input.entrySet()) {
 			values = clipping.getValue().split(kindleToken);
 			Stream.of(values).forEach(clip -> {

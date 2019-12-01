@@ -3,8 +3,8 @@ package main.java.factory;
 import java.nio.file.Paths;
 
 import main.java.model.TextFileReader;
+import main.java.model.TextFileWriter;
 import main.java.model.evernote.EvernoteHtmlParser;
-import main.java.model.simplemodel.TextFileWriter;
 import main.java.strategy.FormatStrategy;
 
 public class EvernoteEngine extends AbstractAnkiEngine {

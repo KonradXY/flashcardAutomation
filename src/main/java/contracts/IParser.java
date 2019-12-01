@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 public interface IParser {
 	
@@ -30,7 +30,7 @@ public interface IParser {
 	public static String QA_SEPARATOR = "RISPOSTE";	
 
 	// Map<filename,filecontent>
-	public List<AbstractAnkiCard> parse(Map<Path, String> input);
+	public List<AnkiCard> parse(Map<Path, String> input);
 	
 	
 	public default String closeInHtml(String input) {

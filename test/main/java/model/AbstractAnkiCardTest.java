@@ -21,7 +21,7 @@ class AbstractAnkiCardTest {
 	
 	@Test
 	void testCreatingEmptyAbstractCard() {
-		AbstractAnkiCard card = new AbstractAnkiCard();
+		AnkiCard card = new AnkiCard();
 		
 		assertEquals(emptyFront, card.getFront().toString());
 		assertEquals(emptyBack, card.getBack().toString());
@@ -39,7 +39,7 @@ class AbstractAnkiCardTest {
 	
 	@Test
 	void testAddingSimpleTextAbstractAnkiCard() {
-		AbstractAnkiCard card = new AbstractAnkiCard();
+		AnkiCard card = new AnkiCard();
 		
 		card.addTextContentToFront(content);
 		assertEquals(content, card.getFront().ownText());
@@ -51,7 +51,7 @@ class AbstractAnkiCardTest {
 	
 	@Test
 	void testAddingElementAbstractAnkiCard() {
-		AbstractAnkiCard card = new AbstractAnkiCard();
+		AnkiCard card = new AnkiCard();
 		Tag tag = Tag.valueOf("div");
 		Element elem = new Element(tag, "").addClass("inner-content");
 		elem.appendText(content);

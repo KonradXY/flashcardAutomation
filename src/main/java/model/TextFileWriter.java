@@ -1,4 +1,4 @@
-package main.java.model.simplemodel;
+package main.java.model;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -8,17 +8,16 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import main.java.contracts.IPrinter;
-import main.java.model.AbstractAnkiCard;
 
 public class TextFileWriter implements IPrinter {
 
 	@Override  
-	public void printFile(String destPath, List<AbstractAnkiCard> input) {
+	public void printFile(String destPath, List<AnkiCard> input) {
 		
 		checkOutputFolder(Paths.get(destPath));
 		
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destPath), "UTF-8"))) {
-			for (AbstractAnkiCard ankiCard : input) {
+			for (AnkiCard ankiCard : input) {
 				bos.write(ankiCard.toString());
 			}
 		} catch (IOException ioex) {

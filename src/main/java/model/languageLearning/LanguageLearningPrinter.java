@@ -11,18 +11,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import main.java.contracts.IPrinter;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 public class LanguageLearningPrinter implements IPrinter {
 
 	private final String nameFile = "languageExcerciseParsed.txt";
 	
 	@Override
-	public void printFile(String destFolderPath, List<AbstractAnkiCard> input) throws IOException {
+	public void printFile(String destFolderPath, List<AnkiCard> input) throws IOException {
 		printAnkiCard(destFolderPath + nameFile, input);
 	}
 	
-	private void printAnkiCard(String destPath, List<AbstractAnkiCard> input) throws IOException  {
+	private void printAnkiCard(String destPath, List<AnkiCard> input) throws IOException  {
 		checkOutputFolder(Paths.get(destPath));
 		
 		try (BufferedWriter pw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destPath), "UTF-8"))) {

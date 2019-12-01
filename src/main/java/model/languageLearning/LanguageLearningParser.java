@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import main.java.contracts.IParser;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 
@@ -18,8 +18,8 @@ public class LanguageLearningParser implements IParser {
 
 	
 	@Override
-	public List<AbstractAnkiCard> parse(Map<Path, String> input) {
-		List<AbstractAnkiCard> cardList = new ArrayList<>();
+	public List<AnkiCard> parse(Map<Path, String> input) {
+		List<AnkiCard> cardList = new ArrayList<>();
 
 		for (Map.Entry<Path, String> file : input.entrySet()) {
 			
@@ -45,7 +45,7 @@ public class LanguageLearningParser implements IParser {
 		return cardList;
 	}
 	
-	private void addParsedGrammaticaCard(List<AbstractAnkiCard> cardList, String grammaticaInput) {
+	private void addParsedGrammaticaCard(List<AnkiCard> cardList, String grammaticaInput) {
 		String[] splitted = grammaticaInput.split(PIPE_SEPARATOR);
 		int length = (splitted.length%2 == 0 ? splitted.length : splitted.length -1);
 		for (int i = 0; i < length; i+=2) {
@@ -53,15 +53,15 @@ public class LanguageLearningParser implements IParser {
 		}
 	}
 
-	private void addParsedVocabolarioCard(List<AbstractAnkiCard> listCard, String input) {
+	private void addParsedVocabolarioCard(List<AnkiCard> listCard, String input) {
 		addNestedParsedCard(listCard, input, PracticeMakesPerfectEnum.VOCABOLARIO);
 	}
 
-	private void addParsedTraduzioniCard(List<AbstractAnkiCard> listCard, String input) {
+	private void addParsedTraduzioniCard(List<AnkiCard> listCard, String input) {
 		addParsedCard(listCard, input, PracticeMakesPerfectEnum.TRADUZIONE);
 	}
 	
-	private <T> void addParsedCard(List<AbstractAnkiCard> listCard, String input, PracticeMakesPerfectEnum cardKind) {
+	private <T> void addParsedCard(List<AnkiCard> listCard, String input, PracticeMakesPerfectEnum cardKind) {
 
 		String qa[] = parseDomandeRisposte(input);
 
@@ -87,7 +87,7 @@ public class LanguageLearningParser implements IParser {
 	
 	
 	
-	private void addNestedParsedCard(List<AbstractAnkiCard> listCard, String input, PracticeMakesPerfectEnum cardKind) {
+	private void addNestedParsedCard(List<AnkiCard> listCard, String input, PracticeMakesPerfectEnum cardKind) {
 
 		Map<String, Map<String, String>> domandeMap = new HashMap<>();
 		Map<String, Map<String, String>> risposteMap = new HashMap<>();

@@ -12,14 +12,14 @@ import org.junit.jupiter.api.Test;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
+import main.java.model.SimpleParser;
 import main.java.model.TextFileReader;
+import main.java.model.TextFileWriter;
 import main.java.model.evernote.EvernoteHtmlParser;
 import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
 import main.java.model.languageLearning.LanguageLearningParser;
 import main.java.model.languageLearning.LanguageLearningPrinter;
-import main.java.model.simplemodel.SimpleParser;
-import main.java.model.simplemodel.TextFileWriter;
 
 class EngineBuilderTest {
 

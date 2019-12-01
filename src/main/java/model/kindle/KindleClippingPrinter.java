@@ -12,12 +12,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import main.java.contracts.IPrinter;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 public class KindleClippingPrinter implements IPrinter {
 
 	@Override
-	public void printFile(String destFile, List<AbstractAnkiCard> input) throws IOException {
+	public void printFile(String destFile, List<AnkiCard> input) throws IOException {
 
 		Path destPath = Paths.get(destFile);
 		

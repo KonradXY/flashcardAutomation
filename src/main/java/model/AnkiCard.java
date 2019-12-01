@@ -3,40 +3,34 @@ package main.java.model;
 import static main.java.contracts.IParser.NEW_LINE;
 import static main.java.contracts.IParser.TAB;
 
-import java.util.Map;
-
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 
-public class AbstractAnkiCard implements Map.Entry<Element, Element>  {
+import main.java.contracts.IAnkiCard;
 
-	protected static final String FRONT = "front";
-	protected static final String BACK = "back";
-
-	protected final static Tag divTag = Tag.valueOf("div");
+public class AnkiCard implements IAnkiCard  {
 
 	protected Element front;
 	protected Element back;
 
-	public AbstractAnkiCard() {
+	public AnkiCard() {
 		this.front = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(FRONT));
 		this.back = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(BACK));
 	}
 
-	public AbstractAnkiCard(String front, String back) {
+	public AnkiCard(String front, String back) {
 		this();
 		this.addTextContentToFront(front);
 		this.addTextContentToBack(back);
 	}
 	
-	public AbstractAnkiCard(Element front, Element back) {
+	public AnkiCard(Element front, Element back) {
 		this();
 		this.addElementToFront(front);
 		this.addElementToBack(back);
 	}
 	
-	public AbstractAnkiCard(Elements front, Elements back) {
+	public AnkiCard(Elements front, Elements back) {
 		this();
 		front.forEach(it -> this.addElementToFront(it));
 		back.forEach(it -> this.addElementToBack(it));

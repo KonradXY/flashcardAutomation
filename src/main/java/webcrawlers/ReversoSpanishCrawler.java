@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.google.inject.Singleton;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
@@ -18,8 +17,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.java.model.AbstractAnkiCard;
-import main.java.model.simplemodel.SimpleAnkiCard;
+import com.google.inject.Singleton;
+
+import main.java.model.AnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
 @Singleton
@@ -35,8 +35,8 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private static final String ANCHOR_TAG = "a";
 
-	public List<AbstractAnkiCard> getExamplesFromWord(String word)  {
-		List<AbstractAnkiCard> cardList = new ArrayList<>();
+	public List<AnkiCard> getExamplesFromWord(String word)  {
+		List<AnkiCard> cardList = new ArrayList<>();
 
 		try {
 			doc = Jsoup.connect(getUrlAsString(ESP_ITA_URL,word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
@@ -50,7 +50,7 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 						String traduzione = getEsempioTradotto(example).text();
 						String contenuto = getEsempioContenuto(example).text();
 
-						AbstractAnkiCard card = new SimpleAnkiCard();
+						AnkiCard card = new AnkiCard();
 						CardDecorator.addWordLearnedToFront(card, word);
 						CardDecorator.addTranslationToFront(card, traduzione);
 						CardDecorator.addContenutoToBack(card, contenuto);

@@ -1,8 +1,8 @@
 package main.java.factory;
 
+import main.java.model.SimpleParser;
 import main.java.model.TextFileReader;
-import main.java.model.simplemodel.SimpleParser;
-import main.java.model.simplemodel.TextFileWriter;
+import main.java.model.TextFileWriter;
 import main.java.strategy.FormatStrategy;
 
 public class DefaultEngine extends AbstractAnkiEngine {

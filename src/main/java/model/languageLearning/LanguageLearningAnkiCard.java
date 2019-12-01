@@ -2,9 +2,9 @@ package main.java.model.languageLearning;
 
 import java.util.function.Predicate;
 
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
-public class LanguageLearningAnkiCard extends AbstractAnkiCard {
+public class LanguageLearningAnkiCard extends AnkiCard {
 
 	public enum PracticeMakesPerfectEnum {
 		TRADUZIONE,

@@ -12,7 +12,7 @@ import com.google.inject.Inject;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 import main.java.netutilities.CertificateManager;
 import main.java.webcrawlers.LanguageLearningMediator;
 

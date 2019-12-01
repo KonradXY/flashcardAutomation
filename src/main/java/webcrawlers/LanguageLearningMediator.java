@@ -17,13 +17,12 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import com.google.inject.Inject;
-
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 
-import main.java.model.AbstractAnkiCard;
-import main.java.model.simplemodel.SimpleAnkiCard;
+import com.google.inject.Inject;
+
+import main.java.model.AnkiCard;
 import main.java.modelDecorator.CardDecorator;
 
 public class LanguageLearningMediator {
@@ -51,9 +50,9 @@ public class LanguageLearningMediator {
 				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitions(word);
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
-				List<AbstractAnkiCard> cards = reversoCrawler.getExamplesFromWord(word);
+				List<AnkiCard> cards = reversoCrawler.getExamplesFromWord(word);
 
-				for (AbstractAnkiCard card : cards) {
+				for (AnkiCard card : cards) {
 					CardDecorator.addDefinizioneToBack(card, definizioniMap);
 					CardDecorator.addSinonimiToBack(card, synonims);
 				}
@@ -78,7 +77,7 @@ public class LanguageLearningMediator {
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-					AbstractAnkiCard card = createClozeAnkiCard(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
+					AnkiCard card = createClozeAnkiCard(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
 					bos.write(card.toString());
 				}
 
@@ -89,8 +88,8 @@ public class LanguageLearningMediator {
 		}
 	}
 
-	private AbstractAnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition, List<String> synonims) {
-		AbstractAnkiCard card = new SimpleAnkiCard();
+	private AnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition, List<String> synonims) {
+		AnkiCard card = new AnkiCard();
 		CardDecorator.addTranslationToFront(card, clozeText);
 		CardDecorator.addWordLearnedToBack(card, word);
 		CardDecorator.addContenutoToBack(card, originalValue);
@@ -141,15 +140,15 @@ public class LanguageLearningMediator {
 		return words[index];
 	}
 
-	private void writeCards(List<AbstractAnkiCard> cards, BufferedWriter bos) throws IOException {
-		for (AbstractAnkiCard card : cards) {
+	private void writeCards(List<AnkiCard> cards, BufferedWriter bos) throws IOException {
+		for (AnkiCard card : cards) {
 			writeCard(card, bos);
 		}
 
 		bos.flush();
 	}
 
-	private void writeCard(AbstractAnkiCard card, BufferedWriter bos) throws IOException {
+	private void writeCard(AnkiCard card, BufferedWriter bos) throws IOException {
 		if (!card.getFront().text().trim().isEmpty()) {
 			bos.write(card.toString());
 			bos.flush();

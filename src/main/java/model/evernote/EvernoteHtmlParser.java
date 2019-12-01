@@ -17,7 +17,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import main.java.contracts.IParser;
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 import main.java.modelDecorator.CardDecorator;
 import main.java.utils.Property;
 
@@ -43,24 +43,24 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     @Override
-    public List<AbstractAnkiCard> parse(Map<Path, String> input) {
-        List<AbstractAnkiCard> cardList = new ArrayList<>();
+    public List<AnkiCard> parse(Map<Path, String> input) {
+        List<AnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
             cardList.addAll(parseEvernoteCardTableFromFile(entry.getKey(), entry.getValue()));
 
         return cardList;
     }
 
-    private List<AbstractAnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
+    private List<AnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
         Document doc = Jsoup.parse(htmlContent);
         formatImageTags(fileName, doc);
         return createCards(doc, fileName);
     }
 
-    private List<AbstractAnkiCard> createCards(Document doc, Path fileName) {
-        List<AbstractAnkiCard> cardList = new ArrayList<>();
+    private List<AnkiCard> createCards(Document doc, Path fileName) {
+        List<AnkiCard> cardList = new ArrayList<>();
         for (Element tbody : doc.getElementsByTag("tbody")) {
-            AbstractAnkiCard card = parseCardFromTBody(tbody);
+            AnkiCard card = parseCardFromTBody(tbody);
             if (cardExceedMaxSize(card)) continue;
             cardList.add(card);
         }
@@ -68,17 +68,17 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
-    private boolean cardExceedMaxSize(AbstractAnkiCard card) {
+    private boolean cardExceedMaxSize(AnkiCard card) {
     	boolean check = card.getValue().text().length() > MAX_SIZE_CARD;
     	if (check) log.info("Card exceded max size ! ");
     	return check;
     }
 
-    private AbstractAnkiCard parseCardFromTBody(Element tbody) {
+    private AnkiCard parseCardFromTBody(Element tbody) {
         Elements content = tbody.getElementsByTag("tr");
         Elements frontElements = getContentFromTrTag(content.get(0));
         Elements backElements = getContentFromTrTag(content.get(1));
-        return new AbstractAnkiCard(frontElements, backElements);
+        return new AnkiCard(frontElements, backElements);
     }
 
     private Elements getContentFromTrTag(Element elem) {

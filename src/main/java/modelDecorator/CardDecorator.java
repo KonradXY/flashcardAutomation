@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 
-import main.java.model.AbstractAnkiCard;
+import main.java.model.AnkiCard;
 
 import java.util.Arrays;
 import java.util.List;
@@ -52,15 +52,15 @@ public class CardDecorator {
 
 
     // TODO <-- secondo me sto facendo troppe indirezioni qua dentro. Inoltre i metodi non sono generici. Dovrei rinominarli !
-    public static void addWordLearnedToFront(AbstractAnkiCard card, String text)    { addWordLearned(card.getFront(), text); }
-    public static void addWordLearnedToBack(AbstractAnkiCard card, String text)    { addWordLearned(card.getBack(), text); }
+    public static void addWordLearnedToFront(AnkiCard card, String text)    { addWordLearned(card.getFront(), text); }
+    public static void addWordLearnedToBack(AnkiCard card, String text)    { addWordLearned(card.getBack(), text); }
 
-    public static void addTranslationToFront(AbstractAnkiCard card, String text)    { addTranslationToCard(text, card.getFront()); }
-    public static void addParoleTradotteToBack(AbstractAnkiCard card, String text)  { addParoleTradotte(text, card.getBack()); }
-    public static void addContenutoToBack(AbstractAnkiCard card, String text)       { addContenutoToCard(card.getBack(), text); }
-    public static void addAudioToBack(AbstractAnkiCard card, String audio)          { addAudio(audio, card.getBack()); }
+    public static void addTranslationToFront(AnkiCard card, String text)    { addTranslationToCard(text, card.getFront()); }
+    public static void addParoleTradotteToBack(AnkiCard card, String text)  { addParoleTradotte(text, card.getBack()); }
+    public static void addContenutoToBack(AnkiCard card, String text)       { addContenutoToCard(card.getBack(), text); }
+    public static void addAudioToBack(AnkiCard card, String audio)          { addAudio(audio, card.getBack()); }
 
-    public static void addSinonimiToBack(AbstractAnkiCard card, List<String> sinonimi) {
+    public static void addSinonimiToBack(AnkiCard card, List<String> sinonimi) {
         if (sinonimi.isEmpty())
             return;
 
@@ -76,7 +76,7 @@ public class CardDecorator {
 
     }
 
-    public static void addDefinizioneToBack(AbstractAnkiCard card, Map<String, String> definizioni) {
+    public static void addDefinizioneToBack(AnkiCard card, Map<String, String> definizioni) {
         if (definizioni.isEmpty())
             return;
 
