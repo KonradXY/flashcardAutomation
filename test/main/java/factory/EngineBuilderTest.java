@@ -13,8 +13,8 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.EngineBuilder;
-import main.java.model.SimpleParser;
+import main.java.enginefactory.TextEngineBuilder;
+import main.java.model.DefaultParser;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
@@ -25,7 +25,7 @@ import main.java.model.languageLearning.LanguageLearningParser;
 @RunWith(JUnitPlatform.class)
 class EngineBuilderTest {
 
-	private EngineBuilder builder = new EngineBuilder();
+	private TextEngineBuilder builder = new TextEngineBuilder();
 	private AbstractAnkiEngine ankiEngine;
 	private String[] args;
 	
@@ -35,7 +35,7 @@ class EngineBuilderTest {
 		ankiEngine = builder.createTextEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
-		assertEquals(ankiEngine.getParser().getClass(), SimpleParser.class);
+		assertEquals(ankiEngine.getParser().getClass(), DefaultParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
 		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + GENERIC_DIR );

@@ -12,9 +12,9 @@ import com.google.inject.Singleton;
 // TODO - questo e' da rifare con guice
 
 @Singleton
-public class EngineBuilder {
+public class TextEngineBuilder {
 	
-	private static final Logger log = Logger.getLogger(EngineBuilder.class);
+	private static final Logger log = Logger.getLogger(TextEngineBuilder.class);
 	
 	public AbstractAnkiEngine createTextEngine(String[] inputParam) {
 
@@ -26,7 +26,6 @@ public class EngineBuilder {
 			case "evernote": 			ankiModel = new EvernoteEngine(EVERNOTE_DIR, EVERNOTE_DIR + "evernoteParsed.txt"); break;
 			case "kindle": 	 			ankiModel = new KindleEngine(KINDLE_DIR, KINDLE_DIR);   break;
 			case "languageLearning": 	ankiModel = new LanguageLearningEngine(LANGUAGE_LEARNING_DIR, LANGUAGE_LEARNING_DIR); break;
-			// TODO - introdurre web e cloze come modelli
 			default : 					ankiModel = new DefaultEngine(GENERIC_DIR, GENERIC_DIR); break;
 		}
 		

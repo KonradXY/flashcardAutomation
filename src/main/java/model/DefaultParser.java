@@ -14,7 +14,7 @@ import main.java.contracts.IParser;
 /*
  * Classe utilizzata per il parsing di file csv (l'input separator e' il pipe)
  */
-public class SimpleParser implements IParser {
+public class DefaultParser implements IParser {
 	
 	@Override	// TODO - vedere se riesco a fare qualcosa con le stream perche' e' un po' illegibile
 	public List<IAnkiCard> parse(Map<Path, String> input) {

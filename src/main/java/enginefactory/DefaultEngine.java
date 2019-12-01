@@ -1,6 +1,6 @@
 package main.java.enginefactory;
 
-import main.java.model.SimpleParser;
+import main.java.model.DefaultParser;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.strategy.ReadingFormatStrategy;
@@ -13,7 +13,7 @@ public class DefaultEngine extends AbstractAnkiEngine {
 	@Override
 	public void buildEngine() {
 		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
-		parser = new SimpleParser();
+		parser = new DefaultParser();
 		printer = new TextFilePrinter();
 	}
 	
