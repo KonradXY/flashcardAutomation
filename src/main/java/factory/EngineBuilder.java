@@ -1,6 +1,9 @@
 package main.java.factory;
 
-import static main.java.utils.Property.*;
+import static main.java.utils.Property.EVERNOTE_DIR;
+import static main.java.utils.Property.GENERIC_DIR;
+import static main.java.utils.Property.KINDLE_DIR;
+import static main.java.utils.Property.LANGUAGE_LEARNING_DIR;
 
 import org.apache.log4j.Logger;
 

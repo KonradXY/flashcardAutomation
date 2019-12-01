@@ -1,6 +1,7 @@
 package main.java.summarizer;
 
-import static main.java.utils.Property.*;
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.TXT_INPUTDIR;
 
 
 /**

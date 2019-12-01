@@ -1,14 +1,14 @@
 package main.java.modelDecorator;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 
 import main.java.model.AnkiCard;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 public class CardDecorator {
 

@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import main.java.model.AnkiCard;
-
 public interface IParser {
 	
 	public static String REGULAR_PIPE = "|";

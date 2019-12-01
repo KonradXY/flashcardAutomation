@@ -5,11 +5,9 @@ import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
 
 import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class AbstractWebCrawler {

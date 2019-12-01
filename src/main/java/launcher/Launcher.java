@@ -2,8 +2,6 @@ package main.java.launcher;
 
 import static main.java.utils.Property.WEB_CRAWLER_DIR;
 
-import java.io.IOException;
-
 import org.apache.log4j.Logger;
 
 import com.google.inject.Guice;

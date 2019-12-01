@@ -5,8 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import main.java.model.AnkiCard;
-
 public interface IPrinter {
 
 	public void printFile(String destPath, List<IAnkiCard> input) throws IOException;

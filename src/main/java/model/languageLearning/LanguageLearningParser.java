@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
 import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 

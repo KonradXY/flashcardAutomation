@@ -13,7 +13,6 @@ import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
-import main.java.model.AnkiCard;
 
 public abstract class AbstractAnkiEngine {
 	

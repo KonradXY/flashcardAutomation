@@ -1,18 +1,9 @@
 package main.java.facade;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-
 import com.google.inject.Inject;
 
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EngineBuilder;
-import main.java.model.AnkiCard;
 import main.java.netutilities.CertificateManager;
 import main.java.webcrawlers.LanguageLearningMediator;
 

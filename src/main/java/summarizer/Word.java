@@ -1,6 +1,8 @@
 package main.java.summarizer;
 import java.util.ArrayList;
 
+import org.junit.runner.Runner;
+
 public class Word {
 	private String wordText;
 	private int belongsToSentenceN;
