@@ -28,7 +28,6 @@ public class KindleClippingPrinter implements IPrinter {
 		
 		Map<String, List<KindleAnkiCard>> list = 
 				input.parallelStream().map(it -> (KindleAnkiCard) it).sorted().collect(Collectors.groupingBy(KindleAnkiCard::getTitle));
-
 		
 		if (!Files.isDirectory(destPath)) 
 			destPath = destPath.getParent();

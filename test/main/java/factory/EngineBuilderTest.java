@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import main.java.enginefactory.AbstractAnkiEngine;
+import main.java.enginefactory.EngineBuilder;
 import main.java.model.SimpleParser;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;

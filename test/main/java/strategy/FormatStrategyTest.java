@@ -35,7 +35,7 @@ class FormatStrategyTest {
 	@Test
 	void testAddPipeReadingStrategy() throws IOException {
 		String check = content.replaceAll("\n", "\n|");
-		reader = new TextFileReader(FormatStrategy.ADD_PIPE);
+		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals("the 'add pipe' format strategy should add a pipe", 
 					check, contentRead.get(filepath));
@@ -44,7 +44,7 @@ class FormatStrategyTest {
 	@Test
 	void testNoFormatStrategy() throws IOException {
 		String check = content;
-		reader = new TextFileReader(FormatStrategy.NO_FORMAT);
+		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals("the 'no format' format strategy should be identical as the input !", 
 					check, contentRead.get(filepath));
@@ -53,7 +53,7 @@ class FormatStrategyTest {
 	@Test
 	void testReplaceNewLinesFormatStrategy() throws IOException {
 		String check = content.replaceAll("\n", "");
-		reader = new TextFileReader(FormatStrategy.REPLACE_NEW_LINES);
+		reader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals("the 'replace new lines' format strategy should replace new lines !", 
 					check, contentRead.get(filepath));
@@ -62,7 +62,7 @@ class FormatStrategyTest {
 	@Test
 	void testAddNewLineFormatStrategy() throws IOException {
 		String check = content.replace("\n", "\n\n");
-		reader = new TextFileReader(FormatStrategy.ADD_NEW_LINE);
+		reader = new TextFileReader(ReadingFormatStrategy.ADD_NEW_LINE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals("the 'add new line' format strategy should add a new line at the end !", 
 					check, contentRead.get(filepath));

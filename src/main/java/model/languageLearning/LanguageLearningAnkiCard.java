@@ -15,7 +15,6 @@ public class LanguageLearningAnkiCard extends AnkiCard {
 	public LanguageLearningAnkiCard(String front, String back) {
 		super(front, back);
 	}
-	
 	public LanguageLearningAnkiCard(String front, String back, PracticeMakesPerfectEnum val) {
 		super(front, back);
 		this.kind = val;

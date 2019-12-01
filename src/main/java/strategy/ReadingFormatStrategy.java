@@ -2,7 +2,7 @@ package main.java.strategy;
 
 import main.java.contracts.IParser;
 
-public enum FormatStrategy {
+public enum ReadingFormatStrategy {
 
 	ADD_PIPE {
 		@Override

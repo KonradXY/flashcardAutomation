@@ -17,8 +17,8 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 import main.java.contracts.IAnkiCard;
-import main.java.factory.AbstractAnkiEngine;
-import main.java.factory.EvernoteEngine;
+import main.java.enginefactory.AbstractAnkiEngine;
+import main.java.enginefactory.EvernoteEngine;
 
 @RunWith(JUnitPlatform.class)
 class EvernoteHtmlParserTest {

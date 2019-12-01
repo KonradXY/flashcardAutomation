@@ -1,9 +1,9 @@
-package main.java.factory;
+package main.java.enginefactory;
 
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.model.languageLearning.LanguageLearningParser;
-import main.java.strategy.FormatStrategy;
+import main.java.strategy.ReadingFormatStrategy;
 
 public class LanguageLearningEngine extends AbstractAnkiEngine {
 	
@@ -12,7 +12,7 @@ public class LanguageLearningEngine extends AbstractAnkiEngine {
 	
 	@Override
 	public void buildEngine() {
-		reader = new TextFileReader(FormatStrategy.ADD_NEW_LINE);
+		reader = new TextFileReader(ReadingFormatStrategy.ADD_NEW_LINE);
 		parser = new LanguageLearningParser();
 		printer = new TextFilePrinter();
 	}

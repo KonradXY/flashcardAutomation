@@ -16,7 +16,7 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 import main.java.contracts.IReader;
-import main.java.strategy.FormatStrategy;
+import main.java.strategy.ReadingFormatStrategy;
 
 @RunWith(JUnitPlatform.class)
 class TextFileReaderTest {
@@ -39,7 +39,7 @@ class TextFileReaderTest {
 	
 	private final static String content = "This is \n the content \n";
 
-	private IReader reader = new TextFileReader(FormatStrategy.NO_FORMAT);
+	private IReader reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
 
 	@BeforeAll
 	public static void setup() throws IOException {

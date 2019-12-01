@@ -13,17 +13,17 @@ import java.util.stream.Stream;
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IReader;
-import main.java.strategy.FormatStrategy;
+import main.java.strategy.ReadingFormatStrategy;
 
 public class TextFileReader implements IReader {
 
 	private static final Logger log = Logger.getLogger(TextFileReader.class);
 
-	private final FormatStrategy reader;
+	private final ReadingFormatStrategy reader;
 	
 	private int fileCounter = 0;
 
-	public TextFileReader(FormatStrategy strategy) {
+	public TextFileReader(ReadingFormatStrategy strategy) {
 		this.reader = strategy;
 	}
 

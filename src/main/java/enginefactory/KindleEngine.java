@@ -1,9 +1,9 @@
-package main.java.factory;
+package main.java.enginefactory;
 
 import main.java.model.TextFileReader;
 import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
-import main.java.strategy.FormatStrategy;
+import main.java.strategy.ReadingFormatStrategy;
 
 public class KindleEngine extends AbstractAnkiEngine {
 	
@@ -12,7 +12,7 @@ public class KindleEngine extends AbstractAnkiEngine {
 	
 	@Override
 	public void buildEngine() {
-		reader = new TextFileReader(FormatStrategy.REPLACE_NEW_LINES);
+		reader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
 		parser = new KindleClippingsParser();
 		printer = new KindleClippingPrinter();
 	}

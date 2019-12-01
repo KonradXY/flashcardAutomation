@@ -2,8 +2,8 @@ package main.java.facade;
 
 import com.google.inject.Inject;
 
-import main.java.factory.AbstractAnkiEngine;
-import main.java.factory.EngineBuilder;
+import main.java.enginefactory.AbstractAnkiEngine;
+import main.java.enginefactory.EngineBuilder;
 import main.java.netutilities.CertificateManager;
 import main.java.webcrawlers.LanguageLearningMediator;
 
