@@ -19,7 +19,6 @@ import main.java.model.evernote.EvernoteHtmlParser;
 import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
 import main.java.model.languageLearning.LanguageLearningParser;
-import main.java.model.languageLearning.LanguageLearningPrinter;
 
 @RunWith(JUnitPlatform.class)
 class EngineBuilderTest {
@@ -74,7 +73,7 @@ class EngineBuilderTest {
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
-		assertEquals(ankiEngine.getPrinter().getClass(), LanguageLearningPrinter.class);
+		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
 		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + LANGUAGE_LEARNING_DIR);
 		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + LANGUAGE_LEARNING_DIR);

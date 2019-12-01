@@ -9,13 +9,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
+import org.apache.log4j.Logger;
+
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 
 public class LanguageLearningParser implements IParser {
-
+	
+	private final static Logger log = Logger.getLogger(LanguageLearningParser.class);
 	
 	@Override
 	public List<IAnkiCard> parse(Map<Path, String> input) {
@@ -34,12 +37,14 @@ public class LanguageLearningParser implements IParser {
 			else if (fileName.endsWith("traduzioni.txt"))
 				addParsedTraduzioniCard(cardList, file.getValue());	
 			
-			else if (fileName.endsWith("parole.txt"))
+			else if (fileName.endsWith("parole.txt"))	// TODO - questo in teoria e' il simple parser (da customizzare con eng/esp o viceversa)
 				throw new UnsupportedOperationException("TODO - funzione da fare !");
 			
-			else 
-				throw new RuntimeException(
-						"Tipologia di file non contemplata per il parser LanguageLearning: " + file.getKey());
+			else {
+				log.info("Trovato file non contemplato per il parser LanguageLearning: " + file.getKey() 
+				+ "\nil file verrà scartato. ");
+				continue;
+			}
 
 		}
 		return cardList;

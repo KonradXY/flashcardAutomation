@@ -1,0 +1,7 @@
+<div class="front"> ﻿Domanda di grammatica </div>	<div class="back">  Risposta di grammatica - elenco 1 - elenco 2 </div>
+<div class="front">  What time will you go to bed? </div>	<div class="back">  ¿A qué hora te acostarás? </div>
+<div class="front">  We will arrive at ten o’clock tomorrow night. </div>	<div class="back">  Llegaremos a las diez mañana por la noche. </div>
+<div class="front">  He will sleep until tomorrow afternoon. </div>	<div class="back">  Él dormirá hasta mañana por la tarde. </div>
+<div class="front">  She’ll buy a new car next year. </div>	<div class="back">  Ella comprará un carro nuevo el año que viene. </div>
+<div class="front">  I’ll speak with you tomorrow. </div>	<div class="back">  Te hablaré mañana. or Hablaré contigo mañana. </div>
+<div class="front"> ﻿ Test da tradurre </div>	<div class="back">  testo tradotto </div>

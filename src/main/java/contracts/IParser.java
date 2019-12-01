@@ -10,15 +10,7 @@ public interface IParser {
 	public static String REGULAR_PIPE = "|";
 	public static String PIPE_SEPARATOR = "\\|";
 	public static String TAB = "\t";
-	public static String NEW_LINE_HTML = "<br>";
 	public static String NEW_LINE = "\n";
-	
-	public static String HTML_OPEN = "<html><body>";
-	public static String HTML_CLOSE = "</body></html>";
-	
-	public static final int GRAMMATICA_INDEX = 0;
-	public static final int VOCABOLARIO_INDEX = 1;
-	public static final int TRADUZIONI_INDEX = 2;
 	
 	public static final int DOMANDE_INDEX = 0;
 	public static final int RISPOSTE_INDEX = 1;
@@ -30,11 +22,6 @@ public interface IParser {
 	// Map<filename,filecontent>
 	public List<IAnkiCard> parse(Map<Path, String> input);
 	
-	
-	public default String closeInHtml(String input) {
-		return HTML_OPEN + input + HTML_CLOSE;
-	}
-
 	public static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}
 	public static String replaceWhitespaces(String input) { return input.replace(" ", "");}
 }
