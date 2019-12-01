@@ -19,16 +19,15 @@ import org.jsoup.select.Elements;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.modelDecorator.CardDecorator;
+import main.java.modelDecorator.StandardFormatCardDecorator;
 import main.java.utils.Property;
 
 public class EvernoteHtmlParser implements IParser {
 
-    private final static int MAX_SIZE_CARD = 131072;
-
+    private static final int MAX_SIZE_CARD = 131072;
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
-
+    private static final StandardFormatCardDecorator standardDecorator = new StandardFormatCardDecorator();
+    
     private Path imgInputContent;
     
     public EvernoteHtmlParser() { }
@@ -53,13 +52,13 @@ public class EvernoteHtmlParser implements IParser {
         return cardList;
     }
 
-    private List<AnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
+    private List<IAnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);
         formatImageTags(fileName, htmlDoc);
         return createCards(htmlDoc, fileName);
     }
 
-    private List<AnkiCard> createCards(Document doc, Path fileName) {
+    private List<IAnkiCard> createCards(Document doc, Path fileName) {
        return  doc.getElementsByTag("tbody").stream()
         	.map(tbody -> parseCardFromTBody(tbody))
         	.filter(card -> !cardExceedMaxSize(card))
@@ -67,24 +66,17 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
-    private boolean cardExceedMaxSize(AnkiCard card) {
+    private boolean cardExceedMaxSize(IAnkiCard card) {
     	boolean check = card.getBack().text().length() > MAX_SIZE_CARD;
     	if (check) log.info("Card exceded max size ! ");
     	return check;
     }
 
-    private AnkiCard parseCardFromTBody(Element tbody) {
+    private IAnkiCard parseCardFromTBody(Element tbody) {
         Elements content = tbody.getElementsByTag("tr");
-        Elements frontElements = getContentFromTrTag(content.get(0));
-        Elements backElements = getContentFromTrTag(content.get(1));
-        return new AnkiCard(frontElements, backElements);
-    }
-
-    private Elements getContentFromTrTag(Element elem) {
-    	Elements elements = elem.getElementsByTag("div");
-    	for (Element e : elements) 
-    		CardDecorator.applyStandardFormat(e);
-    	return elements;
+        Elements frontElements = content.get(0).getElementsByTag("div");
+        Elements backElements = content.get(1).getElementsByTag("div");
+        return standardDecorator.create(frontElements, backElements);
     }
 
     public void formatImageTags(Path fileName, Document doc) {

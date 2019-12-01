@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
@@ -20,12 +21,13 @@ import org.jsoup.select.Elements;
 import com.google.inject.Singleton;
 
 import main.java.model.AnkiCard;
-import main.java.modelDecorator.CardDecorator;
+import main.java.modelDecorator.WebParsedCardDecorator;
 
 @Singleton
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
+	private final static WebParsedCardDecorator webCardDecorator = new WebParsedCardDecorator();
 
 	private static final String EXAMPLES_ID = "examples-content";
 	private static final String TRANSLATION_CONTENT_ID = "translations-content";
@@ -34,8 +36,8 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 	private static final String TRADUCT_CLASS = "trg ltr";
 
 	private static final String ANCHOR_TAG = "a";
-
-	public List<AnkiCard> getExamplesFromWord(String word)  {
+	
+	public List<AnkiCard> getExamplesFromWord(String word, Map<String, String> definizioniMap, List<String> synonims)  {
 		List<AnkiCard> cardList = new ArrayList<>();
 
 		try {
@@ -49,15 +51,9 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 					.forEach(example -> {
 						String traduzione = getEsempioTradotto(example).text();
 						String contenuto = getEsempioContenuto(example).text();
-
-						AnkiCard card = new AnkiCard();
-						CardDecorator.addWordLearnedToFront(card, word);
-						CardDecorator.addTranslationToFront(card, traduzione);
-						CardDecorator.addContenutoToBack(card, contenuto);
-						CardDecorator.addParoleTradotteToBack(card, listaSinonimi);
-						cardList.add(card);
-
+						cardList.add(webCardDecorator.create(word, traduzione, contenuto, listaSinonimi, definizioniMap, synonims));
 					});
+			
 			return cardList;
 
 

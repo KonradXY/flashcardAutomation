@@ -52,7 +52,7 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
             log.error("Error with I/O: " + ioEx);
         }
 
-        return Collections.EMPTY_MAP;
+        return Collections.emptyMap();
     }
 
     public List<String> getWordSynonims(String word) {
@@ -70,7 +70,7 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
             log.error("Error with I/O: " + ioEx);
         }
 
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     private URL getSynonimsUrl(String input) throws MalformedURLException {

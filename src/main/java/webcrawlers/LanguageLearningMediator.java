@@ -22,15 +22,18 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
 
+import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
-import main.java.modelDecorator.CardDecorator;
+import main.java.modelDecorator.WebParsedClozedCardDecorator;
 
 public class LanguageLearningMediator {
 
 	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
+	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
 	private final ReversoSpanishCrawler reversoCrawler; 
 	private final WordReferenceCrawler wordReferenceCrawler;
+	
 
 	@Inject
 	public LanguageLearningMediator(
@@ -50,13 +53,7 @@ public class LanguageLearningMediator {
 				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitions(word);
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
-				List<AnkiCard> cards = reversoCrawler.getExamplesFromWord(word);
-
-				for (AnkiCard card : cards) {
-					CardDecorator.addDefinizioneToBack(card, definizioniMap);
-					CardDecorator.addSinonimiToBack(card, synonims);
-				}
-
+				List<AnkiCard> cards = reversoCrawler.getExamplesFromWord(word, definizioniMap, synonims);
 				writeCards(cards, bos);
 
 				logNumberOfWords(numWords++);
@@ -77,7 +74,8 @@ public class LanguageLearningMediator {
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-					AnkiCard card = createClozeAnkiCard(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
+					IAnkiCard card = webCardDecorator.create(cloze.getValue(), 
+							word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
 					bos.write(card.toString());
 				}
 
@@ -87,17 +85,6 @@ public class LanguageLearningMediator {
 			}
 		}
 	}
-
-	private AnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition, List<String> synonims) {
-		AnkiCard card = new AnkiCard();
-		CardDecorator.addTranslationToFront(card, clozeText);
-		CardDecorator.addWordLearnedToBack(card, word);
-		CardDecorator.addContenutoToBack(card, originalValue);
-		CardDecorator.addContenutoToBack(card, wordDefinition);
-		CardDecorator.addSinonimiToBack(card, synonims);
-		return card;
-	}
-
 
 	private Map<String, String> createClozeMap(Map<String, String> map, String word) {
 		Map<String, String> clozeMap = map.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));

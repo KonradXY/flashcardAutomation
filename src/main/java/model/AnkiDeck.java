@@ -5,7 +5,7 @@ import java.util.List;
 
 import main.java.contracts.IAnkiCard;
 
-public class AnkiDeck implements IAnkiCard {
+public class AnkiDeck  {
 	
 	private String name;
 	private List<IAnkiCard> deck;

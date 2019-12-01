@@ -36,8 +36,22 @@ public class AnkiCard implements IAnkiCard  {
 		back.forEach(it -> this.addElementToBack(it));
 	}
 
-
+	@Override
+	public IAnkiCard create() {
+		return new AnkiCard();
+	}
+	@Override
+	public IAnkiCard create(String front, String back) {
+		return new AnkiCard(front, back);
+	}
+	@Override
+	public IAnkiCard create(Element front, Element back) {
+		return new AnkiCard(front, back);
+	}
+	
+	@Override
 	public Element getFront() { return front.getElementsByClass(FRONT).get(0); }
+	@Override
 	public Element getBack()  { return back.getElementsByClass(BACK).get(0); }
 
 	public void setKey(Element key) 		{ this.front = key ; }
