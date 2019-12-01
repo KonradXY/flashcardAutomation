@@ -2,7 +2,7 @@ package main.java.factory;
 
 import main.java.model.SimpleParser;
 import main.java.model.TextFileReader;
-import main.java.model.TextFileWriter;
+import main.java.model.TextFilePrinter;
 import main.java.strategy.FormatStrategy;
 
 public class DefaultEngine extends AbstractAnkiEngine {
@@ -14,7 +14,7 @@ public class DefaultEngine extends AbstractAnkiEngine {
 	public void buildEngine() {
 		reader = new TextFileReader(FormatStrategy.ADD_PIPE);
 		parser = new SimpleParser();
-		printer = new TextFileWriter();
+		printer = new TextFilePrinter();
 	}
 	
 }

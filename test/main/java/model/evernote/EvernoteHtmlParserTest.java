@@ -13,11 +13,14 @@ import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
+import main.java.contracts.IAnkiCard;
 import main.java.factory.AbstractAnkiEngine;
 import main.java.factory.EvernoteEngine;
-import main.java.model.AnkiCard;
 
+@RunWith(JUnitPlatform.class)
 class EvernoteHtmlParserTest {
 	
 	private static final String emptyCardValueFront = 
@@ -85,11 +88,11 @@ class EvernoteHtmlParserTest {
 	@Test 
 	void testEvernoteEngineParsing() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		List<AnkiCard> cardList = evernoteEngine.parse(content);
+		List<IAnkiCard> cardList = evernoteEngine.parse(content);
 		
 		assertEquals(2, cardList.size());
 		
-		AnkiCard emptyCard, imgCard;
+		IAnkiCard emptyCard, imgCard;
 		if (cardList.get(0).toString().length() > cardList.get(1).toString().length()) {
 			emptyCard = cardList.get(1);
 			imgCard = cardList.get(0);
@@ -108,7 +111,7 @@ class EvernoteHtmlParserTest {
 	@Test
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		List<AnkiCard> cardList = evernoteEngine.parse(content);
+		List<IAnkiCard> cardList = evernoteEngine.parse(content);
 		evernoteEngine.print(cardList, outputFile);
 		
 		assertTrue(Files.exists(outputTestFile));

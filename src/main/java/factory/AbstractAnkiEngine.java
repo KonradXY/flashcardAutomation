@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
+import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
@@ -42,7 +43,7 @@ public abstract class AbstractAnkiEngine {
 	
 	public void createFlashcards() {
 		Map<Path, String> contentRead = this.read();
-		List<AnkiCard> cardList = this.parse(contentRead);
+		List<IAnkiCard> cardList = this.parse(contentRead);
 		this.print(cardList);
 	}
 	
@@ -50,10 +51,10 @@ public abstract class AbstractAnkiEngine {
 	public Map<Path, String> read() {
 		return read(Paths.get(getInputDestination()));
 	}
-	public List<AnkiCard> parse(Map<Path, String> content) {
+	public List<IAnkiCard> parse(Map<Path, String> content) {
 		return this.getParser().parse(content);
 	}
-	public void print(List<AnkiCard> cardList) {
+	public void print(List<IAnkiCard> cardList) {
 		this.print(cardList, this.getOutputDestination());
 	}
 	
@@ -67,7 +68,7 @@ public abstract class AbstractAnkiEngine {
 		}
 	}
 	
-	public void print(List<AnkiCard> cardList, String destPath) {
+	public void print(List<IAnkiCard> cardList, String destPath) {
 		try {
 			this.getPrinter().printFile(destPath, cardList);
 		} catch (IOException ex) {

@@ -30,7 +30,7 @@ public interface IParser {
 	public static String QA_SEPARATOR = "RISPOSTE";	
 
 	// Map<filename,filecontent>
-	public List<AnkiCard> parse(Map<Path, String> input);
+	public List<IAnkiCard> parse(Map<Path, String> input);
 	
 	
 	public default String closeInHtml(String input) {

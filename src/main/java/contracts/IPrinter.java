@@ -9,7 +9,8 @@ import main.java.model.AnkiCard;
 
 public interface IPrinter {
 
-	public void printFile(String destPath, List<AnkiCard> input) throws IOException;
+	public void printFile(String destPath, List<IAnkiCard> input) throws IOException;
+	public void printFile(Path destPath, List<IAnkiCard> input) throws IOException;
 
 	default void checkOutputFolder(Path filePath) {
 		try {

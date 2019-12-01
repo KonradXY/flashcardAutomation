@@ -1,12 +1,14 @@
 package main.java.model;
 
-import static main.java.utils.Property.*;
+import static main.java.utils.Property.SIMPLE_PARSER_ENG_FIELD;
+import static main.java.utils.Property.SIMPLE_PARSER_ESP_FIELD;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 
 /*
@@ -15,8 +17,8 @@ import main.java.contracts.IParser;
 public class SimpleParser implements IParser {
 	
 	@Override	// TODO - vedere se riesco a fare qualcosa con le stream perche' e' un po' illegibile
-	public List<AnkiCard> parse(Map<Path, String> input) {
-		List<AnkiCard> ankiCards = new ArrayList<>();
+	public List<IAnkiCard> parse(Map<Path, String> input) {
+		List<IAnkiCard> ankiCards = new ArrayList<>();
 		for (String text : input.values()) {
 			String[] splittedText = text.split(PIPE_SEPARATOR);
 			

@@ -16,6 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
 import main.java.modelDecorator.CardDecorator;
@@ -43,8 +44,8 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     @Override
-    public List<AnkiCard> parse(Map<Path, String> input) {
-        List<AnkiCard> cardList = new ArrayList<>();
+    public List<IAnkiCard> parse(Map<Path, String> input) {
+        List<IAnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
             cardList.addAll(parseEvernoteCardTableFromFile(entry.getKey(), entry.getValue()));
 
