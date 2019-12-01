@@ -2,7 +2,9 @@ package main.java.exception;
 
 public class CrawlingException extends Exception {
 
-    public CrawlingException(Exception ex) {
+	private static final long serialVersionUID = 1L;
+
+	public CrawlingException(Exception ex) {
         super(ex);
     }
 
