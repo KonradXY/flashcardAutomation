@@ -59,21 +59,20 @@ public class EvernoteHtmlParser implements IParser {
 
     private List<AbstractAnkiCard> createCards(Document doc, Path fileName) {
         List<AbstractAnkiCard> cardList = new ArrayList<>();
-
         for (Element tbody : doc.getElementsByTag("tbody")) {
             AbstractAnkiCard card = parseCardFromTBody(tbody);
-
-            // FIXME - esiste una size massima per le flashcard. Vedere una soluzione 
-            if (card.getValue().text().length() > MAX_SIZE_CARD) {
-                log.info("Card exceded max size ! ");
-                continue;
-            }
-
+            if (cardExceedMaxSize(card)) continue;
             cardList.add(card);
         }
         return cardList;
     }
 
+    // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
+    private boolean cardExceedMaxSize(AbstractAnkiCard card) {
+    	boolean check = card.getValue().text().length() > MAX_SIZE_CARD;
+    	if (check) log.info("Card exceded max size ! ");
+    	return check;
+    }
 
     private AbstractAnkiCard parseCardFromTBody(Element tbody) {
         Elements content = tbody.getElementsByTag("tr");
@@ -82,11 +81,10 @@ public class EvernoteHtmlParser implements IParser {
         return new AbstractAnkiCard(frontElements, backElements);
     }
 
-	// TODO - disacoppiare la formattazione degli element con la creazione del
-	// contenuto (trovare un sistema comodo per poterlo fare)
     private Elements getContentFromTrTag(Element elem) {
     	Elements elements = elem.getElementsByTag("div");
-    	for (Element e : elements) CardDecorator.applyStandardFormat(e);
+    	for (Element e : elements) 
+    		CardDecorator.applyStandardFormat(e);
     	return elements;
     }
 
