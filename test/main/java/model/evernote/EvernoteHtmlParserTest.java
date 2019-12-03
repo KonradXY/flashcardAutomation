@@ -22,13 +22,13 @@ class EvernoteHtmlParserTest {
 	private static final String emptyCardValueFront = 
 			"<div class=\"front\"> "
 					+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-						+ "D:&nbsp; &nbsp; "
+						+ "<br> "
 					+ "</div>"
 				+ "</div>";
 	private static final String emptyCardValueBack = 
 			"<div class=\"back\"> "
 				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-					+ "R:&nbsp; &nbsp; "
+					+ "<br> "
 				+ "</div>"
 			+ "</div>";
 	
@@ -37,7 +37,7 @@ class EvernoteHtmlParserTest {
 	private static final String imgCardValueFront = 
 			"<div class=\"front\"> "
 				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-					+ "D:&nbsp; &nbsp;immagine "
+					+ "immagine1"
 				+ "</div>"
 			+ "</div>" ;
 			
@@ -46,7 +46,7 @@ class EvernoteHtmlParserTest {
 	private static final String imgCardValueBack = 
 		 	"<div class=\"back\"> "
 		 		+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-		 			+ "R:&nbsp; &nbsp;  <img src=\"testevernotedownload.jpg\" type=\"image/png\" data-filename=\"download.png\"> "
+		 			+ "<img src=\"testevernoteimmagine1.jpg\" type=\"image/jpeg\" data-filename=\"immagine1.jpg\"> "
 		 		+ "</div>"
 		 	+ "</div>";
 	
@@ -61,8 +61,10 @@ class EvernoteHtmlParserTest {
 	private static final Path testFilePath = Paths.get(testFile);
 	private static final Path outputTestFile = Paths.get(outputFile);
 	
-	private static final Path imgPath = Paths.get(testFileDir+"testevernotedownload.jpg");
-	
+	private static final Path imgPath1 = Paths.get(testFileDir+"testevernoteimmagine1.jpg");
+	private static final Path imgPath2 = Paths.get(testFileDir+"testevernoteimmagine2.jpg");
+	private static final Path imgPath3 = Paths.get(testFileDir+"testevernoteimmagine3.jpg");
+
 	private static AbstractAnkiEngine evernoteEngine;
 	
 	
@@ -86,22 +88,35 @@ class EvernoteHtmlParserTest {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
 		List<IAnkiCard> cardList = evernoteEngine.parse(content);
 		
-		assertEquals(2, cardList.size());
+		assertEquals(4, cardList.size());
 		
-		IAnkiCard emptyCard, imgCard;
-		if (cardList.get(0).toString().length() > cardList.get(1).toString().length()) {
-			emptyCard = cardList.get(1);
-			imgCard = cardList.get(0);
-		} else {
-			emptyCard = cardList.get(0);
-			imgCard = cardList.get(1);
+		IAnkiCard emptyCard = null, imgCard1 = null, imgCard2 = null, imgCard3 = null;
+		for (IAnkiCard card : cardList) {
+			switch (card.getFront().text().trim()) {
+				case "immagine1" : imgCard1 = card; break;
+				case "immagine2" : imgCard2 = card; break;
+				case "immagine3" : imgCard3 = card; break;
+				case "" 		 : emptyCard = card; break;
+				default : throw new RuntimeException("card not recognized !");
+			}
 		}
 		
-		assertEquals(emptyCardValue.trim(), emptyCard.toString().trim());
-		assertEquals(imgCardValue.trim(), imgCard.toString().trim());
-		assertTrue(Files.exists(imgPath));
+		assertEquals(replaceWhitespaces(emptyCardValue.trim()), replaceWhitespaces(emptyCard.toString().trim()));
 
-		Files.delete(imgPath);
+		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine1.jpg", "immagine1", "immagine1.jpg").trim()),
+				replaceWhitespaces(imgCard1.toString().trim()));
+
+		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine2.jpg", "immagine2", "immagine2.jpg").trim()),
+				replaceWhitespaces(imgCard2.toString().trim()));
+
+		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine3.jpg", "immagine3", "immagine3.jpg").trim()),
+				replaceWhitespaces(imgCard3.toString().trim()));
+
+		assertTrue(Files.exists(imgPath1));
+		assertTrue(Files.exists(imgPath2));
+		assertTrue(Files.exists(imgPath3));
+
+		Files.delete(imgPath1); Files.delete(imgPath2); Files.delete(imgPath3);
 	}
 	
 	@Test
@@ -111,13 +126,40 @@ class EvernoteHtmlParserTest {
 		evernoteEngine.print(cardList, outputFile);
 		
 		assertTrue(Files.exists(outputTestFile));
-		Files.delete(imgPath);
+		Files.delete(imgPath1);
 		Files.delete(outputTestFile);
 	}
 
 	@AfterAll
 	public static void teardown() throws IOException {
-		Files.deleteIfExists(imgPath);
+		Files.deleteIfExists(imgPath1);
+		Files.deleteIfExists(imgPath2);
+		Files.deleteIfExists(imgPath3);
 		Files.deleteIfExists(outputTestFile);
 	}
+
+
+	private String replaceWhitespaces(String input) { return input.replace(" ", "");}
+
+	private String getimgValue(String imgSrc, String imgName, String imgFileName) {
+		String imgFront =
+				"<div class=\"front\"> "
+						+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+						+ imgName
+						+ "</div>"
+						+ "</div>" ;
+
+		String imgBack =
+				"<div class=\"back\"> "
+						+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
+						+ "<img src=\""
+						+ imgSrc
+						+ "\" type=\"image/jpeg\" data-filename=\""
+						+ imgFileName
+						+ "\"> "
+						+ "</div>"
+						+ "</div>";
+		return imgFront + "\t" + imgBack + "\n";
+	}
+
 }
