@@ -2,6 +2,7 @@ package main.java.modelDecorator;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
@@ -28,12 +29,14 @@ public class AbstractCardDecorator {
 	}
 
     /** class attributes**/
-    protected static final String MARGIN = "margin", AUTO = "auto";
+    private static final String MARGIN = "margin", AUTO = "auto";
     protected static final String ALIGN = "align";
 	protected static final String LEFT = "left";
+	protected static final String CENTER = "center";
     protected static final String TEXT_ALIGN = "text-align";
     protected static final String FONT_STYLE = "font style";
-    protected static final String FONT_SIZE = "font-size: 10pt";
+    protected static final String FONT_SIZE_10 = "font-size: 10pt";
+    protected static final String FONT_SIZE_12 = "font-size: 12pt";
 
     protected final static Tag P_TAG      = Tag.valueOf("p");
     protected final static Tag B_TAG      = Tag.valueOf("b");
@@ -77,9 +80,6 @@ public class AbstractCardDecorator {
     public static void addAudioToBack(AnkiCard card, String audio)          { addAudio(audio, card.getBack()); }
 
     
-
-    
-
     public static Element createSingleDefinizione(Map.Entry<String, String> entry) {
         Element elem = getListItemTag();
         Element definition = getParagraphTag().text(entry.getKey() + ": ");
@@ -96,7 +96,7 @@ public class AbstractCardDecorator {
     public static void addWordLearned(Element card, String text)            { addContentToCard(card, getWordLearnedTag(), text);}
     public static void addTranslationToCard(String text, Element card)      { addContentToCard(card, getTraduzioneTag(), text); }
     public static void addAudio(String audio, Element card)                 { addContentToCard(card, getAudioTag(), audio); }
-    public static void addParoleTradotte(String text, Element card)         { addContentToCard(card, applyStandardFormatRecursively(getParolaTradottaTag()), text); }
+    public static void addParoleTradotte(String text, Element card)         { addContentToCard(card, getParolaTradottaTag(), text); }
     public static void addContenutoToCard(Element card, String text)        { addContentToCard(card, getContenutoTag(), text); }
 
     private static void addContentToCard(Element card, Element contentDiv, String contentText) {
@@ -105,29 +105,37 @@ public class AbstractCardDecorator {
         card.appendChild(contentDiv);
     }
 
-
     /** ***********  Formattazione delle classi *********** **/
-    protected static Element applyStandardFormat(Element element) {
-        removeStyleAttribute(element);
-        return element.attr(ALIGN, LEFT)
-                .attr(TEXT_ALIGN, LEFT)
-                .attr(FONT_STYLE, FONT_SIZE)
-                .attr(MARGIN, AUTO);
-    }
-	
-	protected static Element applyStandardFormatRecursively(Element element) {
-        applyStandardFormat(element);
-        for (Element elem : element.children())
-            applyStandardFormatRecursively(elem);
-        return element;
+
+
+
+	protected static void applyStandardFormatRecursively(Element element) {
+        applyLeftFormat(element);
+        element.children().stream().forEach(AbstractCardDecorator::applyLeftFormat);
     }
 
-    public static Element applyCenterFormat(Element element) {
+
+    protected static void applyFormatRecursively(Consumer<Element> format, Element elem) {
+	    format.accept(elem);
+	    elem.children().stream().forEach(format);
+    }
+
+    protected static Consumer<Element> applyLeftFormat = AbstractCardDecorator::applyLeftFormat;
+    protected static Consumer<Element> applyCenterFormat = AbstractCardDecorator::applyCenterFormat;
+
+    protected static void applyLeftFormat(Element element) {
+        applyFormat(element, LEFT, LEFT, FONT_SIZE_10, AUTO);
+    }
+    public static void applyCenterFormat(Element element) {
+        applyFormat(element, CENTER, CENTER, FONT_SIZE_12, AUTO);
+    }
+
+    public static void applyFormat(Element element, String align, String textAlign, String fontSize, String margin) {
         removeStyleAttribute(element);
-        return element.attr(ALIGN, "center")
-                .attr(TEXT_ALIGN, "center")
-                .attr(FONT_STYLE, "12pt")
-                .attr(MARGIN, AUTO);
+        element.attr(ALIGN, align)
+                .attr(TEXT_ALIGN, textAlign)
+                .attr(FONT_STYLE, fontSize)
+                .attr(MARGIN, margin);
     }
 
     protected static void removeStyleAttribute(Element elem) {

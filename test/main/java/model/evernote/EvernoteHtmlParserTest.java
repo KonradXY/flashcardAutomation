@@ -1,7 +1,11 @@
-package main.java.model.evernote; 
+package main.java.model.evernote;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import main.java.contracts.IAnkiCard;
+import main.java.enginefactory.AbstractAnkiEngine;
+import main.java.enginefactory.EvernoteEngine;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,17 +14,9 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import main.java.contracts.IAnkiCard;
-import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.EvernoteEngine;
-
-@RunWith(JUnitPlatform.class)
 class EvernoteHtmlParserTest {
 	
 	private static final String emptyCardValueFront = 

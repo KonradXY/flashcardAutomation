@@ -1,6 +1,6 @@
 package main.java.model;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,13 +12,10 @@ import org.apache.log4j.Logger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import main.java.contracts.IReader;
 import main.java.strategy.ReadingFormatStrategy;
 
-@RunWith(JUnitPlatform.class)
 class TextFileReaderTest {
 
 	private final static Logger log = Logger.getLogger(TextFileReaderTest.class);

@@ -9,8 +9,6 @@ import static main.java.utils.Property.OUTPUT_DIR;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import main.java.enginefactory.AbstractAnkiEngine;
 import main.java.enginefactory.TextEngineBuilder;
@@ -22,7 +20,6 @@ import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
 import main.java.model.languageLearning.LanguageLearningParser;
 
-@RunWith(JUnitPlatform.class)
 class EngineBuilderTest {
 
 	private TextEngineBuilder builder = new TextEngineBuilder();

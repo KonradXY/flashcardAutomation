@@ -1,6 +1,6 @@
 package main.java.strategy;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,14 +11,11 @@ import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import main.java.contracts.IReader;
 import main.java.model.TextFileReader;
 
 
-@RunWith(JUnitPlatform.class)
 class FormatStrategyTest {
 
 	private final static String filename = "tempfile.txt";
@@ -37,8 +34,7 @@ class FormatStrategyTest {
 		String check = content.replaceAll("\n", "\n|");
 		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
-		assertEquals("the 'add pipe' format strategy should add a pipe", 
-					check, contentRead.get(filepath));
+		assertEquals(check, contentRead.get(filepath));
 	}
 	
 	@Test
@@ -46,8 +42,7 @@ class FormatStrategyTest {
 		String check = content;
 		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
 		Map<Path, String> contentRead = reader.readFile(filepath);
-		assertEquals("the 'no format' format strategy should be identical as the input !", 
-					check, contentRead.get(filepath));
+		assertEquals(check, contentRead.get(filepath));
 	}
 	
 	@Test
@@ -55,8 +50,7 @@ class FormatStrategyTest {
 		String check = content.replaceAll("\n", "");
 		reader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
 		Map<Path, String> contentRead = reader.readFile(filepath);
-		assertEquals("the 'replace new lines' format strategy should replace new lines !", 
-					check, contentRead.get(filepath));
+		assertEquals(check, contentRead.get(filepath));
 	}
 	
 	@Test
@@ -64,8 +58,7 @@ class FormatStrategyTest {
 		String check = content.replace("\n", "\n\n");
 		reader = new TextFileReader(ReadingFormatStrategy.ADD_NEW_LINE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
-		assertEquals("the 'add new line' format strategy should add a new line at the end !", 
-					check, contentRead.get(filepath));
+		assertEquals(check, contentRead.get(filepath));
 	}
 
 

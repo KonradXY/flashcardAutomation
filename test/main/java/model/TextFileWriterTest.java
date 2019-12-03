@@ -14,15 +14,12 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
 import main.java.model.kindle.KindleAnkiCard;
 import main.java.model.languageLearning.LanguageLearningAnkiCard;
 
-@RunWith(JUnitPlatform.class)
 class TextFileWriterTest {
 
 	private static AnkiCard card;

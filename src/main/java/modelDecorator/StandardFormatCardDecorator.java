@@ -13,10 +13,10 @@ public class StandardFormatCardDecorator extends AbstractCardDecorator {
 	public IAnkiCard create(Elements front, Elements back) {
 		
 		for (Element e : front) 
-    		applyStandardFormat(e);
+    		applyLeftFormat(e);
 		for (Element e : back) 
-			applyStandardFormat(e);
-		
+			applyLeftFormat(e);
+
 		this.card = new AnkiCard(front, back);
 		
 		return card;

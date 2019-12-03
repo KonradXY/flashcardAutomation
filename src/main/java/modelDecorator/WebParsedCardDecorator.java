@@ -47,7 +47,7 @@ public class WebParsedCardDecorator extends StandardFormatCardDecorator {
         applyStandardFormatRecursively(definizioniList);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Definizioni")));
+        card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
         card.getBack().appendChild(definizioniList);
 
     }
@@ -63,7 +63,7 @@ public class WebParsedCardDecorator extends StandardFormatCardDecorator {
         applyStandardFormatRecursively(listaSinonimi);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(applyStandardFormatRecursively(getBoldParagraphTag().text("Sinonimi")));
+        card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
         card.getBack().appendChild(listaSinonimi);
 
     }
