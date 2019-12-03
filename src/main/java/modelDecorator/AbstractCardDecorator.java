@@ -14,44 +14,44 @@ public class AbstractCardDecorator {
 	
 	protected IAnkiCard card;
 	
-	public IAnkiCard create() {
+	protected IAnkiCard create() {
 		return card.create();
 	}
-	public IAnkiCard create(String front, String back) {
+    protected IAnkiCard create(String front, String back) {
 		return card.create(front, back);
 	}
-	public IAnkiCard create(Element front, Element back) {
+    protected IAnkiCard create(Element front, Element back) {
 		return card.create(front, back);
 	}
-	
-	public void setCard(IAnkiCard card) {
+
+    public void setCard(IAnkiCard card) {
 		this.card = card;
 	}
 
     /** class attributes**/
     private static final String MARGIN = "margin", AUTO = "auto";
-    protected static final String ALIGN = "align";
-	protected static final String LEFT = "left";
-	protected static final String CENTER = "center";
-    protected static final String TEXT_ALIGN = "text-align";
-    protected static final String FONT_STYLE = "font style";
-    protected static final String FONT_SIZE_10 = "font-size: 10pt";
-    protected static final String FONT_SIZE_12 = "font-size: 12pt";
+    private static final String ALIGN = "align";
+	private static final String LEFT = "left";
+	private static final String CENTER = "center";
+    private static final String TEXT_ALIGN = "text-align";
+    private static final String FONT_STYLE = "font style";
+    private static final String FONT_SIZE_10 = "font-size: 10pt";
+    private static final String FONT_SIZE_12 = "font-size: 12pt";
 
-    protected final static Tag P_TAG      = Tag.valueOf("p");
-    protected final static Tag B_TAG      = Tag.valueOf("b");
-    protected final static Tag I_TAG      = Tag.valueOf("i");
-    protected final static Tag DIV_TAG    = Tag.valueOf("div");
-    protected final static Tag UL_TAG     = Tag.valueOf("ul");
-    protected final static Tag LI_TAG     = Tag.valueOf("li");
-    protected final static Tag NEW_LINE_TAG = Tag.valueOf("br");
-    protected final static Tag SPAN_TAG   = Tag.valueOf("span");
+    private static final Tag P_TAG      = Tag.valueOf("p");
+    private static final Tag B_TAG      = Tag.valueOf("b");
+    private static final Tag I_TAG      = Tag.valueOf("i");
+    private static final Tag DIV_TAG    = Tag.valueOf("div");
+    private static final Tag UL_TAG     = Tag.valueOf("ul");
+    private static final Tag LI_TAG     = Tag.valueOf("li");
+    private static final Tag NEW_LINE_TAG = Tag.valueOf("br");
+    private static final Tag SPAN_TAG   = Tag.valueOf("span");
 
     protected static Element getParagraphTag()            { return new Element(P_TAG, "");}
     protected static Element getBoldParagraphTag()        { return new Element(B_TAG, "");}
     protected static Element getItalicParagraphTag()      { return new Element(I_TAG, "");}
     protected static Element getDivTag()                  { return new Element(DIV_TAG, "");}
-    
+
     protected static Element getListItemTag()             { return new Element(LI_TAG, "");}
     protected static Element getNewLineTag()              { return new Element(NEW_LINE_TAG, "");}
     protected static Element getSpanTag()                 { return new Element(SPAN_TAG, "");}
@@ -64,8 +64,8 @@ public class AbstractCardDecorator {
     protected static Element getContenutoTag()            { return getParagraphTag().addClass("contenuto"); }
     protected static Element getParolaTradottaTag()       { return getItalicParagraphTag().addClass("parolaTradotta"); }
     protected static Element getAudioTag()                { return getDivTag().addClass("audio"); }
-    
-    protected static Element getUnorderedListTag() { 
+
+    protected static Element getUnorderedListTag() {
 		return new Element(UL_TAG, ""); // .attr("style", "list-style-type: disc;");}
 	}
 
