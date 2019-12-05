@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import com.google.inject.Singleton;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 
@@ -26,6 +27,7 @@ import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
 import main.java.modelDecorator.WebParsedClozedCardDecorator;
 
+@Singleton
 public class LanguageLearningMediator {
 
 	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
@@ -53,7 +55,7 @@ public class LanguageLearningMediator {
 				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitions(word);
 				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
-				List<AnkiCard> cards = reversoCrawler.getExamplesFromWord(word, definizioniMap, synonims);
+				List<IAnkiCard> cards = reversoCrawler.getExamplesFromWord(word, definizioniMap, synonims);
 				writeCards(cards, bos);
 
 				logNumberOfWords(numWords++);
@@ -127,15 +129,15 @@ public class LanguageLearningMediator {
 		return words[index];
 	}
 
-	private void writeCards(List<AnkiCard> cards, BufferedWriter bos) throws IOException {
-		for (AnkiCard card : cards) {
+	private void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
+		for (IAnkiCard card : cards) {
 			writeCard(card, bos);
 		}
 
 		bos.flush();
 	}
 
-	private void writeCard(AnkiCard card, BufferedWriter bos) throws IOException {
+	private void writeCard(IAnkiCard card, BufferedWriter bos) throws IOException {
 		if (!card.getFront().text().trim().isEmpty()) {
 			bos.write(card.toString());
 			bos.flush();

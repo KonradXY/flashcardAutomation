@@ -13,6 +13,9 @@ import main.java.model.AnkiCard;
 public class AbstractCardDecorator {
 	
 	protected IAnkiCard card;
+
+	// TODO - tutta sta roba di add bisognerebbe farla con un builder per descrivere meglio la creazione delle carte
+    //  (o cmq cercare di dare una parvena migliore al codice)
 	
 	protected IAnkiCard create() {
 		return card.create();
@@ -71,9 +74,16 @@ public class AbstractCardDecorator {
 
 
     // TODO <-- secondo me sto facendo troppe indirezioni qua dentro. Inoltre i metodi non sono generici. Dovrei rinominarli !
+    // TODO <-- inoltre dovrei lavorare per interfacce mentre qua sto lavorando per una implementazione delle carte. Dovrei strutturare molto meglio questa classe (vedere di trovare una soluzione elegante x sta roba)
+    public static void addWordLearnedToFront(IAnkiCard card, String text)    { addWordLearned(card.getFront(), text); }
+    public static void addWordLearnedToBack(IAnkiCard card, String text)    { addWordLearned(card.getBack(), text); }
+    public static void addTranslationToFront(IAnkiCard card, String text)    { addTranslationToCard(text, card.getFront()); }
+    public static void addParoleTradotteToBack(IAnkiCard card, String text)  { addParoleTradotte(text, card.getBack()); }
+    public static void addContenutoToBack(IAnkiCard card, String text)       { addContenutoToCard(card.getBack(), text); }
+    public static void addAudioToBack(IAnkiCard card, String audio)          { addAudio(audio, card.getBack()); }
+
     public static void addWordLearnedToFront(AnkiCard card, String text)    { addWordLearned(card.getFront(), text); }
     public static void addWordLearnedToBack(AnkiCard card, String text)    { addWordLearned(card.getBack(), text); }
-
     public static void addTranslationToFront(AnkiCard card, String text)    { addTranslationToCard(text, card.getFront()); }
     public static void addParoleTradotteToBack(AnkiCard card, String text)  { addParoleTradotte(text, card.getBack()); }
     public static void addContenutoToBack(AnkiCard card, String text)       { addContenutoToCard(card.getBack(), text); }
@@ -105,10 +115,11 @@ public class AbstractCardDecorator {
         card.appendChild(contentDiv);
     }
 
-    /** ***********  Formattazione delle classi *********** **/
 
 
 
+
+    /** ***********  Formattazione delle classi css *********** **/
 	protected static void applyStandardFormatRecursively(Element element) {
         applyLeftFormat(element);
         element.children().stream().forEach(AbstractCardDecorator::applyLeftFormat);

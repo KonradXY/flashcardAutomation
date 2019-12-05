@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import main.java.contracts.IAnkiCard;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
@@ -37,8 +38,8 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
 	private static final String ANCHOR_TAG = "a";
 	
-	public List<AnkiCard> getExamplesFromWord(String word, Map<String, String> definizioniMap, List<String> synonims)  {
-		List<AnkiCard> cardList = new ArrayList<>();
+	public List<IAnkiCard> getExamplesFromWord(String word, Map<String, String> definizioniMap, List<String> synonims)  {
+		List<IAnkiCard> cardList = new ArrayList<>();
 
 		try {
 			doc = Jsoup.connect(getUrlAsString(ESP_ITA_URL,word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();

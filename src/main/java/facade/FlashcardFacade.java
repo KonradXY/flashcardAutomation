@@ -11,10 +11,7 @@ public class FlashcardFacade {
 	
 	private final TextEngineBuilder engineBuilder;
 	private final LanguageLearningMediator languageLearningMediator;
-	private AbstractAnkiEngine ankiModel;
-	
 
-	
 	@Inject
 	public FlashcardFacade(TextEngineBuilder engineBuilder, LanguageLearningMediator languageLearningMediator) {
 		this.engineBuilder = engineBuilder;
@@ -22,7 +19,7 @@ public class FlashcardFacade {
 	}
 	
 	public void buildFlashcardsFromTextFile(String[] args) {
-		ankiModel = engineBuilder.createTextEngine(args);
+		AbstractAnkiEngine ankiModel = engineBuilder.createTextEngine(args);
 		ankiModel.createFlashcards();
 	}
 	
