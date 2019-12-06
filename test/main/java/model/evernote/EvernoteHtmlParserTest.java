@@ -34,24 +34,6 @@ class EvernoteHtmlParserTest {
 	
 	private static final String emptyCardValue = emptyCardValueFront + "\t" + emptyCardValueBack + "\n";
 
-	private static final String imgCardValueFront = 
-			"<div class=\"front\"> "
-				+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-					+ "immagine1"
-				+ "</div>"
-			+ "</div>" ;
-			
-			
-	
-	private static final String imgCardValueBack = 
-		 	"<div class=\"back\"> "
-		 		+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
-		 			+ "<img src=\"testevernoteimmagine1.jpg\" type=\"image/jpeg\" data-filename=\"immagine1.jpg\"> "
-		 		+ "</div>"
-		 	+ "</div>";
-	
-	private static final String imgCardValue = imgCardValueFront + "\t" + imgCardValueBack + "\n";
-	
 
 	
 	private static final String testFileDir = "test/main/resources/";
@@ -103,13 +85,13 @@ class EvernoteHtmlParserTest {
 		
 		assertEquals(replaceWhitespaces(emptyCardValue.trim()), replaceWhitespaces(emptyCard.toString().trim()));
 
-		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine1.jpg", "immagine1", "immagine1.jpg").trim()),
+		assertEquals(replaceWhitespaces(getImgValue("testevernoteimmagine1.jpg", "immagine1", "immagine1.jpg").trim()),
 				replaceWhitespaces(imgCard1.toString().trim()));
 
-		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine2.jpg", "immagine2", "immagine2.jpg").trim()),
+		assertEquals(replaceWhitespaces(getImgValue("testevernoteimmagine2.jpg", "immagine2", "immagine2.jpg").trim()),
 				replaceWhitespaces(imgCard2.toString().trim()));
 
-		assertEquals(replaceWhitespaces(getimgValue("testevernoteimmagine3.jpg", "immagine3", "immagine3.jpg").trim()),
+		assertEquals(replaceWhitespaces(getImgValue("testevernoteimmagine3.jpg", "immagine3", "immagine3.jpg").trim()),
 				replaceWhitespaces(imgCard3.toString().trim()));
 
 		assertTrue(Files.exists(imgPath1));
@@ -141,7 +123,7 @@ class EvernoteHtmlParserTest {
 
 	private String replaceWhitespaces(String input) { return input.replace(" ", "");}
 
-	private String getimgValue(String imgSrc, String imgName, String imgFileName) {
+	private String getImgValue(String imgSrc, String imgName, String imgFileName) {
 		String imgFront =
 				"<div class=\"front\"> "
 						+ "<div align=\"left\" text-align=\"left\" font style=\"font-size: 10pt\" margin=\"auto\">  "
