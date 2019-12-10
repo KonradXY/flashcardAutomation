@@ -12,11 +12,13 @@ public class WebParsedClozedCardDecorator extends WebParsedCardDecorator {
 	
 	private AnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition, List<String> synonims) {
 		AnkiCard card = new AnkiCard();
-		addTranslationToFront(card, clozeText);
-		addWordLearnedToBack(card, word);
-		addContenutoToBack(card, originalValue);
-		addContenutoToBack(card, wordDefinition);
-		addSinonimiToBack(card, synonims);
+		addContentToFront(card, clozeText, getParagraphTag().addClass("traduzione"));
+
+		addContentToBack(card, word, getParagraphTag().addClass("word"));
+		addContentToBack(card, originalValue, getParagraphTag().addClass("contenuto"));
+		addContentToBack(card, wordDefinition, getParagraphTag().addClass("wordDefinition"));
+
+		addSinonimiToBack(card, synonims);	// TODO <-- pure questo e' da rivedere !
 		return card;
 	}
 

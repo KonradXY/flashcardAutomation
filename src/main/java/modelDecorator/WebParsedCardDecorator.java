@@ -1,5 +1,7 @@
 package main.java.modelDecorator;
 
+
+
 import java.util.List;
 import java.util.Map;
 
@@ -10,38 +12,25 @@ import main.java.model.AnkiCard;
 
 public class WebParsedCardDecorator extends StandardFormatCardDecorator {
 
-	// TODO - dovrei implementare dei campi per le definizioni e per i sinonimi ? 
-	
-	// TODO - questo e' quello che piu' si avvicina al decorator che pensavo:
-	// la carta parte inizialmente vuota e vengono aggiuti i vari elementi. Verificare e capire meglio il pattern
-	
 	public IAnkiCard create(String word, String traduzione, String contenuto, String listaSinonimi,
                             Map<String, String> definizioniMap, List<String> synonims) {
-//		AnkiCard card = new AnkiCard();
         this.card.create();
-		addWordLearnedToFront(card, word);
-		addTranslationToFront(card, traduzione);
-		addContenutoToBack(card, contenuto);
-		addParoleTradotteToBack(card, listaSinonimi);
-		addDefinizioneToBack(card, definizioniMap);
-		addSinonimiToBack(card, synonims);
+        addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+        addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
+        addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+
+		addDefinizioneToBack(card, definizioniMap); // TODO <--- questi sono entrambi da rivedere !
+		addSinonimiToBack(card, synonims);          // TODO <--- questi sono entrambi da rivedere ! (e da eliminare)
 		return this.card;
 	}
 	
-	
-	
-	private static Element getDefinizioneTag() {
-		return getUnorderedListTag().addClass("definizioni");
-	}
-	private static Element getSinonimiTag() {
-		return getUnorderedListTag().addClass("sinonimi");
-	}
-	
+
+
 	private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
         if (definizioni.isEmpty())
             return;
 
-        Element definizioniList = getDefinizioneTag();
+        Element definizioniList = getUnorderedListTag().addClass("definizioni");
         for (Map.Entry<String, String> entry : definizioni.entrySet()) {
             Element listItem = createSingleDefinizione(entry);
             definizioniList.appendChild(listItem);
@@ -58,7 +47,7 @@ public class WebParsedCardDecorator extends StandardFormatCardDecorator {
         if (sinonimi.isEmpty())
             return;
 
-        Element listaSinonimi = getSinonimiTag();
+        Element listaSinonimi = getUnorderedListTag().addClass("sinonimi");
         for (String str : sinonimi) {
             listaSinonimi.appendChild(getListItemTag().text(str));
         }
