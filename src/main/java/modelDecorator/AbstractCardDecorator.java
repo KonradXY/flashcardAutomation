@@ -5,6 +5,7 @@ import static main.java.modelDecorator.DecoratingCard.*;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import org.jsoup.nodes.Element;
 
@@ -123,6 +124,8 @@ public class AbstractCardDecorator implements DecoratingCard {
     protected static Consumer<Element> applyLeftFormat = AbstractCardDecorator::applyLeftFormat;
     protected static Consumer<Element> applyCenterFormat = AbstractCardDecorator::applyCenterFormat;
 
+
+
     protected static void applyLeftFormat(Element element) {
         applyFormat(element, LEFT, LEFT, FONT_SIZE_10, AUTO);
     }
@@ -145,6 +148,11 @@ public class AbstractCardDecorator implements DecoratingCard {
     private static void removeUselessAttributes(Element elem, String... attrs) {
     	for (String attr : Arrays.asList(attrs))
     		elem.removeAttr(attr);
+    }
+
+    @Override
+    public String toString() {
+        return card.toString();
     }
 
 }

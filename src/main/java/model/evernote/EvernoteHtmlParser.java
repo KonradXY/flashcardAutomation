@@ -1,5 +1,16 @@
 package main.java.model.evernote;
 
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.modelDecorator.DecoratingCard;
+import main.java.utils.Property;
+import org.apache.log4j.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,23 +22,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.modelDecorator.StandardFormatCardDecorator;
-import main.java.utils.Property;
+import static main.java.modelDecorator.StandardFormatCardDecorator.decorateWithLeftFormat;
 
 public class EvernoteHtmlParser implements IParser {
 
     private static final int MAX_SIZE_CARD = 131072;
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
-    private static final StandardFormatCardDecorator standardDecorator = new StandardFormatCardDecorator();
-    
+
     private Path imgInputContent;
     
     public EvernoteHtmlParser() { }
@@ -59,10 +60,11 @@ public class EvernoteHtmlParser implements IParser {
     }
 
     private List<IAnkiCard> createCards(Document doc, Path fileName) {
-       return  doc.getElementsByTag("tbody").stream()
-        	.map(tbody -> parseCardFromTBody(tbody))
-        	.filter(card -> !cardExceedMaxSize(card))
-        	.collect(Collectors.toList());
+        return doc.getElementsByTag("tbody").stream()
+                .map(tbody -> parseCardFromTBody(tbody))
+                .filter(card -> !cardExceedMaxSize(card))
+                .map(DecoratingCard::decorateWithLeftFormat)
+                .collect(Collectors.toList());
     }
 
     // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
@@ -76,7 +78,7 @@ public class EvernoteHtmlParser implements IParser {
         Elements content = tbody.getElementsByTag("tr");
         Elements frontElements = content.get(0).getElementsByTag("div");
         Elements backElements = content.get(1).getElementsByTag("div");
-        return standardDecorator.create(frontElements, backElements);
+        return new AnkiCard(frontElements, backElements);
     }
 
     public void formatImageTags(Path fileName, Document doc) {

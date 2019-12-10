@@ -15,4 +15,7 @@ public interface IAnkiCard {
 	
 	Element getFront();
 	Element getBack();
+
+	String toString();
+
 }
