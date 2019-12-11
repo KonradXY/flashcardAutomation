@@ -20,7 +20,7 @@ class ReversoSpanishCrawlerTest {
             System.out.println(card);
         }
 
-        System.out.println(reversoSpanishCrawler.doc.toString());
+
     }
 
 }

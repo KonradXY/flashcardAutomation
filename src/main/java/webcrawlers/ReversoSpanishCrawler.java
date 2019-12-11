@@ -4,22 +4,21 @@ import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
 import org.apache.log4j.Logger;
-import org.jsoup.HttpStatusException;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static main.java.modelDecorator.AbstractCardDecorator.addContentToBack;
+import static main.java.modelDecorator.AbstractCardDecorator.addContentToFront;
+import static main.java.modelDecorator.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
 import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
 import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
 import static main.java.utils.WebCrawlerProperties.REVERSO_ESP_ITA_TRANSLATION_PAGE_URL;
-import static main.java.modelDecorator.AbstractCardDecorator.*;
 
 @Singleton
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
@@ -33,37 +32,28 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
     private static final String ANCHOR_TAG = "a";
 
-    public List<IAnkiCard> getReversoExamplesFromWord(String word) {
-        List<IAnkiCard> cardList = new ArrayList<>();
+	public List<IAnkiCard> getReversoExamplesFromWord(String word) {
 
-        try {
-            doc = Jsoup.connect(getUrlAsString(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
-            Element elements = doc.getElementById(EXAMPLES_ID);
-            elements.getElementsByClass(EXAMPLE_CLASS).stream()
-                    .limit(NUM_EXAMPLES)
-                    .forEach(example -> {
-                        String traduzione = getEsempioTradotto(example).text();
-                        String contenuto = getEsempioContenuto(example).text();
+		Document doc = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
+		List<IAnkiCard> cardList = new ArrayList<>();
 
-                        IAnkiCard card = new AnkiCard();
-                        addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-                        addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
-                        addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+		Element elements = doc.getElementById(EXAMPLES_ID);
+		elements.getElementsByClass(EXAMPLE_CLASS).stream()
+				.limit(NUM_EXAMPLES)
+				.forEach(example -> {
+					String traduzione = getEsempioTradotto(example).text();
+					String contenuto = getEsempioContenuto(example).text();
 
-                        cardList.add(card);
-                    });
+					IAnkiCard card = new AnkiCard();
+					addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+					addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
+					addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
 
-            return cardList;
+					cardList.add(card);
+				});
 
-
-        } catch (MalformedURLException | HttpStatusException ex) {
-            log.error("Error while scraping: " + ex);
-        } catch (IOException ioEx) {
-            log.error("Error with I/O: " + ioEx);
-        }
-
-        return cardList;
-    }
+		return cardList;
+	}
 
 
     /**
