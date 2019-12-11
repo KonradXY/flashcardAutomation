@@ -24,7 +24,7 @@ public interface DecoratingCard extends IAnkiCard {
     }
 
     // NB: funzione che mi permette di decorare gli oggetti in maniera semplice
-    default DecoratingCard decorate(Function<? super DecoratingCard, ? extends DecoratingCard> decorator) {
+    default DecoratingCard decorateWith(Function<? super DecoratingCard, ? extends DecoratingCard> decorator) {
         return decorator.apply(this);
     }
 
@@ -37,7 +37,7 @@ public interface DecoratingCard extends IAnkiCard {
     // NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
     static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
         DecoratingCard decorated = DecoratingCard.from(card)
-                                        .decorate(StandardFormatCardDecorator.decorateWithLeftFormat);
+                                        .decorateWith(StandardFormatCardDecorator.decorateWithLeftFormat);
         return decorated;
     }
 

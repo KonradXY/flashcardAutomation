@@ -16,9 +16,10 @@ public class WebCrawlerProperties {
 	public static final int LOG_COUNTER 	= 5 * NUM_EXAMPLES;
 	public static final int TIMEOUT_SEC 	= getTimeoutSec();
 
-	public final static String ESP_ITA_URL 			= getSpanishItalianUrl();
-	public final static String ESP_DEF				= getSpanishDefinitionUrl();
-	public final static String ESP_SINON			= getSpanishSinonymousUrl();
+	// TODO - questi credo sia meglio levarli dal properties e metterli nele rispettive classi 
+	public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = getSpanishItalianUrl();
+	public final static String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = getSpanishDefinitionUrl();
+	public final static String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = getSpanishSinonymousUrl();
 	public final static String discardedWordsPath 	= getDiscardedWordPath();
 
 	private static int getTimeSleep() 				{ return Integer.parseInt(prop.getProperty("webcrawler.timesleep_milli")); }

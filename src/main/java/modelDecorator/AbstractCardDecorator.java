@@ -51,22 +51,22 @@ public class AbstractCardDecorator implements DecoratingCard {
     static Tag NEW_LINE_TAG = Tag.valueOf("br");
     static Tag SPAN_TAG = Tag.valueOf("span");
 
-    static Element getParagraphTag()            { return new Element(P_TAG, "");}
-    static Element getBoldParagraphTag()        { return new Element(B_TAG, "");}
-    static Element getItalicParagraphTag()      { return new Element(I_TAG, "");}
-    static Element getDivTag()                  { return new Element(DIV_TAG, "");}
-    static Element getListItemTag()             { return new Element(LI_TAG, "");}
-    static Element getNewLineTag()              { return new Element(NEW_LINE_TAG, "");}
-    static Element getSpanTag()                 { return new Element(SPAN_TAG, "");}
-    static Element getUnorderedListTag()        { return new Element(UL_TAG, ""); }
+    public static Element getParagraphTag()            { return new Element(P_TAG, "");}
+    public static Element getBoldParagraphTag()        { return new Element(B_TAG, "");}
+    public static Element getItalicParagraphTag()      { return new Element(I_TAG, "");}
+    public static Element getDivTag()                  { return new Element(DIV_TAG, "");}
+    public static Element getListItemTag()             { return new Element(LI_TAG, "");}
+    public static Element getNewLineTag()              { return new Element(NEW_LINE_TAG, "");}
+    public static Element getSpanTag()                 { return new Element(SPAN_TAG, "");}
+    public static Element getUnorderedListTag()        { return new Element(UL_TAG, ""); }
 
 
-    protected static void addContentToFront(IAnkiCard card, String content, Element contentDiv) {
+    public static void addContentToFront(IAnkiCard card, String content, Element contentDiv) {
         contentDiv.text(content);
         card.getFront().appendChild(contentDiv);
     }
 
-    protected static void addContentToBack(IAnkiCard card, String content, Element contentDiv) {
+    public static void addContentToBack(IAnkiCard card, String content, Element contentDiv) {
         contentDiv.text(content);
         card.getFront().appendChild(contentDiv);
     }
@@ -85,9 +85,9 @@ public class AbstractCardDecorator implements DecoratingCard {
 
 
     /** ***********  Formattazione delle classi css *********** **/
-	protected static void applyStandardFormatRecursively(Element element) {
+	public static void applyLeftFormatRecursively(Element element) {
         applyLeftFormat(element);
-        element.children().stream().forEach(AbstractCardDecorator::applyLeftFormat);
+        element.children().stream().forEach(AbstractCardDecorator::applyLeftFormat);    // TODO - non mi sembra ricorsivo questo. Dovrei verificare questa cosa
     }
 
     protected static void applyFormatRecursively(Consumer<Element> format, Element elem) {

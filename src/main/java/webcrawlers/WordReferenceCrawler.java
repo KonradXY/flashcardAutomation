@@ -1,7 +1,7 @@
 package main.java.webcrawlers;
 
-import static main.java.utils.WebCrawlerProperties.ESP_DEF;
-import static main.java.utils.WebCrawlerProperties.ESP_SINON;
+import static main.java.utils.WebCrawlerProperties.WORD_REFERENCE_ESP_DEFINITION_PAGE_URL;
+import static main.java.utils.WebCrawlerProperties.WORD_REFERENCE_ESP_SINONYMS_PAGE_URL;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -27,7 +27,7 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
 
     private final static Logger log = Logger.getLogger(WordReferenceCrawler.class);
 
-    public Map<String, String> getWordDefinitions(String word) {
+    public Map<String, String> getWordDefinitionsFromWord(String word) {
 
 
         try {
@@ -55,7 +55,7 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
         return Collections.emptyMap();
     }
 
-    public List<String> getWordSynonims(String word) {
+    public List<String> getSynonimsFromWord(String word) {
 
         try {
             Document doc = Jsoup.parse(getSynonimsUrl(word), TIMEOUT);
@@ -74,15 +74,15 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
     }
 
     private URL getSynonimsUrl(String input) throws MalformedURLException {
-        return getUrlFromString(ESP_SINON, input);
+        return getUrlFromString(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, input);
     }
 
     private URL getDefinitionUrl(String input) throws MalformedURLException {
-        return getUrlFromString(ESP_DEF, input);
+        return getUrlFromString(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, input);
     }
 
     private String getDefinitionUrlAsString(String input) throws UnsupportedEncodingException {
-        return getUrlAsString(ESP_DEF, input);
+        return getUrlAsString(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, input);
     }
 
 
