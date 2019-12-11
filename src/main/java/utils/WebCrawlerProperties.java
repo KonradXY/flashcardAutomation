@@ -11,9 +11,9 @@ public class WebCrawlerProperties {
 	private static Properties prop = getProperties();
 
 	public static final int TIME_SLEEP 		= getTimeSleep();
-	public static final int NUM_EXAMPLES 	= getNumberExamples();
+	public static final int MAX_NUM_EXAMPLES_PER_WORD = getNumberExamples();
 	public static final int NUM_TRANSLATIONS = getNumberTranslations();
-	public static final int LOG_COUNTER 	= 5 * NUM_EXAMPLES;
+	public static final int LOG_COUNTER 	= 5 * MAX_NUM_EXAMPLES_PER_WORD;
 	public static final int TIMEOUT_SEC 	= getTimeoutSec();
 
 	// TODO - questi credo sia meglio levarli dal properties e metterli nele rispettive classi 

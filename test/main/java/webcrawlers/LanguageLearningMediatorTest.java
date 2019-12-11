@@ -1,13 +1,7 @@
 package main.java.webcrawlers;
 
-import static org.mockito.Mockito.*;
-
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class LanguageLearningMediatorTest {
 
@@ -23,7 +17,6 @@ class LanguageLearningMediatorTest {
     public static void setup() {
 
     }
-
 
 
 }

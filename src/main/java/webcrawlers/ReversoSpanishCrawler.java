@@ -16,7 +16,7 @@ import static main.java.modelDecorator.AbstractCardDecorator.addContentToBack;
 import static main.java.modelDecorator.AbstractCardDecorator.addContentToFront;
 import static main.java.modelDecorator.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
-import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
+import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
 import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
 import static main.java.utils.WebCrawlerProperties.REVERSO_ESP_ITA_TRANSLATION_PAGE_URL;
 
@@ -32,33 +32,30 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
     private static final String ANCHOR_TAG = "a";
 
-	public List<IAnkiCard> getReversoExamplesFromWord(String word) {
-
+	public List<IAnkiCard> getExamplesCardFromWord(String word) {
 		Document doc = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
-		List<IAnkiCard> cardList = new ArrayList<>();
-
-		Element elements = doc.getElementById(EXAMPLES_ID);
-		elements.getElementsByClass(EXAMPLE_CLASS).stream()
-				.limit(NUM_EXAMPLES)
-				.forEach(example -> {
-					String traduzione = getEsempioTradotto(example).text();
-					String contenuto = getEsempioContenuto(example).text();
-
-					IAnkiCard card = new AnkiCard();
-					addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-					addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
-					addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
-
-					cardList.add(card);
-				});
-
-		return cardList;
+    	return createAnkiCardsFromContent(doc, word);
 	}
 
+	List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
+        List<IAnkiCard> cardList = new ArrayList<>();
 
-    /**
-     * Prendo tutte le traduzioni possibili (limitate d un numero) per una sola parola
-     **/
+        Element elements = doc.getElementById(EXAMPLES_ID);
+        elements.getElementsByClass(EXAMPLE_CLASS).stream()
+                .limit(MAX_NUM_EXAMPLES_PER_WORD)
+                .forEach(example -> {
+                    String traduzione = getEsempioTradotto(example).text();
+                    String contenuto = getEsempioContenuto(example).text();
+                    IAnkiCard card = new AnkiCard();
+                    addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+                    addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
+                    addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+                    cardList.add(card);
+                });
+        return cardList;
+    }
+
+
     private String getPossibiliTraduzioni(Document doc) {
         try {
             return "Possibili traduzioni: " +

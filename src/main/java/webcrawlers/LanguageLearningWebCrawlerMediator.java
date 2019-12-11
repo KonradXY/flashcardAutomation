@@ -1,7 +1,7 @@
 package main.java.webcrawlers;
 
 import static main.java.utils.WebCrawlerProperties.LOG_COUNTER;
-import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
+import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
 import static main.java.utils.WebCrawlerProperties.TIME_SLEEP;
 import static main.java.modelDecorator.AbstractCardDecorator.*;
 
@@ -29,9 +29,9 @@ import main.java.modelDecorator.WebParsedClozedCardDecorator;
 import org.jsoup.nodes.Element;
 
 @Singleton
-public class LanguageLearningMediator {
+public class LanguageLearningWebCrawlerMediator {
 
-	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
+	private static final Logger log = Logger.getLogger(LanguageLearningWebCrawlerMediator.class);
 	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
 	private final ReversoSpanishCrawler reversoCrawler; 
@@ -39,7 +39,7 @@ public class LanguageLearningMediator {
 	
 
 	@Inject
-	LanguageLearningMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
+	LanguageLearningWebCrawlerMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
 	}
@@ -53,7 +53,7 @@ public class LanguageLearningMediator {
 
 				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
 				List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
-				List<IAnkiCard> cards = reversoCrawler.getReversoExamplesFromWord(word);
+				List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
 
 				for (IAnkiCard card : cards) {
 					addDefinizioneToBack(card, definizioniMap);
@@ -65,6 +65,7 @@ public class LanguageLearningMediator {
 				logNumberOfWords(numWords++);
 				Thread.sleep(TIME_SLEEP);
 			}
+
 		}
 	}
 
@@ -77,7 +78,6 @@ public class LanguageLearningMediator {
 			for (String word : wordList) {
 				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
 				Map<String, String> clozeMap = createClozeMap(originalMap, word);
-				List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
 					IAnkiCard card = webCardDecorator.create(cloze.getValue(), 
@@ -195,7 +195,7 @@ public class LanguageLearningMediator {
 
 	private void logNumberOfWords(int number) {
 		if (number % LOG_COUNTER == 0) {
-			log.info("Numero di esempi parsati: " + number * NUM_EXAMPLES);
+			log.info("Numero di esempi parsati: " + number * MAX_NUM_EXAMPLES_PER_WORD);
 		}
 	}
 
