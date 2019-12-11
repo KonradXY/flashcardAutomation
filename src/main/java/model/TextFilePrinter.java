@@ -16,15 +16,8 @@ public class TextFilePrinter implements IPrinter {
 	
 	@Override
 	public void printFile(Path destPath, List<IAnkiCard> input) {
-		this.printFile(destPath.toString(), input);
-	}
 
-	@Override  
-	public void printFile(String destFile, List<IAnkiCard> input) {
-
-		Path destPath = Paths.get(destFile);
 		checkOutputFolder(destPath);
-
 		try {
 			Files.write(destPath, (Iterable<String>) input.stream().map(it -> it.toString())::iterator);
 		} catch (IOException ex) {

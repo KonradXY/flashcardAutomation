@@ -18,14 +18,7 @@ public class KindleClippingPrinter implements IPrinter {
 	
 	@Override
 	public void printFile(Path destPath, List<IAnkiCard> input) throws IOException {
-		this.printFile(destPath.toString(), input);
-	}
 
-	@Override
-	public void printFile(String destFile, List<IAnkiCard> input) throws IOException {
-
-		Path destPath = Paths.get(destFile);
-		
 		Map<String, List<KindleAnkiCard>> list = 
 				input.parallelStream().map(it -> (KindleAnkiCard) it).sorted().collect(Collectors.groupingBy(KindleAnkiCard::getTitle));
 		

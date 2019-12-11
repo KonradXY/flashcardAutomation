@@ -123,7 +123,7 @@ class EvernoteHtmlParserTest {
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
 		List<IAnkiCard> cardList = evernoteEngine.parse(content);
-		evernoteEngine.print(cardList, outputFile);
+		evernoteEngine.print(cardList, outputTestFile);
 		
 		assertTrue(Files.exists(outputTestFile));
 		Files.delete(imgPath1);

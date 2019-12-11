@@ -54,7 +54,7 @@ public abstract class AbstractAnkiEngine {
 		return this.getParser().parse(content);
 	}
 	public void print(List<IAnkiCard> cardList) {
-		this.print(cardList, this.getOutputDestination());
+		this.print(cardList, Paths.get(this.getOutputDestination()));
 	}
 	
 
@@ -67,7 +67,7 @@ public abstract class AbstractAnkiEngine {
 		}
 	}
 	
-	public void print(List<IAnkiCard> cardList, String destPath) {
+	public void print(List<IAnkiCard> cardList, Path destPath) {
 		try {
 			this.getPrinter().printFile(destPath, cardList);
 		} catch (IOException ex) {
