@@ -17,7 +17,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.LanguageLearningEngine;
+import main.java.enginefactory.LanguageLearningAnkiEngine;
 
 class LanguageLearningParserTest {
 	
@@ -39,7 +39,7 @@ class LanguageLearningParserTest {
 	
 	@BeforeAll
 	public static void setup() {
-		languageLearningEngine = new LanguageLearningEngine(testFileDir, outputFile);
+		languageLearningEngine = new LanguageLearningAnkiEngine(testFileDir, outputFile);
 		languageLearningEngine.setInputDir("./");
 		languageLearningEngine.setOutputDir("./");
 		languageLearningEngine.buildEngine();

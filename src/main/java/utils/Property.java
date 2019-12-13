@@ -20,13 +20,14 @@ public class Property {
 	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();
 	public static int SIMPLE_PARSER_ENG_FIELD = getSimpleParserEngField();
 
+
+
 	private static final String propDir = "src/main/resources/input.properties";
 	private static Properties prop;
 
 	private static String getInputDir() {
 		return getProperties().getProperty("input.dir");
 	}
-
 	private static String getOutputDir() {
 		return getProperties().getProperty("output.dir");
 	}
