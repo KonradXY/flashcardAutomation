@@ -9,12 +9,10 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
 
-// TODO - questo e' da rifare con guice
-
 @Singleton
-public class AnkiEngineBuilder {
+public class AnkiEngineFactory {
 	
-	private static final Logger log = Logger.getLogger(AnkiEngineBuilder.class);
+	private static final Logger log = Logger.getLogger(AnkiEngineFactory.class);
 	
 	public AbstractAnkiEngine createTextEngine(String[] inputParam) {
 
