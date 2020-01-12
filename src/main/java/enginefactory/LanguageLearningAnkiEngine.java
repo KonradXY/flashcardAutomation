@@ -5,10 +5,10 @@ import main.java.model.TextFileReader;
 import main.java.model.languageLearning.LanguageLearningParser;
 import main.java.strategy.ReadingFormatStrategy;
 
-public class LanguageLearningEngine extends AbstractAnkiEngine {
+public class LanguageLearningAnkiEngine extends AbstractAnkiEngine {
 	
-	public LanguageLearningEngine() { super(); }
-	public LanguageLearningEngine(String input, String output) {super(input, output); }
+	public LanguageLearningAnkiEngine() { super(); }
+	public LanguageLearningAnkiEngine(String input, String output) {super(input, output); }
 	
 	@Override
 	public void buildEngine() {

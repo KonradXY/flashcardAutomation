@@ -1,8 +1,9 @@
 package main.java.webcrawlers;
 
 import static main.java.utils.WebCrawlerProperties.LOG_COUNTER;
-import static main.java.utils.WebCrawlerProperties.NUM_EXAMPLES;
+import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
 import static main.java.utils.WebCrawlerProperties.TIME_SLEEP;
+import static main.java.modelDecorator.AbstractCardDecorator.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,13 +25,13 @@ import org.apache.log4j.Logger;
 import com.google.inject.Inject;
 
 import main.java.contracts.IAnkiCard;
-import main.java.model.AnkiCard;
 import main.java.modelDecorator.WebParsedClozedCardDecorator;
+import org.jsoup.nodes.Element;
 
 @Singleton
-public class LanguageLearningMediator {
+public class LanguageLearningWebCrawlerMediator {
 
-	private static final Logger log = Logger.getLogger(LanguageLearningMediator.class);
+	private static final Logger log = Logger.getLogger(LanguageLearningWebCrawlerMediator.class);
 	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
 	private final ReversoSpanishCrawler reversoCrawler; 
@@ -38,9 +39,7 @@ public class LanguageLearningMediator {
 	
 
 	@Inject
-	public LanguageLearningMediator(
-			 ReversoSpanishCrawler reversoCrawler,
-			 WordReferenceCrawler wordReferenceCrawler ) {
+	LanguageLearningWebCrawlerMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
 	}
@@ -52,15 +51,21 @@ public class LanguageLearningMediator {
 
 			for (String word : wordList) {
 
-				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitions(word);
-				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
+				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
+				List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
+				List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
 
-				List<IAnkiCard> cards = reversoCrawler.getExamplesFromWord(word, definizioniMap, synonims);
+				for (IAnkiCard card : cards) {
+					addDefinizioneToBack(card, definizioniMap);
+					addSinonimiToBack(card, synonims);
+				}
+
 				writeCards(cards, bos);
 
 				logNumberOfWords(numWords++);
 				Thread.sleep(TIME_SLEEP);
 			}
+
 		}
 	}
 
@@ -71,13 +76,12 @@ public class LanguageLearningMediator {
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
 
 			for (String word : wordList) {
-				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinitions(word);
+				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
 				Map<String, String> clozeMap = createClozeMap(originalMap, word);
-				List<String> synonims = wordReferenceCrawler.getWordSynonims(word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
 					IAnkiCard card = webCardDecorator.create(cloze.getValue(), 
-							word, originalMap.get(cloze.getKey()), cloze.getKey(), synonims);
+							word, originalMap.get(cloze.getKey()), cloze.getKey());
 					bos.write(card.toString());
 				}
 
@@ -129,6 +133,39 @@ public class LanguageLearningMediator {
 		return words[index];
 	}
 
+	private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
+		if (definizioni.isEmpty())
+			return;
+
+		Element definizioniList = getUnorderedListTag().addClass("definizioni");
+		for (Map.Entry<String, String> entry : definizioni.entrySet()) {
+			Element listItem = createSingleDefinizione(entry);
+			definizioniList.appendChild(listItem);
+		}
+		applyLeftFormatRecursively(definizioniList);
+
+		card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+		card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
+		card.getBack().appendChild(definizioniList);
+
+	}
+
+	protected void addSinonimiToBack(IAnkiCard card, List<String> sinonimi) {
+		if (sinonimi.isEmpty())
+			return;
+
+		Element listaSinonimi = getUnorderedListTag().addClass("sinonimi");
+		for (String str : sinonimi) {
+			listaSinonimi.appendChild(getListItemTag().text(str));
+		}
+		applyLeftFormatRecursively(listaSinonimi);
+
+		card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+		card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
+		card.getBack().appendChild(listaSinonimi);
+
+	}
+
 	private void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
 		for (IAnkiCard card : cards) {
 			writeCard(card, bos);
@@ -158,9 +195,12 @@ public class LanguageLearningMediator {
 
 	private void logNumberOfWords(int number) {
 		if (number % LOG_COUNTER == 0) {
-			log.info("Numero di esempi parsati: " + number * NUM_EXAMPLES);
+			log.info("Numero di esempi parsati: " + number * MAX_NUM_EXAMPLES_PER_WORD);
 		}
 	}
+
+
+
 
 
 }

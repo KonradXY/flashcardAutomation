@@ -2,7 +2,7 @@ package main.java.model.evernote;
 
 import main.java.contracts.IAnkiCard;
 import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.EvernoteEngine;
+import main.java.enginefactory.EvernoteAnkiEngine;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -52,7 +52,7 @@ class EvernoteHtmlParserTest {
 	
 	@BeforeAll
 	public static void setup() {
-		evernoteEngine = new EvernoteEngine(testFile, testFileDir);
+		evernoteEngine = new EvernoteAnkiEngine(testFile, testFileDir);
 		evernoteEngine.setInputDir("./");
 		evernoteEngine.setOutputDir("./");
 		evernoteEngine.buildEngine();
@@ -105,7 +105,7 @@ class EvernoteHtmlParserTest {
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
 		List<IAnkiCard> cardList = evernoteEngine.parse(content);
-		evernoteEngine.print(cardList, outputFile);
+		evernoteEngine.print(cardList, outputTestFile);
 		
 		assertTrue(Files.exists(outputTestFile));
 		Files.delete(imgPath1);

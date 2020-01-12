@@ -5,10 +5,10 @@ import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.strategy.ReadingFormatStrategy;
 
-public class DefaultEngine extends AbstractAnkiEngine {
+public class DefaultAnkiEngine extends AbstractAnkiEngine {
 	
-	public DefaultEngine() {super();}
-	public DefaultEngine(String input, String output) {super(input,output); }
+	public DefaultAnkiEngine() {super();}
+	public DefaultAnkiEngine(String input, String output) {super(input,output); }
 	
 	@Override
 	public void buildEngine() {

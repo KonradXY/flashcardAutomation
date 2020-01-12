@@ -6,21 +6,21 @@ import org.jsoup.select.Elements;
 import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
 
-public class StandardFormatCardDecorator extends AbstractCardDecorator {
-	
-	// TODO - non mi piace il fatto che creo la card qui .. verificare meglio questa cosa
-	
-	public IAnkiCard create(Elements front, Elements back) {
-		
-		for (Element e : front) 
-    		applyLeftFormat(e);
-		for (Element e : back) 
-			applyLeftFormat(e);
+import java.util.function.Function;
 
-		this.card = new AnkiCard(front, back);
-		
-		return card;
+public class StandardFormatCardDecorator extends AbstractCardDecorator {
+
+	public IAnkiCard create(Elements front, Elements back) {
+		front.stream().forEach(applyLeftFormat);
+		back.stream().forEach(applyLeftFormat);
+		return new AnkiCard(front, back);
 	}
-	
-	
+
+	public static Function<DecoratingCard, DecoratingCard> decorateWithLeftFormat = (it) -> {
+		it.getFront().children().stream().forEach(applyLeftFormat);
+		it.getBack().children().stream().forEach(applyLeftFormat);
+		return it;
+	};
+
+
 }

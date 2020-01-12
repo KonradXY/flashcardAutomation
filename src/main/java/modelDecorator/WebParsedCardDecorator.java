@@ -1,72 +1,24 @@
 package main.java.modelDecorator;
 
+
+
 import java.util.List;
 import java.util.Map;
 
 import main.java.contracts.IAnkiCard;
 import org.jsoup.nodes.Element;
 
-import main.java.model.AnkiCard;
-
 public class WebParsedCardDecorator extends StandardFormatCardDecorator {
 
-	// TODO - dovrei implementare dei campi per le definizioni e per i sinonimi ? 
-	
-	// TODO - questo e' quello che piu' si avvicina al decorator che pensavo:
-	// la carta parte inizialmente vuota e vengono aggiuti i vari elementi. Verificare e capire meglio il pattern
-	
-	public IAnkiCard create(String word, String traduzione, String contenuto, String listaSinonimi,
-                            Map<String, String> definizioniMap, List<String> synonims) {
-//		AnkiCard card = new AnkiCard();
+	public IAnkiCard create(String word, String traduzione, String contenuto) {
         this.card.create();
-		addWordLearnedToFront(card, word);
-		addTranslationToFront(card, traduzione);
-		addContenutoToBack(card, contenuto);
-		addParoleTradotteToBack(card, listaSinonimi);
-		addDefinizioneToBack(card, definizioniMap);
-		addSinonimiToBack(card, synonims);
+        addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+        addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
+        addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+
 		return this.card;
 	}
-	
-	
-	
-	private static Element getDefinizioneTag() {
-		return getUnorderedListTag().addClass("definizioni");
-	}
-	private static Element getSinonimiTag() {
-		return getUnorderedListTag().addClass("sinonimi");
-	}
-	
-	private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
-        if (definizioni.isEmpty())
-            return;
 
-        Element definizioniList = getDefinizioneTag();
-        for (Map.Entry<String, String> entry : definizioni.entrySet()) {
-            Element listItem = createSingleDefinizione(entry);
-            definizioniList.appendChild(listItem);
-        }
-        applyStandardFormatRecursively(definizioniList);
 
-        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
-        card.getBack().appendChild(definizioniList);
 
-    }
-	
-	protected void addSinonimiToBack(IAnkiCard card, List<String> sinonimi) {
-        if (sinonimi.isEmpty())
-            return;
-
-        Element listaSinonimi = getSinonimiTag();
-        for (String str : sinonimi) {
-            listaSinonimi.appendChild(getListItemTag().text(str));
-        }
-        applyStandardFormatRecursively(listaSinonimi);
-
-        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
-        card.getBack().appendChild(listaSinonimi);
-
-    }
 }

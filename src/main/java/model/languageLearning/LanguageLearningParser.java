@@ -1,5 +1,10 @@
 package main.java.model.languageLearning;
 
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
+import org.apache.log4j.Logger;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,12 +13,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-
-import org.apache.log4j.Logger;
-
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.languageLearning.LanguageLearningAnkiCard.PracticeMakesPerfectEnum;
 
 
 public class LanguageLearningParser implements IParser {
@@ -78,14 +77,21 @@ public class LanguageLearningParser implements IParser {
 		Stream.of(splitString(qa[1], IParser.PIPE_SEPARATOR)).forEach(
 				it -> addExcercise(it, risposteMap));
 
+		boolean allKeysAremMatched = true;
 		for (String domKey : domandeMap.keySet()) {
-			checkKeyMap(domKey, domandeMap);
-			
+			allKeysAremMatched &= checkKeyMap(domKey, domandeMap);
+		}
+
+		if (!allKeysAremMatched) {
+			throw new RuntimeException("Mancano delle chiavi all'interno degli esercizi ");
+		}
+
+		for (String domKey : domandeMap.keySet()) {
 			listCard.add(new LanguageLearningAnkiCard(
 					domandeMap.get(domKey),
 					risposteMap.get(domKey),
 					cardKind
-					));
+			));
 		}
 
 	}
@@ -169,9 +175,12 @@ public class LanguageLearningParser implements IParser {
 
 	}
 	
-	private <K, V> void checkKeyMap(K key, Map<K, V> map) {
-		if (!map.containsKey(key))
-			throw new RuntimeException("Chiave non trovata ! - Key: " + key);
+	private <K, V> boolean checkKeyMap(K key, Map<K, V> map) {
+		if (!map.containsKey(key)) {
+			log.error("Non e' stata trovata la coppia di chiavi D/R per la chiave: " + key);
+			return false;
+		}
+		return true;
 	}
 	
 	private String[] parseDomandeRisposte(String input) {

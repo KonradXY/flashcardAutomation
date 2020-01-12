@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.TextEngineBuilder;
+import main.java.enginefactory.AnkiEngineFactory;
 import main.java.model.DefaultParser;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
@@ -22,7 +22,7 @@ import main.java.model.languageLearning.LanguageLearningParser;
 
 class EngineBuilderTest {
 
-	private TextEngineBuilder builder = new TextEngineBuilder();
+	private AnkiEngineFactory builder = new AnkiEngineFactory();
 	private AbstractAnkiEngine ankiEngine;
 	private String[] args;
 	

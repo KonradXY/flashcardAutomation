@@ -3,17 +3,17 @@ package main.java.facade;
 import com.google.inject.Inject;
 
 import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.TextEngineBuilder;
+import main.java.enginefactory.AnkiEngineFactory;
 import main.java.netutilities.CertificateManager;
-import main.java.webcrawlers.LanguageLearningMediator;
+import main.java.webcrawlers.LanguageLearningWebCrawlerMediator;
 
 public class FlashcardFacade {
 	
-	private final TextEngineBuilder engineBuilder;
-	private final LanguageLearningMediator languageLearningMediator;
+	private final AnkiEngineFactory engineBuilder;
+	private final LanguageLearningWebCrawlerMediator languageLearningMediator;
 
 	@Inject
-	public FlashcardFacade(TextEngineBuilder engineBuilder, LanguageLearningMediator languageLearningMediator) {
+	public FlashcardFacade(AnkiEngineFactory engineBuilder, LanguageLearningWebCrawlerMediator languageLearningMediator) {
 		this.engineBuilder = engineBuilder;
 		this.languageLearningMediator = languageLearningMediator;
 	}

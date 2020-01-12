@@ -20,7 +20,7 @@ import main.java.contracts.IPrinter;
 import main.java.model.kindle.KindleAnkiCard;
 import main.java.model.languageLearning.LanguageLearningAnkiCard;
 
-class TextFileWriterTest {
+class TextFilePrinterTest {
 
 	private static AnkiCard card;
 	private static final Path filetestpath = Paths.get("./test.txt");
