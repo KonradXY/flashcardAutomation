@@ -22,6 +22,7 @@ public class Property {
 
 
 
+
 	private static final String propDir = "src/main/resources/input.properties";
 	private static Properties prop;
 

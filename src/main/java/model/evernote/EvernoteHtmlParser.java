@@ -110,6 +110,9 @@ public class EvernoteHtmlParser implements IParser {
             throw new RuntimeException("FILE DEST NON PUO' ESSERE DIRECTORY ! " + dest);
         }
 
+        // FIXME - all'interno della cartella di output ci sono ancora le estensioni dei file ... fixare
+        dest = Paths.get(dest.toString().replace(".txt",""));
+
         try {
             Files.copy(src, dest, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ex) {
