@@ -93,6 +93,10 @@ public class EvernoteHtmlParser implements IParser {
         Path source;
 
         for (Element img : doc.getElementsByTag("img")) {
+
+            if (img.attr("src").contains("http"))   // FIXME <<-- quickfix qua dentro. Fare in modo di pulire l'html da queste immagini fasulle (e difatti nn funge nemmeno)
+                continue;
+
             imgTitle = img.attr("src");
             source = currDir.resolve(imgTitle);
             String titleImage = getTitleForImage(fileName, imgTitle);
