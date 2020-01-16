@@ -37,7 +37,6 @@ public abstract class AbstractAnkiEngine {
 		this.outputContent = output;
 	}
 	
-	
 	public abstract void buildEngine();
 	
 	public void createFlashcards() {

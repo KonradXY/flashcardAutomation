@@ -19,6 +19,11 @@ public class TextFilePrinter implements IPrinter {
 
 		checkOutputFolder(destPath);
 
+		// FIXME - anche sta roba fa parte di una serie di minipatch per risolvere il problema. Rifletterci meglio piu' avanti.
+		if (Files.isDirectory(destPath)) {
+			destPath = destPath.resolve("evernoteParsed.txt");
+		}
+
 		try {
 			Files.write(destPath, (Iterable<String>) input.stream().map(it -> it.toString())::iterator);
 		} catch (IOException ex) {
