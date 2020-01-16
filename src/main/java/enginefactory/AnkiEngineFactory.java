@@ -21,7 +21,7 @@ public class AnkiEngineFactory {
 		AbstractAnkiEngine ankiModel;
 		String input = inputParam[0];
 		switch(input) {
-			case "evernote": 			ankiModel = new EvernoteAnkiEngine(EVERNOTE_DIR, EVERNOTE_DIR + "evernoteParsed.txt"); break;
+			case "evernote": 			ankiModel = new EvernoteAnkiEngine(EVERNOTE_DIR, EVERNOTE_DIR); break;
 			case "kindle": 	 			ankiModel = new KindleAnkiEngine(KINDLE_DIR, KINDLE_DIR);   break;
 			case "languageLearning": 	ankiModel = new LanguageLearningAnkiEngine(LANGUAGE_LEARNING_DIR, LANGUAGE_LEARNING_DIR); break;
 			default : 					ankiModel = new DefaultAnkiEngine(GENERIC_DIR, GENERIC_DIR); break;

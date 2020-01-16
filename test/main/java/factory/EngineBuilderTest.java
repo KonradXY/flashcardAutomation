@@ -49,7 +49,7 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
 		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + EVERNOTE_DIR);
-		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + EVERNOTE_DIR + "evernoteParsed.txt");	// TODO <-- questo e' da eliminare !
+		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + EVERNOTE_DIR);
 	}
 	
 	@Test
