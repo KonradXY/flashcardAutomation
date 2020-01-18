@@ -15,7 +15,7 @@ import java.nio.file.StandardCopyOption;
 public class ParserUtil {
 
     private static final Logger log = Logger.getLogger(ParserUtil.class);
-
+    
     Path imgInputContent;
 
     public void setImgInputContent(Path imgInputContent) {
@@ -53,7 +53,7 @@ public class ParserUtil {
         }
     }
 
-    private void copyFile(Path src, Path dest) {
+    public void copyFile(Path src, Path dest) {
         if (!Files.exists(src))
             throw new RuntimeException("FILE SRC NON TROVATO: " + src);
 
@@ -63,6 +63,10 @@ public class ParserUtil {
 
         // FIXME - all'interno della cartella di output ci sono ancora le estensioni dei file ... fixare
         // dest = Paths.get(dest.toString().replace(".txt",""));
+        
+        // FIXME - se non esiste la cartella di output va in eccezione. Fixare !
+        
+        // FIXME - fare in modo che l'estensione delle immagini sia la stessa !
 
         try {
             Files.copy(src, dest, StandardCopyOption.REPLACE_EXISTING);

@@ -39,36 +39,26 @@ public class EvernoteHtmlParser implements IParser {
         this.parserUtil.setImgInputContent(imgInputContent);
     }
     
-
-
     @Override
     public List<IAnkiCard> parse(Map<Path, String> input) {
         List<IAnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
-            cardList.addAll(parseEvernoteCardTableFromFile(entry.getKey(), entry.getValue()));
+            cardList.addAll(parseEvernoteFlashCards(entry.getKey(), entry.getValue()));
 
         return cardList;
     }
 
-    private List<IAnkiCard> parseEvernoteCardTableFromFile(Path fileName, String htmlContent) {
+    private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);
         formatImageTags(fileName, htmlDoc);
-        return createCards(htmlDoc, fileName);
-    }
-
-    private List<IAnkiCard> createCards(Document doc, Path fileName) {
-        return doc.getElementsByTag("tbody").stream()
-                .map(tbody -> parseCardFromTBody(tbody))
-                .filter(card -> !cardExceedMaxSize(card))
-                .map(DecoratingCard::decorateWithLeftFormat)
-                .collect(Collectors.toList());
-    }
-
-    // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
-    private boolean cardExceedMaxSize(IAnkiCard card) {
-    	boolean check = card.getBack().text().length() > MAX_SIZE_CARD;
-    	if (check) log.info("Card exceded max size ! ");
-    	return check;
+        
+        List<IAnkiCard> cards = htmlDoc.getElementsByTag("tbody").stream()
+							        .map(tbody -> parseCardFromTBody(tbody))
+							        .filter(card -> !cardExceedMaxSize(card))
+							        .map(DecoratingCard::decorateWithLeftFormat)
+							        .collect(Collectors.toList());
+        
+        return cards;
     }
 
     private IAnkiCard parseCardFromTBody(Element tbody) {
@@ -77,9 +67,16 @@ public class EvernoteHtmlParser implements IParser {
         Elements backElements = content.get(1).getElementsByTag("div");
         return new AnkiCard(frontElements, backElements);
     }
+    
+    // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
+    private boolean cardExceedMaxSize(IAnkiCard card) {
+    	boolean check = card.getBack().text().length() > MAX_SIZE_CARD;
+    	if (check) log.info("Card exceded max size ! ");
+    	return check;
+    }
 
     public void formatImageTags(Path fileName, Document doc) {
-        String imgDir = parserUtil.getImageDir(fileName);
+        String imgDir = parserUtil.getImageDir(fileName);	// TODO - qua sto pezzo puo' essere rifattorizzato in modo che stia dentro al parser util tranquillamente
         Path currDir = Paths.get(imgDir).getParent();
         parserUtil.setImagesForFlashcard(doc, currDir, fileName);
     }
