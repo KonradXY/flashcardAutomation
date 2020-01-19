@@ -1,6 +1,4 @@
 package main.java.enginefactory;
-import java.nio.file.Paths;
-
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
@@ -15,7 +13,7 @@ public class EvernoteAnkiEngine extends AbstractAnkiEngine {
 	@Override
 	public void buildEngine() {
 		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
-		parser = new EvernoteHtmlParser(new ParserUtil(), Paths.get(getFullOutputDir()));
+		parser = new EvernoteHtmlParser(new ParserUtil(), getFullOutputPath());
 		printer = new TextFilePrinter();
 	}
 }

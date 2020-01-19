@@ -16,6 +16,7 @@ import main.java.contracts.IParser;
 
 public class ParserUtil {
 
+	private static final Path MEDIA_FOLDER = Paths.get("mediaFolder");
 	private static final Logger log = Logger.getLogger(ParserUtil.class);
 	private static final int MAX_SIZE_CARD = 131072;
 
@@ -61,7 +62,7 @@ public class ParserUtil {
 
 	private Path buildMediaFolder(Path outputContent) {
 		try {
-			Path mediaFolder = outputContent.resolve("mediaFolder/");
+			Path mediaFolder = outputContent.resolve(MEDIA_FOLDER);
 			if (!Files.exists(mediaFolder)) {
 				Files.createDirectories(mediaFolder);
 			}

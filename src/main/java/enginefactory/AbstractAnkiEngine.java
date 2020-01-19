@@ -39,10 +39,13 @@ public abstract class AbstractAnkiEngine {
 	
 	public abstract void buildEngine();
 	
+	// TODO - per poter fare il discorso della lettura e creazione di piu' file contemporeaneamente dovrei far
+	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
+	// Inoltre dovrei fare dei test !
 	public void createFlashcards() {
-		Map<Path, String> contentRead = this.read(Paths.get(getFullInputDir()));
+		Map<Path, String> contentRead = this.read(this.getFullInputPath());
 		List<IAnkiCard> cardList = this.parse(contentRead);
-		this.print(cardList, Paths.get(this.getFullOutputDir()));
+		this.print(cardList, this.getFullOutputPath());
 	}
 
 	public List<IAnkiCard> parse(Map<Path, String> content) {
@@ -74,6 +77,8 @@ public abstract class AbstractAnkiEngine {
 	public void setParser(IParser parser) 			{ this.parser = parser; }
 	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
 	
+	public Path getFullInputPath() 					{ return Paths.get(getFullInputDir()); }
+	public Path getFullOutputPath()					{ return Paths.get(getFullOutputDir()); }
 	public String getFullInputDir()					{ return inputDir + parserInputDir; }
 	public String getFullOutputDir() 				{ return outputDir + parserOutputDir; }
 	
