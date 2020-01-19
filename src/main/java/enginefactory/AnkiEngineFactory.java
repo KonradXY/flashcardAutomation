@@ -29,8 +29,8 @@ public class AnkiEngineFactory {
 		
 		ankiModel.buildEngine();
 
-		log.info("Cartella di input: " + ankiModel.getInputDestination());
-		log.info("Cartella di output: " + ankiModel.getOutputDestination());
+		log.info("Cartella di input: " + ankiModel.getFullInputDir());
+		log.info("Cartella di output: " + ankiModel.getFullOutputDir());
 		
 		return ankiModel;
 	}

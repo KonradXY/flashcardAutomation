@@ -31,26 +31,28 @@ public class EvernoteHtmlParser implements IParser {
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
 
     private ParserUtil parserUtil;
+    private Path outputContent;
     
     public EvernoteHtmlParser() { }
 
-    public EvernoteHtmlParser(ParserUtil parserUtil, Path imgInputContent) {
+    public EvernoteHtmlParser(ParserUtil parserUtil, Path outputContent) {
         this.parserUtil = parserUtil;
-        this.parserUtil.setImgInputContent(imgInputContent);
+        this.outputContent = outputContent;
     }
     
     @Override
     public List<IAnkiCard> parse(Map<Path, String> input) {
         List<IAnkiCard> cardList = new ArrayList<>();
         for (Map.Entry<Path, String> entry : input.entrySet())
-            cardList.addAll(parseEvernoteFlashCards(entry.getKey(), entry.getValue()));
+            cardList.addAll(parseEvernoteFlashCards(entry.getKey(), entry.getValue(), outputContent));
 
         return cardList;
     }
 
-    private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent) {
+    private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);
-        formatImageTags(fileName, htmlDoc);
+       
+        formatImageTags(fileName, outputContent, htmlDoc);
         
         List<IAnkiCard> cards = htmlDoc.getElementsByTag("tbody").stream()
 							        .map(tbody -> parseCardFromTBody(tbody))
@@ -75,10 +77,12 @@ public class EvernoteHtmlParser implements IParser {
     	return check;
     }
 
-    public void formatImageTags(Path fileName, Document doc) {
+    // TODO - vorrei levare sto outputContent da qui in qualche modo. Verificare. 
+    public void formatImageTags(Path fileName, Path outputContent, Document doc) {
         String imgDir = parserUtil.getImageDir(fileName);	// TODO - qua sto pezzo puo' essere rifattorizzato in modo che stia dentro al parser util tranquillamente
         Path currDir = Paths.get(imgDir).getParent();
-        parserUtil.setImagesForFlashcard(doc, currDir, fileName);
+        parserUtil.setImagesForFlashcard(doc, currDir, outputContent, fileName);
+        
     }
 
 

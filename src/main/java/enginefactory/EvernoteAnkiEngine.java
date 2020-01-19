@@ -12,11 +12,10 @@ public class EvernoteAnkiEngine extends AbstractAnkiEngine {
 	public EvernoteAnkiEngine() { super(); }
 	public EvernoteAnkiEngine(String input, String output) { super(input, output); }
 	
-	
 	@Override
 	public void buildEngine() {
 		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
-		parser = new EvernoteHtmlParser(new ParserUtil(), Paths.get(getOutputDestination()));
+		parser = new EvernoteHtmlParser(new ParserUtil(), Paths.get(getFullOutputDir()));
 		printer = new TextFilePrinter();
 	}
 }

@@ -1,35 +1,32 @@
 package main.java.utils;
 
-import main.java.contracts.IParser;
-import org.apache.log4j.Logger;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import main.java.contracts.IParser;
 
 public class ParserUtil {
 
     private static final Logger log = Logger.getLogger(ParserUtil.class);
-    
-    Path imgInputContent;
 
-    public void setImgInputContent(Path imgInputContent) {
-        this.imgInputContent = imgInputContent;
-    }
-
-    public Path getImgInputContent() {
-        return this.imgInputContent;
-    }
-
-    public void setImagesForFlashcard(Document doc, Path currDir, Path fileName) {
+    public void setImagesForFlashcard(Document doc, Path currDir, Path outputContent, Path fileName) {
         String imgTitle;
         Path dest;
         Path source;
+        
+        try {
+        	dest = buildMediaFolder(outputContent);
+        } catch (IOException ex) {
+        	log.error("Cannot create media folder !");
+        	throw new RuntimeException(ex);
+        }
 
         for (Element img : doc.getElementsByTag("img")) {
 
@@ -44,13 +41,21 @@ public class ParserUtil {
 
             String titleImage = getTitleForImage(fileName, imgTitle);
             log.info("TITLE IMAGE: " + titleImage);
-
-            dest = getImgInputContent().resolve(titleImage);
-            log.info("DEST: " + dest);
-
-            copyFile(source, dest);
+            
+            copyFile(source, dest.resolve(titleImage));
             img.attr("src", getTitleForImage(fileName, imgTitle));
         }
+    }
+    
+    private Path buildMediaFolder(Path outputContent) throws IOException {
+    	Path mediaFolder = outputContent.resolve("mediaFolder/");
+    	log.info("mediaFolder: " + mediaFolder.toAbsolutePath());
+    	
+    	if (!Files.exists(mediaFolder)) {
+    		Files.createDirectories(mediaFolder);
+    	}
+    	
+    	return mediaFolder;
     }
 
     public void copyFile(Path src, Path dest) {
@@ -80,7 +85,7 @@ public class ParserUtil {
 
         int first = filePath.toString().lastIndexOf(File.separatorChar)+1;
         int last = filePath.toString().lastIndexOf(".");
-        String imgTitle = filePath.toString().substring(first, last);
+        String imgTitle = filePath.toString().substring(first, last);	// TODO - qua faccio la copia dell'estensione
 
         first = imgName.lastIndexOf("/") + 1;
         last = imgName.lastIndexOf(".");
