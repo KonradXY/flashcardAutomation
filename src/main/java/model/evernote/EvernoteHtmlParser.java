@@ -1,33 +1,26 @@
 package main.java.model.evernote;
 
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.modelDecorator.DecoratingCard;
-import main.java.utils.ParserUtil;
-import main.java.utils.Property;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import static main.java.modelDecorator.StandardFormatCardDecorator.decorateWithLeftFormat;
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.modelDecorator.DecoratingCard;
+import main.java.utils.ParserUtil;
 
 public class EvernoteHtmlParser implements IParser {
 
-    private static final int MAX_SIZE_CARD = 131072;
+    
     private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
 
     private ParserUtil parserUtil;
@@ -51,12 +44,12 @@ public class EvernoteHtmlParser implements IParser {
 
     private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);
-       
-        formatImageTags(fileName, outputContent, htmlDoc);
+          
+        parserUtil.createImagesForFlashcard(htmlDoc, outputContent, fileName);
         
         List<IAnkiCard> cards = htmlDoc.getElementsByTag("tbody").stream()
 							        .map(tbody -> parseCardFromTBody(tbody))
-							        .filter(card -> !cardExceedMaxSize(card))
+							        .filter(card -> !parserUtil.cardExceedMaxSize(card))
 							        .map(DecoratingCard::decorateWithLeftFormat)
 							        .collect(Collectors.toList());
         
@@ -69,23 +62,6 @@ public class EvernoteHtmlParser implements IParser {
         Elements backElements = content.get(1).getElementsByTag("div");
         return new AnkiCard(frontElements, backElements);
     }
-    
-    // FIXME - esiste una size massima per le flashcard. Vedere una soluzione
-    private boolean cardExceedMaxSize(IAnkiCard card) {
-    	boolean check = card.getBack().text().length() > MAX_SIZE_CARD;
-    	if (check) log.info("Card exceded max size ! ");
-    	return check;
-    }
-
-    // TODO - vorrei levare sto outputContent da qui in qualche modo. Verificare. 
-    public void formatImageTags(Path fileName, Path outputContent, Document doc) {
-        String imgDir = parserUtil.getImageDir(fileName);	// TODO - qua sto pezzo puo' essere rifattorizzato in modo che stia dentro al parser util tranquillamente
-        Path currDir = Paths.get(imgDir).getParent();
-        parserUtil.setImagesForFlashcard(doc, currDir, outputContent, fileName);
-        
-    }
-
-
 
 
 }
