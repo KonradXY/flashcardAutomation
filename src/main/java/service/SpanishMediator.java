@@ -33,219 +33,214 @@ import org.jsoup.nodes.Element;
 @Singleton
 public class SpanishMediator {
 
-	private static final Logger log = Logger.getLogger(SpanishMediator.class);
-	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
-	
-	private final ReversoSpanishCrawler reversoCrawler;
-	private final WordReferenceDefinitionPage definitionPageWR;
-	private final WordReferenceSynonimsPage synonimsPageWR;
-	private final WordReferenceTranslationPage translationPageWR;
+    private static final Logger log = Logger.getLogger(SpanishMediator.class);
+    private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 
-	private final ClozeEngine clozeEngine;
-	
+    private final ReversoSpanishCrawler reversoCrawler;
+    private final WordReferenceDefinitionPage definitionPageWR;
+    private final WordReferenceSynonimsPage synonimsPageWR;
+    private final WordReferenceTranslationPage translationPageWR;
 
-	@Inject
-	SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine ) {
-		this.reversoCrawler = reversoCrawler;
-		this.definitionPageWR = definitionPageWR;
-		this.synonimsPageWR = synonimsPageWR;
-		this.translationPageWR = translationPageWR;
-		this.clozeEngine = clozeEngine;
-	}
-
-	// TODO - tutte queste alla fine diventeranno delle strategy da wrappare all'interno della scrittura (un template o uno strategy pattern praticamente)
-	// TODO - bisogna rivedere pratiacmente tutta sta parte (soprattutto se penso di combinarla con il parsing di codice da siti diversi)
-	public void createDefinitionFlashcards(String inputFile, String outputFile) throws Exception {
-		int numWords = 0;
-
-		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
-
-			List<String> wordList = getWordListFromFile(inputFile);
-			IAnkiCard card;
-
-			for (String word : wordList) {
-				translationPageWR.scrapeSpanishItalianTranslationPage(word);
-
-				writeCard(createSimpleDefinitionCard(word), bos);
-				writeCard(createReverseDefinitionCard(word), bos);
-
-				numWords+=2;
-			}
-		}
-
-		log.info("effettuata la creazione di " + numWords + " carte");
-
-	}
-
-	/**
-	 * @param word
-	 * @return flashcard con definizione e traduzione in italiano
-	 */
-	private IAnkiCard createSimpleDefinitionCard(String word) {
-		Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
-
-		IAnkiCard card = new AnkiCard();
-		addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-
-		for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
-			addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
-		}
-
-		Optional<Element> tip = translationPageWR.getWordTips(word);
-		if (tip.isPresent()) {
-			addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
-		}
-
-		return card;
-	}
-
-	/**
-	 * @param word
-	 * @return flashcard con traduzione in italiano e parola in spagnolo piu' le varie definizioni possibili
-	 */
-	private IAnkiCard createReverseDefinitionCard(String word) {
-		IAnkiCard card = new AnkiCard();
-		Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
-		if (!traduzioni.isEmpty()) 	{
-
-			addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
-
-			for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
-				addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
-			}
-		}
+    private final ClozeEngine clozeEngine;
 
 
-		return card;
-	}
+    @Inject
+    SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
+        this.reversoCrawler = reversoCrawler;
+        this.definitionPageWR = definitionPageWR;
+        this.synonimsPageWR = synonimsPageWR;
+        this.translationPageWR = translationPageWR;
+        this.clozeEngine = clozeEngine;
+    }
 
-	/**
-	 *
-	 * @param inputFile
-	 * @param outputFile
-	 * @throws Exception
-	 */
-	public void createFlashcard(String inputFile, String outputFile) throws Exception {
-		int numWords = 0;
-		List<String> wordList = getWordListFromFile(inputFile);
-		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
+    // TODO - qua dentro voglio semplicemente creare la lista di carte. La stampa dev'essere fatta da qualche altra parte
 
-				for (String word : wordList) {
+    public void createDefinitionFlashcards(String inputFile, String outputFile) throws Exception {
+        int numWords = 0;
 
-					definitionPageWR.scrapeSpanishDefinitionWord(word);
-					synonimsPageWR.scrapeSpanishSynonimsPage(word);
+        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
 
-					Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
-					List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
-					List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
+            List<String> wordList = getWordListFromFile(inputFile);
+            IAnkiCard card;
 
-					for (IAnkiCard card : cards) {
-						addDefinizioneToBack(card, definizioniMap);
-						addSinonimiToBack(card, synonims);
-					}
+            for (String word : wordList) {
+                translationPageWR.scrapeSpanishItalianTranslationPage(word);
 
-					writeCards(cards, bos);
+                writeCard(createSimpleDefinitionCard(word), bos);
+                writeCard(createReverseDefinitionCard(word), bos);
 
-					logNumberOfWords(numWords++);
-					Thread.sleep(TIME_SLEEP);
-				}
+                numWords += 2;
+            }
+        }
 
-			}
-		}
+        log.info("effettuata la creazione di " + numWords + " carte");
 
-		public void createClozeFlashcards(String input, String output) throws Exception {
-		List<String> wordList = getWordListFromFile(input);
-		int numWords = 0;
+    }
 
-		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
+    /**
+     * @param word
+     * @return flashcard con definizione e traduzione in italiano
+     */
+    private IAnkiCard createSimpleDefinitionCard(String word) {
+        Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
 
-			for (String word : wordList) {
-				Map<String, String> originalMap = definitionPageWR.getWordDefinition(word);
-				Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
+        IAnkiCard card = new AnkiCard();
+        addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
 
-				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-					IAnkiCard card = webCardDecorator.create(cloze.getValue(), 
-							word, originalMap.get(cloze.getKey()), cloze.getKey());
-					bos.write(card.toString());
-				}
+        for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
+            addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+        }
 
-				logNumberOfWords(numWords++);
+        Optional<Element> tip = translationPageWR.getWordTips(word);
+        if (tip.isPresent()) {
+            addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
+        }
 
-				Thread.sleep(TIME_SLEEP);
-			}
-		}
-	}
+        return card;
+    }
 
+    /**
+     * @param word
+     * @return flashcard con traduzione in italiano e parola in spagnolo piu' le varie definizioni possibili
+     */
+    private IAnkiCard createReverseDefinitionCard(String word) {
+        IAnkiCard card = new AnkiCard();
+        Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
+        if (!traduzioni.isEmpty()) {
 
+            addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
 
-	private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
-		if (definizioni.isEmpty())
-			return;
-
-		Element definizioniList = getUnorderedListTag().addClass("definizioni");
-		for (Map.Entry<String, String> entry : definizioni.entrySet()) {
-			Element listItem = createSingleDefinizione(entry);
-			definizioniList.appendChild(listItem);
-		}
-		applyLeftFormatRecursively(definizioniList);
-
-		card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-		card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
-		card.getBack().appendChild(definizioniList);
-
-	}
-
-	protected void addSinonimiToBack(IAnkiCard card, List<String> sinonimi) {
-		if (sinonimi.isEmpty())
-			return;
-
-		Element listaSinonimi = getUnorderedListTag().addClass("sinonimi");
-		for (String str : sinonimi) {
-			listaSinonimi.appendChild(getListItemTag().text(str));
-		}
-		applyLeftFormatRecursively(listaSinonimi);
-
-		card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-		card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
-		card.getBack().appendChild(listaSinonimi);
-
-	}
-
-	private void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
-		for (IAnkiCard card : cards) {
-			writeCard(card, bos);
-		}
-
-		bos.flush();
-	}
-
-	private void writeCard(IAnkiCard card, BufferedWriter bos) throws IOException {
-		if (!card.getFront().text().trim().isEmpty()) {
-			bos.write(card.toString());
-			bos.flush();
-		}
-
-	}
-	
-	private List<String> getWordListFromFile(String inputFile) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
-		List<String> wordsList = br.lines()
-				.map(String::trim)
-				//.limit(5)
-				.collect(Collectors.toList());
-		br.close();
-		return wordsList;
-	}
+            for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
+                addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+            }
+        }
 
 
-	private void logNumberOfWords(int number) {
-		if (number % LOG_COUNTER == 0) {
-			log.info("Numero di esempi parsati: " + number * MAX_NUM_EXAMPLES_PER_WORD);
-		}
-	}
+        return card;
+    }
+
+    /**
+     * @param inputFile
+     * @param outputFile
+     * @throws Exception
+     */
+    public void createFlashcard(String inputFile, String outputFile) throws Exception {
+        int numWords = 0;
+        List<String> wordList = getWordListFromFile(inputFile);
+        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
+
+            for (String word : wordList) {
+
+                definitionPageWR.scrapeSpanishDefinitionWord(word);
+                synonimsPageWR.scrapeSpanishSynonimsPage(word);
+
+                Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
+                List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
+                List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
+
+                for (IAnkiCard card : cards) {
+                    addDefinizioneToBack(card, definizioniMap);
+                    addSinonimiToBack(card, synonims);
+                }
+
+                writeCards(cards, bos);
+
+                logNumberOfWords(numWords++);
+                Thread.sleep(TIME_SLEEP);
+            }
+
+        }
+    }
+
+    public void createClozeFlashcards(String input, String output) throws Exception {
+        List<String> wordList = getWordListFromFile(input);
+        int numWords = 0;
+
+        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
+
+            for (String word : wordList) {
+                Map<String, String> originalMap = definitionPageWR.getWordDefinition(word);
+                Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
+
+                for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
+                    IAnkiCard card = webCardDecorator.create(cloze.getValue(),
+                            word, originalMap.get(cloze.getKey()), cloze.getKey());
+                    bos.write(card.toString());
+                }
+
+                logNumberOfWords(numWords++);
+
+                Thread.sleep(TIME_SLEEP);
+            }
+        }
+    }
 
 
+    private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
+        if (definizioni.isEmpty())
+            return;
 
+        Element definizioniList = getUnorderedListTag().addClass("definizioni");
+        for (Map.Entry<String, String> entry : definizioni.entrySet()) {
+            Element listItem = createSingleDefinizione(entry);
+            definizioniList.appendChild(listItem);
+        }
+        applyLeftFormatRecursively(definizioniList);
+
+        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+        card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
+        card.getBack().appendChild(definizioniList);
+
+    }
+
+    protected void addSinonimiToBack(IAnkiCard card, List<String> sinonimi) {
+        if (sinonimi.isEmpty())
+            return;
+
+        Element listaSinonimi = getUnorderedListTag().addClass("sinonimi");
+        for (String str : sinonimi) {
+            listaSinonimi.appendChild(getListItemTag().text(str));
+        }
+        applyLeftFormatRecursively(listaSinonimi);
+
+        card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
+        card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
+        card.getBack().appendChild(listaSinonimi);
+
+    }
+
+    private void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
+        for (IAnkiCard card : cards) {
+            writeCard(card, bos);
+        }
+
+        bos.flush();
+    }
+
+    private void writeCard(IAnkiCard card, BufferedWriter bos) throws IOException {
+        if (!card.getFront().text().trim().isEmpty()) {
+            bos.write(card.toString());
+            bos.flush();
+        }
+
+    }
+
+    private List<String> getWordListFromFile(String inputFile) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
+        List<String> wordsList = br.lines()
+                .map(String::trim)
+                //.limit(5)
+                .collect(Collectors.toList());
+        br.close();
+        return wordsList;
+    }
+
+
+    private void logNumberOfWords(int number) {
+        if (number % LOG_COUNTER == 0) {
+            log.info("Numero di esempi parsati: " + number * MAX_NUM_EXAMPLES_PER_WORD);
+        }
+    }
 
 
 }
