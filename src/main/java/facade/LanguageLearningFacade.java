@@ -94,11 +94,15 @@ public class LanguageLearningFacade {
 	private IAnkiCard createReverseDefinitionCard(String word) {
 		IAnkiCard card = new AnkiCard();
 		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
-		addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
+		if (!traduzioni.isEmpty()) 	{
 
-		for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
-			addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+			addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
+
+			for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
+				addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+			}
 		}
+
 
 		return card;
 	}

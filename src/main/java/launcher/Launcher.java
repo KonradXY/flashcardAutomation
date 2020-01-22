@@ -36,7 +36,7 @@ public class Launcher {
 
             } else if (inputArg.contains("simpledefinitions")) {
                 log.info(" ====>>> launching simpleDefinitions mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "vocabolario b1 cucina.txt";
+                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "vocabolario b1 animali.txt";
                 String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "simpleDefinitions.txt";
                 facade.buildSimpleDefinitionFlashcardsFromWeb(inputDir, outputDir);
 
