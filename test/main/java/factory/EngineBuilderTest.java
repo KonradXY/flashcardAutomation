@@ -35,8 +35,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), DefaultParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + GENERIC_DIR );
-		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + GENERIC_DIR);
+		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + GENERIC_DIR );
+		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + GENERIC_DIR);
 	}
 	
 	@Test
@@ -48,8 +48,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + EVERNOTE_DIR);
-		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + EVERNOTE_DIR);
+		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + EVERNOTE_DIR);
+		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + EVERNOTE_DIR);
 	}
 	
 	@Test
@@ -61,8 +61,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), KindleClippingsParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), KindleClippingPrinter.class);
 		
-		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + KINDLE_DIR);
-		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + KINDLE_DIR);
+		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + KINDLE_DIR);
+		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + KINDLE_DIR);
 	}
 	
 	@Test
@@ -74,8 +74,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getInputDestination(), INPUT_DIR + LANGUAGE_LEARNING_DIR);
-		assertEquals(ankiEngine.getOutputDestination(), OUTPUT_DIR + LANGUAGE_LEARNING_DIR);
+		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + LANGUAGE_LEARNING_DIR);
+		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + LANGUAGE_LEARNING_DIR);
 	}
 
 }

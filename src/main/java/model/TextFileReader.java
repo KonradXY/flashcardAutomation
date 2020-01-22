@@ -50,7 +50,7 @@ public class TextFileReader implements IReader {
 		
 			Files.walk(filePath)
 				.filter(p -> !p.equals(filePath))
-				.sorted() 	// TODO - fare un comparator custom per sta roba
+				.sorted() 	// TODO - fare un comparator custom per sta roba (come li devo ordinare ? Sinceramente nn mi ricordo perche' l'ho segnato)
 				.forEach(path -> readContent(contentMap, path));
 		
 		} catch (IOException ex) {

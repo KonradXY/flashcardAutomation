@@ -23,8 +23,8 @@ public abstract class AbstractAnkiEngine {
 	protected String inputDir;
 	protected String outputDir;
 	
-	protected String inputContent;
-	protected String outputContent;
+	protected String parserInputDir;
+	protected String parserOutputDir;
 
 	protected AbstractAnkiEngine() {
 		this.inputDir = INPUT_DIR;
@@ -33,16 +33,19 @@ public abstract class AbstractAnkiEngine {
 	
 	protected AbstractAnkiEngine(String input, String output) {
 		this();
-		this.inputContent  = input;
-		this.outputContent = output;
+		this.parserInputDir  = input;
+		this.parserOutputDir = output;
 	}
 	
 	public abstract void buildEngine();
 	
+	// TODO - per poter fare il discorso della lettura e creazione di piu' file contemporeaneamente dovrei far
+	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
+	// Inoltre dovrei fare dei test !
 	public void createFlashcards() {
-		Map<Path, String> contentRead = this.read(Paths.get(getInputDestination()));
+		Map<Path, String> contentRead = this.read(this.getFullInputPath());
 		List<IAnkiCard> cardList = this.parse(contentRead);
-		this.print(cardList, Paths.get(this.getOutputDestination()));
+		this.print(cardList, this.getFullOutputPath());
 	}
 
 	public List<IAnkiCard> parse(Map<Path, String> content) {
@@ -74,15 +77,21 @@ public abstract class AbstractAnkiEngine {
 	public void setParser(IParser parser) 			{ this.parser = parser; }
 	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
 	
-	public String getInputDestination()				{ return inputDir + inputContent; }
-	public String getOutputDestination() 			{ return outputDir + outputContent; }
+	public Path getFullInputPath() 					{ return Paths.get(getFullInputDir()); }
+	public Path getFullOutputPath()					{ return Paths.get(getFullOutputDir()); }
+	public String getFullInputDir()					{ return inputDir + parserInputDir; }
+	public String getFullOutputDir() 				{ return outputDir + parserOutputDir; }
+	
+	
+	
+	
 	public String getInputDir() 					{ return inputDir;}
 	public String getOutputDir() 					{ return outputDir; }
-	public String getInputContent()					{ return inputContent; }
-	public String getOutputContent()				{ return outputContent; }
+	public String getParserInputDir()				{ return parserInputDir; }
+	public String getParserOutputDir()				{ return parserOutputDir; }
 	
 	public void setInputDir(String inputContent) 	{ this.inputDir = inputContent; }
 	public void setOutputDir(String outputDir) 		{ this.outputDir = outputDir; }
-	public void setInputContent(String content)		{ this.inputContent = content; }
-	public void setOutputContent(String content) 	{ this.outputContent = content; }
+	public void setParserInputDir(String content)	{ this.parserInputDir = content; }
+	public void setParserOutputDir(String content) 	{ this.parserOutputDir = content; }
 }
