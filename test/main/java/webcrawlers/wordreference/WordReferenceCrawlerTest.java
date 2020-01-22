@@ -1,5 +1,6 @@
-package main.java.webcrawlers;
+package main.java.webcrawlers.wordreference;
 
+import main.java.webcrawlers.wordreference.WordReferenceTranslationPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,7 +18,7 @@ class WordReferenceCrawlerTest {
     private static final String htmlTestFile = "./test/main/resources/webcrawler/word_reference_single_definition_test_example.html";
     private static final String SPANISH_TEST_WORD = "aceite";
 
-    private static final WordReferenceCrawler wordReferenceCrawler = new WordReferenceCrawler();
+    private static final WordReferenceTranslationPage wordReferenceCrawler = new WordReferenceTranslationPage();
 
     @BeforeAll
     public static void setup() throws Exception {

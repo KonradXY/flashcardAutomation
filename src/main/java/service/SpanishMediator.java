@@ -19,7 +19,9 @@ import com.google.inject.Singleton;
 import main.java.model.AnkiCard;
 import main.java.utils.ClozeEngine;
 import main.java.webcrawlers.ReversoSpanishCrawler;
-import main.java.webcrawlers.WordReferenceCrawler;
+import main.java.webcrawlers.wordreference.WordReferenceDefinitionPage;
+import main.java.webcrawlers.wordreference.WordReferenceSynonimsPage;
+import main.java.webcrawlers.wordreference.WordReferenceTranslationPage;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
@@ -35,14 +37,19 @@ public class SpanishMediator {
 	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
 	private final ReversoSpanishCrawler reversoCrawler;
-	private final WordReferenceCrawler wordReferenceCrawler;
+	private final WordReferenceDefinitionPage definitionPageWR;
+	private final WordReferenceSynonimsPage synonimsPageWR;
+	private final WordReferenceTranslationPage translationPageWR;
+
 	private final ClozeEngine clozeEngine;
 	
 
 	@Inject
-	SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler, ClozeEngine clozeEngine ) {
+	SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine ) {
 		this.reversoCrawler = reversoCrawler;
-		this.wordReferenceCrawler = wordReferenceCrawler;
+		this.definitionPageWR = definitionPageWR;
+		this.synonimsPageWR = synonimsPageWR;
+		this.translationPageWR = translationPageWR;
 		this.clozeEngine = clozeEngine;
 	}
 
@@ -57,7 +64,7 @@ public class SpanishMediator {
 			IAnkiCard card;
 
 			for (String word : wordList) {
-				wordReferenceCrawler.scrapeSpanishItalianTranslationPage(word);
+				translationPageWR.scrapeSpanishItalianTranslationPage(word);
 
 				writeCard(createSimpleDefinitionCard(word), bos);
 				writeCard(createReverseDefinitionCard(word), bos);
@@ -75,7 +82,7 @@ public class SpanishMediator {
 	 * @return flashcard con definizione e traduzione in italiano
 	 */
 	private IAnkiCard createSimpleDefinitionCard(String word) {
-		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
+		Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
 
 		IAnkiCard card = new AnkiCard();
 		addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
@@ -84,7 +91,7 @@ public class SpanishMediator {
 			addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
 		}
 
-		Optional<Element> tip = wordReferenceCrawler.getWordTips(word);
+		Optional<Element> tip = translationPageWR.getWordTips(word);
 		if (tip.isPresent()) {
 			addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
 		}
@@ -98,7 +105,7 @@ public class SpanishMediator {
 	 */
 	private IAnkiCard createReverseDefinitionCard(String word) {
 		IAnkiCard card = new AnkiCard();
-		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
+		Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
 		if (!traduzioni.isEmpty()) 	{
 
 			addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
@@ -125,11 +132,11 @@ public class SpanishMediator {
 
 				for (String word : wordList) {
 
-					wordReferenceCrawler.scrapeSpanishDefinitionWord(word);
-					wordReferenceCrawler.scrapeSpanishSynonimsPage(word);
+					definitionPageWR.scrapeSpanishDefinitionWord(word);
+					synonimsPageWR.scrapeSpanishSynonimsPage(word);
 
-					Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinition(word);
-					List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
+					Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
+					List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
 					List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
 
 					for (IAnkiCard card : cards) {
@@ -153,7 +160,7 @@ public class SpanishMediator {
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
 
 			for (String word : wordList) {
-				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinition(word);
+				Map<String, String> originalMap = definitionPageWR.getWordDefinition(word);
 				Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
