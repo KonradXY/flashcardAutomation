@@ -6,22 +6,68 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
-
-import static main.java.utils.WebCrawlerProperties.WORD_REFERENCE_ESP_DEFINITION_PAGE_URL;
-import static main.java.utils.WebCrawlerProperties.WORD_REFERENCE_ESP_SINONYMS_PAGE_URL;
 
 @Singleton
 public class WordReferenceCrawler extends AbstractWebCrawler {
 
+    public final static String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = "https://www.wordreference.com/definicion/";
+    public final static String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = "https://www.wordreference.com/sinonimos/";
+    public final static String WORD_REFERENCE_ESP_ITA_PAGE_URL = "https://www.wordreference.com/esit/";
+
     private final static Logger log = Logger.getLogger(WordReferenceCrawler.class);
 
-    public Map<String, String> getWordDefinitionsFromWord(String word) {
-            Document doc = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word);
-            Element article = doc.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.
+    private Document definitionPage;
+    private Document synonimsPage;
+    private Document traduzioneEspItaPage;
+
+    // TODO - credo che dovrei creare una nuova classe per distinguere le due pagine e come tirare fuori le informazioni (qua mi sa che entra in gioco un abstract factory o qualcosa di simile)
+    // TODO - da capire meglio come gestire questa circostanca (ovvero piu' pagine all'interno di un singolo sito)
+
+    // TODO - dovrei fare dei test (almeno per i nuovi metodi). Mi ricordo che era un bel casino settare la pagina. Verificare.
+
+    public void scrapeSpanishDefinitionWord(String word) {
+        this.definitionPage = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word);
+    }
+    public void scrapeSpanishSynonimsPage(String word) {
+        this.synonimsPage = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word);
+    }
+    public void scrapeSpanishItalianTranslationPage(String word) {
+        this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word);
+    }
+
+    public Map<String, String> getWordTranslation(String word) {
+
+        Map<String, String> traduzioniMap = new LinkedHashMap<>();
+        Element article = this.traduzioneEspItaPage.getElementById("article");
+
+        Elements entries = article.getElementsByClass("superentry");
+        for (Element entry : entries) {
+            String parola = entry.getElementsByClass("hwblk").get(0).getElementsByTag("hw").get(0).text();
+            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; "));
+
+            traduzioniMap.put(parola, traduzione);
+        }
+
+        return traduzioniMap;
+
+    }
+
+    public Optional<Element> getWordTips(String word) {
+        Element article = this.traduzioneEspItaPage.getElementById("article");
+        Elements tips = article.getElementsByClass("infoblock");
+
+       for (Element tip : tips) {
+           if (!tips.isEmpty())
+               return Optional.of(tip);
+       }
+
+        return Optional.empty();
+    }
+
+    public Map<String, String> getWordDefinition(String word) {
+            Element article = definitionPage.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.
             Elements li = article.getElementsByTag("li");
             Map<String, String> defMap = new LinkedHashMap<>();
 
@@ -33,9 +79,10 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
             return defMap;
     }
 
-    public List<String> getSynonimsFromWord(String word) {
-        Document doc = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word);
-        Element article = doc.getElementById("article");
+
+
+    public List<String> getSynonimsFromWord(String word) {  // TODO - qua ci potrei mettere un check per verificare che la pagina scrapata sia la stessa della parola (? valutare utilita')
+        Element article = synonimsPage.getElementById("article");
         Elements synonims = article.getElementsByTag("li");
         return synonims.stream().map(Element::text).collect(Collectors.toList());
     }

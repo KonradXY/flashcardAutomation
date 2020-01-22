@@ -7,6 +7,8 @@ import main.java.facade.FlashcardFacade;
 import org.apache.log4j.Logger;
 
 import static main.java.utils.Property.WEB_CRAWLER_DIR;
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.OUTPUT_DIR;
 
 public class Launcher {
 
@@ -24,18 +26,24 @@ public class Launcher {
             if (args.length == 0) args = new String[]{"default"};
             String inputArg = args[0].toLowerCase();
 
-            // TODO - tutto sto pezzo deve andare all'interno dell'engineBuilder
+            // TODO - tutto sto pezzo deve andare all'interno dell'engineBuilder (o cmq lo devo sistemare in quella maniera -- e sto discorso si collega all'abstractFactory anche per il webbcrawling)
+            // TODO - sistemare anche il passaggio di parametri (webcrawler + input)
             if (inputArg.contains("webcrawling")) {
                 log.info(" ====>>> launching webcrawling mode");
-                String inputDir = WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = WEB_CRAWLER_DIR + "scrapedList.txt";
+                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
+                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
 				facade.buildFlashcardsFromWeb(inputDir, outputDir);
 
+            } else if (inputArg.contains("simpledefinitions")) {
+                log.info(" ====>>> launching simpleDefinitions mode");
+                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "vocabolario b1 cucina.txt";
+                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "simpleDefinitions.txt";
+                facade.buildSimpleDefinitionFlashcardsFromWeb(inputDir, outputDir);
+
             } else if (inputArg.contains("clozecrawling")) {
-                // TODO - sta roba va a finire all'interno del build properties (che finisce all'interno del main praticamente -> in questo caso il mediator si pone all'interno del parsing ma dovrei studiarmela meglio come cosa
                 log.info(" ====>>> launching clozeCrawling mode");
-                String inputDir = WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = WEB_CRAWLER_DIR + "scrapedList.txt";
+                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
+                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
 				facade.buildClozeFlashcardsFromWeb(inputDir, outputDir);
 
             } else {

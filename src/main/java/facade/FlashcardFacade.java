@@ -5,31 +5,35 @@ import com.google.inject.Inject;
 import main.java.enginefactory.AbstractAnkiEngine;
 import main.java.enginefactory.AnkiEngineFactory;
 import main.java.netutilities.CertificateManager;
-import main.java.webcrawlers.LanguageLearningWebCrawlerMediator;
 
 public class FlashcardFacade {
 	
 	private final AnkiEngineFactory engineBuilder;
-	private final LanguageLearningWebCrawlerMediator languageLearningMediator;
+	private final LanguageLearningFacade languageLearningFacade;
 
 	@Inject
-	public FlashcardFacade(AnkiEngineFactory engineBuilder, LanguageLearningWebCrawlerMediator languageLearningMediator) {
+	public FlashcardFacade(AnkiEngineFactory engineBuilder, LanguageLearningFacade languageLearningMediator) {
 		this.engineBuilder = engineBuilder;
-		this.languageLearningMediator = languageLearningMediator;
+		this.languageLearningFacade = languageLearningMediator;
 	}
 	
 	public void buildFlashcardsFromTextFile(String[] args) {
 		AbstractAnkiEngine ankiModel = engineBuilder.createTextEngine(args);
 		ankiModel.createFlashcards();
 	}
+
+	public void buildSimpleDefinitionFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {
+		CertificateManager.doTrustToCertificates();
+		languageLearningFacade.createDefinitionFlashcards(inputFile, outputFile);
+	}
 	
 	public void buildFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
-		languageLearningMediator.createFlashcard(inputFile, outputFile);
+		languageLearningFacade.createFlashcard(inputFile, outputFile);
 	}
 
 	public void buildClozeFlashcardsFromWeb(String inputfile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
-		languageLearningMediator.createClozeFlashcards(inputfile, outputFile);
+		languageLearningFacade.createClozeFlashcards(inputfile, outputFile);
 	}
 }

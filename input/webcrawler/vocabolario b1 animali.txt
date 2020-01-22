@@ -1,0 +1,189 @@
+la abeja
+el aguila
+la araña
+la ardilla
+las aves
+el avestruz
+la avispa
+la ballena
+el bufalo
+el búho
+el buitre
+el burro
+el caballo
+la cabra
+el cachorro
+el camello
+el canario
+el canguro
+el caparazón
+el caracol
+la cebra
+el cerdo
+el ciervo
+la cigueña
+el cisne
+el cocodrilo
+la cola
+el colmillo
+el conejo
+el corral
+la cría
+la cucaracha
+los cuernos
+el cuervo
+la cueva
+el delfin
+el dromedario
+el elefante
+el erizo
+la especie
+el establo
+la extinción
+el flamenco
+la foca
+la gallina
+el ganado
+las garras
+el gato
+la gaviota
+el gorila
+el gorrión
+la golondrina
+el gusano
+el hábitat
+el hárnster
+la hiena
+el hipopótamo
+el hocico
+la hormiga
+la huella
+el hurón
+la iguana
+el insecto
+el jabalí
+la jirafa
+el lagarto
+la lagartija
+el león
+el leopardo
+el lince
+el lobo
+el loro
+los mamiferos
+la mariposa
+la mascota
+la medusa
+la mofeta
+el mono
+la mosca
+el mosquito
+la mula
+el murciélago
+el nido
+el oso
+la oveja
+el pájaro
+la paloma
+la pantera
+el pato
+el pavo
+el pelaje
+el pelìcano
+la perdiz
+el perro
+el pez
+la picadura
+la piel
+el pinguino
+la pluma
+el rabo
+la rana
+el ratón
+el reptil
+el rinoceronte
+el rugido
+el safari
+la serpiente
+el tiburón
+la tigre
+el toro
+la tortuga
+la trompa
+la vaca
+la yegua
+el zoològico
+el zoólogo
+el zorro
+acuático
+astuto
+bovino
+bravo
+carnivoro
+cruel
+dèbil
+domèstico
+felino
+fiel
+fiero
+fuerte
+herbìvoro
+invertebrado
+mamifero
+manso
+noble
+oviparo
+peludo
+porcino
+primitivo
+rabioso
+rapaz
+rumiante
+salvaje
+sanguinario
+terrestre
+vacuno
+vertebrado
+voraz
+acariciar
+acechar
+aletear
+amaestrar
+anidar
+aparear
+arañar
+atacar
+atar
+aullar
+balar
+cebar
+criar
+croar
+dar coces
+disecar
+domesticar
+evolucionar
+extinguir
+incubar
+ladrad
+lamer
+maullar
+merodear
+montar
+morder
+mugir
+nadar
+ordeñar
+parir
+perseguir
+piar
+picar
+poner huevos
+relinchar
+roer
+rugir
+rumiar
+trepar
+trinar
+trotar
+volar

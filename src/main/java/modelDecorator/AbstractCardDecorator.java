@@ -68,7 +68,7 @@ public class AbstractCardDecorator implements DecoratingCard {
 
     public static void addContentToBack(IAnkiCard card, String content, Element contentDiv) {
         contentDiv.text(content);
-        card.getFront().appendChild(contentDiv);
+        card.getBack().appendChild(contentDiv);
     }
 
 

@@ -47,7 +47,8 @@ public class AbstractWebCrawler {
     }
 
     protected String createUrlAsString(String host, String input) throws UnsupportedEncodingException {
-        return host + URLEncoder.encode(formatWordsForUrl(input), "UTF-8");
+        String url = host + URLEncoder.encode(formatWordsForUrl(input), "UTF-8");
+        return url;
     }
 
     private String formatWordsForUrl(String words) {

@@ -1,4 +1,4 @@
-package main.java.webcrawlers;
+package main.java.facade;
 
 import static main.java.utils.WebCrawlerProperties.LOG_COUNTER;
 import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
@@ -13,12 +13,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.CharBuffer;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.inject.Singleton;
+import main.java.model.AnkiCard;
+import main.java.webcrawlers.ReversoSpanishCrawler;
+import main.java.webcrawlers.WordReferenceCrawler;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 
@@ -29,19 +34,73 @@ import main.java.modelDecorator.WebParsedClozedCardDecorator;
 import org.jsoup.nodes.Element;
 
 @Singleton
-public class LanguageLearningWebCrawlerMediator {
+public class LanguageLearningFacade {
 
-	private static final Logger log = Logger.getLogger(LanguageLearningWebCrawlerMediator.class);
+	private static final Logger log = Logger.getLogger(LanguageLearningFacade.class);
 	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
-	private final ReversoSpanishCrawler reversoCrawler; 
+	private final ReversoSpanishCrawler reversoCrawler;
 	private final WordReferenceCrawler wordReferenceCrawler;
 	
 
 	@Inject
-	LanguageLearningWebCrawlerMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
+	LanguageLearningFacade(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
+	}
+
+	// TODO - tutte queste alla fine diventeranno delle strategy da wrappare all'interno della scrittura (un template o uno strategy pattern praticamente)
+	// TODO - bisogna rivedere pratiacmente tutta sta parte (soprattutto se penso di combinarla con il parsing di codice da siti diversi)
+	public void createDefinitionFlashcards(String inputFile, String outputFile) throws Exception {
+		int numWords = 0;
+
+		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
+
+			List<String> wordList = getWordListFromFile(inputFile);
+			IAnkiCard card;
+
+			for (String word : wordList) {
+				wordReferenceCrawler.scrapeSpanishItalianTranslationPage(word);
+
+				writeCard(createSimpleDefinitionCard(word), bos);
+				writeCard(createReverseDefinitionCard(word), bos);
+
+				numWords+=2;
+			}
+		}
+
+		log.info("effettuata la creazione di " + numWords + " carte");
+
+	}
+
+	private IAnkiCard createSimpleDefinitionCard(String word) {
+		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
+
+		IAnkiCard card = new AnkiCard();
+		addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+
+		for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
+			addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+		}
+
+		Optional<Element> tip = wordReferenceCrawler.getWordTips(word);
+		if (tip.isPresent()) {
+			addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
+		}
+
+		return card;
+	}
+
+	private IAnkiCard createReverseDefinitionCard(String word) {
+		IAnkiCard card = new AnkiCard();
+		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
+		addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
+
+		for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
+			addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+		}
+
+		return card;
 	}
 
 	public void createFlashcard(String inputFile, String outputFile) throws Exception {
@@ -49,34 +108,37 @@ public class LanguageLearningWebCrawlerMediator {
 		List<String> wordList = getWordListFromFile(inputFile);
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
 
-			for (String word : wordList) {
+				for (String word : wordList) {
 
-				Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
-				List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
-				List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
+					wordReferenceCrawler.scrapeSpanishDefinitionWord(word);
+					wordReferenceCrawler.scrapeSpanishSynonimsPage(word);
 
-				for (IAnkiCard card : cards) {
-					addDefinizioneToBack(card, definizioniMap);
-					addSinonimiToBack(card, synonims);
+					Map<String, String> definizioniMap = wordReferenceCrawler.getWordDefinition(word);
+					List<String> synonims = wordReferenceCrawler.getSynonimsFromWord(word);
+					List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
+
+					for (IAnkiCard card : cards) {
+						addDefinizioneToBack(card, definizioniMap);
+						addSinonimiToBack(card, synonims);
+					}
+
+					writeCards(cards, bos);
+
+					logNumberOfWords(numWords++);
+					Thread.sleep(TIME_SLEEP);
 				}
 
-				writeCards(cards, bos);
-
-				logNumberOfWords(numWords++);
-				Thread.sleep(TIME_SLEEP);
 			}
-
 		}
-	}
 
-	public void createClozeFlashcards(String input, String output) throws Exception {
+		public void createClozeFlashcards(String input, String output) throws Exception {
 		List<String> wordList = getWordListFromFile(input);
 		int numWords = 0;
 
 		try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
 
 			for (String word : wordList) {
-				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinitionsFromWord(word);
+				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinition(word);
 				Map<String, String> clozeMap = createClozeMap(originalMap, word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
@@ -186,7 +248,7 @@ public class LanguageLearningWebCrawlerMediator {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
 		List<String> wordsList = br.lines()
 				.map(String::trim)
-				.limit(1)
+				//.limit(5)
 				.collect(Collectors.toList());
 		br.close();
 		return wordsList;

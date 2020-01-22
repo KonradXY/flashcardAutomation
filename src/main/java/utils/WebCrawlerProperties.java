@@ -7,46 +7,16 @@ import java.util.Properties;
 
 public class WebCrawlerProperties {
 
-	private static final String propDir = "src/main/resources/crawler.properties";
-	private static Properties prop = getProperties();
-
-	public static final int TIME_SLEEP 		= getTimeSleep();
-	public static final int MAX_NUM_EXAMPLES_PER_WORD = getNumberExamples();
-	public static final int NUM_TRANSLATIONS = getNumberTranslations();
+	public static final int TIME_SLEEP 		= 2000;
+	public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;
+	public static final int NUM_TRANSLATIONS = 5;
 	public static final int LOG_COUNTER 	= 5 * MAX_NUM_EXAMPLES_PER_WORD;
-	public static final int TIMEOUT_SEC 	= getTimeoutSec();
+	public static final int TIMEOUT_SEC 	= 10;
 
 	// TODO - questi credo sia meglio levarli dal properties e metterli nele rispettive classi 
-	public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = getSpanishItalianUrl();
-	public final static String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = getSpanishDefinitionUrl();
-	public final static String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = getSpanishSinonymousUrl();
-	public final static String discardedWordsPath 	= getDiscardedWordPath();
+	public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = "http://context.reverso.net/traduzione/spagnolo-italiano/";
 
-	private static int getTimeSleep() 				{ return Integer.parseInt(prop.getProperty("webcrawler.timesleep_milli")); }
-	private static int getNumberExamples()			{ return Integer.parseInt(prop.getProperty("webcrawler.numberExamples")); }
-	private static int getNumberTranslations() 		{ return Integer.parseInt(prop.getProperty("webcrawler.numberTranslations"));	}
-	private static int getTimeoutSec()				{ return Integer.parseInt(prop.getProperty("webcrawler.timeout_sec")); }
-	private static String getSpanishItalianUrl()	{ return prop.getProperty("webcrawler.esp_ita_url"); }
-	private static String getSpanishDefinitionUrl() { return prop.getProperty("webcrawler.definizione_esp");}
-	private static String getSpanishSinonymousUrl() { return prop.getProperty("webcrawler.sinonimi_esp");}
-	private static String getDiscardedWordPath()	{ return prop.getProperty("webcrawler.discardedPath"); }
-
-
-	private static Properties getProperties() {
-		if (prop == null)
-			loadProperties();
-		return prop;
-	}
-
-	private static void loadProperties() {
-		try (InputStream input = new FileInputStream(propDir)) {
-			prop = new Properties();
-			prop.load(input);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			throw new RuntimeException(ex);
-		}
-	}
+	public final static String discardedWordsPath 	= "./src/main/resources/discardedWords.log";
 
 
 }
