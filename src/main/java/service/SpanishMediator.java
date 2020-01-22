@@ -1,4 +1,4 @@
-package main.java.facade;
+package main.java.service;
 
 import static main.java.modelDecorator.AbstractCardDecorator.*;
 import static main.java.webcrawlers.AbstractWebCrawler.*;
@@ -10,12 +10,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.nio.CharBuffer;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.inject.Singleton;
@@ -23,7 +20,6 @@ import main.java.model.AnkiCard;
 import main.java.utils.ClozeEngine;
 import main.java.webcrawlers.ReversoSpanishCrawler;
 import main.java.webcrawlers.WordReferenceCrawler;
-import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
@@ -33,9 +29,9 @@ import main.java.modelDecorator.WebParsedClozedCardDecorator;
 import org.jsoup.nodes.Element;
 
 @Singleton
-public class LanguageLearningFacade {
+public class SpanishMediator {
 
-	private static final Logger log = Logger.getLogger(LanguageLearningFacade.class);
+	private static final Logger log = Logger.getLogger(SpanishMediator.class);
 	private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 	
 	private final ReversoSpanishCrawler reversoCrawler;
@@ -44,7 +40,7 @@ public class LanguageLearningFacade {
 	
 
 	@Inject
-	LanguageLearningFacade(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler, ClozeEngine clozeEngine ) {
+	SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler, ClozeEngine clozeEngine ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
 		this.clozeEngine = clozeEngine;
@@ -74,6 +70,10 @@ public class LanguageLearningFacade {
 
 	}
 
+	/**
+	 * @param word
+	 * @return flashcard con definizione e traduzione in italiano
+	 */
 	private IAnkiCard createSimpleDefinitionCard(String word) {
 		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
 
@@ -92,6 +92,10 @@ public class LanguageLearningFacade {
 		return card;
 	}
 
+	/**
+	 * @param word
+	 * @return flashcard con traduzione in italiano e parola in spagnolo piu' le varie definizioni possibili
+	 */
 	private IAnkiCard createReverseDefinitionCard(String word) {
 		IAnkiCard card = new AnkiCard();
 		Map<String, String> traduzioni = wordReferenceCrawler.getWordTranslation(word);
@@ -108,6 +112,12 @@ public class LanguageLearningFacade {
 		return card;
 	}
 
+	/**
+	 *
+	 * @param inputFile
+	 * @param outputFile
+	 * @throws Exception
+	 */
 	public void createFlashcard(String inputFile, String outputFile) throws Exception {
 		int numWords = 0;
 		List<String> wordList = getWordListFromFile(inputFile);

@@ -4,15 +4,16 @@ import com.google.inject.Inject;
 
 import main.java.enginefactory.AbstractAnkiEngine;
 import main.java.enginefactory.AnkiEngineFactory;
+import main.java.service.SpanishMediator;
 import main.java.netutilities.CertificateManager;
 
 public class FlashcardFacade {
 	
 	private final AnkiEngineFactory engineBuilder;
-	private final LanguageLearningFacade languageLearningFacade;
+	private final SpanishMediator languageLearningFacade;
 
 	@Inject
-	public FlashcardFacade(AnkiEngineFactory engineBuilder, LanguageLearningFacade languageLearningMediator) {
+	public FlashcardFacade(AnkiEngineFactory engineBuilder, SpanishMediator languageLearningMediator) {
 		this.engineBuilder = engineBuilder;
 		this.languageLearningFacade = languageLearningMediator;
 	}

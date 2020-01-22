@@ -25,8 +25,6 @@ public class WordReferenceCrawler extends AbstractWebCrawler {
     // TODO - credo che dovrei creare una nuova classe per distinguere le due pagine e come tirare fuori le informazioni (qua mi sa che entra in gioco un abstract factory o qualcosa di simile)
     // TODO - da capire meglio come gestire questa circostanca (ovvero piu' pagine all'interno di un singolo sito)
 
-    // TODO - dovrei fare dei test (almeno per i nuovi metodi). Mi ricordo che era un bel casino settare la pagina. Verificare.
-
     public void scrapeSpanishDefinitionWord(String word)         { this.definitionPage = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word); }
     public void scrapeSpanishSynonimsPage(String word)           { this.synonimsPage = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word); }
     public void scrapeSpanishItalianTranslationPage(String word) { this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word); }
