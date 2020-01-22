@@ -16,12 +16,11 @@ import static main.java.modelDecorator.AbstractCardDecorator.addContentToBack;
 import static main.java.modelDecorator.AbstractCardDecorator.addContentToFront;
 import static main.java.modelDecorator.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
-import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
-import static main.java.utils.WebCrawlerProperties.NUM_TRANSLATIONS;
-import static main.java.utils.WebCrawlerProperties.REVERSO_ESP_ITA_TRANSLATION_PAGE_URL;
 
 @Singleton
 public class ReversoSpanishCrawler extends AbstractWebCrawler {
+
+    public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = "http://context.reverso.net/traduzione/spagnolo-italiano/";
 
     private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
     private static final String EXAMPLES_ID = "examples-content";
@@ -32,12 +31,12 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
     private static final String ANCHOR_TAG = "a";
 
-	public List<IAnkiCard> getExamplesCardFromWord(String word) {
-		Document doc = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
-    	return createAnkiCardsFromContent(doc, word);
-	}
+    public List<IAnkiCard> getExamplesCardFromWord(String word) {
+        Document doc = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
+        return createAnkiCardsFromContent(doc, word);
+    }
 
-	List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
+    List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
         List<IAnkiCard> cardList = new ArrayList<>();
 
         Element elements = doc.getElementById(EXAMPLES_ID);

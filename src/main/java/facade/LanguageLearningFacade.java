@@ -1,9 +1,7 @@
 package main.java.facade;
 
-import static main.java.utils.WebCrawlerProperties.LOG_COUNTER;
-import static main.java.utils.WebCrawlerProperties.MAX_NUM_EXAMPLES_PER_WORD;
-import static main.java.utils.WebCrawlerProperties.TIME_SLEEP;
 import static main.java.modelDecorator.AbstractCardDecorator.*;
+import static main.java.webcrawlers.AbstractWebCrawler.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

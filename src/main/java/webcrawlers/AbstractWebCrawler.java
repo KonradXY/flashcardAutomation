@@ -11,14 +11,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import static main.java.utils.WebCrawlerProperties.TIMEOUT_SEC;
 
 public class AbstractWebCrawler {
 
     private final static Logger log = Logger.getLogger(AbstractWebCrawler.class);
 
+    public static final int TIME_SLEEP 		= 2000;
+    public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;
+    public static final int NUM_TRANSLATIONS = 5;
+    public static final int LOG_COUNTER 	= 5 * MAX_NUM_EXAMPLES_PER_WORD;
+    public static final int TIMEOUT_SEC 	= 10;
     public static final int TIMEOUT = 1000 * TIMEOUT_SEC;
+
     public static final String USER_AGENT = "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36";
+
+    public final static String discardedWordsPath 	= "./src/main/resources/discardedWords.log";
 
     protected Document scrapePage(String urlPage, String word) {
         Document doc = null;
