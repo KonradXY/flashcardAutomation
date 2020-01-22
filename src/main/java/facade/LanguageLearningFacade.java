@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 
 import com.google.inject.Singleton;
 import main.java.model.AnkiCard;
+import main.java.utils.ClozeEngine;
 import main.java.webcrawlers.ReversoSpanishCrawler;
 import main.java.webcrawlers.WordReferenceCrawler;
 import org.apache.commons.text.similarity.LevenshteinDistance;
@@ -39,12 +40,14 @@ public class LanguageLearningFacade {
 	
 	private final ReversoSpanishCrawler reversoCrawler;
 	private final WordReferenceCrawler wordReferenceCrawler;
+	private final ClozeEngine clozeEngine;
 	
 
 	@Inject
-	LanguageLearningFacade(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler ) {
+	LanguageLearningFacade(ReversoSpanishCrawler reversoCrawler, WordReferenceCrawler wordReferenceCrawler, ClozeEngine clozeEngine ) {
 		this.reversoCrawler = reversoCrawler;
 		this.wordReferenceCrawler = wordReferenceCrawler;
+		this.clozeEngine = clozeEngine;
 	}
 
 	// TODO - tutte queste alla fine diventeranno delle strategy da wrappare all'interno della scrittura (un template o uno strategy pattern praticamente)
@@ -141,7 +144,7 @@ public class LanguageLearningFacade {
 
 			for (String word : wordList) {
 				Map<String, String> originalMap = wordReferenceCrawler.getWordDefinition(word);
-				Map<String, String> clozeMap = createClozeMap(originalMap, word);
+				Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
 
 				for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
 					IAnkiCard card = webCardDecorator.create(cloze.getValue(), 
@@ -156,46 +159,7 @@ public class LanguageLearningFacade {
 		}
 	}
 
-	private Map<String, String> createClozeMap(Map<String, String> map, String word) {
-		Map<String, String> clozeMap = map.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-		return 	clozeMap.entrySet().stream()
-					.filter(valueNotEmpty)
-					.map(it -> clozifyText(it, word))
-					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-	}
-	
-	private Predicate<Map.Entry<String, String>> valueNotEmpty = (it -> !it.getValue().trim().isEmpty());
 
-	private Map.Entry<String, String> clozifyText(Map.Entry<String, String> entry, String word) {
-		String value = entry.getValue();
-		value = clozifyWord(value, word);
-		entry.setValue(value);
-		return entry;
-	}
-
-
-	private String clozifyWord(String text, String word) {
-		String wordToBeClozed = getMostCloseWord(text, word);
-		int charBuffer = (wordToBeClozed.length() > 2 ? wordToBeClozed.length() -2 : 2);
-		String clozeChar = CharBuffer.allocate(charBuffer).toString().replace('\0','_');
-		clozeChar = wordToBeClozed.charAt(0) +  clozeChar + wordToBeClozed.charAt(wordToBeClozed.length()-1);
-		return text.replace(wordToBeClozed, clozeChar);
-	}
-
-	private String getMostCloseWord(String text, String word) {
-		String[] words = text.split(" ");
-		int minDistance = 100;
-		int index = 0;
-		for (int i = 0; i < words.length; i++) {
-			int distance = LevenshteinDistance.getDefaultInstance().apply(word, words[i]);
-			if (distance < minDistance){
-				minDistance = distance;
-				index = i;
-			}
-		}
-
-		return words[index];
-	}
 
 	private void addDefinizioneToBack(IAnkiCard card, Map<String, String> definizioni) {
 		if (definizioni.isEmpty())
