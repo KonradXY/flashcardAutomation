@@ -22,6 +22,9 @@ public class WebCrawlerFacade {
 
     private final SpanishWebCrawlerService spanishWebCrawlerService;
 
+    private static String inputDir = INPUT_DIR + WEB_CRAWLER_DIR;
+    private static String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR;
+
     @Inject
     WebCrawlerFacade(SpanishWebCrawlerService spanishWebCrawlerService) {
         this.spanishWebCrawlerService = spanishWebCrawlerService;
@@ -32,24 +35,26 @@ public class WebCrawlerFacade {
 
             CertificateManager.doTrustToCertificates();
 
-            // TODO - sistemare il discorso input/output
+            // TODO - sistemare il discorso input/output:
+
+            // 1. fare lettura di cartella o file
+            // 2. la scrittura su file deve avvenire con lo stesso nome dell'input pero' con sopra _scraped_list.txt
+            // 3. vorrei capire se sia possibile effettuare la scrittura su file durante il parsing in maniera unificata  (il ciclo for dovrei farlo fuori dalla lista)
+            // 4. prendendo l'idea di sopra dovrei vedere se riesco a fare come con l'anki engine (qualcosa che metta in piedi lettura dall'input, parsing e altra roba tutta insieme)
+            //  (questi if qua sotto andranno a diventare uno strategy o qualcosa di simile al parser)
+            // TODO - finito sto pezzo qua passare ai decorator e sistemarli una volta per tutte
+
 
             if (args.contains("general")) {
                 log.info(" ====>>> launching webcrawling mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
                 spanishWebCrawlerService.createGeneralFlashcards(inputDir, outputDir);
 
             } else if (args.contains("simple")) {
                 log.info(" ====>>> launching simpleDefinitions mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "vocabolario b1 animali.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "simpleDefinitions.txt";
                 spanishWebCrawlerService.createDefinitionFlashcards(inputDir, outputDir);
 
             } else if (args.contains("cloze")) {
                 log.info(" ====>>> launching clozeCrawling mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
                 spanishWebCrawlerService.createClozeFlashcards(inputDir, outputDir);
             }
 

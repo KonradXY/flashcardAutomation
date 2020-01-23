@@ -22,6 +22,7 @@ public class AnkiEngineFactory {
 		if (inputParam == null) throw new RuntimeException("Inserire parametro !");
 		
 		AbstractAnkiEngine ankiModel;
+
 		String input = inputParam.get(0);
 		switch(input) {
 			case "evernote": 			ankiModel = new EvernoteAnkiEngine(EVERNOTE_DIR, EVERNOTE_DIR); break;
