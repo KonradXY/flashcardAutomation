@@ -37,15 +37,16 @@ class EvernoteHtmlParserTest {
 
 	
 	private static final String testFileDir = "test/main/resources/";
+	private static final String testMediaFolderDir = testFileDir + "mediaFolder/";
 	private static final String testFile = testFileDir + "testevernote.html"; 
 	private static final String outputFile = testFileDir + "outputtest.txt";
 	
 	private static final Path testFilePath = Paths.get(testFile);
 	private static final Path outputTestFile = Paths.get(outputFile);
 	
-	private static final Path imgPath1 = Paths.get(testFileDir+"testevernoteimmagine1.jpg");
-	private static final Path imgPath2 = Paths.get(testFileDir+"testevernoteimmagine2.jpg");
-	private static final Path imgPath3 = Paths.get(testFileDir+"testevernoteimmagine3.jpg");
+	private static final Path imgPath1 = Paths.get(testMediaFolderDir+"testevernoteimmagine1.jpg");
+	private static final Path imgPath2 = Paths.get(testMediaFolderDir+"testevernoteimmagine2.jpg");
+	private static final Path imgPath3 = Paths.get(testMediaFolderDir+"testevernoteimmagine3.jpg");
 
 	private static AbstractAnkiEngine evernoteEngine;
 	
