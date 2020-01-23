@@ -3,8 +3,13 @@ package main.java.launcher;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import main.java.config.AnkiApplicationModule;
-import main.java.facade.FlashcardFacade;
+import main.java.service.SpanishWebCrawlerService;
+import main.java.facade.TextFileFacade;
+import main.java.facade.WebCrawlerFacade;
 import org.apache.log4j.Logger;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static main.java.utils.Property.WEB_CRAWLER_DIR;
 import static main.java.utils.Property.INPUT_DIR;
@@ -14,6 +19,25 @@ public class Launcher {
 
     private final static Logger log = Logger.getLogger(Launcher.class);
 
+    private static TextFileFacade textFileFacade;
+    private static SpanishWebCrawlerService spanishWebCrawlerService;
+    private static WebCrawlerFacade webCrawlerFacade;
+
+    /**
+     * @param args
+     *
+     * I valori che i parametri possono assumere sono i seguenti:
+     *
+     *          null - campo vuoto - "default"  <<<===  default engine
+     *          evernote                        <<<=== evernote engine
+     *          kindle                          <<<=== kindle engine
+     *          languageLearning                <<<=== languageLearning engine
+     *          webcrawler general              <<<=== spanish general flashcard (spanishWebCrawlerService)
+     *          wencrawler simple               <<<=== spanish simple flashcard (just definition x2 ita/esp && esp&ita)
+     *          webcrawler cloze                <<<=== spanish cloze flashcard
+     */
+
+
     public static void main(String[] args) {
         try {
 
@@ -21,35 +45,22 @@ public class Launcher {
             log.info("... Inizio creazione flashcard ...");
 
             Injector injector = Guice.createInjector(new AnkiApplicationModule());
-            FlashcardFacade facade = injector.getInstance(FlashcardFacade.class);
+            textFileFacade = injector.getInstance(TextFileFacade.class);
+            spanishWebCrawlerService = injector.getInstance(SpanishWebCrawlerService.class);
+            webCrawlerFacade = injector.getInstance(WebCrawlerFacade.class);
 
             if (args.length == 0) args = new String[]{"default"};
-            String inputArg = args[0].toLowerCase();
+            List<String> inputArg = Arrays.asList(args);
 
-            // TODO - tutto sto pezzo deve andare all'interno dell'engineBuilder (o cmq lo devo sistemare in quella maniera -- e sto discorso si collega all'abstractFactory anche per il webbcrawling)
-            // TODO - sistemare anche il passaggio di parametri (webcrawler + input)
-            if (inputArg.contains("webcrawling")) {
+
+
+            if (inputArg.contains("webcrawler")) {
                 log.info(" ====>>> launching webcrawling mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
-				facade.buildFlashcardsFromWeb(inputDir, outputDir);
-
-            } else if (inputArg.contains("simpledefinitions")) {
-                log.info(" ====>>> launching simpleDefinitions mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "vocabolario b1 animali.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "simpleDefinitions.txt";
-                facade.buildSimpleDefinitionFlashcardsFromWeb(inputDir, outputDir);
-
-            } else if (inputArg.contains("clozecrawling")) {
-                log.info(" ====>>> launching clozeCrawling mode");
-                String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
-				facade.buildClozeFlashcardsFromWeb(inputDir, outputDir);
-
-            } else {
+                webCrawlerFacade.createFlashcardsScrapingTheWeb(inputArg);
+            }
+            else {
                 log.info(" ====>>> launching parsing from file ");
-                facade.buildFlashcardsFromTextFile(args);
-
+                textFileFacade.buildFlashcardsFromTextFile(inputArg);
             }
 
             log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis() - timeSpent) / 1000 + " sec");

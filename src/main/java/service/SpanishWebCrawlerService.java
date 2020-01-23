@@ -29,9 +29,9 @@ import main.java.modelDecorator.WebParsedClozedCardDecorator;
 import org.jsoup.nodes.Element;
 
 @Singleton
-public class SpanishWebService {
+public class SpanishWebCrawlerService {
 
-    private static final Logger log = Logger.getLogger(SpanishWebService.class);
+    private static final Logger log = Logger.getLogger(SpanishWebCrawlerService.class);
     private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 
     private final ReversoSpanishCrawler reversoCrawler;
@@ -43,7 +43,7 @@ public class SpanishWebService {
 
 
     @Inject
-    SpanishWebService(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
+    SpanishWebCrawlerService(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
         this.reversoCrawler = reversoCrawler;
         this.definitionPageWR = definitionPageWR;
         this.synonimsPageWR = synonimsPageWR;
@@ -122,7 +122,7 @@ public class SpanishWebService {
      * @param outputFile
      * @throws Exception
      */
-    public void createFlashcard(String inputFile, String outputFile) throws Exception {
+    public void createGeneralFlashcards(String inputFile, String outputFile) throws Exception {
         int numWords = 0;
         List<String> wordList = getWordListFromFile(inputFile);
         try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {

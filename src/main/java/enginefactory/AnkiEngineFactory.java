@@ -10,17 +10,19 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
 
+import java.util.List;
+
 @Singleton
 public class AnkiEngineFactory {
 	
 	private static final Logger log = Logger.getLogger(AnkiEngineFactory.class);
 	
-	public AbstractAnkiEngine createTextEngine(String[] inputParam) {
+	public AbstractAnkiEngine createTextEngine(List<String> inputParam) {
 
 		if (inputParam == null) throw new RuntimeException("Inserire parametro !");
 		
 		AbstractAnkiEngine ankiModel;
-		String input = inputParam[0];
+		String input = inputParam.get(0);
 		switch(input) {
 			case "evernote": 			ankiModel = new EvernoteAnkiEngine(EVERNOTE_DIR, EVERNOTE_DIR); break;
 			case "kindle": 	 			ankiModel = new KindleAnkiEngine(KINDLE_DIR, KINDLE_DIR);   break;
