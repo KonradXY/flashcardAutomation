@@ -1,0 +1,3707 @@
+{
+    "messages": [],
+    "flowErrors": null,
+    "debugInfo": null,
+    "itinerarySearchResults": {
+        "itineraryResults": [
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 29.99,
+                            "discount": -4.06
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 39.65,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 39.65,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 43.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 1.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.91,
+                "freeCancellationLimit": null,
+                "key": "0,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    0
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,FR9015"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 0
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 30.64,
+                            "discount": -4.11
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 42.10,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 42.10,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 46.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.91,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 0.5,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.78,
+                "freeCancellationLimit": null,
+                "key": "1,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    1
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U27384"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 1
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 30.48,
+                            "discount": -4.22
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 47.50,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 47.50,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 51.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.76,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.79,
+                "freeCancellationLimit": null,
+                "key": "2,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    2,
+                    3
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,FR9811",
+                    "1,FR9045"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 2
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 30.48,
+                            "discount": -4.22
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 47.50,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 47.50,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 51.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.76,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 0.5,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.71,
+                "freeCancellationLimit": null,
+                "key": "3,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    4
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,FR5091"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 3
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 30.61,
+                            "discount": -4.26
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 49.46,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 49.46,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 53.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.70,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 0.5,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.68,
+                "freeCancellationLimit": null,
+                "key": "4,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    5
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U22264"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 4
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 31.73,
+                            "discount": -4.40
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 56.66,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 56.66,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 61.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.45,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.64,
+                "freeCancellationLimit": null,
+                "key": "5,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    6
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,FR9815"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 5
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 31.06,
+                            "discount": -4.48
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 60.51,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 60.51,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 64.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.36,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.59,
+                "freeCancellationLimit": null,
+                "key": "6,VY",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    7
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,VY7834"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 6
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 35.27,
+                            "discount": 14.28
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 57.25,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 57.25,
+                        "tax": 30.23
+                    },
+                    "sortPrice": 73.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.08,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 1,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.54,
+                "freeCancellationLimit": 0,
+                "key": "7,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    8
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,D85500"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 7
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 35.27,
+                            "discount": 14.28
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 57.25,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 57.25,
+                        "tax": 30.23
+                    },
+                    "sortPrice": 73.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.08,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 1,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.54,
+                "freeCancellationLimit": 0,
+                "key": "8,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    9
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,D85502"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 8
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 32.48,
+                            "discount": -4.64
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 68.44,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 68.44,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 73.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.08,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.45,
+                "freeCancellationLimit": null,
+                "key": "9,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    10
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,FR3843"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 9
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 32.16,
+                            "discount": -4.75
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 74.00,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 74.00,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 78.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 0.75,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.37,
+                "freeCancellationLimit": null,
+                "key": "10,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    11,
+                    12,
+                    13,
+                    14
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U22262",
+                    "1,U28576",
+                    "2,U28578",
+                    "3,U22268"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 10
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 32.43,
+                            "discount": -4.81
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 76.86,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 76.86,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 81.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.41,
+                "freeCancellationLimit": null,
+                "key": "11,VY",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    15,
+                    16,
+                    17
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,VY7822",
+                    "1,VY7820",
+                    "2,VY7828"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 11
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 32.69,
+                            "discount": -4.87
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 79.73,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 79.73,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 84.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 0.5,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.33,
+                "freeCancellationLimit": null,
+                "key": "12,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    18
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U22266"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 12
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 32.79,
+                            "discount": -4.95
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 83.81,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 83.81,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 88.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.41,
+                "freeCancellationLimit": null,
+                "key": "13,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    19
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U28574"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 13
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 35.65,
+                            "discount": 14.20
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 68.70,
+                            "totalTax": 35.14,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 68.70,
+                        "tax": 35.14
+                    },
+                    "sortPrice": 89.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 1,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.50,
+                "freeCancellationLimit": 0,
+                "key": "14,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    20
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,IB5708"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 14
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 33.75,
+                            "discount": -5.09
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 91.18,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 91.18,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 96.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.41,
+                "freeCancellationLimit": null,
+                "key": "15,TF",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    21,
+                    22
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,U28572",
+                    "1,U28580"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 15
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 40.03,
+                            "discount": 14.12
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 89.96,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 89.96,
+                        "tax": 30.23
+                    },
+                    "sortPrice": 106.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 1,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.50,
+                "freeCancellationLimit": 0,
+                "key": "16,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    23,
+                    24,
+                    25,
+                    26
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,BA8079",
+                    "1,BA8068",
+                    "2,BA8066",
+                    "3,BA8074"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 16
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 37.02,
+                            "discount": 14.12
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 85.05,
+                            "totalTax": 35.14,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 85.05,
+                        "tax": 35.14
+                    },
+                    "sortPrice": 106.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 1,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 1.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.50,
+                "freeCancellationLimit": 0,
+                "key": "17,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    27,
+                    28,
+                    29
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,IB5703",
+                    "1,IB5701",
+                    "2,IB5528"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 17
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 36.77,
+                            "discount": 14.11
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 68.70,
+                            "totalTax": 52.80,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 68.70,
+                        "tax": 52.80
+                    },
+                    "sortPrice": 107.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 0.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.17,
+                "freeCancellationLimit": 0,
+                "key": "18,1A",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    30,
+                    31,
+                    32
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,IB931,IB3176",
+                    "1,IB1201,IB3172",
+                    "2,IB1331,IB3166"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 18
+            },
+            {
+                "price": {
+                    "feeInfo": {
+                        "searchFee": {
+                            "tax": 7.22,
+                            "discount": -13.79
+                        },
+                        "paymentFee": {
+                            "tax": 0,
+                            "discount": 0
+                        }
+                    },
+                    "fareDetail": {
+                        "adultFares": {
+                            "fare": 117.17,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "fare": 117.17,
+                        "tax": 0.00
+                    },
+                    "sortPrice": 130.99,
+                    "markup": 0.00,
+                    "alternativePriceContainer": {
+                        "alternativePrices": []
+                    }
+                },
+                "membershipPerks": null,
+                "debugInfo": null,
+                "rankCriteriaContainer": {
+                    "rankCriterias": [
+                        {
+                            "rating": 0.00,
+                            "rankType": "PRICE"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "BAGGAGE"
+                        },
+                        {
+                            "rating": 0.00,
+                            "rankType": "DURATION"
+                        },
+                        {
+                            "rating": 0,
+                            "rankType": "WEEKEND"
+                        },
+                        {
+                            "rating": 1.0,
+                            "rankType": "AIRPORTS"
+                        }
+                    ]
+                },
+                "lockInformation": null,
+                "odiRating": 0.17,
+                "freeCancellationLimit": null,
+                "key": "19,TF,VY",
+                "collectionMethodFees": null,
+                "baggageFees": null,
+                "resident": null,
+                "firstSegments": [
+                    33,
+                    34
+                ],
+                "secondSegments": [],
+                "thirdSegments": [],
+                "fourthSegments": [],
+                "fifthSegments": [],
+                "sixthSegments": [],
+                "firstSegmentsKeys": [
+                    "0,VK1007,OE314",
+                    "1,VY9563,OE314"
+                ],
+                "secondSegmentsKeys": [],
+                "thirdSegmentsKeys": [],
+                "fourthSegmentsKeys": [],
+                "fifthSegmentsKeys": [],
+                "sixthSegmentsKeys": [],
+                "itinerary": 22
+            }
+        ],
+        "legend": {
+            "carriers": [
+                {
+                    "id": 0,
+                    "code": "FR",
+                    "name": "Ryanair"
+                },
+                {
+                    "id": 1,
+                    "code": "U2",
+                    "name": "Easyjet"
+                },
+                {
+                    "id": 2,
+                    "code": "VY",
+                    "name": "Vueling"
+                },
+                {
+                    "id": 3,
+                    "code": "D8",
+                    "name": "Norwegian Air International"
+                },
+                {
+                    "id": 4,
+                    "code": "IB",
+                    "name": "Iberia"
+                },
+                {
+                    "id": 5,
+                    "code": "BA",
+                    "name": "British Airways"
+                },
+                {
+                    "id": 6,
+                    "code": "VK",
+                    "name": "Level Operated by Anisec"
+                },
+                {
+                    "id": 7,
+                    "code": "OE",
+                    "name": "Laudamotion"
+                }
+            ],
+            "locations": [
+                {
+                    "geoNodeId": 157,
+                    "cityName": "Barcelona",
+                    "name": "El Prat",
+                    "type": "Airport",
+                    "iataCode": "BCN",
+                    "cityIataCode": "BCN",
+                    "countryCode": "ES",
+                    "countryName": "Spain"
+                },
+                {
+                    "geoNodeId": 1775,
+                    "cityName": "London",
+                    "name": "Stansted",
+                    "type": "Airport",
+                    "iataCode": "STN",
+                    "cityIataCode": "LON",
+                    "countryCode": "GB",
+                    "countryName": "United Kingdom"
+                },
+                {
+                    "geoNodeId": 1072447,
+                    "cityName": "London",
+                    "name": "Southend",
+                    "type": "Airport",
+                    "iataCode": "SEN",
+                    "cityIataCode": "LON",
+                    "countryCode": "GB",
+                    "countryName": "United Kingdom"
+                },
+                {
+                    "geoNodeId": 1121,
+                    "cityName": "London",
+                    "name": "Luton International",
+                    "type": "Airport",
+                    "iataCode": "LTN",
+                    "cityIataCode": "LON",
+                    "countryCode": "GB",
+                    "countryName": "United Kingdom"
+                },
+                {
+                    "geoNodeId": 1068,
+                    "cityName": "London",
+                    "name": "Gatwick",
+                    "type": "Airport",
+                    "iataCode": "LGW",
+                    "cityIataCode": "LON",
+                    "countryCode": "GB",
+                    "countryName": "United Kingdom"
+                },
+                {
+                    "geoNodeId": 1147,
+                    "cityName": "Madrid",
+                    "name": "Adolfo Suárez Madrid - Barajas",
+                    "type": "Airport",
+                    "iataCode": "MAD",
+                    "cityIataCode": "MAD",
+                    "countryCode": "ES",
+                    "countryName": "Spain"
+                },
+                {
+                    "geoNodeId": 1070,
+                    "cityName": "London",
+                    "name": "Heathrow",
+                    "type": "Airport",
+                    "iataCode": "LHR",
+                    "cityIataCode": "LON",
+                    "countryCode": "GB",
+                    "countryName": "United Kingdom"
+                },
+                {
+                    "geoNodeId": 2002,
+                    "cityName": "Vienna",
+                    "name": "Schwechat",
+                    "type": "Airport",
+                    "iataCode": "VIE",
+                    "cityIataCode": "VIE",
+                    "countryCode": "AT",
+                    "countryName": "Austria"
+                }
+            ],
+            "sectionResults": [
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "9015",
+                        "from": 157,
+                        "departureDate": "2020-02-07T13:55:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-07T15:25:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 0
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "7384",
+                        "from": 157,
+                        "departureDate": "2020-02-07T21:35:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1072447,
+                        "arrivalDate": "2020-02-07T22:55:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 1
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "9811",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:50:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-07T09:20:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 2
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "9045",
+                        "from": 157,
+                        "departureDate": "2020-02-07T10:50:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-07T12:20:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 3
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5091",
+                        "from": 157,
+                        "departureDate": "2020-02-07T13:10:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1121,
+                        "arrivalDate": "2020-02-07T14:35:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 4
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "2264",
+                        "from": 157,
+                        "departureDate": "2020-02-07T11:30:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1121,
+                        "arrivalDate": "2020-02-07T12:55:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 5
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "9815",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:05:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-07T19:40:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 155
+                    },
+                    "id": 6
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "7834",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:15:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:35:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 2,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 7
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5500",
+                        "from": 157,
+                        "departureDate": "2020-02-07T09:00:00+01:00",
+                        "departureTerminal": "2",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T10:15:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 3,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            0
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "73H",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 2,
+                        "duration": 135
+                    },
+                    "id": 8
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5502",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:20:00+01:00",
+                        "departureTerminal": "2",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T19:35:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 3,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            0
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "73H",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 2,
+                        "duration": 135
+                    },
+                    "id": 9
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "3843",
+                        "from": 157,
+                        "departureDate": "2020-02-07T15:35:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-07T17:05:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 0,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 10
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "2262",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:30:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1121,
+                        "arrivalDate": "2020-02-07T09:00:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 11
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8576",
+                        "from": 157,
+                        "departureDate": "2020-02-07T12:25:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T13:50:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 12
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8578",
+                        "from": 157,
+                        "departureDate": "2020-02-07T19:40:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T21:05:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 13
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "2268",
+                        "from": 157,
+                        "departureDate": "2020-02-07T20:50:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1121,
+                        "arrivalDate": "2020-02-07T22:15:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 14
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "7822",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:35:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:55:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 2,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 15
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "7820",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:50:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T20:10:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 2,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 16
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "7828",
+                        "from": 157,
+                        "departureDate": "2020-02-07T19:40:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T21:00:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 2,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 17
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "2266",
+                        "from": 157,
+                        "departureDate": "2020-02-07T15:00:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1121,
+                        "arrivalDate": "2020-02-07T16:25:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 18
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8574",
+                        "from": 157,
+                        "departureDate": "2020-02-07T14:10:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T15:35:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 19
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5708",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:15:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:35:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            1
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 20
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8572",
+                        "from": 157,
+                        "departureDate": "2020-02-07T10:35:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T12:05:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 150
+                    },
+                    "id": 21
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8580",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:00:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T19:20:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 1,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 22
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8079",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:15:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:35:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 5,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            2
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 23
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8068",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:35:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:55:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 5,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            2
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "321",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 24
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8066",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:50:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T20:10:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 5,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            2
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "32A",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 25
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "8074",
+                        "from": 157,
+                        "departureDate": "2020-02-07T19:40:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T21:00:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 5,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            2
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "32A",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 26
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5703",
+                        "from": 157,
+                        "departureDate": "2020-02-07T07:35:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T08:55:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            3
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 27
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5701",
+                        "from": 157,
+                        "departureDate": "2020-02-07T18:50:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T20:10:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            3
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 28
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "5528",
+                        "from": 157,
+                        "departureDate": "2020-02-07T19:40:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1068,
+                        "arrivalDate": "2020-02-07T21:00:00Z",
+                        "arrivalTerminal": "S",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            3
+                        ],
+                        "operatingCarrier": 2,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 1,
+                        "duration": 140
+                    },
+                    "id": 29
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "931",
+                        "from": 157,
+                        "departureDate": "2020-02-07T09:30:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1147,
+                        "arrivalDate": "2020-02-07T10:55:00+01:00",
+                        "arrivalTerminal": "4",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "321",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 85
+                    },
+                    "id": 30
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "3176",
+                        "from": 1147,
+                        "departureDate": "2020-02-07T13:20:00+01:00",
+                        "departureTerminal": "4",
+                        "to": 1070,
+                        "arrivalDate": "2020-02-07T14:55:00Z",
+                        "arrivalTerminal": "5",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "32A",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 155
+                    },
+                    "id": 31
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "1201",
+                        "from": 157,
+                        "departureDate": "2020-02-07T12:00:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1147,
+                        "arrivalDate": "2020-02-07T13:25:00+01:00",
+                        "arrivalTerminal": "4",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "32A",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 85
+                    },
+                    "id": 32
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "3172",
+                        "from": 1147,
+                        "departureDate": "2020-02-07T14:45:00+01:00",
+                        "departureTerminal": "4",
+                        "to": 1070,
+                        "arrivalDate": "2020-02-07T16:20:00Z",
+                        "arrivalTerminal": "5",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "320",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 155
+                    },
+                    "id": 33
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "1331",
+                        "from": 157,
+                        "departureDate": "2020-02-07T13:30:00+01:00",
+                        "departureTerminal": "1",
+                        "to": 1147,
+                        "arrivalDate": "2020-02-07T14:55:00+01:00",
+                        "arrivalTerminal": "4",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "321",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 85
+                    },
+                    "id": 34
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "3166",
+                        "from": 1147,
+                        "departureDate": "2020-02-07T15:50:00+01:00",
+                        "departureTerminal": "4S",
+                        "to": 1070,
+                        "arrivalDate": "2020-02-07T17:15:00Z",
+                        "arrivalTerminal": "5",
+                        "carrier": 4,
+                        "cabinClass": "ECONOMIC_DISCOUNTED",
+                        "fareInfoPassengers": [
+                            4
+                        ],
+                        "operatingCarrier": null,
+                        "vehicleModel": "346",
+                        "baggageAllowanceType": "NP",
+                        "baggageAllowanceQuantity": 0,
+                        "duration": 145
+                    },
+                    "id": 35
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "1007",
+                        "from": 157,
+                        "departureDate": "2020-02-07T20:30:00+01:00",
+                        "departureTerminal": null,
+                        "to": 2002,
+                        "arrivalDate": "2020-02-07T22:55:00+01:00",
+                        "arrivalTerminal": null,
+                        "carrier": 6,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 36
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "314",
+                        "from": 2002,
+                        "departureDate": "2020-02-08T06:35:00+01:00",
+                        "departureTerminal": null,
+                        "to": 1775,
+                        "arrivalDate": "2020-02-08T07:55:00Z",
+                        "arrivalTerminal": null,
+                        "carrier": 7,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 140
+                    },
+                    "id": 37
+                },
+                {
+                    "section": {
+                        "technicalStops": [],
+                        "id": "9563",
+                        "from": 157,
+                        "departureDate": "2020-02-07T20:30:00+01:00",
+                        "departureTerminal": null,
+                        "to": 2002,
+                        "arrivalDate": "2020-02-07T22:55:00+01:00",
+                        "arrivalTerminal": null,
+                        "carrier": 2,
+                        "cabinClass": null,
+                        "fareInfoPassengers": [],
+                        "operatingCarrier": null,
+                        "vehicleModel": null,
+                        "baggageAllowanceType": null,
+                        "baggageAllowanceQuantity": null,
+                        "duration": 145
+                    },
+                    "id": 38
+                }
+            ],
+            "segmentResults": [
+                {
+                    "segment": {
+                        "sections": [
+                            0
+                        ],
+                        "carrier": 0,
+                        "duration": 150,
+                        "seats": 2,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 0
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            1
+                        ],
+                        "carrier": 1,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 1
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            2
+                        ],
+                        "carrier": 0,
+                        "duration": 150,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 2
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            3
+                        ],
+                        "carrier": 0,
+                        "duration": 150,
+                        "seats": 4,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 3
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            4
+                        ],
+                        "carrier": 0,
+                        "duration": 145,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 4
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            5
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 5
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            6
+                        ],
+                        "carrier": 0,
+                        "duration": 155,
+                        "seats": 1,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 6
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            7
+                        ],
+                        "carrier": 2,
+                        "duration": 140,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 7
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            8
+                        ],
+                        "carrier": 3,
+                        "duration": 135,
+                        "seats": 8,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 8
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            9
+                        ],
+                        "carrier": 3,
+                        "duration": 135,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 9
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            10
+                        ],
+                        "carrier": 0,
+                        "duration": 150,
+                        "seats": 5,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 10
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            11
+                        ],
+                        "carrier": 1,
+                        "duration": 150,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 11
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            12
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 12
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            13
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 13
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            14
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 14
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            15
+                        ],
+                        "carrier": 2,
+                        "duration": 140,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 15
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            16
+                        ],
+                        "carrier": 2,
+                        "duration": 140,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 16
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            17
+                        ],
+                        "carrier": 2,
+                        "duration": 140,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 17
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            18
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 18
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            19
+                        ],
+                        "carrier": 1,
+                        "duration": 145,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 19
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            20
+                        ],
+                        "carrier": 4,
+                        "duration": 140,
+                        "seats": 4,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 20
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            21
+                        ],
+                        "carrier": 1,
+                        "duration": 150,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 21
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            22
+                        ],
+                        "carrier": 1,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 22
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            23
+                        ],
+                        "carrier": 5,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 23
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            24
+                        ],
+                        "carrier": 5,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 24
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            25
+                        ],
+                        "carrier": 5,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 25
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            26
+                        ],
+                        "carrier": 5,
+                        "duration": 140,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 26
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            27
+                        ],
+                        "carrier": 4,
+                        "duration": 140,
+                        "seats": 4,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 27
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            28
+                        ],
+                        "carrier": 4,
+                        "duration": 140,
+                        "seats": 4,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 28
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            29
+                        ],
+                        "carrier": 4,
+                        "duration": 140,
+                        "seats": 4,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 29
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            30,
+                            31
+                        ],
+                        "carrier": 4,
+                        "duration": 385,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 30
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            32,
+                            33
+                        ],
+                        "carrier": 4,
+                        "duration": 320,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 31
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            34,
+                            35
+                        ],
+                        "carrier": 4,
+                        "duration": 285,
+                        "seats": 9,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 32
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            36,
+                            37
+                        ],
+                        "carrier": 6,
+                        "duration": 745,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 33
+                },
+                {
+                    "segment": {
+                        "sections": [
+                            38,
+                            37
+                        ],
+                        "carrier": 2,
+                        "duration": 745,
+                        "seats": null,
+                        "timesUndefined": null,
+                        "amenityGroup": null
+                    },
+                    "id": 34
+                }
+            ],
+            "fareInfoPaxResults": [
+                {
+                    "fareInfoPax": {
+                        "bookingClass": "X",
+                        "paxType": "ADULT",
+                        "fareBasisId": "XITFR5",
+                        "resident": false,
+                        "fareType": "NEGOTIATED",
+                        "agreementsType": "ETICKET",
+                        "fareRules": null
+                    },
+                    "id": 0
+                },
+                {
+                    "fareInfoPax": {
+                        "bookingClass": "Q",
+                        "paxType": "ADULT",
+                        "fareBasisId": "QOWNVY",
+                        "resident": false,
+                        "fareType": "PUBLIC",
+                        "agreementsType": "ETICKET",
+                        "fareRules": null
+                    },
+                    "id": 3
+                },
+                {
+                    "fareInfoPax": {
+                        "bookingClass": "O",
+                        "paxType": "ADULT",
+                        "fareBasisId": "OONNA0B6",
+                        "resident": false,
+                        "fareType": "PUBLIC",
+                        "agreementsType": "ETICKET",
+                        "fareRules": null
+                    },
+                    "id": 4
+                },
+                {
+                    "fareInfoPax": {
+                        "bookingClass": "O",
+                        "paxType": "ADULT",
+                        "fareBasisId": "OOWNVY",
+                        "resident": false,
+                        "fareType": "PUBLIC",
+                        "agreementsType": "ETICKET",
+                        "fareRules": null
+                    },
+                    "id": 1
+                },
+                {
+                    "fareInfoPax": {
+                        "bookingClass": "O",
+                        "paxType": "ADULT",
+                        "fareBasisId": "OOWVY",
+                        "resident": false,
+                        "fareType": "PUBLIC",
+                        "agreementsType": "ETICKET",
+                        "fareRules": null
+                    },
+                    "id": 2
+                }
+            ],
+            "collectionEstimationFees": [],
+            "collectionMethods": [],
+            "baggageEstimationFees": [],
+            "itineraries": {
+                "crossFarings": [],
+                "hubs": [
+                    {
+                        "hubItineraryInsurances": {
+                            "insurances": [
+                                {
+                                    "conditionsUrls": [
+                                        {
+                                            "type": "BASIC",
+                                            "url": "ED_AU_en_1_1"
+                                        },
+                                        {
+                                            "type": "EXTENDED",
+                                            "url": "ED_AU_en_1_1"
+                                        }
+                                    ],
+                                    "policy": "VINGSELF",
+                                    "provider": "NOSUPP"
+                                }
+                            ],
+                            "debugInfo": null,
+                            "id": "I",
+                            "totalPrice": 0.00,
+                            "providerPrice": 0.00
+                        },
+                        "id": 21,
+                        "oth": 20,
+                        "htd": 19
+                    }
+                ],
+                "smartHubs": [
+                    {
+                        "smartHubItineraryInsurances": {
+                            "insurances": [
+                                {
+                                    "conditionsUrls": [
+                                        {
+                                            "type": "BASIC",
+                                            "url": "ED_AU_en_1_1"
+                                        },
+                                        {
+                                            "type": "EXTENDED",
+                                            "url": "ED_AU_en_1_1"
+                                        }
+                                    ],
+                                    "policy": "VINGSELF",
+                                    "provider": "NOSUPP"
+                                }
+                            ],
+                            "debugInfo": null,
+                            "id": "I",
+                            "totalPrice": 0.00,
+                            "providerPrice": 0.00
+                        },
+                        "id": 22,
+                        "itinerary": 21,
+                        "rule": 1,
+                        "outboundHubDefinition": 9841,
+                        "inboundHubDefinition": null
+                    }
+                ],
+                "owasrts": [],
+                "hidings": [],
+                "crossFaringMultiDestinations": [],
+                "simples": [
+                    {
+                        "adultFares": {
+                            "fare": 47.50,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 3,
+                        "provider": "TF",
+                        "sections": [
+                            4
+                        ],
+                        "price": 47.50,
+                        "providerPrice": 29.04,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 57.25,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 7,
+                        "provider": "1A",
+                        "sections": [
+                            8
+                        ],
+                        "price": 87.48,
+                        "providerPrice": 53.48,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 83.81,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 13,
+                        "provider": "TF",
+                        "sections": [
+                            19
+                        ],
+                        "price": 83.81,
+                        "providerPrice": 51.24,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 85.05,
+                            "totalTax": 35.14,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 17,
+                        "provider": "1A",
+                        "sections": [
+                            27,
+                            28,
+                            29
+                        ],
+                        "price": 120.19,
+                        "providerPrice": 73.48,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 91.18,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 15,
+                        "provider": "TF",
+                        "sections": [
+                            21,
+                            22
+                        ],
+                        "price": 91.18,
+                        "providerPrice": 55.74,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 42.10,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 1,
+                        "provider": "TF",
+                        "sections": [
+                            1
+                        ],
+                        "price": 42.10,
+                        "providerPrice": 25.74,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 47.50,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 2,
+                        "provider": "TF",
+                        "sections": [
+                            2,
+                            3
+                        ],
+                        "price": 47.50,
+                        "providerPrice": 29.04,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 43.58,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 19,
+                        "provider": "TF",
+                        "sections": [
+                            37
+                        ],
+                        "price": 43.58,
+                        "providerPrice": 26.64,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 68.44,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 9,
+                        "provider": "TF",
+                        "sections": [
+                            10
+                        ],
+                        "price": 68.44,
+                        "providerPrice": 41.84,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 79.73,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 12,
+                        "provider": "TF",
+                        "sections": [
+                            18
+                        ],
+                        "price": 79.73,
+                        "providerPrice": 48.74,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 73.59,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 20,
+                        "provider": "VY",
+                        "sections": [
+                            36,
+                            38
+                        ],
+                        "price": 73.59,
+                        "providerPrice": 44.99,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 49.46,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 4,
+                        "provider": "TF",
+                        "sections": [
+                            5
+                        ],
+                        "price": 49.46,
+                        "providerPrice": 30.24,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 56.66,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 5,
+                        "provider": "TF",
+                        "sections": [
+                            6
+                        ],
+                        "price": 56.66,
+                        "providerPrice": 34.64,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 39.65,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 0,
+                        "provider": "TF",
+                        "sections": [
+                            0
+                        ],
+                        "price": 39.65,
+                        "providerPrice": 24.24,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 57.25,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 8,
+                        "provider": "1A",
+                        "sections": [
+                            9
+                        ],
+                        "price": 87.48,
+                        "providerPrice": 53.48,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 74.00,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 10,
+                        "provider": "TF",
+                        "sections": [
+                            11,
+                            12,
+                            13,
+                            14
+                        ],
+                        "price": 74.00,
+                        "providerPrice": 45.24,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 68.70,
+                            "totalTax": 35.14,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 14,
+                        "provider": "1A",
+                        "sections": [
+                            20
+                        ],
+                        "price": 103.84,
+                        "providerPrice": 63.48,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 68.70,
+                            "totalTax": 52.80,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 18,
+                        "provider": "1A",
+                        "sections": [
+                            32,
+                            33,
+                            34,
+                            35,
+                            30,
+                            31
+                        ],
+                        "price": 121.50,
+                        "providerPrice": 74.28,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 89.96,
+                            "totalTax": 30.23,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 16,
+                        "provider": "1A",
+                        "sections": [
+                            23,
+                            24,
+                            25,
+                            26
+                        ],
+                        "price": 120.19,
+                        "providerPrice": 73.48,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "REG",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 76.86,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 11,
+                        "provider": "VY",
+                        "sections": [
+                            16,
+                            17,
+                            15
+                        ],
+                        "price": 76.86,
+                        "providerPrice": 46.99,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    },
+                    {
+                        "adultFares": {
+                            "fare": 60.51,
+                            "totalTax": 0.00,
+                            "taxDetails": []
+                        },
+                        "childFares": null,
+                        "infantFares": null,
+                        "taxInformation": [],
+                        "baggageAllowances": [],
+                        "id": 6,
+                        "provider": "VY",
+                        "sections": [
+                            7
+                        ],
+                        "price": 60.51,
+                        "providerPrice": 36.99,
+                        "providerCurrency": "EUR",
+                        "providerItineraryId": null,
+                        "flightType": "LC",
+                        "corporateCodes": []
+                    }
+                ]
+            },
+            "freeCancellationLimits": [
+                {
+                    "id": 0,
+                    "limitTime": "2020-01-24T00:00:00+01:00"
+                }
+            ],
+            "amenityGroups": []
+        },
+        "externalSelectionResponse": null,
+        "repricingInfoResponse": null,
+        "cabinClass": "TOURIST",
+        "sortCriteria": "MINIMUM_PURCHASABLE_PRICE"
+    },
+    "accommodationSearchResults": null,
+    "searchId": 7380398496,
+    "requiresResidentConfirmation": false
+}

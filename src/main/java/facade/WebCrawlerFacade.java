@@ -32,6 +32,8 @@ public class WebCrawlerFacade {
 
             CertificateManager.doTrustToCertificates();
 
+            // TODO - sistemare il discorso input/output
+
             if (args.contains("general")) {
                 log.info(" ====>>> launching webcrawling mode");
                 String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
@@ -49,8 +51,8 @@ public class WebCrawlerFacade {
                 String inputDir = INPUT_DIR + WEB_CRAWLER_DIR + "1k_lista2.txt";
                 String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR + "scrapedList.txt";
                 spanishWebCrawlerService.createClozeFlashcards(inputDir, outputDir);
-
             }
+
         } catch (Exception ex) {
             log.error("Errore nella creazione di flashcard tramite webcrawler: " + ex);
             throw new RuntimeException(ex);
