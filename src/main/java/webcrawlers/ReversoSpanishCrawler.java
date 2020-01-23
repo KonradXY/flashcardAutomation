@@ -31,9 +31,12 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
 
     private static final String ANCHOR_TAG = "a";
 
-    public List<IAnkiCard> getExamplesCardFromWord(String word) {
-        Document doc = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
-        return createAnkiCardsFromContent(doc, word);
+    private Document reversoPage;
+
+    @Override
+    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
+        reversoPage = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
+        cardList = createAnkiCardsFromContent(reversoPage, word);
     }
 
     List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {

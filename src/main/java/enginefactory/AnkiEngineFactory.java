@@ -5,6 +5,7 @@ import static main.java.utils.Property.GENERIC_DIR;
 import static main.java.utils.Property.KINDLE_DIR;
 import static main.java.utils.Property.LANGUAGE_LEARNING_DIR;
 
+import main.java.webcrawlers.AbstractWebCrawler;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
@@ -34,7 +35,7 @@ public class AnkiEngineFactory {
 		
 		return ankiModel;
 	}
-	
+
 }
 
 

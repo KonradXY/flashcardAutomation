@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 
 import main.java.enginefactory.AbstractAnkiEngine;
 import main.java.enginefactory.AnkiEngineFactory;
-import main.java.service.SpanishMediator;
+import main.java.service.SpanishWebService;
 import main.java.netutilities.CertificateManager;
 
 import java.io.BufferedWriter;
@@ -15,12 +15,12 @@ import java.io.OutputStreamWriter;
 public class FlashcardFacade {
 	
 	private final AnkiEngineFactory engineBuilder;
-	private final SpanishMediator languageLearningFacade;
+	private final SpanishWebService spanishWebService;
 
 	@Inject
-	public FlashcardFacade(AnkiEngineFactory engineBuilder, SpanishMediator languageLearningMediator) {
+	public FlashcardFacade(AnkiEngineFactory engineBuilder, SpanishWebService spanishWebService) {
 		this.engineBuilder = engineBuilder;
-		this.languageLearningFacade = languageLearningMediator;
+		this.spanishWebService = spanishWebService;
 	}
 	
 	public void buildFlashcardsFromTextFile(String[] args) {
@@ -28,19 +28,21 @@ public class FlashcardFacade {
 		ankiModel.createFlashcards();
 	}
 
+
+
 	public void buildSimpleDefinitionFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
-		languageLearningFacade.createDefinitionFlashcards(inputFile, outputFile);
+		spanishWebService.createDefinitionFlashcards(inputFile, outputFile);
 	}
 	
 	public void buildFlashcardsFromWeb(String inputFile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
-		languageLearningFacade.createFlashcard(inputFile, outputFile);
+		spanishWebService.createFlashcard(inputFile, outputFile);
 	}
 
 	public void buildClozeFlashcardsFromWeb(String inputfile, String outputFile) throws Exception {
 		CertificateManager.doTrustToCertificates();
-		languageLearningFacade.createClozeFlashcards(inputfile, outputFile);
+		spanishWebService.createClozeFlashcards(inputfile, outputFile);
 	}
 
 	public void metodoCheWrappaLaRobaFuoriDalSpanishMediator(String inputFile, String outputFile) {

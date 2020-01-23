@@ -1,12 +1,14 @@
 package main.java.webcrawlers.wordreference;
 
 import com.google.inject.Singleton;
+import main.java.contracts.IAnkiCard;
 import main.java.webcrawlers.AbstractWebCrawler;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Singleton
@@ -16,16 +18,10 @@ public class WordReferenceDefinitionPage extends AbstractWebCrawler {
 
     private Document definitionPage;
 
-
-    public void scrapeSpanishDefinitionWord(String word) {
+    @Override
+    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
         this.definitionPage = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word);
     }
-
-
-    void setDefinitionPage(Document doc) {
-        this.definitionPage = doc;
-    }
-
 
     public Map<String, String> getWordDefinition(String word) {
         Element article = definitionPage.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.

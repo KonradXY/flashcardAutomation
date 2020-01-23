@@ -10,9 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.google.inject.Singleton;
@@ -31,9 +29,9 @@ import main.java.modelDecorator.WebParsedClozedCardDecorator;
 import org.jsoup.nodes.Element;
 
 @Singleton
-public class SpanishMediator {
+public class SpanishWebService {
 
-    private static final Logger log = Logger.getLogger(SpanishMediator.class);
+    private static final Logger log = Logger.getLogger(SpanishWebService.class);
     private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 
     private final ReversoSpanishCrawler reversoCrawler;
@@ -45,7 +43,7 @@ public class SpanishMediator {
 
 
     @Inject
-    SpanishMediator(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
+    SpanishWebService(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
         this.reversoCrawler = reversoCrawler;
         this.definitionPageWR = definitionPageWR;
         this.synonimsPageWR = synonimsPageWR;
@@ -64,7 +62,7 @@ public class SpanishMediator {
             IAnkiCard card;
 
             for (String word : wordList) {
-                translationPageWR.scrapeSpanishItalianTranslationPage(word);
+                translationPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
 
                 writeCard(createSimpleDefinitionCard(word), bos);
                 writeCard(createReverseDefinitionCard(word), bos);
@@ -131,12 +129,14 @@ public class SpanishMediator {
 
             for (String word : wordList) {
 
-                definitionPageWR.scrapeSpanishDefinitionWord(word);
-                synonimsPageWR.scrapeSpanishSynonimsPage(word);
+                definitionPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+                synonimsPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
 
                 Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
                 List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
-                List<IAnkiCard> cards = reversoCrawler.getExamplesCardFromWord(word);
+
+                List<IAnkiCard> cards = new ArrayList<>();
+                reversoCrawler.scrapePageWithWord(cards, word);
 
                 for (IAnkiCard card : cards) {
                     addDefinizioneToBack(card, definizioniMap);

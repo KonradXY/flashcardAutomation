@@ -1,5 +1,6 @@
 package main.java.webcrawlers;
 
+import main.java.contracts.IWebCrawler;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
@@ -12,7 +13,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class AbstractWebCrawler {
+public abstract class AbstractWebCrawler implements IWebCrawler {
 
     private final static Logger log = Logger.getLogger(AbstractWebCrawler.class);
 
