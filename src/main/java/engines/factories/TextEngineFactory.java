@@ -18,10 +18,10 @@ public class TextEngineFactory extends AbstractEngineFactory {
 	private static final Logger log = Logger.getLogger(TextEngineFactory.class);
 
 	@Override
-	public TextEngine createTextEngine(List<String> inputParam) {
+	public AbstractEngine createEngine(List<String> inputParam) {
 
 		if (inputParam == null) throw new RuntimeException("Inserire parametro !");
-		
+
 		TextEngine textEngine;
 
 		String input = inputParam.get(0);

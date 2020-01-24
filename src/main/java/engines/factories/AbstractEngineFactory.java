@@ -1,10 +1,10 @@
 package main.java.engines.factories;
 
-import main.java.engines.TextEngine;
+import main.java.engines.AbstractEngine;
 
 import java.util.List;
 
 public abstract class AbstractEngineFactory {
 
-    protected abstract TextEngine createTextEngine(List<String> inputParam);
+    protected abstract AbstractEngine createEngine(List<String> inputParam);
 }

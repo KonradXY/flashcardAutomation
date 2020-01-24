@@ -14,7 +14,7 @@ import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 
-public abstract class TextEngine {
+public abstract class TextEngine extends AbstractEngine{
 	
 	protected IReader reader;
 	protected IParser parser;
@@ -22,7 +22,7 @@ public abstract class TextEngine {
 	
 	protected String inputDir;
 	protected String outputDir;
-	
+
 	protected String parserInputDir;
 	protected String parserOutputDir;
 

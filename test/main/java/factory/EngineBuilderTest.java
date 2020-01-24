@@ -32,7 +32,7 @@ class EngineBuilderTest {
 	@Test
 	void testDefaultEngineModel() {
 		args = Arrays.asList("");
-		ankiEngine = builder.createTextEngine(args);
+		ankiEngine = (TextEngine)builder.createEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), DefaultParser.class);
@@ -45,7 +45,7 @@ class EngineBuilderTest {
 	@Test
 	void testEvernoteEngineModel() {
 		args = Arrays.asList("evernote");
-		ankiEngine = builder.createTextEngine(args);
+		ankiEngine = (TextEngine)builder.createEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
@@ -57,8 +57,8 @@ class EngineBuilderTest {
 	
 	@Test
 	void testKindleEngineModel() {
-		Arrays.asList("kindle");
-		ankiEngine = builder.createTextEngine(args);
+		args = Arrays.asList("kindle");
+		ankiEngine = (TextEngine)builder.createEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), KindleClippingsParser.class);
@@ -70,8 +70,8 @@ class EngineBuilderTest {
 	
 	@Test
 	void testLanguageLearningEngineModel() {
-		Arrays.asList("languageLearning");
-		ankiEngine = builder.createTextEngine(args);
+		args = Arrays.asList("languageLearning");
+		ankiEngine = (TextEngine)builder.createEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
