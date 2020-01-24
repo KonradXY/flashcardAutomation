@@ -1,12 +1,12 @@
 package main.java.engines.factories;
 
-import main.java.engines.TextEngine;
 import main.java.engines.WebCrawlerEngine;
 import org.apache.log4j.Logger;
 
 import java.util.List;
 
-public class WebEngineFactory extends AbstractEngineFactory {
+
+public abstract class WebEngineFactory extends AbstractEngineFactory {
 
     private static final Logger log = Logger.getLogger(WebEngineFactory.class);
 

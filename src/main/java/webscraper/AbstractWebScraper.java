@@ -1,6 +1,6 @@
 package main.java.webscraper;
 
-import main.java.contracts.IWebCrawler;
+import main.java.contracts.IWebScraper;
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public abstract class AbstractWebScraper implements IWebCrawler {
+public abstract class AbstractWebScraper implements IWebScraper {
 
     private final static Logger log = Logger.getLogger(AbstractWebScraper.class);
 

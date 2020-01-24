@@ -3,7 +3,6 @@ package main.java.launcher;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import main.java.config.AnkiApplicationModule;
-import main.java.service.SpanishWebCrawlerService;
 import main.java.facade.TextFileFacade;
 import main.java.facade.WebCrawlerFacade;
 import org.apache.log4j.Logger;
@@ -16,7 +15,6 @@ public class Launcher {
     private final static Logger log = Logger.getLogger(Launcher.class);
 
     private static TextFileFacade textFileFacade;
-    private static SpanishWebCrawlerService spanishWebCrawlerService;
     private static WebCrawlerFacade webCrawlerFacade;
 
     /**
@@ -42,7 +40,6 @@ public class Launcher {
 
             Injector injector = Guice.createInjector(new AnkiApplicationModule());
             textFileFacade = injector.getInstance(TextFileFacade.class);
-            spanishWebCrawlerService = injector.getInstance(SpanishWebCrawlerService.class);
             webCrawlerFacade = injector.getInstance(WebCrawlerFacade.class);
 
             if (args.length == 0) args = new String[]{"default"};
