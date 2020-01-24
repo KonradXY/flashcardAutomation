@@ -1,8 +1,8 @@
 package main.java.model.evernote;
 
 import main.java.contracts.IAnkiCard;
-import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.EvernoteAnkiEngine;
+import main.java.engines.TextEngine;
+import main.java.engines.EvernoteEngine;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -48,12 +48,12 @@ class EvernoteHtmlParserTest {
 	private static final Path imgPath2 = Paths.get(testMediaFolderDir+"testevernoteimmagine2.jpg");
 	private static final Path imgPath3 = Paths.get(testMediaFolderDir+"testevernoteimmagine3.jpg");
 
-	private static AbstractAnkiEngine evernoteEngine;
+	private static TextEngine evernoteEngine;
 	
 	
 	@BeforeAll
 	public static void setup() {
-		evernoteEngine = new EvernoteAnkiEngine(testFile, testFileDir);
+		evernoteEngine = new EvernoteEngine(testFile, testFileDir);
 		evernoteEngine.setInputDir("./");
 		evernoteEngine.setOutputDir("./");
 		evernoteEngine.buildEngine();

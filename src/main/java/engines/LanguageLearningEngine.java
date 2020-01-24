@@ -1,14 +1,14 @@
-package main.java.enginefactory;
+package main.java.engines;
 
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.model.languageLearning.LanguageLearningParser;
 import main.java.strategy.ReadingFormatStrategy;
 
-public class LanguageLearningAnkiEngine extends AbstractAnkiEngine {
+public class LanguageLearningEngine extends TextEngine {
 	
-	public LanguageLearningAnkiEngine() { super(); }
-	public LanguageLearningAnkiEngine(String input, String output) {super(input, output); }
+	public LanguageLearningEngine() { super(); }
+	public LanguageLearningEngine(String input, String output) {super(input, output); }
 	
 	@Override
 	public void buildEngine() {

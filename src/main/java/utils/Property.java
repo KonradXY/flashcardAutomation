@@ -10,14 +10,14 @@ public class Property {
 	public static String OUTPUT_DIR = getOutputDir();
 	public static String INPUT_DIR = getInputDir();
 	
-	public static final String LANGUAGE_LEARNING_DIR = "languageLearning/prepositions/";
-	public static final String EVERNOTE_DIR = "evernote/";
-	public static final String KINDLE_DIR = "kindle/";
-	public static final String WEB_CRAWLER_DIR = "webcrawler/";
-	public static final String TXT_INPUTDIR = "txtSummarize/";
-	public static final String GENERIC_DIR = "generic/parole.txt";
+	public static final String LANGUAGE_LEARNING_PATH = "languageLearning/prepositions/";
+	public static final String EVERNOTE_PATH = "evernote/";
+	public static final String KINDLE_PATH = "kindle/";
+	public static final String WEB_CRAWLER_PATH = "webcrawler/";
+	public static final String TXT_INPUT_PATH = "txtSummarize/";
+	public static final String GENERIC_PATH = "generic/parole.txt";
 	
-	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();
+	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();	// TODO - anche questi dovrei spostarli dal properties e metterli nella classe corretta
 	public static int SIMPLE_PARSER_ENG_FIELD = getSimpleParserEngField();
 
 

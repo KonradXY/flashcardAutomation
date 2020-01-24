@@ -1,14 +1,14 @@
-package main.java.enginefactory;
+package main.java.engines;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
 import main.java.strategy.ReadingFormatStrategy;
 import main.java.utils.ParserUtil;
 
-public class EvernoteAnkiEngine extends AbstractAnkiEngine {
+public class EvernoteEngine extends TextEngine {
 	
-	public EvernoteAnkiEngine() { super(); }
-	public EvernoteAnkiEngine(String input, String output) { super(input, output); }
+	public EvernoteEngine() { super(); }
+	public EvernoteEngine(String input, String output) { super(input, output); }
 	
 	@Override
 	public void buildEngine() {

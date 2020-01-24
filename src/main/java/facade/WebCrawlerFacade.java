@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 import static main.java.utils.Property.*;
-import static main.java.utils.Property.WEB_CRAWLER_DIR;
+import static main.java.utils.Property.WEB_CRAWLER_PATH;
 
 @Singleton
 public class WebCrawlerFacade {
@@ -22,8 +22,8 @@ public class WebCrawlerFacade {
 
     private final SpanishWebCrawlerService spanishWebCrawlerService;
 
-    private static String inputDir = INPUT_DIR + WEB_CRAWLER_DIR;
-    private static String outputDir = OUTPUT_DIR + WEB_CRAWLER_DIR;
+    private static String inputDir = INPUT_DIR + WEB_CRAWLER_PATH;
+    private static String outputDir = OUTPUT_DIR + WEB_CRAWLER_PATH;
 
     @Inject
     WebCrawlerFacade(SpanishWebCrawlerService spanishWebCrawlerService) {

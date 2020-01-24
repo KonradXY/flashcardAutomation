@@ -1,7 +1,7 @@
 package main.java.summarizer;
 
 import static main.java.utils.Property.INPUT_DIR;
-import static main.java.utils.Property.TXT_INPUTDIR;
+import static main.java.utils.Property.TXT_INPUT_PATH;
 
 
 /**
@@ -15,7 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		String FILEPATH = INPUT_DIR + TXT_INPUTDIR + "prova.txt";	// the file you want to summarize
+		String FILEPATH = INPUT_DIR + TXT_INPUT_PATH + "prova.txt";	// the file you want to summarize
 		String LANGCODE = "EN";										// "NO"=norwegian or "EN"=english (decides which stop-word dict to use)
 		int LENGTH = 5;												// Summary length
 		

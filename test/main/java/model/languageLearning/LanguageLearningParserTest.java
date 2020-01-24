@@ -16,8 +16,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.LanguageLearningAnkiEngine;
+import main.java.engines.TextEngine;
+import main.java.engines.LanguageLearningEngine;
 
 class LanguageLearningParserTest {
 	
@@ -25,7 +25,7 @@ class LanguageLearningParserTest {
 	private static final String outputFile = testFileDir + "outputtest.txt";
 	private static final Path outputFilePath = Paths.get(outputFile);
 	
-	private static AbstractAnkiEngine languageLearningEngine;
+	private static TextEngine languageLearningEngine;
 	
 	private final String entry1 = "<div class=\"front\"> ﻿Domanda di grammatica </div>	<div class=\"back\">  Risposta di grammatica - elenco 1 - elenco 2 </div>";
 	private final String entry2 = "<div class=\"front\">  What time will you go to bed? </div>	<div class=\"back\">  ¿A qué hora te acostarás? </div>";
@@ -39,7 +39,7 @@ class LanguageLearningParserTest {
 	
 	@BeforeAll
 	public static void setup() {
-		languageLearningEngine = new LanguageLearningAnkiEngine(testFileDir, outputFile);
+		languageLearningEngine = new LanguageLearningEngine(testFileDir, outputFile);
 		languageLearningEngine.setInputDir("./");
 		languageLearningEngine.setOutputDir("./");
 		languageLearningEngine.buildEngine();

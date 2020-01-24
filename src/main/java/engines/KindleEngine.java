@@ -1,14 +1,14 @@
-package main.java.enginefactory;
+package main.java.engines;
 
 import main.java.model.TextFileReader;
 import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
 import main.java.strategy.ReadingFormatStrategy;
 
-public class KindleAnkiEngine extends AbstractAnkiEngine {
+public class KindleEngine extends TextEngine {
 	
-	public KindleAnkiEngine() { super(); }
-	public KindleAnkiEngine(String input, String output) { super(input, output); }
+	public KindleEngine() { super(); }
+	public KindleEngine(String input, String output) { super(input, output); }
 	
 	@Override
 	public void buildEngine() {

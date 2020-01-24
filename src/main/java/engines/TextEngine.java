@@ -1,4 +1,4 @@
-package main.java.enginefactory;
+package main.java.engines;
 
 import static main.java.utils.Property.INPUT_DIR;
 import static main.java.utils.Property.OUTPUT_DIR;
@@ -14,7 +14,7 @@ import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 
-public abstract class AbstractAnkiEngine {
+public abstract class TextEngine {
 	
 	protected IReader reader;
 	protected IParser parser;
@@ -26,12 +26,12 @@ public abstract class AbstractAnkiEngine {
 	protected String parserInputDir;
 	protected String parserOutputDir;
 
-	protected AbstractAnkiEngine() {
+	protected TextEngine() {
 		this.inputDir = INPUT_DIR;
 		this.outputDir = OUTPUT_DIR;
 	}
 	
-	protected AbstractAnkiEngine(String input, String output) {
+	protected TextEngine(String input, String output) {
 		this();
 		this.parserInputDir  = input;
 		this.parserOutputDir = output;
@@ -42,6 +42,7 @@ public abstract class AbstractAnkiEngine {
 	// TODO - per poter fare il discorso della lettura e creazione di piu' file contemporeaneamente dovrei far
 	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
 	// Inoltre dovrei fare dei test !
+
 	public void createFlashcards() {
 		Map<Path, String> contentRead = this.read(this.getFullInputPath());
 		List<IAnkiCard> cardList = this.parse(contentRead);

@@ -2,25 +2,23 @@ package main.java.facade;
 
 import com.google.inject.Inject;
 
-import main.java.enginefactory.AbstractAnkiEngine;
-import main.java.enginefactory.AnkiEngineFactory;
-import main.java.service.SpanishWebCrawlerService;
+import main.java.engines.TextEngine;
+import main.java.engines.factories.TextEngineFactory;
 
 import java.util.List;
 
 public class TextFileFacade {
 	
-	private final AnkiEngineFactory engineBuilder;
-	private final SpanishWebCrawlerService spanishWebCrawlerService;
+	private final TextEngineFactory engineBuilder;
 
 	@Inject
-	public TextFileFacade(AnkiEngineFactory engineBuilder, SpanishWebCrawlerService spanishWebCrawlerService) {
+	public TextFileFacade(TextEngineFactory engineBuilder) {
 		this.engineBuilder = engineBuilder;
-		this.spanishWebCrawlerService = spanishWebCrawlerService;
 	}
-	
+
+	// TODO - chissa' se questo lo posso levare
 	public void buildFlashcardsFromTextFile(List<String> args) {
-		AbstractAnkiEngine ankiModel = engineBuilder.createTextEngine(args);
+		TextEngine ankiModel = engineBuilder.createTextEngine(args);
 		ankiModel.createFlashcards();
 	}
 

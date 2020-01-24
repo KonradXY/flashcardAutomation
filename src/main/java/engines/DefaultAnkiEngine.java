@@ -1,11 +1,11 @@
-package main.java.enginefactory;
+package main.java.engines;
 
 import main.java.model.DefaultParser;
 import main.java.model.TextFilePrinter;
 import main.java.model.TextFileReader;
 import main.java.strategy.ReadingFormatStrategy;
 
-public class DefaultAnkiEngine extends AbstractAnkiEngine {
+public class DefaultAnkiEngine extends TextEngine {
 	
 	public DefaultAnkiEngine() {super();}
 	public DefaultAnkiEngine(String input, String output) {super(input,output); }
