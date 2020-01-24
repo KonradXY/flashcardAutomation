@@ -18,7 +18,7 @@ public class SpanishGeneralEngine extends WebCrawlerEngine {
 
     @Override
     public void buildEngine() {
-        reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
+        reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
         webCrawler = new SpanishGeneralWebCrawler(new ReversoSpanishScraper(), new WordReferenceDefinitionPage(), new WordReferenceSynonimsPage());
         printer = new TextFilePrinter();
     }

@@ -13,7 +13,7 @@ public class SpanishDefinitionEngine extends WebCrawlerEngine  {
 
     @Override
     public void buildEngine() {
-        reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
+        reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
         webCrawler = new SpanishDefinitionWebCrawler(new WordReferenceTranslationPage());
         printer = new TextFilePrinter();
     }

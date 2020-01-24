@@ -12,7 +12,7 @@ public class SpanishClozeEngine extends WebCrawlerEngine {
 
     @Override
     public void buildEngine() {
-        reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
+        reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
         webCrawler = new SpanishClozeWebCrawler(new ClozeEngine(), new WordReferenceDefinitionPage());
         printer = new TextFilePrinter();
     }

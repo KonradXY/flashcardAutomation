@@ -2,6 +2,7 @@ package main.java.facade;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import main.java.engines.TextEngine;
 import main.java.engines.WebCrawlerEngine;
 import main.java.engines.factories.WebEngineFactory;
 import main.java.netutilities.CertificateManager;
@@ -22,11 +23,11 @@ public class WebCrawlerFacade {
 
     public void createFlashcardsScrapingTheWeb(List<String> args) {
 
-
-
         try {
 
-            CertificateManager.doTrustToCertificates(); // TODO <-- questo probabilmente deve esere spostato da qua
+            CertificateManager.doTrustToCertificates();
+            WebCrawlerEngine webCrawler = (WebCrawlerEngine)engineFactory.createEngine(args);
+            //webCrawler.createFlashcards();    // TODO <<--- fixare (in piu' la roba qua sotto deve andare proprio dentro questo metodo)
 
             // TODO - sistemare il discorso input/output:
 
@@ -38,18 +39,7 @@ public class WebCrawlerFacade {
             // TODO - finito sto pezzo qua passare ai decorator e sistemarli una volta per tutte
 
 
-            if (args.contains("general")) {
-                log.info(" ====>>> launching webcrawling mode");
-                //spanishWebCrawlerService.createGeneralFlashcards(inputDir, outputDir);
 
-            } else if (args.contains("simple")) {
-                log.info(" ====>>> launching simpleDefinitions mode");
-                //spanishWebCrawlerService.createDefinitionFlashcards(inputDir, outputDir);
-
-            } else if (args.contains("cloze")) {
-                log.info(" ====>>> launching clozeCrawling mode");
-                //spanishWebCrawlerService.createClozeFlashcards(inputDir, outputDir);
-            }
 
         } catch (Exception ex) {
             log.error("Errore nella creazione di flashcard tramite webcrawler: " + ex);

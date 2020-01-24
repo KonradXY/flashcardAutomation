@@ -45,8 +45,6 @@ public class Launcher {
             if (args.length == 0) args = new String[]{"default"};
             List<String> inputArg = Arrays.asList(args);
 
-
-
             if (inputArg.contains("webcrawler")) {
                 log.info(" ====>>> launching webcrawling mode");
                 webCrawlerFacade.createFlashcardsScrapingTheWeb(inputArg);
