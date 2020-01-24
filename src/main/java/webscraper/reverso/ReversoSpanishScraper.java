@@ -1,8 +1,9 @@
-package main.java.webcrawlers;
+package main.java.webscraper.reverso;
 
 import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
+import main.java.webscraper.AbstractWebScraper;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,11 +19,11 @@ import static main.java.modelDecorator.AbstractCardDecorator.getBoldParagraphTag
 import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
 
 @Singleton
-public class ReversoSpanishCrawler extends AbstractWebCrawler {
+public class ReversoSpanishScraper extends AbstractWebScraper {
 
     public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = "http://context.reverso.net/traduzione/spagnolo-italiano/";
 
-    private final static Logger log = Logger.getLogger(ReversoSpanishCrawler.class);
+    private final static Logger log = Logger.getLogger(ReversoSpanishScraper.class);
     private static final String EXAMPLES_ID = "examples-content";
     private static final String TRANSLATION_CONTENT_ID = "translations-content";
     private static final String EXAMPLE_CLASS = "example";
@@ -39,7 +40,7 @@ public class ReversoSpanishCrawler extends AbstractWebCrawler {
         cardList = createAnkiCardsFromContent(reversoPage, word);
     }
 
-    List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
+    public List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
         List<IAnkiCard> cardList = new ArrayList<>();
 
         Element elements = doc.getElementById(EXAMPLES_ID);

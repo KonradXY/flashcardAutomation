@@ -6,6 +6,10 @@ import static main.java.utils.Property.KINDLE_PATH;
 import static main.java.utils.Property.LANGUAGE_LEARNING_PATH;
 
 import main.java.engines.*;
+import main.java.engines.textengines.DefaultAnkiEngine;
+import main.java.engines.textengines.EvernoteEngine;
+import main.java.engines.textengines.KindleEngine;
+import main.java.engines.textengines.LanguageLearningEngine;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;

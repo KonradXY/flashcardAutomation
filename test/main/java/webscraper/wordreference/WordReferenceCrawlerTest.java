@@ -1,6 +1,5 @@
-package main.java.webcrawlers.wordreference;
+package main.java.webscraper.wordreference;
 
-import main.java.webcrawlers.wordreference.WordReferenceTranslationPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.junit.jupiter.api.BeforeAll;

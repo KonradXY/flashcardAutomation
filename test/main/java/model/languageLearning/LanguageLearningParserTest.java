@@ -17,7 +17,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import main.java.engines.TextEngine;
-import main.java.engines.LanguageLearningEngine;
+import main.java.engines.textengines.LanguageLearningEngine;
 
 class LanguageLearningParserTest {
 	

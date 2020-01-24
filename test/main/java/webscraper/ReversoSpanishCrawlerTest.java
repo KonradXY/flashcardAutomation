@@ -1,6 +1,7 @@
-package main.java.webcrawlers;
+package main.java.webscraper;
 
 import main.java.contracts.IAnkiCard;
+import main.java.webscraper.reverso.ReversoSpanishScraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ class ReversoSpanishCrawlerTest {
     private static final String htmlTestFile = "./test/main/resources/webcrawler/reverso_test_example.html";
 
 
-    private final ReversoSpanishCrawler reversoSpanishCrawler = new ReversoSpanishCrawler();
+    private final ReversoSpanishScraper reversoSpanishCrawler = new ReversoSpanishScraper();
 
     @Test
     void cardsAreCreatedCorrectly() throws IOException {

@@ -1,8 +1,8 @@
-package main.java.webcrawlers.wordreference;
+package main.java.webscraper.wordreference;
 
 import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
-import main.java.webcrawlers.AbstractWebCrawler;
+import main.java.webscraper.AbstractWebScraper;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Singleton
-public class WordReferenceSynonimsPage extends AbstractWebCrawler {
+public class WordReferenceSynonimsPage extends AbstractWebScraper {
 
     public final static String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = "https://www.wordreference.com/sinonimos/";
 

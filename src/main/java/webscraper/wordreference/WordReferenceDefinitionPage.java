@@ -1,8 +1,8 @@
-package main.java.webcrawlers.wordreference;
+package main.java.webscraper.wordreference;
 
 import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
-import main.java.webcrawlers.AbstractWebCrawler;
+import main.java.webscraper.AbstractWebScraper;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Singleton
-public class WordReferenceDefinitionPage extends AbstractWebCrawler {
+public class WordReferenceDefinitionPage extends AbstractWebScraper {
 
     public final static String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = "https://www.wordreference.com/definicion/";
 

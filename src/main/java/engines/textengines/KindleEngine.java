@@ -1,5 +1,6 @@
-package main.java.engines;
+package main.java.engines.textengines;
 
+import main.java.engines.TextEngine;
 import main.java.model.TextFileReader;
 import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;

@@ -2,7 +2,7 @@ package main.java.model.evernote;
 
 import main.java.contracts.IAnkiCard;
 import main.java.engines.TextEngine;
-import main.java.engines.EvernoteEngine;
+import main.java.engines.textengines.EvernoteEngine;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

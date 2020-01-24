@@ -1,4 +1,4 @@
-package main.java.webcrawlers;
+package main.java.webscraper;
 
 import main.java.contracts.IWebCrawler;
 import org.apache.log4j.Logger;
@@ -13,9 +13,9 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public abstract class AbstractWebCrawler implements IWebCrawler {
+public abstract class AbstractWebScraper implements IWebCrawler {
 
-    private final static Logger log = Logger.getLogger(AbstractWebCrawler.class);
+    private final static Logger log = Logger.getLogger(AbstractWebScraper.class);
 
     public static final int TIME_SLEEP 		= 2000;
     public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;

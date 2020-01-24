@@ -1,7 +1,7 @@
 package main.java.service;
 
 import static main.java.modelDecorator.AbstractCardDecorator.*;
-import static main.java.webcrawlers.AbstractWebCrawler.*;
+import static main.java.webscraper.AbstractWebScraper.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 import com.google.inject.Singleton;
 import main.java.model.AnkiCard;
 import main.java.utils.ClozeEngine;
-import main.java.webcrawlers.ReversoSpanishCrawler;
-import main.java.webcrawlers.wordreference.WordReferenceDefinitionPage;
-import main.java.webcrawlers.wordreference.WordReferenceSynonimsPage;
-import main.java.webcrawlers.wordreference.WordReferenceTranslationPage;
+import main.java.webscraper.reverso.ReversoSpanishScraper;
+import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
+import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
+import main.java.webscraper.wordreference.WordReferenceTranslationPage;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
@@ -31,10 +31,12 @@ import org.jsoup.nodes.Element;
 @Singleton
 public class SpanishWebCrawlerService {
 
+
+    // TODO - sono questi da splittare in piu' parti (???)
     private static final Logger log = Logger.getLogger(SpanishWebCrawlerService.class);
     private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
 
-    private final ReversoSpanishCrawler reversoCrawler;
+    private final ReversoSpanishScraper reversoCrawler;
     private final WordReferenceDefinitionPage definitionPageWR;
     private final WordReferenceSynonimsPage synonimsPageWR;
     private final WordReferenceTranslationPage translationPageWR;
@@ -43,7 +45,7 @@ public class SpanishWebCrawlerService {
 
 
     @Inject
-    SpanishWebCrawlerService(ReversoSpanishCrawler reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
+    SpanishWebCrawlerService(ReversoSpanishScraper reversoCrawler, WordReferenceTranslationPage translationPageWR, WordReferenceSynonimsPage synonimsPageWR, WordReferenceDefinitionPage definitionPageWR, ClozeEngine clozeEngine) {
         this.reversoCrawler = reversoCrawler;
         this.definitionPageWR = definitionPageWR;
         this.synonimsPageWR = synonimsPageWR;

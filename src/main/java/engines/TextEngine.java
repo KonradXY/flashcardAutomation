@@ -14,30 +14,23 @@ import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 
-public abstract class TextEngine extends AbstractEngine{
+public abstract class TextEngine extends AbstractEngine {
 	
 	protected IReader reader;
 	protected IParser parser;
 	protected IPrinter printer;
 	
-	protected String inputDir;
-	protected String outputDir;
+	protected TextEngine() { super(); }
+	protected TextEngine(String input, String output) { super(input, output); }
 
-	protected String parserInputDir;
-	protected String parserOutputDir;
+	public IReader getReader() 						{ return reader; }
+	public IParser getParser() 						{ return parser; }
+	public IPrinter getPrinter() 					{ return printer; }
 
-	protected TextEngine() {
-		this.inputDir = INPUT_DIR;
-		this.outputDir = OUTPUT_DIR;
-	}
-	
-	protected TextEngine(String input, String output) {
-		this();
-		this.parserInputDir  = input;
-		this.parserOutputDir = output;
-	}
-	
-	public abstract void buildEngine();
+	public void setReader(IReader reader) 			{ this.reader = reader; }
+	public void setParser(IParser parser) 			{ this.parser = parser; }
+	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
+
 	
 	// TODO - per poter fare il discorso della lettura e creazione di piu' file contemporeaneamente dovrei far
 	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
@@ -70,29 +63,7 @@ public abstract class TextEngine extends AbstractEngine{
 	}
 	
 	
-	public IReader getReader() 						{ return reader; }
-	public IParser getParser() 						{ return parser; }
-	public IPrinter getPrinter() 					{ return printer; }
 
-	public void setReader(IReader reader) 			{ this.reader = reader; }
-	public void setParser(IParser parser) 			{ this.parser = parser; }
-	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
 	
-	public Path getFullInputPath() 					{ return Paths.get(getFullInputDir()); }
-	public Path getFullOutputPath()					{ return Paths.get(getFullOutputDir()); }
-	public String getFullInputDir()					{ return inputDir + parserInputDir; }
-	public String getFullOutputDir() 				{ return outputDir + parserOutputDir; }
-	
-	
-	
-	
-	public String getInputDir() 					{ return inputDir;}
-	public String getOutputDir() 					{ return outputDir; }
-	public String getParserInputDir()				{ return parserInputDir; }
-	public String getParserOutputDir()				{ return parserOutputDir; }
-	
-	public void setInputDir(String inputContent) 	{ this.inputDir = inputContent; }
-	public void setOutputDir(String outputDir) 		{ this.outputDir = outputDir; }
-	public void setParserInputDir(String content)	{ this.parserInputDir = content; }
-	public void setParserOutputDir(String content) 	{ this.parserOutputDir = content; }
+
 }
