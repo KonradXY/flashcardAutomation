@@ -12,6 +12,11 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     protected IWebCrawler webCrawler;
     protected IPrinter printer;
 
+    @Override
+    public void createFlashcards() {
+        throw new UnsupportedOperationException("Not yet implemented !");
+    }
+
 
     public IReader getReader() { return reader; }
     public IWebCrawler getWebCrawler() { return webCrawler; }

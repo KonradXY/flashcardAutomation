@@ -26,7 +26,7 @@ public class WebCrawlerFacade {
         try {
 
             CertificateManager.doTrustToCertificates();
-            WebCrawlerEngine webCrawler = (WebCrawlerEngine)engineFactory.createEngine(args);
+            WebCrawlerEngine webCrawler = engineFactory.createEngine(args);
             //webCrawler.createFlashcards();    // TODO <<--- fixare (in piu' la roba qua sotto deve andare proprio dentro questo metodo)
 
             // TODO - sistemare il discorso input/output:
@@ -37,8 +37,6 @@ public class WebCrawlerFacade {
             // 4. prendendo l'idea di sopra dovrei vedere se riesco a fare come con l'anki engine (qualcosa che metta in piedi lettura dall'input, parsing e altra roba tutta insieme)
             //  (questi if qua sotto andranno a diventare uno strategy o qualcosa di simile al parser)
             // TODO - finito sto pezzo qua passare ai decorator e sistemarli una volta per tutte
-
-
 
 
         } catch (Exception ex) {

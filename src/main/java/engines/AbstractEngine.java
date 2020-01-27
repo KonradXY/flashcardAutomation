@@ -26,6 +26,7 @@ public abstract class AbstractEngine {
     }
 
     public abstract void buildEngine();
+    public abstract void createFlashcards();
 
     public Path getFullInputPath() 					{ return Paths.get(getFullInputDir()); }
     public Path getFullOutputPath()					{ return Paths.get(getFullOutputDir()); }

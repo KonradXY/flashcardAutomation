@@ -36,7 +36,10 @@ public abstract class TextEngine extends AbstractEngine {
 	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
 	// Inoltre dovrei fare dei test !
 
+	@Override
 	public void createFlashcards() {
+
+
 		Map<Path, String> contentRead = this.read(this.getFullInputPath());
 		List<IAnkiCard> cardList = this.parse(contentRead);
 		this.print(cardList, this.getFullOutputPath());

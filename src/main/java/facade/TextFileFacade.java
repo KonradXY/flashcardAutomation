@@ -16,7 +16,6 @@ public class TextFileFacade {
 		this.engineBuilder = engineBuilder;
 	}
 
-	// TODO - chissa' se questo lo posso levare
 	public void buildFlashcardsFromTextFile(List<String> args) {
 		TextEngine ankiModel = (TextEngine)engineBuilder.createEngine(args);
 		ankiModel.createFlashcards();

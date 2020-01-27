@@ -11,10 +11,10 @@ import static main.java.webscraper.AbstractWebScraper.MAX_NUM_EXAMPLES_PER_WORD;
 
 public interface IWebCrawler {
 
-    // TODO - capire quale sia la firma migliore per quest'interfacia (vorrei che fosse identica a quella del text engine ... verificare)
+    // TODO - capire quale sia la firma migliore per quest'interfacia (vorrei che fosse identica a quella del text engine ... verificare).
+    // TODO - se devo implementare il printer e' normale che il parser debba tornare delle
 
     Logger log = Logger.getLogger(IWebCrawler.class);
-
 
     default void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
         for (IAnkiCard card : cards) {
