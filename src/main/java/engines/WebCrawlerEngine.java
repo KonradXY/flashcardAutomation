@@ -33,8 +33,7 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
                 List<IAnkiCard> cardList = webCrawler.createFlashcards(word);
                 writeCards(cardList, bos);
 
-                logNumberOfWords(numWords);
-                numWords++;
+                logNumberOfWords(numWords++);
                 Thread.sleep(TIME_SLEEP);
             }
 
