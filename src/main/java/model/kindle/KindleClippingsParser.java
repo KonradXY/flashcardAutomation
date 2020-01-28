@@ -15,20 +15,14 @@ public class KindleClippingsParser implements IParser {
 	private final String kindleKey = "evidenziazione";
 	
 	@Override
-	public List<IAnkiCard> parse(Map<Path, String> input) {
-
-		String[] values;
-		List<IAnkiCard> ankiCardList = new ArrayList<>();
-		for (Map.Entry<Path, String> clipping : input.entrySet()) {
-			values = clipping.getValue().split(kindleToken);
-			Stream.of(values).forEach(clip -> {
-				if (clip.contains(kindleKey)) {
-					ankiCardList.add(new KindleAnkiCard("", "").mapFromLine(clip));
-				}
-			});
-		}
-		
-		return ankiCardList;
+	public List<IAnkiCard> parse(Path fileName, String input) {
+		String[] values = input.split(kindleToken);
+		List<IAnkiCard> cardList = new ArrayList<>();
+		Stream.of(values).forEach(clip -> {
+			if (clip.contains(kindleKey)) {
+				cardList.add(new KindleAnkiCard("", "").mapFromLine(clip));
+			}});
+		return cardList;
 	}
 
 }

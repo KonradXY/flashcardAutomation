@@ -33,14 +33,14 @@ public class EvernoteHtmlParser implements IParser {
         this.outputContent = outputContent;
     }
     
-    @Override
-    public List<IAnkiCard> parse(Map<Path, String> input) {
-        List<IAnkiCard> cardList = new ArrayList<>();
-        for (Map.Entry<Path, String> entry : input.entrySet())
-            cardList.addAll(parseEvernoteFlashCards(entry.getKey(), entry.getValue(), outputContent));
 
+    @Override
+    public List<IAnkiCard> parse(Path filename, String input) {
+        List<IAnkiCard> cardList = new ArrayList<>();
+        cardList.addAll(parseEvernoteFlashCards(filename, input, outputContent));
         return cardList;
     }
+
 
     private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);

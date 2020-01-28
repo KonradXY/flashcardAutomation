@@ -12,13 +12,10 @@ import main.java.strategy.TextParsingStrategy;
 public class DefaultParser implements IParser {
 
     @Override
-    public List<IAnkiCard> parse(Map<Path, String> input) {
+    public List<IAnkiCard> parse(Path fileName, String input) {
         List<IAnkiCard> ankiCards = new ArrayList<>();
-        for (String text : input.values()) {
-            TextParsingStrategy.SIMPLE_PARSER.parseFile(ankiCards, text);
-        }
+        TextParsingStrategy.SIMPLE_PARSER.parseFile(ankiCards, input);
         return ankiCards;
     }
-
 
 }

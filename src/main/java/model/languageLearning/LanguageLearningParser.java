@@ -8,40 +8,34 @@ import org.apache.log4j.Logger;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 
 public class LanguageLearningParser implements IParser {
 	
 	private final static Logger log = Logger.getLogger(LanguageLearningParser.class);
-	
+
 	@Override
-	public List<IAnkiCard> parse(Map<Path, String> input) {
+	public List<IAnkiCard> parse(Path path, String file) {
+
+		String fileName = path.toString().trim();
 		List<IAnkiCard> cardList = new ArrayList<>();
 
-		for (Map.Entry<Path, String> file : input.entrySet()) {
-			
-			String fileName = file.getKey().toString().trim();
-			
-			if 		(fileName.endsWith("grammatica.txt"))
-				TextParsingStrategy.PRACTICE_MAKES_PERFECT_GRAMMATICA.parseFile(cardList, file.getValue());
+		if 		(fileName.endsWith("grammatica.txt"))
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_GRAMMATICA.parseFile(cardList, file);
 
-			else if (fileName.endsWith("vocabolario.txt"))
-				TextParsingStrategy.PRACTICE_MAKES_PERFECT_VOCABOLARIO.parseFile(cardList, file.getValue());
+		else if (fileName.endsWith("vocabolario.txt"))
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_VOCABOLARIO.parseFile(cardList, file);
 
-			else if (fileName.endsWith("traduzioni.txt"))
-				TextParsingStrategy.PRACTICE_MAKES_PERFECT_TRADUZIONI.parseFile(cardList, file.getValue());
-			
-			else if (fileName.endsWith("parole.txt"))
-				TextParsingStrategy.SIMPLE_PARSER.parseFile(cardList, file.getValue());
-			
-			else {
-				log.info("Trovato file non contemplato per il parser LanguageLearning: " + file.getKey() 
-				+ ". Il file verrà scartato. ");
-				continue;
-			}
+		else if (fileName.endsWith("traduzioni.txt"))
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_TRADUZIONI.parseFile(cardList, file);
 
+		else if (fileName.endsWith("parole.txt"))
+			TextParsingStrategy.SIMPLE_PARSER.parseFile(cardList, file);
+
+		else {
+			log.info("Trovato file non contemplato per il parser LanguageLearning: " + path
+					+ ". Il file verrà scartato. ");
 		}
+
 		return cardList;
 	}
 	

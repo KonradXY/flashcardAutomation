@@ -1,11 +1,9 @@
 package main.java.engines;
 
-import static main.java.utils.Property.INPUT_DIR;
-import static main.java.utils.Property.OUTPUT_DIR;
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,21 +30,34 @@ public abstract class TextEngine extends AbstractEngine {
 	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
 
 	
-	// TODO - per poter fare il discorso della lettura e creazione di piu' file contemporeaneamente dovrei far
-	// ritornare dal parser una mappa di filePath, List<AnkiCard> in modo da poterli scrivere separatamente. 
-	// Inoltre dovrei fare dei test !
-
 	@Override
 	public void createFlashcards() {
-
 		Map<Path, String> contentRead = this.read(this.getFullInputPath());
-		List<IAnkiCard> cardList = this.parse(contentRead);	// TODO - piuttosto che passargli direttamente la mappa dovrei passare le entry singolarmente !
-		this.print(cardList, this.getFullOutputPath());		// TODO - anche in questo caso dovrei lavorare con le singole entry (sapendo tra l'altro che il nome del file sara' lo stesso (dovrei agiungere solo una costante avanti (o cmq prima dell'estensione)
+
+		Map<Path, List<IAnkiCard>> cardMap = this.parse(contentRead);
+
+		cardMap.entrySet().forEach(entry -> this.print(entry.getKey(), entry.getValue()));
 	}
 
-	public List<IAnkiCard> parse(Map<Path, String> content) {
-		return this.getParser().parse(content);
+
+	public Map<Path, List<IAnkiCard>> parse(Map<Path, String> content) {
+		Map<Path, List<IAnkiCard>> contentParsed = new HashMap<>();
+		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
+			contentParsed.put(getParsedFileName(singleContent.getKey()), this.parser.parse(singleContent.getKey(), singleContent.getValue()));
+		}
+
+		return contentParsed;
 	}
+
+	private Path getParsedFileName(Path inputFile) {
+		String textName = inputFile.toString();
+		String extension = textName.substring(textName.lastIndexOf("."));
+		return Paths.get(textName.replace(extension, "_parsed"+extension));	// TODO - sicuro qua sto sbagliando il file path in output -- rivedere sto discorso con la funzione getFullOutputDir
+	}
+
+
+
+
 
 	public Map<Path, String> read(Path file) {
 		try {
@@ -55,8 +66,13 @@ public abstract class TextEngine extends AbstractEngine {
 			throw new RuntimeException(ex);
 		}
 	}
-	
-	public void print(List<IAnkiCard> cardList, Path destPath) {
+
+
+	public void print(Map<Path, List<IAnkiCard>> cardList) {
+		cardList.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
+	}
+
+	public void print(Path destPath, List<IAnkiCard> cardList) {
 		try {
 			this.getPrinter().printFile(destPath, cardList);
 		} catch (IOException ex) {
