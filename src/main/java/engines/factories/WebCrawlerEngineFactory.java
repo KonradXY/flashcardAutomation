@@ -5,6 +5,7 @@ import main.java.engines.WebCrawlerEngine;
 import main.java.engines.webengines.SpanishClozeEngine;
 import main.java.engines.webengines.SpanishDefinitionEngine;
 import main.java.engines.webengines.SpanishGeneralEngine;
+import main.java.utils.Property;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -31,6 +32,8 @@ public class WebCrawlerEngineFactory extends AbstractEngineFactory {
             webEngine = new SpanishClozeEngine();
         }
 
+        webEngine.setParserInputDir(Property.WEB_CRAWLER_PATH+"prova.txt");
+        webEngine.setParserOutputDir(Property.WEB_CRAWLER_PATH+"parsedList.txt");
         webEngine.buildEngine();
 
         return webEngine;
