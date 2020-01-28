@@ -15,12 +15,6 @@ public class TextFilePrinter implements IPrinter {
 
 		checkOutputFolder(destPath);
 
-		// TODO - qua dovrei fare in modo che il destpath sia da solo il file contenente le flashcard (e quindi un txt). Verificare il comportamento per i vari parser
-		// FIXME - anche sta roba fa parte di una serie di minipatch per risolvere il problema. Rifletterci meglio piu' avanti.
-		if (Files.isDirectory(destPath)) {
-			destPath = destPath.resolve("evernoteParsed.txt");
-		}
-
 		try {
 			Files.write(destPath, (Iterable<String>) input.stream().map(it -> it.toString())::iterator);
 		} catch (IOException ex) {

@@ -3,14 +3,34 @@ package main.java.launcher;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import main.java.config.AnkiApplicationModule;
-import main.java.facade.FlashcardFacade;
+import main.java.facade.TextFileFacade;
+import main.java.facade.WebCrawlerFacade;
 import org.apache.log4j.Logger;
 
-import static main.java.utils.Property.WEB_CRAWLER_DIR;
+import java.util.Arrays;
+import java.util.List;
 
 public class Launcher {
 
     private final static Logger log = Logger.getLogger(Launcher.class);
+
+    private static TextFileFacade textFileFacade;
+    private static WebCrawlerFacade webCrawlerFacade;
+
+    /**
+     * @param args
+     *
+     * I valori che i parametri possono assumere sono i seguenti:
+     *
+     *          null - campo vuoto - "default"  <<<===  default engine
+     *          evernote                        <<<=== evernote engine
+     *          kindle                          <<<=== kindle engine
+     *          languageLearning                <<<=== languageLearning engine
+     *          webcrawler general              <<<=== spanish general flashcard (spanishWebCrawlerService)
+     *          wencrawler simple               <<<=== spanish simple flashcard (just definition x2 ita/esp && esp&ita)
+     *          webcrawler cloze                <<<=== spanish cloze flashcard
+     */
+
 
     public static void main(String[] args) {
         try {
@@ -19,29 +39,19 @@ public class Launcher {
             log.info("... Inizio creazione flashcard ...");
 
             Injector injector = Guice.createInjector(new AnkiApplicationModule());
-            FlashcardFacade facade = injector.getInstance(FlashcardFacade.class);
+            textFileFacade = injector.getInstance(TextFileFacade.class);
+            webCrawlerFacade = injector.getInstance(WebCrawlerFacade.class);
 
             if (args.length == 0) args = new String[]{"default"};
-            String inputArg = args[0].toLowerCase();
+            List<String> inputArg = Arrays.asList(args);
 
-            // TODO - tutto sto pezzo deve andare all'interno dell'engineBuilder
-            if (inputArg.contains("webcrawling")) {
+            if (inputArg.contains("webcrawler")) {
                 log.info(" ====>>> launching webcrawling mode");
-                String inputDir = WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = WEB_CRAWLER_DIR + "scrapedList.txt";
-				facade.buildFlashcardsFromWeb(inputDir, outputDir);
-
-            } else if (inputArg.contains("clozecrawling")) {
-                // TODO - sta roba va a finire all'interno del build properties (che finisce all'interno del main praticamente -> in questo caso il mediator si pone all'interno del parsing ma dovrei studiarmela meglio come cosa
-                log.info(" ====>>> launching clozeCrawling mode");
-                String inputDir = WEB_CRAWLER_DIR + "1k_lista2.txt";
-                String outputDir = WEB_CRAWLER_DIR + "scrapedList.txt";
-				facade.buildClozeFlashcardsFromWeb(inputDir, outputDir);
-
-            } else {
+                webCrawlerFacade.createFlashcardsScrapingTheWeb(inputArg);
+            }
+            else {
                 log.info(" ====>>> launching parsing from file ");
-                facade.buildFlashcardsFromTextFile(args);
-
+                textFileFacade.buildFlashcardsFromTextFile(inputArg);
             }
 
             log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis() - timeSpent) / 1000 + " sec");

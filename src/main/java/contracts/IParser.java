@@ -7,21 +7,23 @@ import java.util.regex.Pattern;
 
 public interface IParser {
 	
-	public static String REGULAR_PIPE = "|";
-	public static String PIPE_SEPARATOR = "\\|";
-	public static String TAB = "\t";
-	public static String NEW_LINE = "\n";
+	String REGULAR_PIPE = "|";
+	String PIPE_SEPARATOR = "\\|";
+	String TAB = "\t";
+	String NEW_LINE = "\n";
 	
-	public static final int DOMANDE_INDEX = 0;
-	public static final int RISPOSTE_INDEX = 1;
+	int DOMANDE_INDEX = 0;
+	int RISPOSTE_INDEX = 1;
 
-	public static Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\.[0-9]");
-	public static Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
-	public static String QA_SEPARATOR = "RISPOSTE";	
+	Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\.[0-9]");
+	Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
+	String QA_SEPARATOR = "RISPOSTE";
 
 	// Map<filename,filecontent>
-	public List<IAnkiCard> parse(Map<Path, String> input);
+	// List<IAnkiCard> parse(Map<Path, String> input);
+	List<IAnkiCard> parse(Path path, String input);
+
 	
-	public static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}
-	public static String replaceWhitespaces(String input) { return input.replace(" ", "");}
+	static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}
+	static String replaceWhitespaces(String input) { return input.replace(" ", "");}
 }

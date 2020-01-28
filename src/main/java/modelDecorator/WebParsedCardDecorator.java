@@ -1,12 +1,6 @@
 package main.java.modelDecorator;
 
-
-
-import java.util.List;
-import java.util.Map;
-
 import main.java.contracts.IAnkiCard;
-import org.jsoup.nodes.Element;
 
 public class WebParsedCardDecorator extends StandardFormatCardDecorator {
 

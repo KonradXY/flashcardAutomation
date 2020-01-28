@@ -11,6 +11,7 @@ public interface DecoratingCard extends IAnkiCard {
     // first and returns the latter. Since DecoratingCard extends IAnkiCard abstract methods, this is trivial.
     // Simply create an anonymous implementation and forward all calls to the adapted component
     // NB: il problema qua e' che se aggiungo roba sull'IAnkiCard devo trasferirla anche qui !!!
+
     static DecoratingCard from(IAnkiCard card) {
         DecoratingCard adapted = new DecoratingCard() {
             @Override public IAnkiCard create() { return card.create(); }

@@ -1,0 +1,307 @@
+el aceite
+la aceituna
+las acelgas
+el agua
+el aguacate
+el ajo
+la albahaca
+el albaricoque
+la alcachofa
+el alioli
+la almeja
+la almendra
+la anchoa
+la angula
+el aperitivo
+el apio
+el arroz
+el arroz con leche
+el atun
+la avellana
+el azafran
+el azucar
+el bacalao
+la batata
+el batido
+el beicon
+los berberechos
+la berenjena
+el berberechos
+la besamel
+el besugo
+el bizcocho
+el bocadillo
+el bombon
+el boqueron
+el brecol
+el buey de sperimentare
+los cacahuetes
+el cafe
+el calabacin
+la calabaza
+el calamamr
+la canela
+los canelones
+el cangrejo
+la castaña
+el cava
+la cebolla
+la cebolleta
+el centollo
+el cerdo
+los cereales
+la cereza
+la cerveza
+el champán
+el campiñón
+la chirimoya
+la chirla
+el chocolate
+el chopito
+el chorizo
+la cigala
+la ciruela
+el clavo
+la col
+las coles de Bruselas
+la coliflor
+el colorante
+el comino
+los condimentos
+el consomé
+el cordero
+las cortezas
+la ciajada
+la dorada
+el dulce de membrillo
+la carne de membrillo
+el embutido
+el fiambre
+la empanada
+la empanadilla
+la endibia
+los entremeses
+la escarola
+los espaguetis
+los espárragos
+las especias
+las espinaas
+el fiambre
+los fiedos
+el flan
+la frambuesa
+la fresa
+la fruta
+los frutos secos
+la galleta
+el gallo
+las gambas
+los garbanzos
+la gaseosa
+la gelatina
+la granada
+la guindilla
+el guisante
+la haba
+laharina
+el helado
+el higo
+la horchata
+las hortalizas
+el huevo
+la infusion
+el jamón
+el jengibre
+el jerez
+las judías
+las judías verdes
+el kiwi
+la langosta
+el langostino
+la lasaña
+el laurel
+la leche
+la lechuga
+las legumbres
+el lenguado
+las lentejas
+la levadura
+el limon
+la limonada
+la lombarda
+la lubina
+los macarrones
+el maiz
+la mandarina
+el mango
+la mantequilla
+la manzana
+la mayonesa
+el mazapán
+el mejillón
+el melocotón
+el melón
+la menta
+la merluza
+la mermelada
+el mero
+la miel
+la mora
+la morcilla
+la mortadela
+la mostaza
+el nabo
+la naranja
+la naranjada
+la nata
+la natillas
+el níspero
+la nuez
+el orégano
+la ostra
+el pan
+la papaya
+la paraguaya
+la pasta
+las pastas
+los pasteles
+las patatas fritas
+el pato
+el pavo
+el pepino
+la pera
+el perejil
+la pescadilla
+el pez espada
+el pimentón
+la pimienta
+el pimiento
+la piña
+los piñones
+las pipas
+el pistacho
+el plátano
+el pollo
+el polboron
+el pomelo
+el postre
+el puerro
+el queso
+el rape
+el refresco
+la remolacha
+el repollo
+el requesón
+el rodaballo
+la sal
+la salchicha
+el salchichón
+el salmón
+el salmonete
+la salsa
+la sandía
+la sardina
+la sepia
+las setas
+la sidra
+la sopa
+la tarta
+el té
+la ternera
+el tocino
+el tomate
+el tomillo
+la torrija
+la trucha
+el turrón
+la uva
+la vaca
+la vanilla
+el vinagre
+el vino
+el yogur
+la zanahoria
+el zumo
+acido
+agrio
+amargo
+avinagrado
+caliente
+crudo
+crujiente
+dulce
+duro
+empalagoso
+espeso
+espumoso
+exquisito
+fresco
+frío
+hambriento
+indigesto
+jugoso
+maduro
+nutritivo
+pasado
+picante
+potable
+pringoso
+refrescante
+rico
+sabroso
+salado
+sano
+seco
+sediento
+soso
+templado
+tierno
+aderezar
+condimentar
+adobar
+alimentarse
+aliñar
+almorzar
+añadir
+asar
+azucarar
+batir
+beber
+brindar
+calentar
+cenar
+cocer
+cocinar
+comer
+condimentar
+congelar
+cortar
+desayunar
+descongelar
+digerir
+dorar
+empachar
+empanar
+enfriar
+escurrir
+freír
+gratinar
+guisar
+hervir
+lavar
+merendar
+pelar
+pesar
+picar
+probar
+rebañar
+rebozar
+rehogar
+rellenar
+remover
+saber a
+saborear
+servir
+sofreir
+tener hambre
+triturar

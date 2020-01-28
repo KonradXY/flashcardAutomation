@@ -1,7 +1,7 @@
 package main.java.summarizer;
 
 import static main.java.utils.Property.INPUT_DIR;
-import static main.java.utils.Property.TXT_INPUTDIR;
+import static main.java.utils.Property.TXT_INPUT_PATH;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ import java.util.List;
 public class WordBuilder {
 
 	private final static String STOPWORDS_EN =
-			INPUT_DIR + TXT_INPUTDIR + "stopwords-en.txt";
+			INPUT_DIR + TXT_INPUT_PATH + "stopwords-en.txt";
 
 	private static ArrayList<Word> dirtyWordObjects = new ArrayList<Word>();						// Word-objects with stop-words
 	private static ArrayList<Word> cleanWordObjects;												// Word-objects without stop-words
