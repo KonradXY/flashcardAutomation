@@ -47,10 +47,10 @@ public enum TextParsingStrategy {
         public void parseFile(List<IAnkiCard> listCard, String inputFile) {
             String[] splittedText = inputFile.split(PIPE_SEPARATOR);
 
-            if (entriesAreNotEven(splittedText))
+            if (!entriesAreEven(splittedText))
                 throw new RuntimeException("Le entry non sono pari ! Controllare che ogni carta abbia due facce !");
 
-            int length = (entriesAreNotEven(splittedText) ? splittedText.length : splittedText.length - 1);
+            int length = (!entriesAreEven(splittedText) ? splittedText.length : splittedText.length - 1);
 
             for (int i = 0; i < length; i += 2) {
                 listCard.add(new AnkiCard(splittedText[i + SIMPLE_PARSER_ENG_FIELD],
@@ -64,14 +64,12 @@ public enum TextParsingStrategy {
     public abstract void parseFile(List<IAnkiCard> listCard, String inputFile);
 
 
-
-
+    // ======== class starts here !!!
 
     private final static Logger log = Logger.getLogger(TextParsingStrategy.class);
 
-
-    boolean entriesAreNotEven(String[] entries) {
-        return entries.length%2 != 0;
+    boolean entriesAreEven(String[] entries) {
+        return entries.length%2 == 0;
     }
 
     <T> void addParsedCard(List<IAnkiCard> listCard, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {

@@ -39,10 +39,9 @@ public abstract class TextEngine extends AbstractEngine {
 	@Override
 	public void createFlashcards() {
 
-
 		Map<Path, String> contentRead = this.read(this.getFullInputPath());
-		List<IAnkiCard> cardList = this.parse(contentRead);
-		this.print(cardList, this.getFullOutputPath());
+		List<IAnkiCard> cardList = this.parse(contentRead);	// TODO - piuttosto che passargli direttamente la mappa dovrei passare le entry singolarmente !
+		this.print(cardList, this.getFullOutputPath());		// TODO - anche in questo caso dovrei lavorare con le singole entry (sapendo tra l'altro che il nome del file sara' lo stesso (dovrei agiungere solo una costante avanti (o cmq prima dell'estensione)
 	}
 
 	public List<IAnkiCard> parse(Map<Path, String> content) {
