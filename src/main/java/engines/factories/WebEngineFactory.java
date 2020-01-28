@@ -1,5 +1,6 @@
 package main.java.engines.factories;
 
+import com.google.inject.Singleton;
 import main.java.engines.WebCrawlerEngine;
 import main.java.engines.webengines.SpanishClozeEngine;
 import main.java.engines.webengines.SpanishDefinitionEngine;
@@ -8,8 +9,8 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 
-
-public abstract class WebEngineFactory extends AbstractEngineFactory {
+@Singleton
+public class WebEngineFactory extends AbstractEngineFactory {
 
     private static final Logger log = Logger.getLogger(WebEngineFactory.class);
 

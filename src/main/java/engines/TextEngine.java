@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
@@ -40,6 +41,7 @@ public abstract class TextEngine extends AbstractEngine {
 	}
 
 
+	// ***************** Parse Functions
 	public Map<Path, List<IAnkiCard>> parse(Map<Path, String> content) {
 		Map<Path, List<IAnkiCard>> contentParsed = new HashMap<>();
 		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
@@ -52,13 +54,13 @@ public abstract class TextEngine extends AbstractEngine {
 	private Path getParsedFileName(Path inputFile) {
 		String textName = inputFile.toString();
 		String extension = textName.substring(textName.lastIndexOf("."));
-		return Paths.get(textName.replace(extension, "_parsed.txt"));	// TODO - sicuro qua sto sbagliando il file path in output -- rivedere sto discorso con la funzione getFullOutputDir
+		return Paths.get(textName.replace(extension, "_parsed.txt"));
 	}
 
 
 
 
-
+	// ***************** Read Functions
 	public Map<Path, String> read(Path file) {
 		try {
 			return this.getReader().readFile(file);
@@ -68,6 +70,8 @@ public abstract class TextEngine extends AbstractEngine {
 	}
 
 
+
+	// ***************** Print Functions
 	public void print(Map<Path, List<IAnkiCard>> cardList) {
 		cardList.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
 	}

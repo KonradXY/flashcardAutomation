@@ -4,7 +4,6 @@ package main.java.engines;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
-import main.java.contracts.IWebScraper;
 
 public abstract class WebCrawlerEngine extends AbstractEngine {
 
