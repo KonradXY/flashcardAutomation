@@ -4,7 +4,8 @@ import java.util.List;
 
 import main.java.model.AnkiCard;
 
-public class WebParsedClozedCardDecorator extends WebParsedCardDecorator {
+public class
+WebParsedClozedCardDecorator extends WebParsedCardDecorator {
 	
 	public AnkiCard create(String clozeText, String word, String originalValue, String wordDefinition) {
 		return createClozeAnkiCard(clozeText, word, originalValue, wordDefinition);
