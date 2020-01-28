@@ -12,10 +12,7 @@ import org.jsoup.nodes.Element;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 import static main.java.modelDecorator.AbstractCardDecorator.*;
 import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
@@ -34,32 +31,15 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
 
     // TODO - qua dentro voglio semplicemente creare la lista di carte. La stampa dev'essere fatta da qualche altra parte
 
-    public void createDefinitionFlashcards(String inputFile, String outputFile) throws Exception {
-        int numWords = 0;
-
-        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
-
-            List<String> wordList = getWordListFromFile(inputFile);
-            IAnkiCard card;
-
-            for (String word : wordList) {
-                translationPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
-
-                writeCard(createSimpleDefinitionCard(word), bos);
-                writeCard(createReverseDefinitionCard(word), bos);
-
-                numWords += 2;
-            }
-        }
-
-        log.info("effettuata la creazione di " + numWords + " carte");
-
+    @Override
+    public List<IAnkiCard> createFlashcards(String word) {
+        translationPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+        List<IAnkiCard> cardList = new ArrayList<>();
+        cardList.add(createSimpleDefinitionCard(word));
+        cardList.add(createReverseDefinitionCard(word));
+        return cardList;
     }
 
-    /**
-     * @param word
-     * @return flashcard con definizione e traduzione in italiano
-     */
     private IAnkiCard createSimpleDefinitionCard(String word) {
         Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
 
@@ -78,10 +58,6 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
         return card;
     }
 
-    /**
-     * @param word
-     * @return flashcard con traduzione in italiano e parola in spagnolo piu' le varie definizioni possibili
-     */
     private IAnkiCard createReverseDefinitionCard(String word) {
         IAnkiCard card = new AnkiCard();
         Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);

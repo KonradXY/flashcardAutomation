@@ -11,6 +11,7 @@ import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -30,26 +31,18 @@ public class SpanishClozeWebCrawler implements IWebCrawler {
         this.definitionPage = wordReferenceDefinitionPage;
     }
 
-    public void createClozeFlashcards(String input, String output) throws Exception {
-        List<String> wordList = getWordListFromFile(input);
-        int numWords = 0;
+    @Override
+    public List<IAnkiCard> createFlashcards(String word) {
+        Map<String, String> originalMap = definitionPage.getWordDefinition(word);
+        Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
+        IAnkiCard card = null;
 
-        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output), "UTF-8"))) {
-
-            for (String word : wordList) {
-                Map<String, String> originalMap = definitionPage.getWordDefinition(word);
-                Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
-
-                for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-                    IAnkiCard card = webCardDecorator.create(cloze.getValue(),
-                            word, originalMap.get(cloze.getKey()), cloze.getKey());
-                    bos.write(card.toString());
-                }
-
-                logNumberOfWords(numWords++);
-
-                Thread.sleep(TIME_SLEEP);
-            }
+        for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
+            card = webCardDecorator.create(cloze.getValue(),
+                    word, originalMap.get(cloze.getKey()), cloze.getKey());
         }
+
+        return Arrays.asList(card);
     }
+
 }

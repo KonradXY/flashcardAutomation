@@ -10,9 +10,9 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 @Singleton
-public class WebEngineFactory extends AbstractEngineFactory {
+public class WebCrawlerEngineFactory extends AbstractEngineFactory {
 
-    private static final Logger log = Logger.getLogger(WebEngineFactory.class);
+    private static final Logger log = Logger.getLogger(WebCrawlerEngineFactory.class);
 
     @Override
     public WebCrawlerEngine createEngine(List<String> inputParam) {

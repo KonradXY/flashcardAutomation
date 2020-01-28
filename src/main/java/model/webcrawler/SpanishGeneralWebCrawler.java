@@ -35,34 +35,23 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         this.synonimsPageWR = wordReferenceSynonimsPage;
     }
 
-    public void createGeneralFlashcards(String inputFile, String outputFile) throws Exception {
-        int numWords = 0;
-        List<String> wordList = getWordListFromFile(inputFile);
-        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
+    @Override
+    public List<IAnkiCard> createFlashcards(String word) {
+        definitionPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+        synonimsPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
 
-            for (String word : wordList) {
+        Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
+        List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
 
-                definitionPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
-                synonimsPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+        List<IAnkiCard> cards = new ArrayList<>();
+        reversoCrawler.scrapePageWithWord(cards, word);
 
-                Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
-                List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
-
-                List<IAnkiCard> cards = new ArrayList<>();
-                reversoCrawler.scrapePageWithWord(cards, word);
-
-                for (IAnkiCard card : cards) {
-                    addDefinizioneToBack(card, definizioniMap);
-                    addSinonimiToBack(card, synonims);
-                }
-
-                writeCards(cards, bos);
-
-                logNumberOfWords(numWords++);
-                Thread.sleep(TIME_SLEEP);
-            }
-
+        for (IAnkiCard card : cards) {
+            addDefinizioneToBack(card, definizioniMap);
+            addSinonimiToBack(card, synonims);
         }
+
+        return cards;
     }
 
 

@@ -2,7 +2,7 @@ package main.java.facade;
 
 import com.google.inject.Inject;
 import main.java.engines.WebCrawlerEngine;
-import main.java.engines.factories.WebEngineFactory;
+import main.java.engines.factories.WebCrawlerEngineFactory;
 import main.java.netutilities.CertificateManager;
 import org.apache.log4j.Logger;
 
@@ -12,10 +12,10 @@ public class WebCrawlerFacade {
 
     private static final Logger log = Logger.getLogger(WebCrawlerFacade.class);
 
-    private final WebEngineFactory engineFactory;
+    private final WebCrawlerEngineFactory engineFactory;
 
     @Inject
-    WebCrawlerFacade(WebEngineFactory engineFactory) {
+    WebCrawlerFacade(WebCrawlerEngineFactory engineFactory) {
         this.engineFactory = engineFactory;
     }
 

@@ -34,9 +34,7 @@ public abstract class TextEngine extends AbstractEngine {
 	@Override
 	public void createFlashcards() {
 		Map<Path, String> contentRead = this.read(this.getFullInputPath());
-
 		Map<Path, List<IAnkiCard>> cardMap = this.parse(contentRead);
-
 		cardMap.entrySet().forEach(entry -> this.print(entry.getKey(), entry.getValue()));
 	}
 
