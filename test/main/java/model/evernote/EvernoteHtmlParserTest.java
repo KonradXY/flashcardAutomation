@@ -39,7 +39,7 @@ class EvernoteHtmlParserTest {
 	private static final String testFileDir = "test/main/resources/";
 	private static final String testMediaFolderDir = testFileDir + "mediaFolder/";
 	private static final String testFile = testFileDir + "testevernote.html";
-	private static final String outputFile = testFileDir + "outputtest.txt";
+	private static final String outputFile = testFileDir + "testevernote_parsed.txt";
 
 	private static final Path testFilePath = Paths.get(testFile);
 	private static final Path outputTestFile = Paths.get(outputFile);
@@ -69,12 +69,16 @@ class EvernoteHtmlParserTest {
 	@Test
 	void testEvernoteEngineParsing() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		Map<Path, List<IAnkiCard>> cardList = evernoteEngine.parse(content);
+		Map<Path, List<IAnkiCard>> cardMap = evernoteEngine.parse(content);
 
+		assertEquals(1, cardMap.size());
+
+		List<IAnkiCard> cardList = cardMap.entrySet().iterator().next().getValue();
 		assertEquals(4, cardList.size());
 
+
 		IAnkiCard emptyCard = null, imgCard1 = null, imgCard2 = null, imgCard3 = null;
-		for (List<IAnkiCard> deck : cardList.values())
+		for (List<IAnkiCard> deck : cardMap.values())
 			for (IAnkiCard card : deck) {
 				switch (card.getFront().text().trim()) {
 					case "immagine1" : imgCard1 = card; break;

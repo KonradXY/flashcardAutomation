@@ -52,7 +52,7 @@ public abstract class TextEngine extends AbstractEngine {
 	private Path getParsedFileName(Path inputFile) {
 		String textName = inputFile.toString();
 		String extension = textName.substring(textName.lastIndexOf("."));
-		return Paths.get(textName.replace(extension, "_parsed"+extension));	// TODO - sicuro qua sto sbagliando il file path in output -- rivedere sto discorso con la funzione getFullOutputDir
+		return Paths.get(textName.replace(extension, "_parsed.txt"));	// TODO - sicuro qua sto sbagliando il file path in output -- rivedere sto discorso con la funzione getFullOutputDir
 	}
 
 
