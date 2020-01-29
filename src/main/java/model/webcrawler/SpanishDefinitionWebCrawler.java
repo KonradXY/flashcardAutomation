@@ -29,8 +29,6 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
         this.translationPageWR = translationPageWR;
     }
 
-    // TODO - qua dentro voglio semplicemente creare la lista di carte. La stampa dev'essere fatta da qualche altra parte
-
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
         translationPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);

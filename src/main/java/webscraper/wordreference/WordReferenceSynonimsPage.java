@@ -22,7 +22,6 @@ public class WordReferenceSynonimsPage extends AbstractWebScraper {
         this.synonimsPage = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word);
     }
 
-    // TODO - qua ci potrei mettere un check per verificare che la pagina scrapata sia la stessa della parola (? valutare utilita')
     public List<String> getSynonimsFromWord(String word) {
         Element article = synonimsPage.getElementById("article");
         Elements synonims = article.getElementsByTag("li");

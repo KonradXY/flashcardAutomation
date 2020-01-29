@@ -42,4 +42,7 @@ public interface DecoratingCard extends IAnkiCard {
         return decorated;
     }
 
+    // TODO - probabilmente dovrei unificare il contratto legato all'utilizzo dei decorator. Il problema e' che questi decorator si comportano in maniera diversa
+    // TODO - il cloze  ad esempio utilizza dati diversi nella firma. Verificare la maniera migliore per andare avanti con i decorator !!
+
 }

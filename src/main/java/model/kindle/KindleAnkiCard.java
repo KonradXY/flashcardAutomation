@@ -7,8 +7,6 @@ import main.java.model.AnkiCard;
 
 public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCard>{
 	
-	// TODO - rivedere meglio il model perchè forse un po' confusionario
-	
 	public static Pattern timePattern = Pattern.compile("\\d\\d:\\d\\d:\\d\\d");
 //			Pattern.compile("[0-9]");
 	

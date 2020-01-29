@@ -15,20 +15,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static main.java.webscraper.AbstractWebScraper.TIME_SLEEP;
-
 @Singleton
 public class SpanishClozeWebCrawler implements IWebCrawler {
 
-    private static final WebParsedClozedCardDecorator webCardDecorator = new WebParsedClozedCardDecorator();
+    private final WebParsedClozedCardDecorator webCardDecorator;
 
     private final ClozeEngine clozeEngine;
     private final WordReferenceDefinitionPage definitionPage;
 
     @Inject
-    public SpanishClozeWebCrawler(ClozeEngine clozeEngine, WordReferenceDefinitionPage wordReferenceDefinitionPage) {
+    public SpanishClozeWebCrawler(ClozeEngine clozeEngine, WordReferenceDefinitionPage wordReferenceDefinitionPage, WebParsedClozedCardDecorator webCardDecorator) {
         this.clozeEngine = clozeEngine;
         this.definitionPage = wordReferenceDefinitionPage;
+        this.webCardDecorator = webCardDecorator;
     }
 
     @Override
@@ -38,8 +37,7 @@ public class SpanishClozeWebCrawler implements IWebCrawler {
         IAnkiCard card = null;
 
         for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-            card = webCardDecorator.create(cloze.getValue(),
-                    word, originalMap.get(cloze.getKey()), cloze.getKey());
+            card = webCardDecorator.create(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey());
         }
 
         return Arrays.asList(card);

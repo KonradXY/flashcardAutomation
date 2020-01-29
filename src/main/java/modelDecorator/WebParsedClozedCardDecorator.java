@@ -1,16 +1,15 @@
 package main.java.modelDecorator;
 
-import java.util.List;
-
+import com.google.inject.Singleton;
 import main.java.model.AnkiCard;
 
-public class
-WebParsedClozedCardDecorator extends WebParsedCardDecorator {
-	
+@Singleton
+public class WebParsedClozedCardDecorator extends WebParsedCardDecorator {
+
 	public AnkiCard create(String clozeText, String word, String originalValue, String wordDefinition) {
 		return createClozeAnkiCard(clozeText, word, originalValue, wordDefinition);
 	}
-	
+
 	private AnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition) {
 		AnkiCard card = new AnkiCard();
 		addContentToFront(card, clozeText, getParagraphTag().addClass("traduzione"));
