@@ -1,7 +1,10 @@
 package main.java.modelDecorator;
 
+import static main.java.modelDecorator.AbstractCardDecorator.*;
+
 import main.java.contracts.IAnkiCard;
 import org.jsoup.nodes.Element;
+
 
 import java.util.function.Function;
 
@@ -24,6 +27,12 @@ public interface DecoratingCard extends IAnkiCard {
         return adapted;
     }
 
+    Function<DecoratingCard, DecoratingCard> decorateWithLeftFormat = (it) -> {
+        it.getFront().children().stream().forEach(applyLeftFormat);
+        it.getBack().children().stream().forEach(applyLeftFormat);
+        return it;
+    };
+
     // NB: funzione che mi permette di decorare gli oggetti in maniera semplice
     default DecoratingCard decorateWith(Function<? super DecoratingCard, ? extends DecoratingCard> decorator) {
         return decorator.apply(this);
@@ -42,7 +51,5 @@ public interface DecoratingCard extends IAnkiCard {
         return decorated;
     }
 
-    // TODO - probabilmente dovrei unificare il contratto legato all'utilizzo dei decorator. Il problema e' che questi decorator si comportano in maniera diversa
-    // TODO - il cloze  ad esempio utilizza dati diversi nella firma. Verificare la maniera migliore per andare avanti con i decorator !!
 
 }
