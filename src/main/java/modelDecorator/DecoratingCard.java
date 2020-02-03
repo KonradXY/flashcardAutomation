@@ -47,7 +47,7 @@ public interface DecoratingCard extends IAnkiCard {
     // NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
     static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
         DecoratingCard decorated = DecoratingCard.from(card)
-                                        .decorateWith(StandardFormatCardDecorator.decorateWithLeftFormat);
+                                        .decorateWith(decorateWithLeftFormat);
         return decorated;
     }
 

@@ -1,12 +1,9 @@
 package main.java.modelDecorator;
 
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
-
-import java.util.function.Function;
 
 public class StandardFormatCardDecorator extends AbstractCardDecorator {
 
