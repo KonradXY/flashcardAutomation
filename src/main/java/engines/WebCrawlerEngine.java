@@ -29,8 +29,6 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     @Override
     public void createFlashcards()  {
 
-        // TODO - splittare la funzione in 3 parti come fatto per il textEngine !
-
         Map<Path, List<String>> contentMap = readFile(getFullInputPath());
 
         int numWords = 0;

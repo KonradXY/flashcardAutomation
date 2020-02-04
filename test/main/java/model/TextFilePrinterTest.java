@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import main.java.model.printers.TextFilePrinter;
+import main.java.strategy.PrinterStrategy;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +26,7 @@ class TextFilePrinterTest {
 
 	private static AnkiCard card;
 	private static final Path filetestpath = Paths.get("./test.txt");
-	private IPrinter printer = new TextFilePrinter();
+	private IPrinter printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	
 	private final static String contentFront = "<div class=\"front\"> this is the front</div>";
 	private final static String contentBack = "<div class=\"back\"> this is the back</div>";
