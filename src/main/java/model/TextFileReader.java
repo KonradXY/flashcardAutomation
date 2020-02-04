@@ -54,7 +54,7 @@ public class TextFileReader implements IReader {
 				.forEach(path -> readContent(contentMap, path));
 		
 		} catch (IOException ex) {
-			log.error("Errore nella lettura dei file: " + ex);
+			log.error("Errore nella lettura dei file: ", ex);
 		}
 
 	}

@@ -32,8 +32,8 @@ public class WebCrawlerEngineFactory extends AbstractEngineFactory {
             webEngine = new SpanishClozeEngine();
         }
 
-        webEngine.setParserInputDir(Property.WEB_CRAWLER_PATH+"prova.txt");
-        webEngine.setParserOutputDir(Property.WEB_CRAWLER_PATH+"parsedList.txt");
+        webEngine.setParserInputDir(Property.WEB_CRAWLER_PATH);
+        webEngine.setParserOutputDir(Property.WEB_CRAWLER_PATH);
         webEngine.buildEngine();
 
         return webEngine;

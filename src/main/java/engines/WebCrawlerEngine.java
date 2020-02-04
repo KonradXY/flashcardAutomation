@@ -2,16 +2,19 @@
 package main.java.engines;
 
 import main.java.contracts.IAnkiCard;
-import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
 import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static main.java.webscraper.AbstractWebScraper.*;
 
@@ -24,29 +27,67 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     @Override
     public void createFlashcards() {
 
+        // TODO - splittare la funzione in 3 parti come fatto per il textEngine !
+
         int numWords = 0;
+        Map<Path, List<String>> contentMap = new HashMap<>();
+        readContent(contentMap, getFullInputPath());
 
-        try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(getFullOutputDir()), "UTF-8"))) {
-            List<String> wordList = getWordListFromFile(getFullInputDir());
+        for (Map.Entry<Path, List<String>> entry : contentMap.entrySet()) {
 
-            for (String word : wordList) {
-                List<IAnkiCard> cardList = webCrawler.createFlashcards(word);
-                writeCards(cardList, bos);
+            try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(getOutputFileName(entry.getKey())), "UTF-8"))) {
 
-                logNumberOfWords(numWords++);
-                Thread.sleep(TIME_SLEEP);
+                for (String word : entry.getValue()) {
+                    List<IAnkiCard> cardList = webCrawler.createFlashcards(word);
+                    writeCards(cardList, bos);
+
+                    logNumberOfWords(numWords++);
+                    Thread.sleep(TIME_SLEEP);
+                }
+
+                log.info("effettuata la creazione di " + numWords + " carte");
+
+            } catch (IOException | InterruptedException ex) {
+                ex.printStackTrace();
+                throw new RuntimeException(ex);
             }
-
-            log.info("effettuata la creazione di " + numWords + " carte");
-
-        } catch (IOException | InterruptedException ex) {
-            ex.printStackTrace();
-            throw new RuntimeException(ex);
         }
 
     }
 
     // *********** reading functions
+
+    private void readContent(Map<Path, List<String>> contentMap, Path filePath) {
+        try {
+            if (!Files.isDirectory(filePath)) {
+                Stream.of(filePath)
+                        .filter(IReader::isParseable)
+                        .forEach(it -> addEntryToMap(contentMap, it));
+                return;
+            }
+
+            Files.walk(filePath)
+                    .filter(p -> !p.equals(filePath))
+                    .sorted()
+                    .forEach(path -> readContent(contentMap, path));
+
+        } catch (IOException ex) {
+            log.error("Errore nella lettura dei file: ", ex);
+        }
+
+    }
+
+    private void addEntryToMap(Map<Path, List<String>> mapInput, Path pathFile) {
+        if (!mapInput.containsKey(pathFile)) {
+            log.info("lettura file: " + pathFile);
+            try {
+                mapInput.put(pathFile, getWordListFromFile(pathFile.toString()));
+            } catch (IOException ex) {
+                log.error("Errore durante la lettura del file: " + pathFile, ex);
+            }
+        }
+    }
+
     public List<String> getWordListFromFile(String inputFile) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
         List<String> wordsList = br.lines()
@@ -59,6 +100,18 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
 
 
     // ************ writing functions
+    public String getOutputFileName(Path inputFileName) throws IOException {
+        String outputFile = inputFileName.toString().replace("input","output");
+        outputFile = outputFile.substring(0, outputFile.lastIndexOf(".")).concat("_scraped.txt");
+
+        if (!Files.exists(Paths.get(outputFile))) {
+            Files.createFile(Paths.get(outputFile));
+        }
+
+        log.info("Scrittura sul file: " + outputFile);
+        return outputFile;
+    }
+
     public void writeCards(List<IAnkiCard> cards, BufferedWriter bos) throws IOException {
         for (IAnkiCard card : cards) {
             writeCard(card, bos);
