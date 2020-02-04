@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import main.java.model.printers.TextFilePrinter;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 

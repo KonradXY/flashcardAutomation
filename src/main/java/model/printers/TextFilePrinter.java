@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.model.printers;
 
 import java.io.IOException;
 import java.nio.file.Files;

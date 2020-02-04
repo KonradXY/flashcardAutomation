@@ -1,7 +1,7 @@
 package main.java.engines.textengines;
 import main.java.engines.TextEngine;
-import main.java.model.TextFilePrinter;
-import main.java.model.TextFileReader;
+import main.java.model.printers.TextFilePrinter;
+import main.java.model.readers.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
 import main.java.strategy.ReadingFormatStrategy;
 import main.java.utils.ParserUtil;

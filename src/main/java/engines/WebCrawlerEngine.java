@@ -2,8 +2,10 @@
 package main.java.engines;
 
 import main.java.contracts.IAnkiCard;
+import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
+import main.java.model.readers.TextListFileReader;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -13,8 +15,6 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static main.java.webscraper.AbstractWebScraper.*;
 
@@ -22,16 +22,18 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
 
     private final static Logger log = Logger.getLogger(WebCrawlerEngine.class);
 
+    protected IReader reader;
     protected IWebCrawler webCrawler;
+    protected IPrinter printer;
 
     @Override
-    public void createFlashcards() {
+    public void createFlashcards()  {
 
         // TODO - splittare la funzione in 3 parti come fatto per il textEngine !
 
+        Map<Path, List<String>> contentMap = readFile(getFullInputPath());
+
         int numWords = 0;
-        Map<Path, List<String>> contentMap = new HashMap<>();
-        readContent(contentMap, getFullInputPath());
 
         for (Map.Entry<Path, List<String>> entry : contentMap.entrySet()) {
 
@@ -55,49 +57,16 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
 
     }
 
-    // *********** reading functions
 
-    private void readContent(Map<Path, List<String>> contentMap, Path filePath) {
+    // ************ reading functions
+    private Map<Path, List<String>> readFile(Path input) {
         try {
-            if (!Files.isDirectory(filePath)) {
-                Stream.of(filePath)
-                        .filter(IReader::isParseable)
-                        .forEach(it -> addEntryToMap(contentMap, it));
-                return;
-            }
-
-            Files.walk(filePath)
-                    .filter(p -> !p.equals(filePath))
-                    .sorted()
-                    .forEach(path -> readContent(contentMap, path));
-
+            return reader.readFile(input);
         } catch (IOException ex) {
-            log.error("Errore nella lettura dei file: ", ex);
-        }
-
-    }
-
-    private void addEntryToMap(Map<Path, List<String>> mapInput, Path pathFile) {
-        if (!mapInput.containsKey(pathFile)) {
-            log.info("lettura file: " + pathFile);
-            try {
-                mapInput.put(pathFile, getWordListFromFile(pathFile.toString()));
-            } catch (IOException ex) {
-                log.error("Errore durante la lettura del file: " + pathFile, ex);
-            }
+            log.error("Errore nella lettura del file: " + input, ex);
+            throw new RuntimeException(ex);
         }
     }
-
-    public List<String> getWordListFromFile(String inputFile) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), "UTF-8"));
-        List<String> wordsList = br.lines()
-                .map(String::trim)
-                //.limit(5)
-                .collect(Collectors.toList());
-        br.close();
-        return wordsList;
-    }
-
 
     // ************ writing functions
     public String getOutputFileName(Path inputFileName) throws IOException {
