@@ -1,5 +1,7 @@
 package main.java.model.kindle;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +20,10 @@ public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCar
 	
 	public KindleAnkiCard(String front, String back) {
 		super(front, back);
+	}
+
+	public Path getTitleAsPath() {
+		return Paths.get(title);
 	}
 	
 	public String getTitle() { return title; }

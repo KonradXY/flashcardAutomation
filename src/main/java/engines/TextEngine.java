@@ -39,14 +39,13 @@ public abstract class TextEngine extends AbstractEngine {
 	}
 
 
-	// ***************** Parse Functions
+	// ***************** Parse & Sort Functions
 	public Map<Path, List<IAnkiCard>> parse(Map<Path, String> content) {
 		Map<Path, List<IAnkiCard>> contentParsed = new HashMap<>();
 		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
 			contentParsed.put(getParsedFileName(singleContent.getKey()), this.parser.parse(singleContent.getKey(), singleContent.getValue()));
 		}
-
-		return contentParsed;
+		return parser.sort(contentParsed);
 	}
 
 	private Path getParsedFileName(Path inputFile) {

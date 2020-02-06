@@ -18,4 +18,9 @@ public class DefaultParser implements IParser {
         return ankiCards;
     }
 
+    @Override
+    public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+        return mapContent;
+    }
+
 }

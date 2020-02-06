@@ -19,9 +19,8 @@ public interface IParser {
 	Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
 	String QA_SEPARATOR = "RISPOSTE";
 
-	// Map<filename,filecontent>
-	// List<IAnkiCard> parse(Map<Path, String> input);
 	List<IAnkiCard> parse(Path path, String input);
+	Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent);
 
 	
 	static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}

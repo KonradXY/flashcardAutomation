@@ -26,8 +26,6 @@ public class TextFilePrinter implements IPrinter {
 
 		checkOutputFolder(destPath);
 
-		printerStrategy.sortCards(input);
-
 		printerStrategy.printCards(destPath, input);
 
 	}

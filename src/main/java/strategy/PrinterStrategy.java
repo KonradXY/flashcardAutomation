@@ -18,7 +18,6 @@ public enum PrinterStrategy {
 
     NO_STRATEGY {
         @Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
-        @Override public void sortCards(List<IAnkiCard> cards) { }
 
         @Override public void printCards(Path destPath, List<IAnkiCard> cards) {
             try {
@@ -32,7 +31,7 @@ public enum PrinterStrategy {
 
     KINDLE_STRATEGY {
         @Override public Path createNameOutputFile(Path outputFile) { return createFileName(outputFile.toString()); }
-        @Override public void sortCards(List<IAnkiCard> cards) { cards.stream().map(it -> (KindleAnkiCard) it).sorted().collect(Collectors.groupingBy(KindleAnkiCard::getTitle)); }
+
 
         @Override
         public void printCards(Path destPath, List<IAnkiCard> cards) {
@@ -52,28 +51,56 @@ public enum PrinterStrategy {
     };
 
     public abstract Path createNameOutputFile(Path outputFile);
-    public abstract void sortCards(List<IAnkiCard> cards);
     public abstract void  printCards(Path destPath, List<IAnkiCard> cards);
 
     private final static Logger log = Logger.getLogger(PrinterStrategy.class);
 
 
-    private static Path createFileName(String fileName) {
-        if (fileName.lastIndexOf("\\") != -1)
-            fileName = fileName.substring(fileName.lastIndexOf("\\"));
+    private static Path createFileName(String filePath) {
+        // log.info("filePath: " + filePath);
 
-        fileName = fileName.replace(".", "")
+        String fileDir = getFileDir(filePath);
+
+        String lastName = getFileName(filePath);
+        // log.info("getFileName: " + lastName);
+
+        lastName = removeSpecialChars(lastName);
+        // log.info("remove special chars: " + lastName);
+
+        lastName = truncateLongNames(lastName);
+        // log.info("truncate long filenames: " + lastName);
+
+        return Paths.get(fileDir+"/"+lastName);
+    }
+
+    private static String getFileName(String fileName) {
+        if (fileName.lastIndexOf("/") != -1)
+            return fileName.substring(fileName.lastIndexOf("/")+1);
+
+        return fileName;
+    }
+    private static String getFileDir(String fileName) {
+        return fileName.substring(0,fileName.lastIndexOf("/"));
+    }
+
+    private static String removeSpecialChars(String fileName) {
+        return fileName
+                .replace(".", "")
                 .replace(":", " ")
                 .replace("*", "")
                 .replace("/", "_")
+                .replace("txt", "")
                 .trim()
-                .concat(".txt")
-        ;
+                .concat(".txt");
+    }
 
-        if (fileName.length() > 50) {
-            fileName = fileName.substring(0,46).concat(".txt");
+    private static String truncateLongNames(String fileName) {
+        if (fileName.replace(".txt", "").length() > 50) {
+            return fileName
+                    .replace(".txt", "")
+                    .substring(0,46).concat(".txt");
         }
 
-        return Paths.get(fileName);
+        return fileName;
     }
 }

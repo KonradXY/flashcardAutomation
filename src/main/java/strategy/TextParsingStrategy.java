@@ -82,7 +82,7 @@ public enum TextParsingStrategy {
                 it -> addExcercise(it, domandeMap));
 
         Map<String, String> risposteMap = new HashMap<>();
-        Stream.of(splitString(qa[1], IParser.PIPE_SEPARATOR)).forEach(
+        Stream.of(splitString(qa[RISPOSTE_INDEX], IParser.PIPE_SEPARATOR)).forEach(
                 it -> addExcercise(it, risposteMap));
 
         boolean allKeysAremMatched = true;

@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class LanguageLearningParser implements IParser {
 	
@@ -37,6 +38,11 @@ public class LanguageLearningParser implements IParser {
 		}
 
 		return cardList;
+	}
+
+	@Override
+	public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+		return mapContent;
 	}
 	
 
