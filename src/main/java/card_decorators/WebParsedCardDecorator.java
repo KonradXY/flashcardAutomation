@@ -1,4 +1,4 @@
-package main.java.modelDecorator;
+package main.java.card_decorators;
 
 import main.java.contracts.IAnkiCard;
 

@@ -38,7 +38,7 @@ public class TextListFileReader implements IReader {
         try {
             if (!Files.isDirectory(filePath)) {
                 Stream.of(filePath)
-                        .filter(IReader::isParseable)
+                        .filter(IReader::filterParsable)
                         .forEach(it -> addEntryToMap(contentMap, it));
                 return;
             }

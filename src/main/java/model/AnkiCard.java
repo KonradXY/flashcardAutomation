@@ -14,8 +14,8 @@ public class AnkiCard implements IAnkiCard  {
 	protected Element back;
 
 	public AnkiCard() {
-		this.front = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(FRONT));
-		this.back = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(BACK));
+		this.front = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(FRONT_TAG));
+		this.back = new Element(divTag, "").appendChild(new Element(divTag, "").addClass(BACK_TAG));
 	}
 
 	public AnkiCard(String front, String back) {
@@ -32,8 +32,8 @@ public class AnkiCard implements IAnkiCard  {
 	
 	public AnkiCard(Elements front, Elements back) {
 		this();
-		front.forEach(it -> this.addElementToFront(it));
-		back.forEach(it -> this.addElementToBack(it));
+		front.forEach(this::addElementToFront);
+		back.forEach(this::addElementToBack);
 	}
 
 	@Override
@@ -50,9 +50,9 @@ public class AnkiCard implements IAnkiCard  {
 	}
 	
 	@Override
-	public Element getFront() { return front.getElementsByClass(FRONT).get(0); }
+	public Element getFront() { return front.getElementsByClass(FRONT_TAG).get(0); }
 	@Override
-	public Element getBack()  { return back.getElementsByClass(BACK).get(0); }
+	public Element getBack()  { return back.getElementsByClass(BACK_TAG).get(0); }
 
 	public void setKey(Element key) 		{ this.front = key ; }
 	public void setKey(String key)  		{ this.front.appendText(key); }

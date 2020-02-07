@@ -1,5 +1,7 @@
 package main.java.netutilities;
 
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.security.cert.CertificateException;
@@ -19,7 +21,7 @@ public class CertificateManager {
     private final static Logger log = Logger.getLogger(CertificateManager.class);
 
     // trusting all certificate
-    public static void doTrustToCertificates() throws Exception {
+    public static void doTrustToCertificates() throws NoSuchAlgorithmException, KeyManagementException {
 
         log.info(".. Trusting all certificates ... ");
 

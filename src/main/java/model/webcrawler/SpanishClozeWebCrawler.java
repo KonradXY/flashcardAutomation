@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
-import main.java.modelDecorator.WebParsedClozedCardDecorator;
+import main.java.card_decorators.WebParsedClozedCardDecorator;
 import main.java.utils.ClozeEngine;
 import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 

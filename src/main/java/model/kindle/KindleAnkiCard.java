@@ -62,8 +62,6 @@ public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCar
 		this.addTextContentToFront(this.title);
 		this.addTextContentToBack(this.content);
 
-
-		
 		return this;
 		
 	}

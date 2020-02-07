@@ -17,7 +17,7 @@ import main.java.model.printers.TextFilePrinter;
 import main.java.model.readers.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
 import main.java.model.kindle.KindleClippingsParser;
-import main.java.model.languageLearning.LanguageLearningParser;
+import main.java.model.languagelearning.LanguageLearningParser;
 
 import java.util.Arrays;
 import java.util.List;
