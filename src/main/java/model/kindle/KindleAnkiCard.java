@@ -22,6 +22,10 @@ public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCar
 		super(front, back);
 	}
 
+	public KindleAnkiCard(String inputLine) {
+		mapFromLine(inputLine);
+	}
+
 	public Path getTitleAsPath() {
 		return Paths.get(title);
 	}
@@ -55,8 +59,10 @@ public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCar
 		this.dataAggiunta = inputLine.substring(idxPosizione+1, idxContent);
 		this.content = inputLine.substring(idxContent);
 		
-		this.front.appendText(this.title);
-		this.back.appendText(this.content);
+		this.addTextContentToFront(this.title);
+		this.addTextContentToBack(this.content);
+
+
 		
 		return this;
 		

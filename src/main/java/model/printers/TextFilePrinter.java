@@ -22,7 +22,6 @@ public class TextFilePrinter implements IPrinter {
 	public void printFile(Path destPath, List<IAnkiCard> input) {
 
 		destPath = printerStrategy.createNameOutputFile(destPath);
-		log.info("PATH OUTPUT: " + destPath);
 
 		checkOutputFolder(destPath);
 

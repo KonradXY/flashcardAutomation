@@ -12,7 +12,7 @@ class PrinterStrategyTest {
 
     PrinterStrategy printerStrategy;
 
-    private final Path kindleName1 = Paths.get("/home/corrado.giovanniello/personalDev/flashcardAutomation/input/kindle/My Clippings - Kindle_parsed.txt");
+    private final Path kindleName1 = Paths.get("/home/corrado.giovanniello/personalDev/flashcardAutomation/output/kindle/My Clippings - Kindle_parsed.txt");
     private final Path kindleNameOutput1 = Paths.get("/home/corrado.giovanniello/personalDev/flashcardAutomation/output/kindle/My Clippings - Kindle_parsed.txt");
 
     @BeforeAll
@@ -21,7 +21,7 @@ class PrinterStrategyTest {
     }
 
     @Test
-    void testKindleGetName() {  // TODO - verificare il discorso tramite data providing in junit
+    void testKindleGetName() {  // TODO - verificare il discorso tramite data providing in junit + aggiungere nuovi test !
         printerStrategy = PrinterStrategy.KINDLE_STRATEGY;
 
         Path newName = printerStrategy.createNameOutputFile(kindleName1);

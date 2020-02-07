@@ -24,9 +24,9 @@ public class KindleClippingsParser implements IParser {
 	public List<IAnkiCard> parse(Path fileName, String input) {
 		String[] values = input.split(KINDLE_TOKEN);
 		List<IAnkiCard> cardList = new ArrayList<>();
-		Stream.of(values).forEach(clip -> {
-			if (clip.contains(KINDLE_KEY)) {
-				cardList.add(new KindleAnkiCard("", "").mapFromLine(clip));
+		Stream.of(values).forEach(inputLine -> {
+			if (inputLine.contains(KINDLE_KEY)) {
+				cardList.add(new KindleAnkiCard(inputLine));
 			}});
 		return cardList;
 	}
