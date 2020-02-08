@@ -24,14 +24,14 @@ public abstract class AbstractWebScraper implements IWebScraper {
     public static final int TIMEOUT_SEC 	= 10;
     public static final int TIMEOUT = 1000 * TIMEOUT_SEC;
 
-    public static final String USER_AGENT = "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36";
+    public static final String MOZILLA_USER_AGENT = "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36";
 
     public final static String discardedWordsPath 	= "./src/main/resources/discardedWords.log";
 
     protected Document scrapePage(String urlPage, String word) {
         Document doc = null;
         try {
-            doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
+            doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(MOZILLA_USER_AGENT).timeout(TIMEOUT).get();
         } catch (MalformedURLException | HttpStatusException ex) {
             log.error("Error while scraping: " + ex);
             throw new RuntimeException(ex);
