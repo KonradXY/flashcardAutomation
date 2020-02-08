@@ -9,17 +9,14 @@ public class Property {
 
 	public static String OUTPUT_DIR = getOutputDir();
 	public static String INPUT_DIR = getInputDir();
-	
+
+
 	public static final String LANGUAGE_LEARNING_PATH = "languageLearning/prepositions/";
 	public static final String EVERNOTE_PATH = "evernote/";
 	public static final String KINDLE_PATH = "kindle/";
 	public static final String WEB_CRAWLER_PATH = "webcrawler/prova/";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";
 	public static final String GENERIC_PATH = "generic/parole.txt";
-	
-	public static int SIMPLE_PARSER_ESP_FIELD = getSimpleParserEspField();	// TODO - anche questi dovrei spostarli dal properties e metterli nella classe corretta
-	public static int SIMPLE_PARSER_ENG_FIELD = getSimpleParserEngField();
-
 
 
 
@@ -33,15 +30,8 @@ public class Property {
 		return getProperties().getProperty("output.dir");
 	}
 
-	private static int getSimpleParserEspField() {
-		return Integer.parseInt(getProperties().getProperty("simpleparser.engField"));
-	}
-	
-	private static int getSimpleParserEngField() {
-		return Integer.parseInt(getProperties().getProperty("simpleparser.espField"));
-	}
 
-	
+
 	private static Properties getProperties() {
 		try {
 			if (prop == null) {

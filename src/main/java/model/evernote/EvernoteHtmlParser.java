@@ -41,6 +41,11 @@ public class EvernoteHtmlParser implements IParser {
         return cardList;
     }
 
+    @Override
+    public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+        return mapContent;
+    }
+
 
     private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);

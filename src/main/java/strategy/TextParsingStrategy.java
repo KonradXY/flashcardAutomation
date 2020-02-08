@@ -2,8 +2,6 @@ package main.java.strategy;
 
 
 import static main.java.contracts.IParser.*;
-import static main.java.utils.Property.SIMPLE_PARSER_ENG_FIELD;
-import static main.java.utils.Property.SIMPLE_PARSER_ESP_FIELD;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
@@ -66,6 +64,9 @@ public enum TextParsingStrategy {
 
     // ======== class starts here !!!
 
+    public static int SIMPLE_PARSER_ESP_FIELD = 0;
+    public static int SIMPLE_PARSER_ENG_FIELD = 1;
+
     private final static Logger log = Logger.getLogger(TextParsingStrategy.class);
 
     boolean entriesAreEven(String[] entries) {
@@ -81,7 +82,7 @@ public enum TextParsingStrategy {
                 it -> addExcercise(it, domandeMap));
 
         Map<String, String> risposteMap = new HashMap<>();
-        Stream.of(splitString(qa[1], IParser.PIPE_SEPARATOR)).forEach(
+        Stream.of(splitString(qa[RISPOSTE_INDEX], IParser.PIPE_SEPARATOR)).forEach(
                 it -> addExcercise(it, risposteMap));
 
         boolean allKeysAremMatched = true;

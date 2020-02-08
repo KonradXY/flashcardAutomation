@@ -13,10 +13,9 @@ import org.junit.jupiter.api.Test;
 import main.java.engines.TextEngine;
 import main.java.engines.factories.TextEngineFactory;
 import main.java.model.DefaultParser;
-import main.java.model.TextFilePrinter;
-import main.java.model.TextFileReader;
+import main.java.model.printers.TextFilePrinter;
+import main.java.model.readers.TextFileReader;
 import main.java.model.evernote.EvernoteHtmlParser;
-import main.java.model.kindle.KindleClippingPrinter;
 import main.java.model.kindle.KindleClippingsParser;
 import main.java.model.languageLearning.LanguageLearningParser;
 
@@ -62,8 +61,8 @@ class EngineBuilderTest {
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
 		assertEquals(ankiEngine.getParser().getClass(), KindleClippingsParser.class);
-		assertEquals(ankiEngine.getPrinter().getClass(), KindleClippingPrinter.class);
-		
+		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
+
 		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + KINDLE_PATH);
 		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + KINDLE_PATH);
 	}

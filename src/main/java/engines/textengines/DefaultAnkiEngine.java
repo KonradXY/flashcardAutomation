@@ -2,8 +2,9 @@ package main.java.engines.textengines;
 
 import main.java.engines.TextEngine;
 import main.java.model.DefaultParser;
-import main.java.model.TextFilePrinter;
-import main.java.model.TextFileReader;
+import main.java.model.printers.TextFilePrinter;
+import main.java.model.readers.TextFileReader;
+import main.java.strategy.PrinterStrategy;
 import main.java.strategy.ReadingFormatStrategy;
 
 public class DefaultAnkiEngine extends TextEngine {
@@ -15,7 +16,7 @@ public class DefaultAnkiEngine extends TextEngine {
 	public void buildEngine() {
 		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
 		parser = new DefaultParser();
-		printer = new TextFilePrinter();
+		printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	}
 	
 }

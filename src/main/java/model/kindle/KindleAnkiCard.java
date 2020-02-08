@@ -1,13 +1,13 @@
 package main.java.model.kindle;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import main.java.model.AnkiCard;
 
 public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCard>{
-	
-	// TODO - rivedere meglio il model perchè forse un po' confusionario
 	
 	public static Pattern timePattern = Pattern.compile("\\d\\d:\\d\\d:\\d\\d");
 //			Pattern.compile("[0-9]");
@@ -20,6 +20,10 @@ public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCar
 	
 	public KindleAnkiCard(String front, String back) {
 		super(front, back);
+	}
+
+	public Path getTitleAsPath() {
+		return Paths.get(title);
 	}
 	
 	public String getTitle() { return title; }

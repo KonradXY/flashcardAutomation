@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import main.java.contracts.IReader;
-import main.java.model.TextFileReader;
+import main.java.model.readers.TextFileReader;
 
 
 class FormatStrategyTest {

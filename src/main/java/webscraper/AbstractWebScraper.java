@@ -20,7 +20,7 @@ public abstract class AbstractWebScraper implements IWebScraper {
     public static final int TIME_SLEEP 		= 2000;
     public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;
     public static final int NUM_TRANSLATIONS = 5;
-    public static final int LOG_COUNTER 	= 5 * MAX_NUM_EXAMPLES_PER_WORD;
+    public static final int LOG_COUNTER 	= 5;
     public static final int TIMEOUT_SEC 	= 10;
     public static final int TIMEOUT = 1000 * TIMEOUT_SEC;
 

@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface IPrinter {
 
-	public void printFile(Path destPath, List<IAnkiCard> input) throws IOException;
+
+	void printFile(Path destPath, List<IAnkiCard> input) throws IOException;
 
 	default void checkOutputFolder(Path filePath) {
 		try {
@@ -18,5 +19,7 @@ public interface IPrinter {
 			throw new RuntimeException(ex);
 		}
 	}
+
+
 
 }

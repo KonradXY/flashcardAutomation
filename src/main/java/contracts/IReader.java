@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 
 public interface IReader {
 	
-	public Map<Path, String> readFile(Path... pathFiles) throws IOException;
+	public <T> Map<Path, T> readFile(Path... pathFiles) throws IOException;
 
 	public static Predicate<Path> isParseable = (IReader::checkParsability);
 	

@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.model.readers;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -50,11 +50,11 @@ public class TextFileReader implements IReader {
 		
 			Files.walk(filePath)
 				.filter(p -> !p.equals(filePath))
-				.sorted() 	// TODO - fare un comparator custom per sta roba (come li devo ordinare ? Sinceramente nn mi ricordo perche' l'ho segnato)
+				.sorted()
 				.forEach(path -> readContent(contentMap, path));
 		
 		} catch (IOException ex) {
-			log.error("Errore nella lettura dei file: " + ex);
+			log.error("Errore nella lettura dei file: ", ex);
 		}
 
 	}

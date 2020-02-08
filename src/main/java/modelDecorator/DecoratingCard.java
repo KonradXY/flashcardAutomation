@@ -1,7 +1,10 @@
 package main.java.modelDecorator;
 
+import static main.java.modelDecorator.AbstractCardDecorator.*;
+
 import main.java.contracts.IAnkiCard;
 import org.jsoup.nodes.Element;
+
 
 import java.util.function.Function;
 
@@ -24,6 +27,12 @@ public interface DecoratingCard extends IAnkiCard {
         return adapted;
     }
 
+    Function<DecoratingCard, DecoratingCard> decorateWithLeftFormat = (it) -> {
+        it.getFront().children().stream().forEach(applyLeftFormat);
+        it.getBack().children().stream().forEach(applyLeftFormat);
+        return it;
+    };
+
     // NB: funzione che mi permette di decorare gli oggetti in maniera semplice
     default DecoratingCard decorateWith(Function<? super DecoratingCard, ? extends DecoratingCard> decorator) {
         return decorator.apply(this);
@@ -38,8 +47,9 @@ public interface DecoratingCard extends IAnkiCard {
     // NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
     static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
         DecoratingCard decorated = DecoratingCard.from(card)
-                                        .decorateWith(StandardFormatCardDecorator.decorateWithLeftFormat);
+                                        .decorateWith(decorateWithLeftFormat);
         return decorated;
     }
+
 
 }
