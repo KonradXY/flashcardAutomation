@@ -1,0 +1,158 @@
+la acera
+las afueras
+la alcantarilla
+el almacén
+el arco
+el auditorio
+el autobs
+la avenida
+el ayuntamiento
+el banco
+el bar
+el barrio
+la biblioteca
+el bloque
+la bolsa
+el buzón
+la cafeteria
+la calle
+el callejón
+la calzada
+la capital
+la carnicería
+el casco antiguo
+el castillo
+la catedral
+el centro
+el centro comercial
+el centro de congresos
+el cine
+el ciudadano
+la comisaría
+la cotaminación
+la polución
+el contenedor
+el cruce
+el cuartel
+la cuesta
+la duputación
+la droguería
+el edificio
+el encanto
+el escaparate
+la estación/parada de metro
+el estadio
+el estanco
+el estanque
+el estilo
+la exposición
+la farmacia
+el farol
+la farola
+la fuente
+la galería
+la gastronomia
+la glorieta
+el gobierno
+la heladería
+la iglesia
+el jardin
+la joyería
+la jugetería
+la librería
+la manzana
+el mercado
+el metro
+la mezquita
+el ministerio
+el monumento
+la muralla
+el museo
+la oferta
+la oficina de correos
+el palacio
+la panadería
+la papelera
+la papelería
+la parada de autobus
+la parada de metro
+el parlamento
+el parque
+el paseo
+el paso de cebra
+la pastelería
+la confitería
+el pavimento
+el peatón
+la peluqueria
+la pescaderia
+la plaza
+la población
+la polución
+el pueblo
+el ppuente
+el quiosco
+el rascacielos
+el restaurante
+la rotonda
+el semaforo
+la sinagoga
+el supermecado
+el teatro
+la tienda de ropa
+la tienda de ultramarinos
+la torre
+el trafico
+el turista
+el vecino
+la zapateria
+amurallado
+antiguo
+autonomico
+arquitectonico
+artistico
+celebre
+civil
+comercial
+concurrido
+cosmopolita
+cultural
+espectacular
+funcional
+gastronomico
+gratuito
+historico
+impresionante
+industrial
+moderno
+monumental
+municipal
+nacional
+oficial
+pintoresco
+popular
+privado
+provincial
+publico
+tipico
+turistico
+sugerente
+urbano
+admirar
+ajardinar
+apreciar
+callejear
+caminar
+conocer
+construir
+contaminar
+cruzar
+indicar
+informarse
+orientarse
+pasear
+pavimentar
+recorrer
+rodear
+visitar
+vivir
