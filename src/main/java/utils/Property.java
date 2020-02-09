@@ -17,6 +17,7 @@ public class Property {
 	public static final String WEB_CRAWLER_PATH = "webcrawler/vocabulary_building_b1/vocabolario b1 citta.txt";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";
 	public static final String GENERIC_PATH = "generic/parole.txt";
+	public static final String STOPWORD_PATH = "stopwords/";
 
 
 
