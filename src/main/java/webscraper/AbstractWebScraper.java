@@ -1,16 +1,20 @@
 package main.java.webscraper;
 
-import main.java.contracts.IWebScraper;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import main.java.contracts.IWebScraper;
 
 
 public abstract class AbstractWebScraper implements IWebScraper {
@@ -32,14 +36,25 @@ public abstract class AbstractWebScraper implements IWebScraper {
         Document doc = null;
         try {
             doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(MOZILLA_USER_AGENT).timeout(TIMEOUT).get();
+        
         } catch (MalformedURLException | HttpStatusException ex) {
             log.error("Error while scraping: " + ex);
-            throw new RuntimeException(ex);
+            logDiscardedWord(word);
+        
         } catch (IOException ioEx) {
             log.error("Error with I/O: " + ioEx);
             throw new RuntimeException(ioEx);
         }
+        
         return doc;
+    }
+    
+    private void logDiscardedWord(String word) {
+    	try (FileWriter fw = new FileWriter(new File(discardedWordsPath), true)){
+    		fw.write(word+"\n");
+    	} catch (IOException ex) {
+    		log.error("Errore nella scrittura sul file discarded_words_path", ex);
+    	} 
     }
 
     protected URL createUrl(String host, String input) throws MalformedURLException {
