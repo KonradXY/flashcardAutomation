@@ -45,7 +45,7 @@ public class WebCrawlerEngineUtils {
 		if (spanishStopwords == null)
 			spanishStopwords = getSpanishStopwords();
 		
-    	content.values().parallelStream().forEach(words -> {
+    	content.values().stream().forEach(words -> {
     		words.stream().forEach(word -> {
     			List<String> tokens = Arrays.asList(word.split(" "));
     			tokens.forEach(t -> {

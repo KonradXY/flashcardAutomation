@@ -113,11 +113,14 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     
     private void resetDiscardedWordFile() {
     	try {
-			Files.createFile(Paths.get(discardedWordsPath));
-		} catch (IOException e) {
-			log.error("Errore nella creazione di un nuovo discarded word text file", e);
-			throw new RuntimeException(e);
-		}
+    		if (Files.exists(Paths.get(discardedWordsPath)))
+    			Files.delete(Paths.get(discardedWordsPath));
+
+    		Files.createFile(Paths.get(discardedWordsPath));
+    	} catch (IOException e) {
+    		log.error("Errore nella creazione di un nuovo discarded word text file", e);
+    		throw new RuntimeException(e);
+    	}
     }
 
 
