@@ -9,10 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
@@ -20,15 +17,14 @@ import org.apache.log4j.Logger;
 import com.google.inject.Singleton;
 
 @Singleton
-public class WebCrawlerEngineUtils {
+public class StopwordsEngine {
 
 	public static final Path SPANISH_STOPWORDS = Paths.get(INPUT_DIR + STOPWORD_PATH + "stopwords-es.txt");
 	
-	private static final Logger log = Logger.getLogger(WebCrawlerEngineUtils.class);
+	private static final Logger log = Logger.getLogger(StopwordsEngine.class);
 	
 	private static Set<String> spanishStopwords;
 
-	// TODO - da testare
 	public Set<String> getSpanishStopwords() {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(SPANISH_STOPWORDS.toString()), "UTF-8"))) {
 			return br.lines().collect(Collectors.toSet());
@@ -37,26 +33,35 @@ public class WebCrawlerEngineUtils {
 			throw new RuntimeException(ex);
 		}
 	}
-	
-	
-	// TODO - da testare
-	public void checkForStopWords(Map<Path, List<String>> content) {
-		
+
+
+	public void checkForSpanishStopWords(Map<Path, List<String>> content) {
 		if (spanishStopwords == null)
 			spanishStopwords = getSpanishStopwords();
-		
-    	content.values().stream().forEach(words -> {
-    		words.stream().forEach(word -> {
-    			List<String> tokens = Arrays.asList(word.split(" "));
-    			tokens.forEach(t -> {
-    				if (spanishStopwords.contains(t)) {
-    					tokens.remove(t);
-    				}
-    			});
-    			
-    			word = tokens.stream().collect(Collectors.joining(" "));
-    			
-    		});
-    	});
+
+		checkForStopWords(content, spanishStopwords);
+	}
+	
+	
+	public void checkForStopWords(Map<Path, List<String>> content, Set<String> stopwordsSet) {
+
+		for (Map.Entry<Path, List<String>> entry : content.entrySet()) {
+			List<String> deck = entry.getValue();
+			Iterator<String> cardIterator = deck.iterator();
+			int cardIndex = 0;
+			while (cardIterator.hasNext()) {
+				String cardValue = cardIterator.next();
+				List<String> tokens = new ArrayList<>(Arrays.asList(cardValue.split(" ")));
+				tokens.removeIf(it -> stopwordsSet.contains(it));
+
+				log.info("Prima e Dopo: " + deck.get(cardIndex) + " - " + tokens.stream().collect(Collectors.joining(" ")));
+
+				deck.set(cardIndex++, tokens.stream().collect(Collectors.joining((" "))).trim());
+			}
+
+			deck.removeIf(it -> it.isEmpty());
+		}
     }
+
+
 }
