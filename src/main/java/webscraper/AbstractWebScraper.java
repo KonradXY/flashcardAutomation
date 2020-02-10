@@ -17,7 +17,7 @@ public abstract class AbstractWebScraper implements IWebScraper {
 
     private static final Logger log = Logger.getLogger(AbstractWebScraper.class);
 
-    public static final int TIME_SLEEP 		= 2000;
+    public static final int TIME_SLEEP 		= 1;
     public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;
     public static final int NUM_TRANSLATIONS = 5;
     public static final int LOG_COUNTER 	= 5;
