@@ -7,8 +7,7 @@ import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -25,22 +24,34 @@ public abstract class AbstractWebScraper implements IWebScraper {
     public static final int TIMEOUT_SEC 	= 10;
     public static final int TIMEOUT = 1000 * TIMEOUT_SEC;
 
-    public static final String USER_AGENT = "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36";
+    public static final String MOZILLA_USER_AGENT = "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36";
 
     public static final String DISCARDED_WORD_PATH = "./src/main/resources/discardedWords.log";
 
     protected Document scrapePage(String urlPage, String word) {
         Document doc = null;
         try {
-            doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(USER_AGENT).timeout(TIMEOUT).get();
+            doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(MOZILLA_USER_AGENT).timeout(TIMEOUT).get();
+        
         } catch (MalformedURLException | HttpStatusException ex) {
             log.error("Error while scraping: " + ex);
+            logDiscardedWord(word);
             throw new WebCrawlerException(ex);
+
         } catch (IOException ioEx) {
             log.error("Error with I/O: " + ioEx);
             throw new WebCrawlerException(ioEx);
         }
+        
         return doc;
+    }
+    
+    private void logDiscardedWord(String word) {
+    	try (FileWriter fw = new FileWriter(new File(DISCARDED_WORD_PATH), true)){
+    		fw.write(word+"\n");
+    	} catch (IOException ex) {
+    		log.error("Errore nella scrittura sul file discarded_words_path", ex);
+    	} 
     }
 
     protected URL createUrl(String host, String input) throws MalformedURLException {

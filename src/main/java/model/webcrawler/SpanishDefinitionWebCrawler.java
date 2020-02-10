@@ -28,7 +28,7 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        translationPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+        translationPageWR.scrapePageWithWord(Collections.emptyList(), word);
         List<IAnkiCard> cardList = new ArrayList<>();
         cardList.add(createSimpleDefinitionCard(word));
         cardList.add(createReverseDefinitionCard(word));

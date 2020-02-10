@@ -1,20 +1,22 @@
 
 package main.java.engines;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
-import main.java.model.readers.TextListFileReader;
-import org.apache.log4j.Logger;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static main.java.webscraper.AbstractWebScraper.*;
 
@@ -29,6 +31,7 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     @Override
     public void createFlashcards()  {
 
+    	resetDiscardedWordFile();
         Map<Path, List<String>> contentMap = readFile(getFullInputPath());
 
         int numWords = 0;
@@ -65,6 +68,8 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
             throw new RuntimeException(ex);
         }
     }
+    
+    
 
     // ************ writing functions
     public String getOutputFileName(Path inputFileName) throws IOException {
@@ -99,6 +104,15 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
         if (number % LOG_COUNTER == 0) {
             log.info("Numero di esempi parsati: " + number * MAX_NUM_EXAMPLES_PER_WORD);
         }
+    }
+    
+    private void resetDiscardedWordFile() {
+    	try {
+			Files.createFile(Paths.get(DISCARDED_WORD_PATH));
+		} catch (IOException e) {
+			log.error("Errore nella creazione di un nuovo discarded word text file", e);
+			throw new RuntimeException(e);
+		}
     }
 
 
