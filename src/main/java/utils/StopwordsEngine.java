@@ -41,27 +41,33 @@ public class StopwordsEngine {
 
 		checkForStopWords(content, spanishStopwords);
 	}
-	
-	
+
+
 	public void checkForStopWords(Map<Path, List<String>> content, Set<String> stopwordsSet) {
-
+		int deckIndex = 0;
 		for (Map.Entry<Path, List<String>> entry : content.entrySet()) {
+
 			List<String> deck = entry.getValue();
-			Iterator<String> cardIterator = deck.iterator();
-			int cardIndex = 0;
-			while (cardIterator.hasNext()) {
-				String cardValue = cardIterator.next();
-				List<String> tokens = new ArrayList<>(Arrays.asList(cardValue.split(" ")));
+			List<String> newDeck = new ArrayList<>();
+
+			for (String card : deck) {
+				List<String> tokens = new ArrayList<>(Arrays.asList(card.split(" ")));
 				tokens.removeIf(it -> stopwordsSet.contains(it));
+				String newCardContent = unifyTokens(tokens);
 
-				log.info("Prima e Dopo: " + deck.get(cardIndex) + " - " + tokens.stream().collect(Collectors.joining(" ")));
-
-				deck.set(cardIndex++, tokens.stream().collect(Collectors.joining((" "))).trim());
+				if (!newCardContent.isEmpty()) {
+					newDeck.add(newCardContent);
+				}
 			}
-
-			deck.removeIf(it -> it.isEmpty());
+			content.put(entry.getKey(), newDeck);
+			deckIndex++;
 		}
-    }
+	}
+
+    private String unifyTokens(List<String> stringList) {
+		stringList.removeIf(str -> str.trim().isEmpty());
+		return stringList.stream().collect(Collectors.joining(" "));
+	}
 
 
 }

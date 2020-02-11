@@ -9,7 +9,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WebCrawlerEngineUtilsTest {
+class StopwordsEngineTest {
 
     static StopwordsEngine webCrawlerUtils;
 
@@ -37,7 +37,7 @@ class WebCrawlerEngineUtilsTest {
         webCrawlerUtils.checkForStopWords(contentMapExample, webCrawlerUtils.getSpanishStopwords());
 
         // then
-        assertEquals(Arrays.asList("parola corretta", "seconda parola corretta"), contentMapExample.entrySet().iterator().next());
+        assertIterableEquals(Arrays.asList("parola corretta", "seconda parola corretta"), contentMapExample.entrySet().iterator().next().getValue());
 
     }
 
