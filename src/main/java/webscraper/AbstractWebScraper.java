@@ -31,6 +31,7 @@ public abstract class AbstractWebScraper implements IWebScraper {
     protected Document scrapePage(String urlPage, String word) {
         Document doc = null;
         try {
+
             doc = Jsoup.connect(createUrlAsString(urlPage, word)).userAgent(MOZILLA_USER_AGENT).timeout(TIMEOUT).get();
         
         } catch (MalformedURLException | HttpStatusException ex) {
@@ -46,7 +47,7 @@ public abstract class AbstractWebScraper implements IWebScraper {
         return doc;
     }
     
-    private void logDiscardedWord(String word) {
+    protected void logDiscardedWord(String word) {
     	try (FileWriter fw = new FileWriter(new File(DISCARDED_WORD_PATH), true)){
     		fw.write(word+"\n");
     	} catch (IOException ex) {

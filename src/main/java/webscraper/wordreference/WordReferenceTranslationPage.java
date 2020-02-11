@@ -1,6 +1,7 @@
 package main.java.webscraper.wordreference;
 
 import com.google.inject.Singleton;
+import main.exceptions.WebCrawlerException;
 import main.java.contracts.IAnkiCard;
 import main.java.webscraper.AbstractWebScraper;
 import org.jsoup.nodes.Document;
@@ -27,6 +28,17 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
     @Override
     public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
         this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word);
+        checkParsingOk(word);
+    }
+
+    private boolean checkParsingOk(String word) {
+        Element noEntryFound = this.traduzioneEspItaPage.getElementById("noEntryFound");
+        if (noEntryFound != null) {
+            logDiscardedWord(word);
+            return false;
+        }
+
+        return true;
     }
 
     public Map<String, String> getWordTranslation(String word) {
