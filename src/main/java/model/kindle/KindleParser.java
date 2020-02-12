@@ -11,9 +11,8 @@ import java.util.stream.Stream;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
-import org.apache.log4j.Logger;
 
-public class KindleClippingsParser implements IParser {
+public class KindleParser implements IParser {
 
 	private static final String KINDLE_TOKEN = "==========";
 	private static final String KINDLE_KEY = "evidenziazione";
