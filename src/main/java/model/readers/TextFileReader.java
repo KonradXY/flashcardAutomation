@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -41,7 +42,7 @@ public class TextFileReader implements IReader {
 
 	private void readContent(Map<Path, String> contentMap, Path filePath) {
 		try {
-			if (!Files.isDirectory(filePath)) {
+			if (!filePath.toFile().isDirectory()) {
 				Stream.of(filePath)
 						.filter(IReader::filterParsable)
 						.forEach(it -> addEntryToMap(contentMap, it));
@@ -63,11 +64,11 @@ public class TextFileReader implements IReader {
 		if (!mapInput.containsKey(pathFile)) {
 			log.info("lettura file: " + pathFile);
 			StringBuilder sb = new StringBuilder();
-			try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), "UTF-8"))) {
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pathFile.toString()), StandardCharsets.UTF_8))) {
 				br.lines().forEach(str -> sb.append(formatLine(str + "\n")));
 				fileCounter++;
 			} catch (IOException ex) {
-				ex.printStackTrace();
+				log.error("Errore nella funzione addEntryToMap", ex);
 			}
 
 			mapInput.put(pathFile, sb.toString());
