@@ -2,10 +2,7 @@ package main.java.model.kindle;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,6 +16,12 @@ public class KindleParser implements IParser {
 
 	@Override
 	public List<IAnkiCard> parse(Path fileName, String input) {
+		List<IAnkiCard> kindleCardList = mapCardsFromInput(input);
+		kindleCardList = removeNearDuplicates(kindleCardList);
+		return kindleCardList;
+	}
+
+	private List<IAnkiCard> mapCardsFromInput(String input) {
 		String[] values = input.split(KINDLE_TOKEN);
 		List<IAnkiCard> cardList = new ArrayList<>();
 		Stream.of(values).forEach(inputLine -> {
@@ -26,6 +29,20 @@ public class KindleParser implements IParser {
 				cardList.add(new KindleAnkiCard(inputLine));
 			}});
 		return cardList;
+	}
+
+	private List<IAnkiCard> removeNearDuplicates(List<IAnkiCard> deck) {
+		List<KindleAnkiCard> kindleDeck = deck.stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
+		Map<Integer, List<KindleAnkiCard>> contentByHash = kindleDeck.stream().collect(Collectors.groupingBy(KindleAnkiCard::getHashContent));
+		List<IAnkiCard> newCardList = new ArrayList<>();
+
+		for (Map.Entry<Integer, List<KindleAnkiCard>> entry : contentByHash.entrySet()) {
+			List<KindleAnkiCard> cardList = entry.getValue();
+			cardList.sort(Comparator.comparingInt((KindleAnkiCard k) -> k.getContent().length()).reversed());
+			newCardList.add(cardList.get(0));
+		}
+
+		return newCardList;
 	}
 
 	@Override
