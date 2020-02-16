@@ -1,4 +1,4 @@
-package main.java.model.languageLearning;
+package main.java.model.languagelearning;
 
 import main.java.model.AnkiCard;
 

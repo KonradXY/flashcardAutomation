@@ -1,4 +1,4 @@
-package main.java.model.languageLearning;
+package main.java.model.languagelearning;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class LanguageLearningParser implements IParser {
 	
-	private final static Logger log = Logger.getLogger(LanguageLearningParser.class);
+	private static final Logger log = Logger.getLogger(LanguageLearningParser.class);
 
 	@Override
 	public List<IAnkiCard> parse(Path path, String file) {

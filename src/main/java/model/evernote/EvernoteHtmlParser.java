@@ -15,7 +15,7 @@ import org.jsoup.select.Elements;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
-import main.java.modelDecorator.DecoratingCard;
+import main.java.card_decorators.DecoratingCard;
 import main.java.utils.ParserUtil;
 
 public class EvernoteHtmlParser implements IParser {
@@ -52,13 +52,11 @@ public class EvernoteHtmlParser implements IParser {
           
         parserUtil.createImagesForFlashcard(htmlDoc, outputContent, fileName);
         
-        List<IAnkiCard> cards = htmlDoc.getElementsByTag("tbody").stream()
-							        .map(tbody -> parseCardFromTBody(tbody))
+        return htmlDoc.getElementsByTag("tbody").stream()
+							        .map(this::parseCardFromTBody)
 							        .filter(card -> !parserUtil.cardExceedMaxSize(card))
 							        .map(DecoratingCard::decorateWithLeftFormat)
 							        .collect(Collectors.toList());
-        
-        return cards;
     }
 
     private IAnkiCard parseCardFromTBody(Element tbody) {

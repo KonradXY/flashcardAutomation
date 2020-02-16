@@ -9,16 +9,12 @@ import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
 import org.jsoup.nodes.Element;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static main.java.modelDecorator.AbstractCardDecorator.*;
-import static main.java.webscraper.AbstractWebScraper.TIME_SLEEP;
+import static main.java.card_decorators.AbstractCardDecorator.*;
 
 @Singleton
 public class SpanishGeneralWebCrawler implements IWebCrawler {

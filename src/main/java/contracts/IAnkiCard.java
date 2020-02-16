@@ -5,8 +5,8 @@ import org.jsoup.parser.Tag;
 
 public interface IAnkiCard {
 
-	String FRONT = "front";
-	String BACK = "back";
+	String FRONT_TAG = "front";
+	String BACK_TAG = "back";
 	Tag divTag = Tag.valueOf("div");
 	
 	IAnkiCard create();

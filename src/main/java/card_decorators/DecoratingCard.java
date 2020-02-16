@@ -1,12 +1,13 @@
-package main.java.modelDecorator;
+package main.java.card_decorators;
 
-import static main.java.modelDecorator.AbstractCardDecorator.*;
+import static main.java.card_decorators.AbstractCardDecorator.*;
 
 import main.java.contracts.IAnkiCard;
 import org.jsoup.nodes.Element;
 
 
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public interface DecoratingCard extends IAnkiCard {
 
@@ -16,7 +17,7 @@ public interface DecoratingCard extends IAnkiCard {
     // NB: il problema qua e' che se aggiungo roba sull'IAnkiCard devo trasferirla anche qui !!!
 
     static DecoratingCard from(IAnkiCard card) {
-        DecoratingCard adapted = new DecoratingCard() {
+        return new DecoratingCard() {
             @Override public IAnkiCard create() { return card.create(); }
             @Override public IAnkiCard create(String front, String back) { return card.create(front, back); }
             @Override public IAnkiCard create(Element front, Element back) { return card.create(front, back); }
@@ -24,10 +25,9 @@ public interface DecoratingCard extends IAnkiCard {
             @Override public Element getBack() { return card.getBack(); }
             @Override public String toString() {return card.toString();}
         };
-        return adapted;
     }
 
-    Function<DecoratingCard, DecoratingCard> decorateWithLeftFormat = (it) -> {
+    UnaryOperator<DecoratingCard> leftFormatDecoration = it -> {
         it.getFront().children().stream().forEach(applyLeftFormat);
         it.getBack().children().stream().forEach(applyLeftFormat);
         return it;
@@ -46,9 +46,7 @@ public interface DecoratingCard extends IAnkiCard {
 
     // NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
     static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
-        DecoratingCard decorated = DecoratingCard.from(card)
-                                        .decorateWith(decorateWithLeftFormat);
-        return decorated;
+        return DecoratingCard.from(card).decorateWith(leftFormatDecoration);
     }
 
 

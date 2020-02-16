@@ -9,13 +9,10 @@ import main.java.webscraper.wordreference.WordReferenceTranslationPage;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.*;
 
-import static main.java.modelDecorator.AbstractCardDecorator.*;
-import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.*;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 @Singleton
 public class SpanishDefinitionWebCrawler implements IWebCrawler {

@@ -1,11 +1,6 @@
 
 package main.java.engines;
 
-import static main.java.webscraper.AbstractWebScraper.LOG_COUNTER;
-import static main.java.webscraper.AbstractWebScraper.MAX_NUM_EXAMPLES_PER_WORD;
-import static main.java.webscraper.AbstractWebScraper.TIME_SLEEP;
-import static main.java.webscraper.AbstractWebScraper.discardedWordsPath;
-
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,17 +8,19 @@ import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import com.google.inject.Inject;
+import main.java.utils.StopwordsEngine;
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
+
+import static main.java.webscraper.AbstractWebScraper.*;
 
 public abstract class WebCrawlerEngine extends AbstractEngine {
 
@@ -33,11 +30,15 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     protected IWebCrawler webCrawler;
     protected IPrinter printer;
 
+    private static final StopwordsEngine stopwordsEngine = new StopwordsEngine();
+
+
     @Override
     public void createFlashcards()  {
 
     	resetDiscardedWordFile();
         Map<Path, List<String>> contentMap = readFile(getFullInputPath());
+        stopwordsEngine.checkForSpanishStopWords(contentMap);
 
         int numWords = 0;
 
@@ -113,10 +114,10 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     
     private void resetDiscardedWordFile() {
     	try {
-    		if (Files.exists(Paths.get(discardedWordsPath)))
-    			Files.delete(Paths.get(discardedWordsPath));
+    		if (Files.exists(Paths.get(DISCARDED_WORD_PATH)))
+    			Files.delete(Paths.get(DISCARDED_WORD_PATH));
 
-    		Files.createFile(Paths.get(discardedWordsPath));
+    		Files.createFile(Paths.get(DISCARDED_WORD_PATH));
     	} catch (IOException e) {
     		log.error("Errore nella creazione di un nuovo discarded word text file", e);
     		throw new RuntimeException(e);

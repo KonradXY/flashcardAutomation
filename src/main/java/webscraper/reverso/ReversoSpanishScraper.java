@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static main.java.modelDecorator.AbstractCardDecorator.addContentToBack;
-import static main.java.modelDecorator.AbstractCardDecorator.addContentToFront;
-import static main.java.modelDecorator.AbstractCardDecorator.getBoldParagraphTag;
-import static main.java.modelDecorator.AbstractCardDecorator.getParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
+import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 @Singleton
 public class ReversoSpanishScraper extends AbstractWebScraper {

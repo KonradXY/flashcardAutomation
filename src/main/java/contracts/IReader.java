@@ -11,13 +11,11 @@ public interface IReader {
 
 	public static Predicate<Path> isParseable = (IReader::checkParsability);
 	
-	public static boolean isParseable(Path p) { return checkParsability(p); }
+	public static boolean filterParsable(Path p) { return checkParsability(p); }
 	
 	public static boolean checkParsability(Path p) {
 		String path = p.toString().trim();
-		if (path.endsWith(".html") || path.endsWith(".txt"))
-			return true;
-		return false;
+		return (path.endsWith(".html") || path.endsWith(".txt"));
 	}
 	
 
