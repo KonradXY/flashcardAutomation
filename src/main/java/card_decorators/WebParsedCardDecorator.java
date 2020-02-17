@@ -2,7 +2,7 @@ package main.java.card_decorators;
 
 import main.java.contracts.IAnkiCard;
 
-public class WebParsedCardDecorator extends StandardFormatCardDecorator {
+public class WebParsedCardDecorator extends StandardCardDecorator {
 
 	public IAnkiCard create(String word, String traduzione, String contenuto) {
         return this.createWebParsedCard(word, traduzione, contenuto);

@@ -33,8 +33,8 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        definitionPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
-        synonimsPageWR.scrapePageWithWord(Collections.EMPTY_LIST, word);
+        definitionPageWR.scrapePageWithWord(Collections.emptyList(), word);
+        synonimsPageWR.scrapePageWithWord(Collections.emptyList(), word);
 
         Map<String, String> definizioniMap = definitionPageWR.getWordDefinition(word);
         List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
@@ -55,7 +55,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (definizioni.isEmpty())
             return;
 
-        Element definizioniList = getUnorderedListTag().addClass("definizioni");
+        Element definizioniList = getUnorderedListTag().addClass(DEFINIZIONI_CLASS);
         for (Map.Entry<String, String> entry : definizioni.entrySet()) {
             Element listItem = createSingleDefinizione(entry);
             definizioniList.appendChild(listItem);
@@ -63,7 +63,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         applyLeftFormatRecursively(definizioniList);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text("Definizioni"));
+        card.getBack().appendChild(getBoldParagraphTag().text(DEFINIZIONI_CLASS));
         card.getBack().appendChild(definizioniList);
 
     }
@@ -72,14 +72,14 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (sinonimi.isEmpty())
             return;
 
-        Element listaSinonimi = getUnorderedListTag().addClass("sinonimi");
+        Element listaSinonimi = getUnorderedListTag().addClass(SINONIMI_CLASS);
         for (String str : sinonimi) {
             listaSinonimi.appendChild(getListItemTag().text(str));
         }
         applyLeftFormatRecursively(listaSinonimi);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text("Sinonimi"));
+        card.getBack().appendChild(getBoldParagraphTag().text(SINONIMI_CLASS));
         card.getBack().appendChild(listaSinonimi);
 
     }
