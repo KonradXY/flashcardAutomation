@@ -48,11 +48,9 @@ public enum TextParsingStrategy {
             if (!entriesAreEven(splittedText))
                 throw new RuntimeException("Le entry non sono pari ! Controllare che ogni carta abbia due facce !");
 
-            int length = (!entriesAreEven(splittedText) ? splittedText.length : splittedText.length - 1);
-
-            for (int i = 0; i < length; i += 2) {
-                listCard.add(new AnkiCard(splittedText[i + SIMPLE_PARSER_ENG_FIELD],
-                        splittedText[i + SIMPLE_PARSER_ESP_FIELD]));
+            for (int i = 0; i < splittedText.length; i += 2) {
+                listCard.add(new AnkiCard(splittedText[i + FIRST_FIELD],
+                        splittedText[i + SECOND_FIELD]));
             }
         }
     }
@@ -64,8 +62,8 @@ public enum TextParsingStrategy {
 
     // ======== class starts here !!!
 
-    public static int SIMPLE_PARSER_ESP_FIELD = 0;
-    public static int SIMPLE_PARSER_ENG_FIELD = 1;
+    public static int FIRST_FIELD = 0;
+    public static int SECOND_FIELD = 1;
 
     private final static Logger log = Logger.getLogger(TextParsingStrategy.class);
 
@@ -73,6 +71,7 @@ public enum TextParsingStrategy {
         return entries.length%2 == 0;
     }
 
+    // TODO - che e' sto generic ?
     <T> void addParsedCard(List<IAnkiCard> listCard, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
 
         String qa[] = parseDomandeRisposte(input);

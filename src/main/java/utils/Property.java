@@ -16,7 +16,7 @@ public class Property {
 	public static final String KINDLE_PATH = "kindle/";
 	public static final String WEB_CRAWLER_PATH = "webcrawler/provaeccezioni.txt";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";
-	public static final String GENERIC_PATH = "generic/parole.txt";
+	public static final String GENERIC_PATH = "generic/alpha.txt";
 	public static final String STOPWORD_PATH = "stopwords/";
 
 
