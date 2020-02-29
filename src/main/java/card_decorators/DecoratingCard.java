@@ -27,12 +27,6 @@ public interface DecoratingCard extends IAnkiCard {
         };
     }
 
-    UnaryOperator<DecoratingCard> leftFormatDecoration = it -> {
-        it.getFront().children().stream().forEach(applyLeftFormat);
-        it.getBack().children().stream().forEach(applyLeftFormat);
-        return it;
-    };
-
     // NB: funzione che mi permette di decorare gli oggetti in maniera semplice
     default DecoratingCard decorateWith(Function<? super DecoratingCard, ? extends DecoratingCard> decorator) {
         return decorator.apply(this);
@@ -42,11 +36,6 @@ public interface DecoratingCard extends IAnkiCard {
     default DecoratingCard decorateFromCard(Function<? super DecoratingCard, ? extends IAnkiCard> decorator ) {
         IAnkiCard decoratedCard = decorator.apply(this);
         return from(decoratedCard);
-    }
-
-    // NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
-    static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
-        return DecoratingCard.from(card).decorateWith(leftFormatDecoration);
     }
 
 

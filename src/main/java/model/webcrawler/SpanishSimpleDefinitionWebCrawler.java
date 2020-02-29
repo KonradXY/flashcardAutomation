@@ -15,14 +15,14 @@ import static main.java.card_decorators.AbstractCardDecorator.*;
 import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 @Singleton
-public class SpanishDefinitionWebCrawler implements IWebCrawler {
+public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
 
-    private static final Logger log = Logger.getLogger(SpanishDefinitionWebCrawler.class);
+    private static final Logger log = Logger.getLogger(SpanishSimpleDefinitionWebCrawler.class);
 
     private final WordReferenceTranslationPage translationPageWR;
 
     @Inject
-    public SpanishDefinitionWebCrawler(WordReferenceTranslationPage translationPageWR) {
+    public SpanishSimpleDefinitionWebCrawler(WordReferenceTranslationPage translationPageWR) {
         this.translationPageWR = translationPageWR;
     }
 
@@ -42,7 +42,7 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
         addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
 
         for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
-            addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+            addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass(TRADUZIONE_CLASS));
         }
 
         Optional<Element> tip = translationPageWR.getWordTips(word);
@@ -58,14 +58,12 @@ public class SpanishDefinitionWebCrawler implements IWebCrawler {
         Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
         if (!traduzioni.isEmpty()) {
 
-            addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass("traduzione"));
+            addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass(TRADUZIONE_CLASS));
 
             for (Map.Entry<String, String> entry : traduzioni.entrySet()) {
-                addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass("traduzione"));
+                addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass(TRADUZIONE_CLASS));
             }
         }
-
-
         return card;
     }
 }

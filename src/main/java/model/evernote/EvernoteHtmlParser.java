@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import main.java.card_decorators.StandardCardDecorator;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -55,7 +56,7 @@ public class EvernoteHtmlParser implements IParser {
         return htmlDoc.getElementsByTag("tbody").stream()
 							        .map(this::parseCardFromTBody)
 							        .filter(card -> !parserUtil.cardExceedMaxSize(card))
-							        .map(DecoratingCard::decorateWithLeftFormat)
+							        .map(StandardCardDecorator::decorateWithLeftFormat)
 							        .collect(Collectors.toList());
     }
 
