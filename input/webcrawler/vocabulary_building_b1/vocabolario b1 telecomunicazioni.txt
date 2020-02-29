@@ -1,0 +1,179 @@
+el actor
+la actriz
+la adaptciàon
+el analisis
+la antena
+la antena parabolica
+el anuncio
+el argumento
+el articulo
+la audienca
+el brillo
+la camara
+el capitulo
+la cartelera
+el color
+la comedia
+la comunicacion
+el concurso
+la contraportada
+el corrector
+el corresponsal
+el cortometraje
+la decoración
+la delegación
+el descanso
+el diálogo
+el diario
+los dibujos animados
+la difusion
+el director
+el doblaje
+el documental
+la edicion
+el editorial
+el ejemplar
+la emision
+el ensayo
+el enviado
+la entrevista
+el episodio
+el escenario
+la escenografia
+la esquela
+el espectaculo
+la estrella
+el estreno
+la fotografia
+la gala
+la grabacion
+el guion
+la imagen
+la informacion
+el informe
+la interferencia
+el interruptor
+el invitado
+el lector
+el locutor
+el mando a distancia
+el maquillaje
+el media
+el melodrama
+el moderador
+el monologo
+las noticias
+el obituario
+la obra de teatro
+la opinion
+el oyente
+la pantalla
+los participantes
+la pausa
+la pelicula
+el periodico
+el periodista
+el personaje
+el presentador
+el programa
+la programacion
+el protagonista
+la prueba
+la publicidad
+el publico
+la radio
+la realizacion
+el recital musical
+la redaccion
+el redactor
+el reportaje
+el reportero
+la reposicion
+la retransmision
+la revista
+la seccion
+la serie
+el sonito
+el subtitulo
+el suplemento
+el telediario
+la telenovela
+el telespectador
+el teletexto
+la tirada
+el titular
+la tragedia
+el vestuario
+el video
+el volumen
+aburrido
+artistico
+borroso
+claro
+comico
+creativo
+cultural deportivo
+divertido
+dominical
+educativo
+en diferido
+en directorentretenido
+ficticio
+global
+infantil
+informativo
+interesante
+internacional
+juvenil
+local
+mediatico
+mensual
+misterioso
+musical
+nacional
+oscuro
+oliciaco
+privado
+publico
+radical
+real
+semanal
+social
+subtitulado
+territorial
+adaptar
+adelantar
+anunciar
+cancelar
+comprobar
+corregir
+dirigir
+distribuir
+doblar
+durar
+editar
+emitir
+entretenerse
+entrevistar
+escribir
+estrenar
+filmar
+grabar
+informar
+imprimir
+interpretar
+maquillar
+notar
+observar
+patrocinar
+poner (una pelicula)
+presentar
+programar
+rebobinar
+redactar
+representar
+retransmitir
+suspender
+ver
+verificar
+culebrón
