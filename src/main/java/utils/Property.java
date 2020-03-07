@@ -14,12 +14,10 @@ public class Property {
 	public static final String LANGUAGE_LEARNING_PATH = "languageLearning/prepositions/";
 	public static final String EVERNOTE_PATH = "evernote/";
 	public static final String KINDLE_PATH = "kindle/";
-	public static final String WEB_CRAWLER_PATH = "webcrawler/provaeccezioni.txt";
+	public static final String WEB_CRAWLER_PATH = "webcrawler/vocabulary_building_b1/vocabolario b1 deportes.txt";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";
 	public static final String GENERIC_PATH = "generic/alpha.txt";
 	public static final String STOPWORD_PATH = "stopwords/";
-
-
 
 	private static final String propDir = "src/main/resources/input.properties";
 	private static Properties prop;
