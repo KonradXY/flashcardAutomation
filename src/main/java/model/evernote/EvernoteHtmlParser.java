@@ -1,39 +1,31 @@
 package main.java.model.evernote;
 
+import main.java.card_decorators.StandardCardDecorator;
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.utils.ParserUtil;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import main.java.card_decorators.StandardCardDecorator;
-import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.card_decorators.DecoratingCard;
-import main.java.utils.ParserUtil;
-
 public class EvernoteHtmlParser implements IParser {
-
-    
-    private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
 
     private ParserUtil parserUtil;
     private Path outputContent;
-    
-    public EvernoteHtmlParser() { }
 
     public EvernoteHtmlParser(ParserUtil parserUtil, Path outputContent) {
         this.parserUtil = parserUtil;
         this.outputContent = outputContent;
     }
-    
+
 
     @Override
     public List<IAnkiCard> parse(Path filename, String input) {
@@ -50,14 +42,14 @@ public class EvernoteHtmlParser implements IParser {
 
     private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
         Document htmlDoc = Jsoup.parse(htmlContent);
-          
+
         parserUtil.createImagesForFlashcard(htmlDoc, outputContent, fileName);
-        
+
         return htmlDoc.getElementsByTag("tbody").stream()
-							        .map(this::parseCardFromTBody)
-							        .filter(card -> !parserUtil.cardExceedMaxSize(card))
-							        .map(StandardCardDecorator::decorateWithLeftFormat)
-							        .collect(Collectors.toList());
+                .map(this::parseCardFromTBody)
+                .filter(card -> !parserUtil.cardExceedMaxSize(card))
+                .map(StandardCardDecorator::decorateWithLeftFormat)
+                .collect(Collectors.toList());
     }
 
     private IAnkiCard parseCardFromTBody(Element tbody) {

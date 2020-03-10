@@ -12,7 +12,7 @@ public class Property {
 
 
 	public static final String LANGUAGE_LEARNING_PATH = "languageLearning/prepositions/";
-	public static final String EVERNOTE_PATH = "evernote/";
+	public static final String EVERNOTE_PATH = "evernote/tdd/";
 	public static final String KINDLE_PATH = "kindle/";
 	public static final String WEB_CRAWLER_PATH = "webcrawler/provaeccezioni.txt";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";

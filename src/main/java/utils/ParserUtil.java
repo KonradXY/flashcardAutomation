@@ -21,10 +21,10 @@ public class ParserUtil {
 	private static final int MAX_SIZE_CARD = 131072;
 
 	public boolean cardExceedMaxSize(IAnkiCard card) {
-		boolean check = card.getBack().text().length() > MAX_SIZE_CARD
-				|| card.getFront().text().length() > MAX_SIZE_CARD;
-		if (check)
+		boolean check = card.getBack().text().length() > MAX_SIZE_CARD || card.getFront().text().length() > MAX_SIZE_CARD;
+		if (check) {
 			log.info("Card exceded max size ! Card title: " + card.getFront().text());
+		}
 		return check;
 	}
 
@@ -47,7 +47,7 @@ public class ParserUtil {
 	}
 
 	private boolean imageIsCopiable(String imgPath) {
-		return imgPath.contains("http");
+		return !imgPath.contains("http");
 	}
 
 	private Path buildMediaFolder(Path outputContent) {
@@ -64,12 +64,15 @@ public class ParserUtil {
 	}
 
 	public void copyFile(Path src, Path dest) {
-		if (!Files.exists(src))
+
+		if (!Files.exists(src)) {
 			throw new IllegalStateException("FILE SRC NON TROVATO: " + src);
+		}
 
 		if (Files.isDirectory(dest)) {
 			throw new IllegalStateException("FILE DEST NON PUO' ESSERE DIRECTORY ! " + dest);
 		}
+
 
 		try {
 			Files.copy(src, dest, StandardCopyOption.REPLACE_EXISTING);
