@@ -32,7 +32,6 @@ public class Property {
 	}
 
 
-
 	private static Properties getProperties() {
 		try {
 			if (prop == null) {
