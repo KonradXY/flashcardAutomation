@@ -9,12 +9,13 @@ public class Property {
 
 	public static String OUTPUT_DIR = getOutputDir();
 	public static String INPUT_DIR = getInputDir();
+	public static String ANKI_MEDIA_COLLECTION_DIR = getAnkiMediaCollectionDir();
 
 
 	public static final String LANGUAGE_LEARNING_PATH = "languageLearning/prepositions/";
-	public static final String EVERNOTE_PATH = "evernote/";
+	public static final String EVERNOTE_PATH = "evernoteExports/";
 	public static final String KINDLE_PATH = "kindle/";
-	public static final String WEB_CRAWLER_PATH = "webcrawler/vocabulary_building_b1/vocabolario b1 deportes.txt";
+	public static final String WEB_CRAWLER_PATH = "webcrawler/vocabulary_building_b1/vocabolario b1 telecomunicazioni.txt";
 	public static final String TXT_INPUT_PATH = "txtSummarize/";
 	public static final String GENERIC_PATH = "generic/alpha.txt";
 	public static final String STOPWORD_PATH = "stopwords/";
@@ -27,6 +28,9 @@ public class Property {
 	}
 	private static String getOutputDir() {
 		return getProperties().getProperty("output.dir");
+	}
+	private static String getAnkiMediaCollectionDir() {
+		return getProperties().getProperty("anki.mediadir");
 	}
 
 

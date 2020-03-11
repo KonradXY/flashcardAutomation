@@ -27,6 +27,8 @@ public class ParserUtil {
 			log.info("Card exceded max size ! ");
 		return check;
 	}
+	
+	// TODO - dovrei spezzare in piu' funzioni semplici sta roba
 
 	public void createImagesForFlashcard(Document doc, Path outputContent, Path imageFile) {
 		String imgTitle;
@@ -60,7 +62,7 @@ public class ParserUtil {
 		return true;
 	}
 
-	private Path buildMediaFolder(Path outputContent) {
+	public Path buildMediaFolder(Path outputContent) {
 		try {
 			Path mediaFolder = outputContent.resolve(MEDIA_FOLDER);
 			if (!Files.exists(mediaFolder)) {
