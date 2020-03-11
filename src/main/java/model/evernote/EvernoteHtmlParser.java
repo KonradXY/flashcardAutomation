@@ -11,16 +11,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import main.java.card_decorators.StandardCardDecorator;
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.utils.ParserUtil;
+
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.utils.ParserUtil;
 
 import static main.java.utils.Property.ANKI_MEDIA_COLLECTION_DIR;
 
@@ -97,6 +97,7 @@ public class EvernoteHtmlParser implements IParser {
 	private boolean isNotDirectory(Path path) {
 		return !Files.isDirectory(path);
 	}
+
 
 
 }

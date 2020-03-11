@@ -21,10 +21,10 @@ public class ParserUtil {
 	private static final int MAX_SIZE_CARD = 131072;
 
 	public boolean cardExceedMaxSize(IAnkiCard card) {
-		boolean check = card.getBack().text().length() > MAX_SIZE_CARD
-				|| card.getFront().text().length() > MAX_SIZE_CARD;
-		if (check)
-			log.info("Card exceded max size ! ");
+		boolean check = card.getBack().text().length() > MAX_SIZE_CARD || card.getFront().text().length() > MAX_SIZE_CARD;
+		if (check) {
+			log.info("Card exceded max size ! Card title: " + card.getFront().text());
+		}
 		return check;
 	}
 	
@@ -38,28 +38,18 @@ public class ParserUtil {
 		Path dest = buildMediaFolder(outputContent);
 
 		for (Element img : doc.getElementsByTag("img")) {
-
 			imgTitle = img.attr("src");
-//          log.info("IMG TITLE: " + imgTitle);
-
 			if (!imageIsCopiable(imgTitle))
 				continue;
-
 			source = currDir.resolve(imgTitle);
-//            log.info("SOURCE: " + source);
-
 			String titleImage = getTitleForImage(imageFile, imgTitle);
-//            log.info("TITLE IMAGE: " + titleImage);
-
 			copyFile(source, dest.resolve(titleImage));
 			img.attr("src", titleImage);
 		}
 	}
 
 	private boolean imageIsCopiable(String imgPath) {
-		if (imgPath.contains("http"))
-			return false;
-		return true;
+		return !imgPath.contains("http");
 	}
 
 	public Path buildMediaFolder(Path outputContent) {
@@ -71,22 +61,25 @@ public class ParserUtil {
 			return mediaFolder;
 		} catch (IOException ex) {
 			log.error("Cannot create media folder !");
-			throw new RuntimeException(ex);
+			throw new IllegalStateException(ex);
 		}
 	}
 
 	public void copyFile(Path src, Path dest) {
-		if (!Files.exists(src))
-			throw new RuntimeException("FILE SRC NON TROVATO: " + src);
+
+		if (!Files.exists(src)) {
+			throw new IllegalStateException("FILE SRC NON TROVATO: " + src);
+		}
 
 		if (Files.isDirectory(dest)) {
-			throw new RuntimeException("FILE DEST NON PUO' ESSERE DIRECTORY ! " + dest);
+			throw new IllegalStateException("FILE DEST NON PUO' ESSERE DIRECTORY ! " + dest);
 		}
+
 
 		try {
 			Files.copy(src, dest, StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException ex) {
-			throw new RuntimeException("Error while copying file: " + ex);
+			throw new IllegalStateException("Error while copying file: " + ex);
 		}
 
 	}
@@ -94,10 +87,10 @@ public class ParserUtil {
 	private String getTitleForImage(Path filePath, String imgName) {
 
 		int first = filePath.toString().lastIndexOf(File.separatorChar) + 1;
-		int last = filePath.toString().lastIndexOf(".");
+		int last = filePath.toString().lastIndexOf('.');
 		String imgTitle = filePath.toString().substring(first, last);
 
-		first = imgName.lastIndexOf("/") + 1;
+		first = imgName.lastIndexOf('/') + 1;
 		imgTitle += imgName.substring(first);
 
 		imgTitle = IParser.replaceWhitespaces(imgTitle);
