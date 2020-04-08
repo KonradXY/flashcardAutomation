@@ -89,6 +89,7 @@ public class EvernoteHtmlParser implements IParser {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				throw new RuntimeException(e);
 			}
 		});
 		
