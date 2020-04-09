@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-import com.google.inject.Inject;
 import main.java.utils.StopwordsEngine;
 import org.apache.log4j.Logger;
 
@@ -37,7 +36,7 @@ public abstract class WebCrawlerEngine extends AbstractEngine {
     public void createFlashcards()  {
 
     	resetDiscardedWordFile();
-        Map<Path, List<String>> contentMap = readFile(getFullInputPath());
+        Map<Path, List<String>> contentMap = readFile(getInputAsPath());
         stopwordsEngine.checkForSpanishStopWords(contentMap);
 
         int numWords = 0;

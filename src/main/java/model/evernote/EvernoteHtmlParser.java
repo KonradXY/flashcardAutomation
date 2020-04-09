@@ -8,6 +8,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import main.java.card_decorators.StandardCardDecorator;
@@ -79,6 +80,12 @@ public class EvernoteHtmlParser implements IParser {
 	}
 
 	private void copyImagesToMediaCollection(Path outputContent) throws IOException {
+
+		if (Objects.isNull(ANKI_MEDIA_COLLECTION_DIR) || ANKI_MEDIA_COLLECTION_DIR.equals("")) {
+			log.info("Attenzione: la cartella mediaCollection di anki non e' presente ! I file multimediali non verranno copiati");
+			return;
+		}
+
 		Path mediaFolder = parserUtil.buildMediaFolder(outputContent);
 		
 		Files.walk(mediaFolder).filter(this::isNotDirectory).forEach(imgPath ->{

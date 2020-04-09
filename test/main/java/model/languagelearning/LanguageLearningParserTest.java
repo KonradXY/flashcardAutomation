@@ -44,8 +44,6 @@ class LanguageLearningParserTest {
 	@BeforeAll
 	public static void setup() {
 		languageLearningEngine = new LanguageLearningEngine(testFileDir, testFileDir);
-		languageLearningEngine.setInputDir("./");
-		languageLearningEngine.setOutputDir("./");
 		languageLearningEngine.buildEngine();
 	}
 

@@ -4,6 +4,8 @@ import static main.java.utils.Property.EVERNOTE_PATH;
 import static main.java.utils.Property.GENERIC_PATH;
 import static main.java.utils.Property.KINDLE_PATH;
 import static main.java.utils.Property.LANGUAGE_LEARNING_PATH;
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.OUTPUT_DIR;
 
 import main.java.engines.*;
 import main.java.engines.textengines.DefaultAnkiEngine;
@@ -30,16 +32,16 @@ public class TextEngineFactory extends AbstractEngineFactory {
 
 		String input = inputParam.get(0);
 		switch(input) {
-			case "evernote": 			textEngine = new EvernoteEngine(EVERNOTE_PATH, EVERNOTE_PATH); break;
-			case "kindle": 	 			textEngine = new KindleEngine(KINDLE_PATH, KINDLE_PATH);   break;
-			case "languageLearning": 	textEngine = new LanguageLearningEngine(LANGUAGE_LEARNING_PATH, LANGUAGE_LEARNING_PATH); break;
-			default : 					textEngine = new DefaultAnkiEngine(GENERIC_PATH, GENERIC_PATH); break;
+			case "evernote": 			textEngine = new EvernoteEngine(INPUT_DIR + EVERNOTE_PATH, OUTPUT_DIR + EVERNOTE_PATH); break;
+			case "kindle": 	 			textEngine = new KindleEngine(INPUT_DIR + KINDLE_PATH, OUTPUT_DIR + KINDLE_PATH);   break;
+			case "languageLearning": 	textEngine = new LanguageLearningEngine(INPUT_DIR + LANGUAGE_LEARNING_PATH, OUTPUT_DIR +  LANGUAGE_LEARNING_PATH); break;
+			default : 					textEngine = new DefaultAnkiEngine(INPUT_DIR + GENERIC_PATH, OUTPUT_DIR + GENERIC_PATH); break;
 		}
 		
 		textEngine.buildEngine();
 
-		log.info("Cartella di input: " + textEngine.getFullInputDir());
-		log.info("Cartella di output: " + textEngine.getFullOutputDir());
+		log.info("Cartella di input: " + textEngine.getInputDir());
+		log.info("Cartella di output: " + textEngine.getOutputDir());
 		
 		return textEngine;
 	}

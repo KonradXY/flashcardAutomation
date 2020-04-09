@@ -53,9 +53,7 @@ class EvernoteHtmlParserTest {
 
 	@BeforeAll
 	public static void setup() {
-		evernoteEngine = new EvernoteEngine(testFile, testFileDir);
-		evernoteEngine.setInputDir("./");
-		evernoteEngine.setOutputDir("./");
+		evernoteEngine = new EvernoteEngine(testFileDir, testFileDir);
 		evernoteEngine.buildEngine();
 	}
 

@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
@@ -33,7 +32,7 @@ public abstract class TextEngine extends AbstractEngine {
 	
 	@Override
 	public void createFlashcards() {
-		Map<Path, String> contentRead = this.read(this.getFullInputPath());
+		Map<Path, String> contentRead = this.read(this.getInputAsPath());
 		Map<Path, List<IAnkiCard>> cardMap = this.parse(contentRead);
 		cardMap.entrySet().forEach(entry -> this.print(entry.getKey(), entry.getValue()));
 	}
