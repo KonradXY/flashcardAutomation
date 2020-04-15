@@ -7,26 +7,31 @@ import java.util.List;
 
 public class AnkiDeck {
 
-    List<IAnkiCard> deck;
+    List<IAnkiCard> cards;
     String title;
 
     public AnkiDeck() {
-        deck = new ArrayList<>();
+        cards = new ArrayList<>();
         title = "";
     }
     
+    private AnkiDeck(AnkiDeck.Builder builder) {
+    	this.cards = builder.cards;
+    	this.title = builder.title;
+    }
+    
     public void addCard(IAnkiCard card) {
-    	if (this.deck == null) 
-    		deck = new ArrayList<>();
-    	deck.add(card);
+    	if (this.cards == null) 
+    		cards = new ArrayList<>();
+    	cards.add(card);
     }
 
-	public List<IAnkiCard> getDeck() {
-		return deck;
+	public List<IAnkiCard> getCards() {
+		return cards;
 	}
 
-	public void setDeck(List<IAnkiCard> deck) {
-		this.deck = deck;
+	public void setDeck(List<IAnkiCard> cards) {
+		this.cards = cards;
 	}
 
 	public String getTitle() {
@@ -37,6 +42,23 @@ public class AnkiDeck {
 		this.title = title;
 	}
     
-    
+	public static class Builder {
+		private List<IAnkiCard> cards;
+		private String title;
+		
+		public Builder withCards(List<IAnkiCard> cards) {
+			this.cards = cards;
+			return this;
+		}
+		
+		public Builder withTitle(String title) {
+			this.title = title;
+			return this;
+		}
+		
+		public AnkiDeck build() {
+			return new AnkiDeck(this);
+		}
+	}
 
 }

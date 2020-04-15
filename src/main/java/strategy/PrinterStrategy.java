@@ -1,6 +1,7 @@
 package main.java.strategy;
 
 import main.java.contracts.IAnkiCard;
+import main.java.model.AnkiDeck;
 import main.java.model.kindle.KindleAnkiCard;
 import org.apache.log4j.Logger;
 
@@ -19,9 +20,9 @@ public enum PrinterStrategy {
     NO_STRATEGY {
         @Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
 
-        @Override public void printCards(Path destPath, List<IAnkiCard> cards) {
+        @Override public void printCards(Path destPath, AnkiDeck deck) {
             try {
-                Files.write(destPath, (Iterable<String>) cards.stream().map(it -> it.toString())::iterator);
+                Files.write(destPath, (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
             } catch (IOException ex) {
                 System.out.println("Errore nella scrittura del file: " + ex.getMessage());
                 throw new RuntimeException(ex);
@@ -34,9 +35,9 @@ public enum PrinterStrategy {
 
 
         @Override
-        public void printCards(Path destPath, List<IAnkiCard> cards) {
+        public void printCards(Path destPath, AnkiDeck deck) {
             int cardIndex = 0;
-            List<KindleAnkiCard> kindleCards = cards.stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
+            List<KindleAnkiCard> kindleCards = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
 
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destPath.toString()), "UTF-8"))) {
                 for (KindleAnkiCard kindleCard : kindleCards) {
@@ -51,7 +52,7 @@ public enum PrinterStrategy {
     };
 
     public abstract Path createNameOutputFile(Path outputFile);
-    public abstract void  printCards(Path destPath, List<IAnkiCard> cards);
+    public abstract void  printCards(Path destPath, AnkiDeck cards);
 
     private final static Logger log = Logger.getLogger(PrinterStrategy.class);
 

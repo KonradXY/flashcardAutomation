@@ -16,7 +16,7 @@ import main.java.contracts.IReader;
 import main.java.model.readers.TextFileReader;
 
 
-class FormatStrategyTest {
+class ReadingFormatStrategyTest {
 
 	private final static String filename = "tempfile.txt";
 	private final static Path filepath = Paths.get(filename);

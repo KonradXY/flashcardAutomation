@@ -35,24 +35,24 @@ class TextFilePrinterTest {
 	@Test
 	void testSimpleCardCorrectlyPrinted() throws IOException {
 		card = new AnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath, cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card));
+		printer.printFile(filetestpath, deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
 	@Test
 	void testLanguageCardCorrectlyPrinted() throws IOException {
 		card = new LanguageLearningAnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath,  cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card));
+		printer.printFile(filetestpath, deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
 	@Test
 	void testKindleCardCorrectlyPrinted() throws IOException {
 		card = new KindleAnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath,  cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card));
+		printer.printFile(filetestpath, deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
@@ -69,6 +69,10 @@ class TextFilePrinterTest {
 		br.lines().forEach(sb::append);
 		br.close();
 		return sb.toString();
+	}
+	
+	private AnkiDeck getDeckWithCards(List<IAnkiCard> cards) {
+		return new AnkiDeck.Builder().withCards(cards).build();
 	}
 
 }

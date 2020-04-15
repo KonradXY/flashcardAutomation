@@ -11,6 +11,7 @@ import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
+import main.java.model.AnkiDeck;
 
 public abstract class TextEngine extends AbstractEngine {
 	
@@ -33,14 +34,14 @@ public abstract class TextEngine extends AbstractEngine {
 	@Override
 	public void createFlashcards() {
 		Map<Path, String> contentRead = this.read(this.getInputAsPath());
-		Map<Path, List<IAnkiCard>> cardMap = this.parse(contentRead);
+		Map<Path, AnkiDeck> cardMap = this.parse(contentRead);
 		cardMap.entrySet().forEach(entry -> this.print(entry.getKey(), entry.getValue()));
 	}
 
 
 	// ***************** Parse & Sort Functions
-	public Map<Path, List<IAnkiCard>> parse(Map<Path, String> content) {
-		Map<Path, List<IAnkiCard>> contentParsed = new HashMap<>();
+	public Map<Path, AnkiDeck> parse(Map<Path, String> content) {
+		Map<Path, AnkiDeck> contentParsed = new HashMap<>();
 		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
 			contentParsed.put(getParsedFileName(singleContent.getKey()), this.parser.parse(singleContent.getKey(), singleContent.getValue()));
 		}
@@ -68,11 +69,11 @@ public abstract class TextEngine extends AbstractEngine {
 
 
 	// ***************** Print Functions
-	public void print(Map<Path, List<IAnkiCard>> cardList) {
+	public void print(Map<Path, AnkiDeck> cardList) {
 		cardList.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
 	}
 
-	public void print(Path destPath, List<IAnkiCard> cardList) {
+	public void print(Path destPath, AnkiDeck cardList) {
 		try {
 			this.getPrinter().printFile(destPath, cardList);
 		} catch (IOException ex) {

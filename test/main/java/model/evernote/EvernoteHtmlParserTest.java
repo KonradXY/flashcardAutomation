@@ -3,6 +3,8 @@ package main.java.model.evernote;
 import main.java.contracts.IAnkiCard;
 import main.java.engines.TextEngine;
 import main.java.engines.textengines.EvernoteEngine;
+import main.java.model.AnkiDeck;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -67,17 +69,17 @@ class EvernoteHtmlParserTest {
 	@Test
 	void testEvernoteEngineParsing() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		Map<Path, List<IAnkiCard>> cardMap = evernoteEngine.parse(content);
+		Map<Path, AnkiDeck> cardMap = evernoteEngine.parse(content);
 
 		assertEquals(1, cardMap.size());
 
-		List<IAnkiCard> cardList = cardMap.entrySet().iterator().next().getValue();
+		List<IAnkiCard> cardList = cardMap.entrySet().iterator().next().getValue().getCards();
 		assertEquals(4, cardList.size());
 
 
 		IAnkiCard emptyCard = null, imgCard1 = null, imgCard2 = null, imgCard3 = null;
-		for (List<IAnkiCard> deck : cardMap.values())
-			for (IAnkiCard card : deck) {
+		for (AnkiDeck deck : cardMap.values())
+			for (IAnkiCard card : deck.getCards()) {
 				switch (card.getFront().text().trim()) {
 					case "immagine1" : imgCard1 = card; break;
 					case "immagine2" : imgCard2 = card; break;
@@ -108,7 +110,7 @@ class EvernoteHtmlParserTest {
 	@Test
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		Map<Path, List<IAnkiCard>> cardList = evernoteEngine.parse(content);
+		Map<Path, AnkiDeck> cardList = evernoteEngine.parse(content);
 		evernoteEngine.print(cardList);
 
 		assertTrue(Files.exists(outputTestFile));

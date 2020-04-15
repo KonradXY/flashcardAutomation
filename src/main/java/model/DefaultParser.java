@@ -12,14 +12,14 @@ import main.java.strategy.TextParsingStrategy;
 public class DefaultParser implements IParser {
 
     @Override
-    public List<IAnkiCard> parse(Path fileName, String input) {
-        List<IAnkiCard> ankiCards = new ArrayList<>();
-        TextParsingStrategy.SIMPLE_PARSER.parseFile(ankiCards, input);
-        return ankiCards;
+    public AnkiDeck parse(Path fileName, String input) {
+        AnkiDeck deck = new AnkiDeck();
+        TextParsingStrategy.SIMPLE_PARSER.parseFile(deck, input);
+        return deck;
     }
 
     @Override
-    public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+    public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
         return mapContent;
     }
 

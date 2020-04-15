@@ -5,6 +5,7 @@ import java.util.List;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
+import main.java.model.AnkiDeck;
 import main.java.strategy.PrinterStrategy;
 import org.apache.log4j.Logger;
 
@@ -19,13 +20,13 @@ public class TextFilePrinter implements IPrinter {
 	}
 	
 	@Override
-	public void printFile(Path destPath, List<IAnkiCard> input) {
+	public void printFile(Path destPath, AnkiDeck deck) {
 
 		destPath = printerStrategy.createNameOutputFile(destPath);
 
 		checkOutputFolder(destPath);
 
-		printerStrategy.printCards(destPath, input);
+		printerStrategy.printCards(destPath, deck);
 
 	}
 	
