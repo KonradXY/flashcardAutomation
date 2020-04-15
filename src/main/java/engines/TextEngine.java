@@ -1,13 +1,12 @@
 package main.java.engines;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
@@ -43,8 +42,12 @@ public abstract class TextEngine extends AbstractEngine {
 	public Map<Path, AnkiDeck> parse(Map<Path, String> content) {
 		Map<Path, AnkiDeck> contentParsed = new HashMap<>();
 		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
-			contentParsed.put(getParsedFileName(singleContent.getKey()), this.parser.parse(singleContent.getKey(), singleContent.getValue()));
+			contentParsed.put(getParsedFileName(singleContent.getKey()), 					// key
+					this.parser.parse(singleContent.getKey(), singleContent.getValue()));	// value
 		}
+		
+		// FIXME- passo l'output foldere il titolo del file all'interno dei deck creati dopo il parsing (questa roba dovrebbe essere molto piu' organica)
+		setDestFoldersAndTitleForDecks(contentParsed);
 		return parser.sort(contentParsed);
 	}
 
@@ -54,6 +57,16 @@ public abstract class TextEngine extends AbstractEngine {
 		return Paths.get(textName.replace(extension, "_parsed.txt"));
 	}
 
+	private void setDestFoldersAndTitleForDecks(Map<Path, AnkiDeck> content) {
+		content.entrySet().stream().forEach(it -> {
+			it.getValue().setDestFolder(this.getOutputDir());
+			it.getValue().setTitle(getFileNameFromPath(it.getKey()));
+		});
+	}
+	
+	private String getFileNameFromPath(Path pathFile) {
+		return new File(pathFile.toString()).getName();
+	}
 
 
 
@@ -69,13 +82,13 @@ public abstract class TextEngine extends AbstractEngine {
 
 
 	// ***************** Print Functions
-	public void print(Map<Path, AnkiDeck> cardList) {
-		cardList.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
+	public void print(Map<Path, AnkiDeck> deck) {
+		deck.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
 	}
 
-	public void print(Path destPath, AnkiDeck cardList) {
+	public void print(Path destPath, AnkiDeck deck) {
 		try {
-			this.getPrinter().printFile(destPath, cardList);
+			this.getPrinter().printFile(deck);
 		} catch (IOException ex) {
 			throw new RuntimeException(ex);
 		}

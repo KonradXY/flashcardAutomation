@@ -20,13 +20,13 @@ public class TextFilePrinter implements IPrinter {
 	}
 	
 	@Override
-	public void printFile(Path destPath, AnkiDeck deck) {
+	public void printFile(AnkiDeck deck) {
 
-		destPath = printerStrategy.createNameOutputFile(destPath);
+		Path destPath = printerStrategy.createNameOutputFile(deck.getPathDest());
 
 		checkOutputFolder(destPath);
-
-		printerStrategy.printCards(destPath, deck);
+		
+		printerStrategy.printCards(deck);
 
 	}
 	

@@ -20,9 +20,9 @@ public enum PrinterStrategy {
     NO_STRATEGY {
         @Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
 
-        @Override public void printCards(Path destPath, AnkiDeck deck) {
+        @Override public void printCards(AnkiDeck deck) {
             try {
-                Files.write(destPath, (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
+                Files.write(deck.getPathDest(), (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
             } catch (IOException ex) {
                 System.out.println("Errore nella scrittura del file: " + ex.getMessage());
                 throw new RuntimeException(ex);
@@ -35,24 +35,24 @@ public enum PrinterStrategy {
 
 
         @Override
-        public void printCards(Path destPath, AnkiDeck deck) {
+        public void printCards(AnkiDeck deck) {
             int cardIndex = 0;
             List<KindleAnkiCard> kindleCards = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
 
-            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destPath.toString()), "UTF-8"))) {
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(deck.getDestFolder()), "UTF-8"))) {
                 for (KindleAnkiCard kindleCard : kindleCards) {
                     bw.write(cardIndex++ + ". " + kindleCard.getTitle() + "|");
                     bw.write(kindleCard.getBack() + "\n\n");
                 }
             } catch (IOException ex) {
-                log.error("Errore nella scrittura del file: " + destPath, ex);
+                log.error("Errore nella scrittura del file: " + deck.getDestFolder(), ex);
             }
         }
 
     };
 
     public abstract Path createNameOutputFile(Path outputFile);
-    public abstract void  printCards(Path destPath, AnkiDeck cards);
+    public abstract void  printCards(AnkiDeck cards);
 
     private final static Logger log = Logger.getLogger(PrinterStrategy.class);
 

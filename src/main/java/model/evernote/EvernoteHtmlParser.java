@@ -91,7 +91,6 @@ public class EvernoteHtmlParser implements IParser {
 		Files.walk(mediaFolder).filter(this::isNotDirectory).forEach(imgPath ->{
 			try {
 				Path imgName = imgPath.getFileName();
-				log.info("Anki media files copied: " + Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName));
 				Files.copy(imgPath, Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName), StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -99,6 +98,7 @@ public class EvernoteHtmlParser implements IParser {
 			}
 		});
 		
+		log.info("Anki media files copied inside folder: " + ANKI_MEDIA_COLLECTION_DIR);
 	}
 	
 	private boolean isNotDirectory(Path path) {

@@ -10,7 +10,7 @@ import main.java.model.AnkiDeck;
 public interface IPrinter {
 
 
-	void printFile(Path destPath, AnkiDeck input) throws IOException;
+	void printFile(AnkiDeck deck) throws IOException;
 
 	default void checkOutputFolder(Path filePath) {
 		try {
