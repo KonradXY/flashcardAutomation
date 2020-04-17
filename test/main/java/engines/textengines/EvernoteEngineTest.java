@@ -1,4 +1,4 @@
-package main.java.model.evernote;
+package main.java.engines.textengines;
 
 import main.java.contracts.IAnkiCard;
 import main.java.engines.TextEngine;
@@ -19,7 +19,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class EvernoteHtmlParserTest {
+class EvernoteEngineTest {
 
 	private static final String emptyCardValueFront =
 			"<div class=\"front\"> "

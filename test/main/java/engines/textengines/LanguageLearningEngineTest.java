@@ -1,13 +1,9 @@
-package main.java.model.languagelearning;
+package main.java.engines.textengines;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +13,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import main.java.engines.TextEngine;
-import main.java.engines.textengines.LanguageLearningEngine;
 
-class LanguageLearningParserTest {
+class LanguageLearningEngineTest extends TextEngineTest{
 	
 	private static final String testFileDir = "test/main/resources/language_learning/";
 
@@ -73,11 +68,4 @@ class LanguageLearningParserTest {
 		Files.deleteIfExists(Paths.get(outputVocabolario));
 	}
 	
-	private String getContentFromFile(Path filePath) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath.toString()), "UTF-8"));
-		StringBuilder sb = new StringBuilder();
-		br.lines().forEach(sb::append);
-		br.close();
-		return sb.toString();
-	}
 }
