@@ -31,6 +31,7 @@ class DefaultAnkiEngineTest extends TextEngineTest {
 	private final String entry10 = "<div class=\"front\"> dentro de </div>	<div class=\"back\">  inside </div>";
 	
 	private List<String> entries = Arrays.asList(entry1,entry2,entry3,entry4,entry5,entry6,entry7,entry8,entry9,entry10);
+	
 	private static TextEngine defaultEngine;
 
 	
