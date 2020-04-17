@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +19,8 @@ class DefaultAnkiEngineTest extends TextEngineTest {
 	
 	private static final String testFileDir = "test/main/resources/generic/";
 	private static final String testFileOutput = testFileDir + "testDefaultParser_parsed.txt";
+	private static final Path testFileOutputPath = Paths.get(testFileOutput);
+	
 
 	private final String entry1 = "<div class=\"front\"> a </div>	<div class=\"back\">  at </div>";
 	private final String entry2 = "<div class=\"front\"> a la derecha de </div>	<div class=\"back\">  to the right of </div>";
@@ -45,7 +48,9 @@ class DefaultAnkiEngineTest extends TextEngineTest {
 	void testDefaultEngineWorksCorrectly() throws IOException {
 		defaultEngine.createFlashcards();
 		
-		String contentReadFromFile = getContentFromFile(Paths.get(testFileOutput));
+		assertTrue(Files.exists(testFileOutputPath));
+		
+		String contentReadFromFile = getContentFromFile(testFileOutputPath);
 		for (String entry : entries)
 			assertTrue(contentReadFromFile.contains(entry));
 
@@ -53,8 +58,8 @@ class DefaultAnkiEngineTest extends TextEngineTest {
 	
 	@AfterAll
 	public static void tearDown() throws IOException {
-		if (Files.exists(Paths.get(testFileOutput))) {
-			Files.delete(Paths.get(testFileOutput));
+		if (Files.exists(testFileOutputPath)) {
+			Files.delete(testFileOutputPath);
 		}
 	}
 
