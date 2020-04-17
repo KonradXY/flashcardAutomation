@@ -1,13 +1,12 @@
 package main.java.model.printers;
 
 import java.nio.file.Path;
-import java.util.List;
 
-import main.java.contracts.IAnkiCard;
+import org.apache.log4j.Logger;
+
 import main.java.contracts.IPrinter;
 import main.java.model.AnkiDeck;
 import main.java.strategy.PrinterStrategy;
-import org.apache.log4j.Logger;
 
 public class TextFilePrinter implements IPrinter {
 
@@ -21,12 +20,13 @@ public class TextFilePrinter implements IPrinter {
 	
 	@Override
 	public void printFile(AnkiDeck deck) {
-
-		Path destPath = printerStrategy.createNameOutputFile(deck.getPathDest());
-
-		checkOutputFolder(destPath);
-		
-		printerStrategy.printCards(deck);
+		try {
+			Path destPath = printerStrategy.createNameOutputFile(deck.getPathDest());
+			checkOutputFolder(destPath);
+			printerStrategy.printCards(deck);
+		} catch (Exception ex) {
+			log.error("Errore nella scrittura su disco", ex);
+		}
 
 	}
 	

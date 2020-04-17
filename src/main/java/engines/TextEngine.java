@@ -50,7 +50,7 @@ public abstract class TextEngine extends AbstractEngine {
 		}
 
 		// FIXME- passo l'output folder e il titolo del file all'interno dei deck creati dopo il parsing (questa roba dovrebbe essere molto piu' organica)
-		setDestFoldersAndTitleForDecks(contentParsed);
+		contentParsed = setDestFoldersAndTitleForDecks(contentParsed);
 		return parser.sort(contentParsed);
 	}
 
@@ -83,14 +83,15 @@ public abstract class TextEngine extends AbstractEngine {
 	private Path getParsedFileName(Path inputFile) {
 		String textName = inputFile.toString();
 		String extension = textName.substring(textName.lastIndexOf("."));
-		return Paths.get(textName.replace(extension, "_parsed.txt"));
+		return Paths.get(textName.replace(extension, "_parsed" + extension));
 	}
 
-	private void setDestFoldersAndTitleForDecks(Map<Path, AnkiDeck> content) {
+	private Map<Path, AnkiDeck> setDestFoldersAndTitleForDecks(Map<Path, AnkiDeck> content) {
 		content.entrySet().stream().forEach(it -> {
 			it.getValue().setDestFolder(this.getOutputDir());
 			it.getValue().setTitle(getFileNameFromPath(it.getKey()));
 		});
+		return content;
 	}
 
 	private String getFileNameFromPath(Path pathFile) {
