@@ -1,47 +1,46 @@
 package main.java.model.languagelearning;
 
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.strategy.TextParsingStrategy;
+import java.nio.file.Path;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import main.java.contracts.IParser;
+import main.java.model.AnkiDeck;
+import main.java.strategy.TextParsingStrategy;
 
 public class LanguageLearningParser implements IParser {
 	
 	private static final Logger log = Logger.getLogger(LanguageLearningParser.class);
 
 	@Override
-	public List<IAnkiCard> parse(Path path, String file) {
+	public AnkiDeck parse(Path path, String file) {
 
 		String fileName = path.toString().trim();
-		List<IAnkiCard> cardList = new ArrayList<>();
+		AnkiDeck deck = new AnkiDeck();
 
 		if 		(fileName.endsWith("grammatica.txt"))
-			TextParsingStrategy.PRACTICE_MAKES_PERFECT_GRAMMATICA.parseFile(cardList, file);
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_GRAMMATICA.parseFile(deck, file);
 
 		else if (fileName.endsWith("vocabolario.txt"))
-			TextParsingStrategy.PRACTICE_MAKES_PERFECT_VOCABOLARIO.parseFile(cardList, file);
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_VOCABOLARIO.parseFile(deck, file);
 
 		else if (fileName.endsWith("traduzioni.txt"))
-			TextParsingStrategy.PRACTICE_MAKES_PERFECT_TRADUZIONI.parseFile(cardList, file);
+			TextParsingStrategy.PRACTICE_MAKES_PERFECT_TRADUZIONI.parseFile(deck, file);
 
 		else if (fileName.endsWith("parole.txt"))
-			TextParsingStrategy.SIMPLE_PARSER.parseFile(cardList, file);
+			TextParsingStrategy.SIMPLE_PARSER.parseFile(deck, file);
 
 		else {
 			log.info("Trovato file non contemplato per il parser LanguageLearning: " + path
 					+ ". Il file verrà scartato. ");
 		}
 
-		return cardList;
+		return deck;
 	}
 
 	@Override
-	public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
 		return mapContent;
 	}
 	

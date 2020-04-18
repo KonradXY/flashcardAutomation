@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import main.java.model.AnkiDeck;
+
 public interface IParser {
 	
 	String REGULAR_PIPE = "|";
@@ -19,8 +21,8 @@ public interface IParser {
 	Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
 	String QA_SEPARATOR = "RISPOSTE";
 
-	List<IAnkiCard> parse(Path path, String input);
-	Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent);
+	AnkiDeck parse(Path path, String input);
+	Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent);
 
 	
 	static String replaceNewLines(String input) { return input.replace(NEW_LINE, "");}

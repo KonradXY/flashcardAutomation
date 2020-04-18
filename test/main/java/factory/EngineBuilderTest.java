@@ -37,8 +37,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), DefaultParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + GENERIC_PATH);
-		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + GENERIC_PATH);
+		assertEquals(ankiEngine.getInputDir(), INPUT_DIR + GENERIC_PATH);
+		assertEquals(ankiEngine.getOutputDir(), OUTPUT_DIR + GENERIC_PATH);
 	}
 	
 	@Test
@@ -50,8 +50,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + EVERNOTE_PATH);
-		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + EVERNOTE_PATH);
+		assertEquals(ankiEngine.getInputDir(), INPUT_DIR + EVERNOTE_PATH);
+		assertEquals(ankiEngine.getOutputDir(), OUTPUT_DIR + EVERNOTE_PATH);
 	}
 	
 	@Test
@@ -63,8 +63,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), KindleParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 
-		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + KINDLE_PATH);
-		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + KINDLE_PATH);
+		assertEquals(ankiEngine.getInputDir(), INPUT_DIR + KINDLE_PATH);
+		assertEquals(ankiEngine.getOutputDir(), OUTPUT_DIR + KINDLE_PATH);
 	}
 	
 	@Test
@@ -76,8 +76,8 @@ class EngineBuilderTest {
 		assertEquals(ankiEngine.getParser().getClass(), LanguageLearningParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
-		assertEquals(ankiEngine.getFullInputDir(), INPUT_DIR + LANGUAGE_LEARNING_PATH);
-		assertEquals(ankiEngine.getFullOutputDir(), OUTPUT_DIR + LANGUAGE_LEARNING_PATH);
+		assertEquals(ankiEngine.getInputDir(), INPUT_DIR + LANGUAGE_LEARNING_PATH);
+		assertEquals(ankiEngine.getOutputDir(), OUTPUT_DIR + LANGUAGE_LEARNING_PATH);
 	}
 
 }

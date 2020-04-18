@@ -6,6 +6,7 @@ import static main.java.contracts.IParser.*;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
+import main.java.model.AnkiDeck;
 import main.java.model.languagelearning.LanguageLearningAnkiCard;
 import org.apache.log4j.Logger;
 
@@ -20,36 +21,36 @@ import java.util.stream.Stream;
 public enum TextParsingStrategy {
 
     PRACTICE_MAKES_PERFECT_GRAMMATICA {
-        public void parseFile(List<IAnkiCard> cardList, String inputFile) {
+        public void parseFile(AnkiDeck deck, String inputFile) {
             String[] splitted = inputFile.split(PIPE_SEPARATOR);
             int length = (splitted.length % 2 == 0 ? splitted.length : splitted.length - 1);
             for (int i = 0; i < length; i += 2) {
-                cardList.add(new LanguageLearningAnkiCard(splitted[i], splitted[i + 1], LanguageLearningAnkiCard.PracticeMakesPerfectEnum.GRAMMATICA));
+                deck.addCard(new LanguageLearningAnkiCard(splitted[i], splitted[i + 1], LanguageLearningAnkiCard.PracticeMakesPerfectEnum.GRAMMATICA));
             }
         }
     },
 
     PRACTICE_MAKES_PERFECT_VOCABOLARIO {
-        public void parseFile(List<IAnkiCard> listCard, String inputFile) {
-            addNestedParsedCard(listCard, inputFile, LanguageLearningAnkiCard.PracticeMakesPerfectEnum.VOCABOLARIO);
+        public void parseFile(AnkiDeck deck, String inputFile) {
+            addNestedParsedCard(deck, inputFile, LanguageLearningAnkiCard.PracticeMakesPerfectEnum.VOCABOLARIO);
         }
     },
 
     PRACTICE_MAKES_PERFECT_TRADUZIONI {
-        public void parseFile(List<IAnkiCard> listCard, String inputFile) {
-            addParsedCard(listCard, inputFile, LanguageLearningAnkiCard.PracticeMakesPerfectEnum.TRADUZIONE);
+        public void parseFile(AnkiDeck deck, String inputFile) {
+            addParsedCard(deck, inputFile, LanguageLearningAnkiCard.PracticeMakesPerfectEnum.TRADUZIONE);
         }
     },
 
     SIMPLE_PARSER {
-        public void parseFile(List<IAnkiCard> listCard, String inputFile) {
+        public void parseFile(AnkiDeck deck, String inputFile) {
             String[] splittedText = inputFile.split(PIPE_SEPARATOR);
 
             if (!entriesAreEven(splittedText))
                 throw new RuntimeException("Le entry non sono pari ! Controllare che ogni carta abbia due facce !");
 
             for (int i = 0; i < splittedText.length; i += 2) {
-                listCard.add(new AnkiCard(splittedText[i + FIRST_FIELD],
+                deck.addCard(new AnkiCard(splittedText[i + FIRST_FIELD],
                         splittedText[i + SECOND_FIELD]));
             }
         }
@@ -57,7 +58,7 @@ public enum TextParsingStrategy {
 
     ;
 
-    public abstract void parseFile(List<IAnkiCard> listCard, String inputFile);
+    public abstract void parseFile(AnkiDeck deck, String inputFile);
 
 
     // ======== class starts here !!!
@@ -72,7 +73,7 @@ public enum TextParsingStrategy {
     }
 
     // TODO - che e' sto generic ?
-    <T> void addParsedCard(List<IAnkiCard> listCard, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
+    <T> void addParsedCard(AnkiDeck deck, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
 
         String qa[] = parseDomandeRisposte(input);
 
@@ -94,7 +95,7 @@ public enum TextParsingStrategy {
         }
 
         for (String domKey : domandeMap.keySet()) {
-            listCard.add(new LanguageLearningAnkiCard(
+            deck.addCard(new LanguageLearningAnkiCard(
                     domandeMap.get(domKey),
                     risposteMap.get(domKey),
                     cardKind
@@ -104,7 +105,7 @@ public enum TextParsingStrategy {
     }
 
 
-    void addNestedParsedCard(List<IAnkiCard> listCard, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
+    void addNestedParsedCard(AnkiDeck deck, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
 
         Map<String, Map<String, String>> domandeMap = new HashMap<>();
         Map<String, Map<String, String>> risposteMap = new HashMap<>();
@@ -130,7 +131,7 @@ public enum TextParsingStrategy {
                         domandeMap.get(domKey).get(innerDomKey),
                         risposteMap.get(domKey).get(innerDomKey),
                         cardKind);
-                listCard.add(card);
+                deck.addCard(card);
             }
         }
 

@@ -8,12 +8,14 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import main.java.card_decorators.StandardCardDecorator;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
+import main.java.model.AnkiDeck;
 import main.java.utils.ParserUtil;
 
 import org.apache.log4j.Logger;
@@ -41,17 +43,16 @@ public class EvernoteHtmlParser implements IParser {
 
 
 	@Override
-	public List<IAnkiCard> parse(Path filename, String input) {
-		List<IAnkiCard> cardList = new ArrayList<>();
-		cardList.addAll(parseEvernoteFlashCards(filename, input, outputContent));
-		return cardList;
+	public AnkiDeck parse(Path filename, String input) {
+		AnkiDeck deck = new AnkiDeck();
+		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, outputContent));
+		return deck;
 	}
 
 	@Override
-	public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
+	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
 		return mapContent;
 	}
-
 
 	private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
 		Document htmlDoc = Jsoup.parse(htmlContent);
@@ -79,20 +80,25 @@ public class EvernoteHtmlParser implements IParser {
 	}
 
 	private void copyImagesToMediaCollection(Path outputContent) throws IOException {
+
+		if (Objects.isNull(ANKI_MEDIA_COLLECTION_DIR) || ANKI_MEDIA_COLLECTION_DIR.equals("")) {
+			log.info("Attenzione: la cartella mediaCollection di anki non e' presente ! I file multimediali non verranno copiati");
+			return;
+		}
+
 		Path mediaFolder = parserUtil.buildMediaFolder(outputContent);
 		
 		Files.walk(mediaFolder).filter(this::isNotDirectory).forEach(imgPath ->{
 			try {
 				Path imgName = imgPath.getFileName();
-				log.info("Anki media files copied: " + Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName));
 				Files.copy(imgPath, Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName), StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException(e);
 			}
 		});
 		
+		log.info("Anki media files copied inside folder: " + ANKI_MEDIA_COLLECTION_DIR);
 	}
 	
 	private boolean isNotDirectory(Path path) {

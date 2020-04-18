@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
+import main.java.model.AnkiDeck;
 
 public class KindleParser implements IParser {
 
@@ -15,24 +16,24 @@ public class KindleParser implements IParser {
 	private static final String KINDLE_KEY = "evidenziazione";
 
 	@Override
-	public List<IAnkiCard> parse(Path fileName, String input) {
-		List<IAnkiCard> kindleCardList = mapCardsFromInput(input);
-		kindleCardList = removeNearDuplicates(kindleCardList);
-		return kindleCardList;
+	public AnkiDeck parse(Path fileName, String input) {
+		AnkiDeck kindleDeck = mapCardsFromInput(input);
+		kindleDeck = removeNearDuplicates(kindleDeck);
+		return kindleDeck;
 	}
 
-	private List<IAnkiCard> mapCardsFromInput(String input) {
+	private AnkiDeck mapCardsFromInput(String input) {
 		String[] values = input.split(KINDLE_TOKEN);
-		List<IAnkiCard> cardList = new ArrayList<>();
+		AnkiDeck deck = new AnkiDeck();
 		Stream.of(values).forEach(inputLine -> {
 			if (inputLine.contains(KINDLE_KEY)) {
-				cardList.add(new KindleAnkiCard(inputLine));
+				deck.addCard(new KindleAnkiCard(inputLine));
 			}});
-		return cardList;
+		return deck;
 	}
 
-	private List<IAnkiCard> removeNearDuplicates(List<IAnkiCard> deck) {
-		List<KindleAnkiCard> kindleDeck = deck.stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
+	private AnkiDeck removeNearDuplicates(AnkiDeck deck) {
+		List<KindleAnkiCard> kindleDeck = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
 		Map<Integer, List<KindleAnkiCard>> contentByHash = kindleDeck.stream().collect(Collectors.groupingBy(KindleAnkiCard::getHashContent));
 		List<IAnkiCard> newCardList = new ArrayList<>();
 
@@ -42,12 +43,12 @@ public class KindleParser implements IParser {
 			newCardList.add(cardList.get(0));
 		}
 
-		return newCardList;
+		return new AnkiDeck.Builder().withCards(newCardList).build();
 	}
 
 	@Override
-	public Map<Path, List<IAnkiCard>> sort(Map<Path, List<IAnkiCard>> mapContent) {
-		List<IAnkiCard> cards = mapContent.values().iterator().next();
+	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
+		List<IAnkiCard> cards = mapContent.values().iterator().next().getCards();
 		Path parentPath = mapContent.keySet().iterator().next().getParent();
 
 		Map<Path, List<KindleAnkiCard>> kindleMap = createKindleMapContent(cards);
@@ -63,11 +64,17 @@ public class KindleParser implements IParser {
 				.collect(Collectors.groupingBy(KindleAnkiCard::getTitleAsPath));
 	}
 
-	private Map<Path, List<IAnkiCard>> createMapContent(Map<Path, List<KindleAnkiCard>> kindleMap, String outputFolder) {
-		Map<Path, List<IAnkiCard>> newContent = new HashMap<>();
+	private Map<Path, AnkiDeck> createMapContent(Map<Path, List<KindleAnkiCard>> kindleMap, String outputFolder) {
+		Map<Path, AnkiDeck> newContent = new HashMap<>();
 		for (Map.Entry<Path, List<KindleAnkiCard>> entry : kindleMap.entrySet()) {
 			Path filePath = Paths.get(outputFolder + entry.getKey().toString().trim());
-			newContent.put(filePath, entry.getValue().stream().map(it -> (IAnkiCard)it).collect(Collectors.toList()));
+
+			AnkiDeck.Builder builder = new AnkiDeck.Builder();
+
+			newContent.put(filePath, builder.withCards(entry.getValue().stream()
+					.map(it -> (IAnkiCard)it)
+					.collect(Collectors.toList()))
+					.build());
 		}
 
 		return newContent;

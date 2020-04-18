@@ -1,24 +1,27 @@
 package main.java.engines;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import com.google.inject.Singleton;
-import main.java.contracts.IAnkiCard;
+import org.apache.log4j.Logger;
+
 import main.java.contracts.IParser;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
+import main.java.model.AnkiDeck;
 
 public abstract class TextEngine extends AbstractEngine {
-	
+
+	private final static Logger log = Logger.getLogger(TextEngine.class);
+
 	protected IReader reader;
 	protected IParser parser;
 	protected IPrinter printer;
-	
+
 	protected TextEngine() { super(); }
 	protected TextEngine(String input, String output) { super(input, output); }
 
@@ -30,59 +33,72 @@ public abstract class TextEngine extends AbstractEngine {
 	public void setParser(IParser parser) 			{ this.parser = parser; }
 	public void setPrinter(IPrinter printer) 		{ this.printer = printer; }
 
-	
-	@Override
-	public void createFlashcards() {
-		Map<Path, String> contentRead = this.read(this.getFullInputPath());
-		Map<Path, List<IAnkiCard>> cardMap = this.parse(contentRead);
-		cardMap.entrySet().forEach(entry -> this.print(entry.getKey(), entry.getValue()));
-	}
 
+	@Override
+	public void createFlashcards() { 
+		Map<Path, String> contentRead = this.read(this.getInputAsPath());
+		Map<Path, AnkiDeck> cardMap = this.parse(contentRead);
+		cardMap.entrySet().forEach(entry -> this.print(entry.getValue()));
+	}
 
 	// ***************** Parse & Sort Functions
-	public Map<Path, List<IAnkiCard>> parse(Map<Path, String> content) {
-		Map<Path, List<IAnkiCard>> contentParsed = new HashMap<>();
+	public Map<Path, AnkiDeck> parse(Map<Path, String> content) {
+		Map<Path, AnkiDeck> contentParsed = new HashMap<>();
 		for (Map.Entry<Path, String> singleContent : content.entrySet()) {
-			contentParsed.put(getParsedFileName(singleContent.getKey()), this.parser.parse(singleContent.getKey(), singleContent.getValue()));
+			contentParsed.put(getParsedFileName(singleContent.getKey()), 					// key
+					this.parser.parse(singleContent.getKey(), singleContent.getValue()));	// value
 		}
+
+		// FIXME- passo l'output folder e il titolo del file all'interno dei deck creati dopo il parsing (questa roba dovrebbe essere molto piu' organica)
+		contentParsed = setDestFoldersAndTitleForDecks(contentParsed);
 		return parser.sort(contentParsed);
 	}
-
-	private Path getParsedFileName(Path inputFile) {
-		String textName = inputFile.toString();
-		String extension = textName.substring(textName.lastIndexOf("."));
-		return Paths.get(textName.replace(extension, "_parsed.txt"));
-	}
-
-
 
 
 	// ***************** Read Functions
 	public Map<Path, String> read(Path file) {
 		try {
-			return this.getReader().readFile(file);
+			return this.getReader().readFile(file); 
 		} catch (IOException ex) {
-			throw new RuntimeException(ex);
+			log.error("Errore durante la lettura del file: " + file, ex);
+			throw new IllegalStateException(ex);
 		}
 	}
-
-
 
 	// ***************** Print Functions
-	public void print(Map<Path, List<IAnkiCard>> cardList) {
-		cardList.entrySet().forEach(it -> this.print(it.getKey(), it.getValue()));
+	public void print(Map<Path, AnkiDeck> entry) {
+		entry.values().forEach(it -> print(it));
 	}
-
-	public void print(Path destPath, List<IAnkiCard> cardList) {
+	private void print(AnkiDeck deck) {
 		try {
-			this.getPrinter().printFile(destPath, cardList);
+			this.getPrinter().printFile(deck);
 		} catch (IOException ex) {
-			throw new RuntimeException(ex);
+			log.error("Errore durante la scrittura del file: " + deck.getPathDest(), ex);
+			throw new IllegalStateException(ex);
 		}
 	}
-	
-	
 
-	
+	// ***************** Utility Functions
+
+	private Path getParsedFileName(Path inputFile) {
+		String textName = inputFile.toString();
+		String extension = textName.substring(textName.lastIndexOf("."));
+		return Paths.get(textName.replace(extension, "_parsed" + extension));
+	}
+
+	private Map<Path, AnkiDeck> setDestFoldersAndTitleForDecks(Map<Path, AnkiDeck> content) {
+		content.entrySet().stream().forEach(it -> {
+			it.getValue().setDestFolder(this.getOutputDir());
+			it.getValue().setTitle(getFileNameFromPath(it.getKey()));
+		});
+		return content;
+	}
+
+	private String getFileNameFromPath(Path pathFile) {
+		return new File(pathFile.toString()).getName();
+	}
+
+
+
 
 }

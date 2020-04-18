@@ -5,10 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import main.java.model.AnkiDeck;
+
 public interface IPrinter {
 
 
-	void printFile(Path destPath, List<IAnkiCard> input) throws IOException;
+	void printFile(AnkiDeck deck) throws IOException;
 
 	default void checkOutputFolder(Path filePath) {
 		try {

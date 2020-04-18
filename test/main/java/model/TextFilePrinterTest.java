@@ -25,7 +25,9 @@ import main.java.model.languagelearning.LanguageLearningAnkiCard;
 class TextFilePrinterTest {
 
 	private static AnkiCard card;
-	private static final Path filetestpath = Paths.get("./test.txt");
+	private static final String fileTestPath = "./";
+	private static final String fileTestName = "test.txt";
+	private static final Path filetestpath = Paths.get(fileTestPath+fileTestName);
 	private IPrinter printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	
 	private final static String contentFront = "<div class=\"front\"> this is the front</div>";
@@ -35,24 +37,24 @@ class TextFilePrinterTest {
 	@Test
 	void testSimpleCardCorrectlyPrinted() throws IOException {
 		card = new AnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath, cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card), fileTestName, fileTestPath);
+		printer.printFile(deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
 	@Test
 	void testLanguageCardCorrectlyPrinted() throws IOException {
 		card = new LanguageLearningAnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath,  cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card), fileTestName, fileTestPath);
+		printer.printFile(deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
 	@Test
 	void testKindleCardCorrectlyPrinted() throws IOException {
 		card = new KindleAnkiCard("this is the front", "this is the back");
-		List<IAnkiCard> cardList = Arrays.asList(card);
-		printer.printFile(filetestpath,  cardList);
+		AnkiDeck deck = getDeckWithCards(Arrays.asList(card), fileTestName, fileTestPath);
+		printer.printFile(deck);
 		assertEquals(content, getContentFromFile(filetestpath));
 	}
 	
@@ -69,6 +71,10 @@ class TextFilePrinterTest {
 		br.lines().forEach(sb::append);
 		br.close();
 		return sb.toString();
+	}
+	
+	private AnkiDeck getDeckWithCards(List<IAnkiCard> cards, String title, String destFolder) {
+		return new AnkiDeck.Builder().withCards(cards).withTitle(title).withDestFolder(destFolder).build();
 	}
 
 }

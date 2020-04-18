@@ -1,13 +1,15 @@
 package main.java.engines.factories;
 
+import static main.java.utils.Property.*;
+
 import com.google.inject.Singleton;
 import main.java.engines.WebCrawlerEngine;
 import main.java.engines.webengines.SpanishClozeEngine;
 import main.java.engines.webengines.SpanishDefinitionEngine;
 import main.java.engines.webengines.SpanishGeneralEngine;
-import main.java.utils.Property;
 import org.apache.log4j.Logger;
 
+import java.security.InvalidParameterException;
 import java.util.List;
 
 @Singleton
@@ -31,9 +33,12 @@ public class WebCrawlerEngineFactory extends AbstractEngineFactory {
             log.info(" ====>>> launching clozeCrawling mode");
             webEngine = new SpanishClozeEngine();
         }
+        else {
+            throw new InvalidParameterException("The webengine called is not supported or malformed: " + inputParam);
+        }
 
-        webEngine.setParserInputDir(Property.WEB_CRAWLER_PATH);
-        webEngine.setParserOutputDir(Property.WEB_CRAWLER_PATH);
+        webEngine.setInputDir(INPUT_DIR + WEB_CRAWLER_PATH);
+        webEngine.setOutputDir(OUTPUT_DIR + WEB_CRAWLER_PATH);  // TODO - sti parametri dovrebbero essere settati dal costruttore !
         webEngine.buildEngine();
 
         return webEngine;
