@@ -41,6 +41,16 @@ public abstract class TextEngine extends AbstractEngine {
 		cardMap.entrySet().forEach(entry -> this.print(entry.getValue()));
 	}
 
+	// ***************** Read Functions
+	public Map<Path, String> read(Path file) {
+		try {
+			return this.getReader().readFile(file); 
+		} catch (IOException ex) {
+			log.error("Errore durante la lettura del file: " + file, ex);
+			throw new IllegalStateException(ex);
+		}
+	}
+
 	// ***************** Parse & Sort Functions
 	public Map<Path, AnkiDeck> parse(Map<Path, String> content) {
 		Map<Path, AnkiDeck> contentParsed = new HashMap<>();
@@ -55,15 +65,6 @@ public abstract class TextEngine extends AbstractEngine {
 	}
 
 
-	// ***************** Read Functions
-	public Map<Path, String> read(Path file) {
-		try {
-			return this.getReader().readFile(file); 
-		} catch (IOException ex) {
-			log.error("Errore durante la lettura del file: " + file, ex);
-			throw new IllegalStateException(ex);
-		}
-	}
 
 	// ***************** Print Functions
 	public void print(Map<Path, AnkiDeck> entry) {
