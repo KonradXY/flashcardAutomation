@@ -1,12 +1,10 @@
-package main.java.model.kindle;
+package main.java.model;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import main.java.model.AnkiCard;
 
 public class KindleAnkiCard extends AnkiCard implements Comparable<KindleAnkiCard>{
 	

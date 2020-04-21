@@ -7,7 +7,8 @@ import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
 import main.java.model.AnkiDeck;
-import main.java.model.languagelearning.LanguageLearningAnkiCard;
+import main.java.model.LanguageLearningAnkiCard;
+
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;

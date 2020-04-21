@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 
 import main.java.engines.TextEngine;
 import main.java.engines.factories.TextEngineFactory;
-import main.java.model.DefaultParser;
 import main.java.model.printers.TextFilePrinter;
 import main.java.model.readers.TextFileReader;
-import main.java.model.evernote.EvernoteHtmlParser;
-import main.java.model.kindle.KindleParser;
-import main.java.model.languagelearning.LanguageLearningParser;
+import main.java.model.parsers.DefaultParser;
+import main.java.model.parsers.EvernoteParser;
+import main.java.model.parsers.KindleParser;
+import main.java.model.parsers.LanguageLearningParser;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +47,7 @@ class EngineBuilderTest {
 		ankiEngine = (TextEngine)builder.createEngine(args);
 		
 		assertEquals(ankiEngine.getReader().getClass(), TextFileReader.class);
-		assertEquals(ankiEngine.getParser().getClass(), EvernoteHtmlParser.class);
+		assertEquals(ankiEngine.getParser().getClass(), EvernoteParser.class);
 		assertEquals(ankiEngine.getPrinter().getClass(), TextFilePrinter.class);
 		
 		assertEquals(ankiEngine.getInputDir(), INPUT_DIR + EVERNOTE_PATH);

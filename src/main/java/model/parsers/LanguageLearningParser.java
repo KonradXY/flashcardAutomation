@@ -1,6 +1,8 @@
-package main.java.model.languagelearning;
+package main.java.model.parsers;
 
 import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -8,16 +10,20 @@ import org.apache.log4j.Logger;
 import main.java.contracts.IParser;
 import main.java.model.AnkiDeck;
 import main.java.strategy.TextParsingStrategy;
+import main.java.utils.Property;
 
 public class LanguageLearningParser implements IParser {
 	
 	private static final Logger log = Logger.getLogger(LanguageLearningParser.class);
 
 	@Override
-	public AnkiDeck parse(Path path, String file) {
+	public List<AnkiDeck> parse(Path path, String file, String destFolder) {
 
 		String fileName = path.toString().trim();
-		AnkiDeck deck = new AnkiDeck();
+		AnkiDeck deck = new AnkiDeck.Builder()
+				.withDestFolder(destFolder)
+				.withTitle(getParsedFileName(path))
+				.build();
 
 		if 		(fileName.endsWith("grammatica.txt"))
 			TextParsingStrategy.PRACTICE_MAKES_PERFECT_GRAMMATICA.parseFile(deck, file);
@@ -36,19 +42,7 @@ public class LanguageLearningParser implements IParser {
 					+ ". Il file verrà scartato. ");
 		}
 
-		return deck;
-	}
-
-	@Override
-	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
-		return mapContent;
+		return Arrays.asList(deck);
 	}
 	
-
-	
-
-	
-
-
-
 }

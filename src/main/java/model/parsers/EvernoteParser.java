@@ -1,4 +1,4 @@
-package main.java.model.evernote;
+package main.java.model.parsers;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -17,6 +18,7 @@ import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
 import main.java.model.AnkiDeck;
 import main.java.utils.ParserUtil;
+import main.java.utils.Property;
 
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -26,33 +28,32 @@ import org.jsoup.select.Elements;
 
 import static main.java.utils.Property.ANKI_MEDIA_COLLECTION_DIR;
 
-public class EvernoteHtmlParser implements IParser {
+public class EvernoteParser implements IParser {
 
 
-	private static final Logger log = Logger.getLogger(EvernoteHtmlParser.class);
+	private static final Logger log = Logger.getLogger(EvernoteParser.class);
 
 	private ParserUtil parserUtil;
 	private Path outputContent;
 
-	public EvernoteHtmlParser() { }
+	public EvernoteParser() { }
 
-	public EvernoteHtmlParser(ParserUtil parserUtil, Path outputContent) {
+	public EvernoteParser(ParserUtil parserUtil, Path outputContent) {
 		this.parserUtil = parserUtil;
 		this.outputContent = outputContent;
 	}
 
 
 	@Override
-	public AnkiDeck parse(Path filename, String input) {
-		AnkiDeck deck = new AnkiDeck();
+	public List<AnkiDeck> parse(Path filename, String input, String destFolder) {
+		AnkiDeck deck = new AnkiDeck.Builder()
+				.withDestFolder(destFolder)
+				.withTitle(getParsedFileName(filename))
+				.build();
 		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, outputContent));
-		return deck;
+		return Arrays.asList(deck);
 	}
-
-	@Override
-	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
-		return mapContent;
-	}
+	
 
 	private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
 		Document htmlDoc = Jsoup.parse(htmlContent);

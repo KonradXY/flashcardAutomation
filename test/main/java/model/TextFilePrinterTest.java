@@ -19,8 +19,6 @@ import org.junit.jupiter.api.Test;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
-import main.java.model.kindle.KindleAnkiCard;
-import main.java.model.languagelearning.LanguageLearningAnkiCard;
 
 class TextFilePrinterTest {
 
