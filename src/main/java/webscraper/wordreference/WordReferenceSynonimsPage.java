@@ -24,7 +24,7 @@ public class WordReferenceSynonimsPage extends AbstractWebScraper {
         this.synonimsPage = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word);
     }
 
-    public List<String> getSynonimsFromWord(String word) {
+    public List<String> getSynonimsFromWord() {
         Element article = synonimsPage.getElementById("article");
         Elements synonims = article.getElementsByTag("li");
         return synonims.stream().map(Element::text).collect(Collectors.toList());

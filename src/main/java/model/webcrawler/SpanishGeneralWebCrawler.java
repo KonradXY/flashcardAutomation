@@ -44,7 +44,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         synonimsPageWR.scrapePageWithWord(Collections.emptyList(), word);
 
         Map<String, String> definizioniMap = definitionPageWR.getWordDefinition();
-        List<String> synonims = synonimsPageWR.getSynonimsFromWord(word);
+        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
 
         List<IAnkiCard> cards = new ArrayList<>();
         reversoCrawler.scrapePageWithWord(cards, word);
