@@ -18,7 +18,7 @@ public class AnkiDeck {
     }
     
     private AnkiDeck(AnkiDeck.Builder builder) {
-    	this.cards = builder.cards;
+    	this.cards = (List<IAnkiCard>) builder.cards;
     	this.title = builder.title;
     	this.destFolder = builder.destFolder;
     }
@@ -68,11 +68,11 @@ public class AnkiDeck {
 
 
 	public static class Builder {
-		private List<IAnkiCard> cards;
+		private List<? extends IAnkiCard> cards;
 		private String title;
 		private String destFolder;
 		
-		public Builder withCards(List<IAnkiCard> cards) {
+		public Builder withCards(List<? extends IAnkiCard> cards) {
 			this.cards = cards;
 			return this;
 		}
