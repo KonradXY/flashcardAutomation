@@ -1,4 +1,4 @@
-package main.java.model.kindle;
+package main.java.model.parsers;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,6 +9,8 @@ import java.util.stream.Stream;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiDeck;
+import main.java.model.KindleAnkiCard;
+import main.java.utils.Property;
 
 public class KindleParser implements IParser {
 
@@ -16,20 +18,18 @@ public class KindleParser implements IParser {
 	private static final String KINDLE_KEY = "evidenziazione";
 
 	@Override
-	public AnkiDeck parse(Path fileName, String input) {
-		AnkiDeck kindleDeck = mapCardsFromInput(input);
-		kindleDeck = removeNearDuplicates(kindleDeck);
-		return kindleDeck;
+	public List<AnkiDeck> parse(Path fileName, String input, String destFolder) {
+		List<KindleAnkiCard> kindleDeck = mapCardsFromInput(input);
+		//kindleDeck = removeNearDuplicates(kindleDeck);
+//		return kindleDeck;
+		throw new UnsupportedOperationException("da implementare");
 	}
-
-	private AnkiDeck mapCardsFromInput(String input) {
-		String[] values = input.split(KINDLE_TOKEN);
-		AnkiDeck deck = new AnkiDeck();
-		Stream.of(values).forEach(inputLine -> {
-			if (inputLine.contains(KINDLE_KEY)) {
-				deck.addCard(new KindleAnkiCard(inputLine));
-			}});
-		return deck;
+	
+	private List<KindleAnkiCard> mapCardsFromInput(String input) {
+		String[] lines = input.split(KINDLE_TOKEN);
+		return Stream.of(lines).filter(kindleEntry -> kindleEntry.contains(KINDLE_KEY))
+				.map(kindleEntry -> new KindleAnkiCard(kindleEntry))
+				.collect(Collectors.toList());
 	}
 
 	private AnkiDeck removeNearDuplicates(AnkiDeck deck) {
@@ -46,7 +46,6 @@ public class KindleParser implements IParser {
 		return new AnkiDeck.Builder().withCards(newCardList).build();
 	}
 
-	@Override
 	public Map<Path, AnkiDeck> sort(Map<Path, AnkiDeck> mapContent) {
 		List<IAnkiCard> cards = mapContent.values().iterator().next().getCards();
 		Path parentPath = mapContent.keySet().iterator().next().getParent();
@@ -78,6 +77,10 @@ public class KindleParser implements IParser {
 		}
 
 		return newContent;
+	}
+	
+	private Path getKindleOutputFolder() {
+		return Paths.get(Property.OUTPUT_DIR + Property.KINDLE_PATH);
 	}
 
 }

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 import org.apache.log4j.Logger;
 
 import main.java.model.AnkiDeck;
-import main.java.model.kindle.KindleAnkiCard;
+import main.java.model.KindleAnkiCard;
 
 public enum PrinterStrategy {
 

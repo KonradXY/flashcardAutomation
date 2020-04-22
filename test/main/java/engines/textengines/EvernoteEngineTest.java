@@ -69,16 +69,16 @@ class EvernoteEngineTest {
 	@Test
 	void testEvernoteEngineParsing() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		Map<Path, AnkiDeck> cardMap = evernoteEngine.parse(content);
+		List<AnkiDeck> cardMap = evernoteEngine.parse(content);
 
 		assertEquals(1, cardMap.size());
 
-		List<IAnkiCard> cardList = cardMap.entrySet().iterator().next().getValue().getCards();
+		List<IAnkiCard> cardList = cardMap.get(0).getCards();
 		assertEquals(4, cardList.size());
 
 
 		IAnkiCard emptyCard = null, imgCard1 = null, imgCard2 = null, imgCard3 = null;
-		for (AnkiDeck deck : cardMap.values())
+		for (AnkiDeck deck : cardMap)
 			for (IAnkiCard card : deck.getCards()) {
 				switch (card.getFront().text().trim()) {
 					case "immagine1" : imgCard1 = card; break;
@@ -110,7 +110,7 @@ class EvernoteEngineTest {
 	@Test
 	void testEvernoteEnginePrinting() throws IOException {
 		Map<Path, String> content = evernoteEngine.read(testFilePath);
-		Map<Path, AnkiDeck> cardList = evernoteEngine.parse(content);
+		List<AnkiDeck> cardList = evernoteEngine.parse(content);
 		evernoteEngine.print(cardList);
 
 		assertTrue(Files.exists(outputTestFile));

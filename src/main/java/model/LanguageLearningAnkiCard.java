@@ -1,6 +1,4 @@
-package main.java.model.languagelearning;
-
-import main.java.model.AnkiCard;
+package main.java.model;
 
 public class LanguageLearningAnkiCard extends AnkiCard {
 

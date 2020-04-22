@@ -13,7 +13,7 @@ public class AnkiDeck {
     private String title;
     private String destFolder;
 
-    public AnkiDeck() {
+    private AnkiDeck() {
         cards = new ArrayList<>();
     }
     
