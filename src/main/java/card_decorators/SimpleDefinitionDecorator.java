@@ -1,9 +1,10 @@
 package main.java.card_decorators;
 
-import main.java.contracts.IAnkiCard;
+import java.util.function.UnaryOperator;
+
 import org.jsoup.nodes.Element;
 
-import java.util.function.UnaryOperator;
+import main.java.contracts.IAnkiCard;
 
 public class SimpleDefinitionDecorator extends AbstractCardDecorator {
 

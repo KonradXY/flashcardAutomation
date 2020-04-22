@@ -1,11 +1,11 @@
 package main.java.model;
 
-import main.java.contracts.IAnkiCard;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import main.java.contracts.IAnkiCard;
 
 public class AnkiDeck {
 
@@ -19,7 +19,8 @@ public class AnkiDeck {
         cards = new ArrayList<>();
     }
     
-    private AnkiDeck(AnkiDeck.Builder builder) {
+    @SuppressWarnings("unchecked")
+	private AnkiDeck(AnkiDeck.Builder builder) {
     	this.cards = (List<IAnkiCard>) builder.cards;
     	this.title = builder.title;
     	this.destFolder = builder.destFolder;

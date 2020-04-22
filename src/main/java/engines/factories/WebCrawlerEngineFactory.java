@@ -1,16 +1,20 @@
 package main.java.engines.factories;
 
-import static main.java.utils.Property.*;
+import static main.java.utils.Property.INPUT_DIR;
+import static main.java.utils.Property.OUTPUT_DIR;
+import static main.java.utils.Property.WEB_CRAWLER_PATH;
+
+import java.security.InvalidParameterException;
+import java.util.List;
+
+import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
+
 import main.java.engines.WebCrawlerEngine;
 import main.java.engines.webengines.SpanishClozeEngine;
 import main.java.engines.webengines.SpanishDefinitionEngine;
 import main.java.engines.webengines.SpanishGeneralEngine;
-import org.apache.log4j.Logger;
-
-import java.security.InvalidParameterException;
-import java.util.List;
 
 @Singleton
 public class WebCrawlerEngineFactory extends AbstractEngineFactory {

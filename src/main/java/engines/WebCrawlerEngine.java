@@ -1,6 +1,11 @@
 
 package main.java.engines;
 
+import static main.java.webscraper.AbstractWebScraper.DISCARDED_WORD_PATH;
+import static main.java.webscraper.AbstractWebScraper.LOG_COUNTER;
+import static main.java.webscraper.AbstractWebScraper.MAX_NUM_EXAMPLES_PER_WORD;
+import static main.java.webscraper.AbstractWebScraper.TIME_SLEEP;
+
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,15 +16,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-import main.java.utils.StopwordsEngine;
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.contracts.IWebCrawler;
-
-import static main.java.webscraper.AbstractWebScraper.*;
+import main.java.utils.StopwordsEngine;
 
 public abstract class WebCrawlerEngine extends AbstractEngine {
 

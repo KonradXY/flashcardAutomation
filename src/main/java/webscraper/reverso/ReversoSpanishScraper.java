@@ -1,22 +1,24 @@
 package main.java.webscraper.reverso;
 
-import com.google.inject.Singleton;
-import main.java.contracts.IAnkiCard;
-import main.java.model.AnkiCard;
-import main.java.webscraper.AbstractWebScraper;
-import org.apache.log4j.Logger;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
+import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
-import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
-import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
-import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.google.inject.Singleton;
+
+import main.java.contracts.IAnkiCard;
+import main.java.model.AnkiCard;
+import main.java.webscraper.AbstractWebScraper;
 
 @Singleton
 public class ReversoSpanishScraper extends AbstractWebScraper {

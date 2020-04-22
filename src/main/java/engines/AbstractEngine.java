@@ -1,10 +1,10 @@
 package main.java.engines;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import static main.java.utils.Property.INPUT_DIR;
 import static main.java.utils.Property.OUTPUT_DIR;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public abstract class AbstractEngine {
 

@@ -3,14 +3,12 @@ package main.java.model.parsers;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IParser;
 import main.java.model.AnkiDeck;
 import main.java.strategy.TextParsingStrategy;
-import main.java.utils.Property;
 
 public class LanguageLearningParser implements IParser {
 	

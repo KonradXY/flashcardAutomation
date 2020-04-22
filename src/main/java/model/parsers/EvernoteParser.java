@@ -1,24 +1,16 @@
 package main.java.model.parsers;
 
+import static main.java.utils.Property.ANKI_MEDIA_COLLECTION_DIR;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
-import main.java.card_decorators.StandardCardDecorator;
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.model.AnkiDeck;
-import main.java.utils.ParserUtil;
-import main.java.utils.Property;
 
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -26,7 +18,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import static main.java.utils.Property.ANKI_MEDIA_COLLECTION_DIR;
+import main.java.card_decorators.StandardCardDecorator;
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.model.AnkiDeck;
+import main.java.utils.ParserUtil;
 
 public class EvernoteParser implements IParser {
 

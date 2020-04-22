@@ -1,12 +1,13 @@
 package main.java.card_decorators;
 
-import main.java.contracts.IAnkiCard;
-import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
-
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Consumer;
+
+import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
+
+import main.java.contracts.IAnkiCard;
 
 public class AbstractCardDecorator implements DecoratingCard {
 

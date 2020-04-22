@@ -1,13 +1,10 @@
 package main.java.card_decorators;
 
-import static main.java.card_decorators.AbstractCardDecorator.*;
+import java.util.function.Function;
 
-import main.java.contracts.IAnkiCard;
 import org.jsoup.nodes.Element;
 
-
-import java.util.function.Function;
-import java.util.function.UnaryOperator;
+import main.java.contracts.IAnkiCard;
 
 public interface DecoratingCard extends IAnkiCard {
 

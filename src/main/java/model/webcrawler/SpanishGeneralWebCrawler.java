@@ -1,20 +1,27 @@
 package main.java.model.webcrawler;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IWebCrawler;
-import main.java.webscraper.reverso.ReversoSpanishScraper;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
-import org.jsoup.nodes.Element;
+import static main.java.card_decorators.AbstractCardDecorator.applyLeftFormatRecursively;
+import static main.java.card_decorators.AbstractCardDecorator.createSingleDefinizione;
+import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.getListItemTag;
+import static main.java.card_decorators.AbstractCardDecorator.getNewLineTag;
+import static main.java.card_decorators.AbstractCardDecorator.getUnorderedListTag;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static main.java.card_decorators.AbstractCardDecorator.*;
+import org.jsoup.nodes.Element;
+
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IWebCrawler;
+import main.java.webscraper.reverso.ReversoSpanishScraper;
+import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
+import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
 
 @Singleton
 public class SpanishGeneralWebCrawler implements IWebCrawler {

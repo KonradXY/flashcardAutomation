@@ -2,12 +2,8 @@ package main.java.contracts;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
-
-import com.google.common.io.Files;
 
 import main.java.model.AnkiDeck;
 

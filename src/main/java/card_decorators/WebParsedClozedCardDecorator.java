@@ -1,6 +1,7 @@
 package main.java.card_decorators;
 
 import com.google.inject.Singleton;
+
 import main.java.contracts.IAnkiCard;
 
 @Singleton

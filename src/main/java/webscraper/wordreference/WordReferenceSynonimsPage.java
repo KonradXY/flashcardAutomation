@@ -1,14 +1,16 @@
 package main.java.webscraper.wordreference;
 
-import com.google.inject.Singleton;
-import main.java.contracts.IAnkiCard;
-import main.java.webscraper.AbstractWebScraper;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.google.inject.Singleton;
+
+import main.java.contracts.IAnkiCard;
+import main.java.webscraper.AbstractWebScraper;
 
 @Singleton
 public class WordReferenceSynonimsPage extends AbstractWebScraper {

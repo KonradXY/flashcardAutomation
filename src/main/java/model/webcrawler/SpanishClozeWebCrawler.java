@@ -1,16 +1,17 @@
 package main.java.model.webcrawler;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IWebCrawler;
-import main.java.card_decorators.WebParsedClozedCardDecorator;
-import main.java.utils.ClozeEngine;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+
+import main.java.card_decorators.WebParsedClozedCardDecorator;
+import main.java.contracts.IAnkiCard;
+import main.java.contracts.IWebCrawler;
+import main.java.utils.ClozeEngine;
+import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 
 @Singleton
 public class SpanishClozeWebCrawler implements IWebCrawler {

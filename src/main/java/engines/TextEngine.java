@@ -1,12 +1,9 @@
 package main.java.engines;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -82,9 +79,8 @@ public abstract class TextEngine extends AbstractEngine {
 		}
 	}
 
-	// ***************** Utility Functions
 
-	
+	// ***************** Utility Functions
 
 	private List<AnkiDeck> setDestFoldersAndTitleForDecks(List<AnkiDeck> content) {
 		content.stream().forEach(it -> {
@@ -93,9 +89,6 @@ public abstract class TextEngine extends AbstractEngine {
 		return content;
 	}
 
-	private String getFileNameFromPath(Path pathFile) {
-		return new File(pathFile.toString()).getName();
-	}
 
 
 

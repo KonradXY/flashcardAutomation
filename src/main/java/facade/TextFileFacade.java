@@ -1,11 +1,11 @@
 package main.java.facade;
 
+import java.util.List;
+
 import com.google.inject.Inject;
 
 import main.java.engines.TextEngine;
 import main.java.engines.factories.TextEngineFactory;
-
-import java.util.List;
 
 public class TextFileFacade {
 	

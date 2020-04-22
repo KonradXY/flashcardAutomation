@@ -1,18 +1,19 @@
 package main.java.webscraper.wordreference;
 
-import com.google.inject.Singleton;
-import main.exceptions.WebCrawlerException;
-import main.java.contracts.IAnkiCard;
-import main.java.webscraper.AbstractWebScraper;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.google.inject.Singleton;
+
+import main.java.contracts.IAnkiCard;
+import main.java.webscraper.AbstractWebScraper;
 
 @Singleton
 public class WordReferenceTranslationPage extends AbstractWebScraper {

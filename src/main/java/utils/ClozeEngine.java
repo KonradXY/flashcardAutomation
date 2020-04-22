@@ -1,12 +1,13 @@
 package main.java.utils;
 
-import com.google.inject.Singleton;
-import org.apache.commons.text.similarity.LevenshteinDistance;
-
 import java.nio.CharBuffer;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import org.apache.commons.text.similarity.LevenshteinDistance;
+
+import com.google.inject.Singleton;
 
 @Singleton
 public class ClozeEngine {

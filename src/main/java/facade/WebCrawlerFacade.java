@@ -1,12 +1,14 @@
 package main.java.facade;
 
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
 import com.google.inject.Inject;
+
 import main.java.engines.WebCrawlerEngine;
 import main.java.engines.factories.WebCrawlerEngineFactory;
 import main.java.netutilities.CertificateManager;
-import org.apache.log4j.Logger;
-
-import java.util.List;
 
 public class WebCrawlerFacade {
 

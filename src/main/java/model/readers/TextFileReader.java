@@ -7,12 +7,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import main.java.utils.Property;
 import org.apache.log4j.Logger;
 
 import main.java.contracts.IReader;
@@ -30,6 +28,7 @@ public class TextFileReader implements IReader {
 		this.reader = strategy;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Map<Path, String> readFile(Path... pathFiles) throws IOException {
 		Map<Path, String> map = new HashMap<>();

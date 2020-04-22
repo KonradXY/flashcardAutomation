@@ -9,7 +9,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
@@ -44,7 +48,6 @@ public class StopwordsEngine {
 
 
 	public void checkForStopWords(Map<Path, List<String>> content, Set<String> stopwordsSet) {
-		int deckIndex = 0;
 		for (Map.Entry<Path, List<String>> entry : content.entrySet()) {
 
 			List<String> deck = entry.getValue();
@@ -60,7 +63,6 @@ public class StopwordsEngine {
 				}
 			}
 			content.put(entry.getKey(), newDeck);
-			deckIndex++;
 		}
 	}
 

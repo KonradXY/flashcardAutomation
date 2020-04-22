@@ -1,16 +1,20 @@
 package main.java.webscraper;
 
-import main.exceptions.WebCrawlerException;
-import main.java.contracts.IWebScraper;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import main.exceptions.WebCrawlerException;
+import main.java.contracts.IWebScraper;
 
 
 public abstract class AbstractWebScraper implements IWebScraper {

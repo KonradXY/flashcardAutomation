@@ -2,21 +2,23 @@ package main.java.engines.factories;
 
 import static main.java.utils.Property.EVERNOTE_PATH;
 import static main.java.utils.Property.GENERIC_PATH;
+import static main.java.utils.Property.INPUT_DIR;
 import static main.java.utils.Property.KINDLE_PATH;
 import static main.java.utils.Property.LANGUAGE_LEARNING_PATH;
-import static main.java.utils.Property.INPUT_DIR;
 import static main.java.utils.Property.OUTPUT_DIR;
 
-import main.java.engines.*;
-import main.java.engines.textengines.DefaultAnkiEngine;
-import main.java.engines.textengines.EvernoteEngine;
-import main.java.engines.textengines.KindleEngine;
-import main.java.engines.textengines.LanguageLearningEngine;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
 
-import java.util.List;
+import main.java.engines.AbstractEngine;
+import main.java.engines.TextEngine;
+import main.java.engines.textengines.DefaultAnkiEngine;
+import main.java.engines.textengines.EvernoteEngine;
+import main.java.engines.textengines.KindleEngine;
+import main.java.engines.textengines.LanguageLearningEngine;
 
 @Singleton
 public class TextEngineFactory extends AbstractEngineFactory {

@@ -1,18 +1,26 @@
 package main.java.model.webcrawler;
 
+import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
+import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.apache.log4j.Logger;
+import org.jsoup.nodes.Element;
+
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
 import main.java.model.AnkiCard;
 import main.java.webscraper.wordreference.WordReferenceTranslationPage;
-import org.apache.log4j.Logger;
-import org.jsoup.nodes.Element;
-
-import java.util.*;
-
-import static main.java.card_decorators.AbstractCardDecorator.*;
-import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 @Singleton
 public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {

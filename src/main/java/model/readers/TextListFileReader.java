@@ -1,8 +1,5 @@
 package main.java.model.readers;
 
-import main.java.contracts.IReader;
-import org.apache.log4j.Logger;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,11 +12,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.log4j.Logger;
+
+import main.java.contracts.IReader;
+
 public class TextListFileReader implements IReader {
 
 	private int fileCounter = 0;
 	private final static Logger log = Logger.getLogger(TextListFileReader.class);
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Map<Path, List<String>> readFile(Path... pathFiles) {
 		Map<Path, List<String>> map = new HashMap<>();

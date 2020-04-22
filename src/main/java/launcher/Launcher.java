@@ -1,14 +1,16 @@
 package main.java.launcher;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+
 import main.java.config.AnkiApplicationModule;
 import main.java.facade.TextFileFacade;
 import main.java.facade.WebCrawlerFacade;
-import org.apache.log4j.Logger;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class Launcher {
 

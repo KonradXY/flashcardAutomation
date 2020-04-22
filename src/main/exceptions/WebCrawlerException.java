@@ -2,7 +2,9 @@ package main.exceptions;
 
 public class WebCrawlerException extends RuntimeException {
 
-    public WebCrawlerException() {
+	private static final long serialVersionUID = 1L;
+
+	public WebCrawlerException() {
         super();
     }
 

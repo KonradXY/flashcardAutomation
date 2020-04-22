@@ -1,20 +1,16 @@
 package main.java.model.parsers;
 
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiDeck;
-import main.java.model.KindleAnkiCard;
-import main.java.utils.Property;
-
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import main.java.contracts.IParser;
+import main.java.model.AnkiDeck;
+import main.java.model.KindleAnkiCard;
 
 public class KindleParser implements IParser {
 

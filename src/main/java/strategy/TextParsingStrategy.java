@@ -1,12 +1,12 @@
 package main.java.strategy;
 
 
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.model.AnkiDeck;
-import main.java.model.LanguageLearningAnkiCard;
-
-import org.apache.log4j.Logger;
+import static main.java.contracts.IParser.DOMANDE_INDEX;
+import static main.java.contracts.IParser.NUM_EX_PATTERN;
+import static main.java.contracts.IParser.PIPE_SEPARATOR;
+import static main.java.contracts.IParser.QA_SEPARATOR;
+import static main.java.contracts.IParser.RISPOSTE_INDEX;
+import static main.java.contracts.IParser.SINGLE_EX_PATTERN;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,12 +16,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import static main.java.contracts.IParser.DOMANDE_INDEX;
-import static main.java.contracts.IParser.NUM_EX_PATTERN;
-import static main.java.contracts.IParser.PIPE_SEPARATOR;
-import static main.java.contracts.IParser.QA_SEPARATOR;
-import static main.java.contracts.IParser.RISPOSTE_INDEX;
-import static main.java.contracts.IParser.SINGLE_EX_PATTERN;
+import org.apache.log4j.Logger;
+
+import main.java.contracts.IParser;
+import main.java.model.AnkiCard;
+import main.java.model.AnkiDeck;
+import main.java.model.LanguageLearningAnkiCard;
 
 public enum TextParsingStrategy {
 
