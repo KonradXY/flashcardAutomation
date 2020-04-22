@@ -22,6 +22,7 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
 
     private Document traduzioneEspItaPage;
 
+    // for test purposes
     void setTraduzioniEspItaPage(Document doc) {
         this.traduzioneEspItaPage = doc;
     }
@@ -29,10 +30,10 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
     @Override
     public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
         this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word);
-        checkParsingOk(word);
+        checkTranslationIsFound(word);
     }
 
-    private boolean checkParsingOk(String word) {
+    private boolean checkTranslationIsFound(String word) {
         Element noEntryFound = this.traduzioneEspItaPage.getElementById("noEntryFound");
         if (noEntryFound != null) {
             logDiscardedWord(word);

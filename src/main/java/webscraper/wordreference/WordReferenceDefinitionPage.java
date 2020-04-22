@@ -25,8 +25,8 @@ public class WordReferenceDefinitionPage extends AbstractWebScraper {
         this.definitionPage = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word);
     }
 
-    public Map<String, String> getWordDefinition(String word) {
-        Element article = definitionPage.getElementById("article");        // <<--- contiene tutte le possibili definizioni di una parola.
+    public Map<String, String> getWordDefinition() {
+        Element article = definitionPage.getElementById("article");        
         Elements li = article.getElementsByTag("li");
         Map<String, String> defMap = new LinkedHashMap<>();
 
@@ -35,6 +35,12 @@ public class WordReferenceDefinitionPage extends AbstractWebScraper {
             String[] split = s.split(":", 2);
             defMap.put(split[0].trim(), split.length > 1 ? split[1].trim() : "");
         }
+        
         return defMap;
+    }
+    
+    
+    void setDefinitionPage(Document doc) {
+    	this.definitionPage = doc;
     }
 }

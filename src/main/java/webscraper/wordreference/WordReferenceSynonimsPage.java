@@ -29,4 +29,9 @@ public class WordReferenceSynonimsPage extends AbstractWebScraper {
         Elements synonims = article.getElementsByTag("li");
         return synonims.stream().map(Element::text).collect(Collectors.toList());
     }
+    
+    
+    void setSynonimsPage(Document doc) {
+    	this.synonimsPage = doc;
+    }
 }

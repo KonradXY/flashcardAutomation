@@ -67,6 +67,7 @@ public class AbstractCardDecorator implements DecoratingCard {
         return new Element(UL_TAG, "");
     }
 
+    // TODO - direi che ste funzioni vanno messe all'interno di IAnkiCard come default o all'interno di un ankicard.builder 
     public static void addContentToFront(IAnkiCard card, String content, Element contentDiv) {
         contentDiv.text(content);
         card.getFront().appendChild(contentDiv);

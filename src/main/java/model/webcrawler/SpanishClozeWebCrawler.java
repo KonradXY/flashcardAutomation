@@ -29,7 +29,7 @@ public class SpanishClozeWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        Map<String, String> originalMap = definitionPage.getWordDefinition(word);
+        Map<String, String> originalMap = definitionPage.getWordDefinition();
         Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
         IAnkiCard card = null;
 

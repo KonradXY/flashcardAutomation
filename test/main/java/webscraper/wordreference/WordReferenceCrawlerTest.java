@@ -14,6 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WordReferenceCrawlerTest {
 
+	// TODO - rivedere meglio questa classe di test (forse alla fine la levero')
+	
     private static final String htmlTestFile = "./test/main/resources/webcrawler/word_reference_single_definition_test_example.html";
     private static final String SPANISH_TEST_WORD = "aceite";
 
