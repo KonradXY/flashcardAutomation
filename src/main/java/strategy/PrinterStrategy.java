@@ -1,10 +1,5 @@
 package main.java.strategy;
 
-import main.java.contracts.IAnkiCard;
-import main.java.model.AnkiDeck;
-import main.java.model.kindle.KindleAnkiCard;
-import org.apache.log4j.Logger;
-
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,93 +10,103 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
+
+import main.java.model.AnkiDeck;
+import main.java.model.kindle.KindleAnkiCard;
+
 public enum PrinterStrategy {
 
-    NO_STRATEGY {
-        @Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
+	NO_STRATEGY {
+		@Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
 
-        @Override public void printCards(AnkiDeck deck) {
-            try {
-                Files.write(deck.getPathDest(), (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
-            } catch (IOException ex) {
-                System.out.println("Errore nella scrittura del file: " + ex.getMessage());
-                throw new RuntimeException(ex);
-            }
-        }
-    },
+		@Override public void printCards(AnkiDeck deck) {
+			try {
+				Files.write(deck.getPathDest(), (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
+			} catch (IOException ex) {
+				System.out.println("Errore nella scrittura del file: " + ex.getMessage());
+				throw new RuntimeException(ex);
+			}
+		}
+	},
 
-    KINDLE_STRATEGY {
-        @Override public Path createNameOutputFile(Path outputFile) { return createFileName(outputFile.toString()); }
-
-
-        @Override
-        public void printCards(AnkiDeck deck) {
-            int cardIndex = 0;
-            List<KindleAnkiCard> kindleCards = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
-
-            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(deck.getDestFolder()), "UTF-8"))) {
-                for (KindleAnkiCard kindleCard : kindleCards) {
-                    bw.write(cardIndex++ + ". " + kindleCard.getTitle() + "|");
-                    bw.write(kindleCard.getBack() + "\n\n");
-                }
-            } catch (IOException ex) {
-                log.error("Errore nella scrittura del file: " + deck.getDestFolder(), ex);
-            }
-        }
-
-    };
-
-    public abstract Path createNameOutputFile(Path outputFile);
-    public abstract void  printCards(AnkiDeck cards);
-
-    private final static Logger log = Logger.getLogger(PrinterStrategy.class);
+	KINDLE_STRATEGY {
+		@Override public Path createNameOutputFile(Path outputFile) { 
+			return createFileName(outputFile.toString()); 
+		}
 
 
-    private static Path createFileName(String filePath) {
-        // log.info("filePath: " + filePath);
+		@Override
+		public void printCards(AnkiDeck deck) {
+			int cardIndex = 0;
+			List<KindleAnkiCard> kindleCards = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
 
-        String fileDir = getFileDir(filePath);
+			try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(deck.getDestFolder()), "UTF-8"))) {
+				for (KindleAnkiCard kindleCard : kindleCards) {
+					bw.write(cardIndex++ + ". " + kindleCard.getTitle() + "|");
+					bw.write(kindleCard.getBack() + "\n\n");
+				}
+			} catch (IOException ex) {
+				log.error("Errore nella scrittura del file: " + deck.getDestFolder(), ex);
+			}
+		}
 
-        String lastName = getFileName(filePath);
-        // log.info("getFileName: " + lastName);
+	};
 
-        lastName = removeSpecialChars(lastName);
-        // log.info("remove special chars: " + lastName);
+	public abstract Path createNameOutputFile(Path outputFile);
+	public abstract void  printCards(AnkiDeck cards);
 
-        lastName = truncateLongNames(lastName);
-        // log.info("truncate long filenames: " + lastName);
+	private final static Logger log = Logger.getLogger(PrinterStrategy.class);
 
-        return Paths.get(fileDir+"/"+lastName);
-    }
 
-    private static String getFileName(String fileName) {
-        if (fileName.lastIndexOf("/") != -1)
-            return fileName.substring(fileName.lastIndexOf("/")+1);
+	private static Path createFileName(String filePath) {
+		// log.info("filePath: " + filePath);
 
-        return fileName;
-    }
-    private static String getFileDir(String fileName) {
-        return fileName.substring(0,fileName.lastIndexOf("/"));
-    }
+		String fileDir = getFileDir(filePath);
 
-    private static String removeSpecialChars(String fileName) {
-        return fileName
-                .replace(".", "")
-                .replace(":", " ")
-                .replace("*", "")
-                .replace("/", "_")
-                .replace("txt", "")
-                .trim()
-                .concat(".txt");
-    }
+		String lastName = getFileName(filePath);
+		// log.info("getFileName: " + lastName);
 
-    private static String truncateLongNames(String fileName) {
-        if (fileName.replace(".txt", "").length() > 50) {
-            return fileName
-                    .replace(".txt", "")
-                    .substring(0,46).concat(".txt");
-        }
+		lastName = removeSpecialChars(lastName);
+		// log.info("remove special chars: " + lastName);
 
-        return fileName;
-    }
+		lastName = truncateLongNames(lastName);
+		// log.info("truncate long filenames: " + lastName);
+
+		return Paths.get(fileDir+"/"+lastName);
+	}
+
+	private static String getFileName(String fileName) {
+		if (fileName.lastIndexOf("/") != -1)
+			return fileName.substring(fileName.lastIndexOf("/")+1);
+
+		return fileName;
+	}
+	private static String getFileDir(String fileName) {
+		int lastIndexOf = fileName.lastIndexOf("/");
+		if (lastIndexOf != -1) 
+			return fileName.substring(0,lastIndexOf);
+		return fileName+"/"; // TODO corretto ? verificare in debug che cosa arriva per il kindle 
+	}
+
+	private static String removeSpecialChars(String fileName) {
+		return fileName
+				.replace(".", "")
+				.replace(":", " ")
+				.replace("*", "")
+				.replace("/", "_")
+				.replace("txt", "")
+				.trim()
+				.concat(".txt");
+	}
+
+	private static String truncateLongNames(String fileName) {
+		if (fileName.replace(".txt", "").length() > 50) {
+			return fileName
+					.replace(".txt", "")
+					.substring(0,46).concat(".txt");
+		}
+
+		return fileName;
+	}
 }
