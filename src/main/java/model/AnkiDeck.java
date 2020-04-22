@@ -9,6 +9,8 @@ import java.util.List;
 
 public class AnkiDeck {
 
+	private final static String TXT_EXTENSION = ".txt";
+
 	private List<IAnkiCard> cards;
     private String title;
     private String destFolder;
@@ -30,12 +32,12 @@ public class AnkiDeck {
     }
 
     
-    public String getDest() {
-    	return this.destFolder + this.title;
+    public String getFileDestination() {
+    	return this.destFolder + this.title + TXT_EXTENSION;
     }
     
     public Path getPathDest() {
-    	return Paths.get(this.destFolder +  this.title);
+    	return Paths.get(this.destFolder +  this.title + TXT_EXTENSION);
     }
     
     

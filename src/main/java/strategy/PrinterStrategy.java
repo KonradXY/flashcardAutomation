@@ -41,7 +41,7 @@ public enum PrinterStrategy {
 			int cardIndex = 0;
 			List<KindleAnkiCard> kindleCards = deck.getCards().stream().map(it -> (KindleAnkiCard)it).collect(Collectors.toList());
 
-			try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(deck.getDestFolder()), "UTF-8"))) {
+			try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(deck.getFileDestination()), "UTF-8"))) {
 				for (KindleAnkiCard kindleCard : kindleCards) {
 					bw.write(cardIndex++ + ". " + kindleCard.getTitle() + "|");
 					bw.write(kindleCard.getBack() + "\n\n");
