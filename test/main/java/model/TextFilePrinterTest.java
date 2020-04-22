@@ -24,8 +24,8 @@ class TextFilePrinterTest {
 
 	private static AnkiCard card;
 	private static final String fileTestPath = "./";
-	private static final String fileTestName = "test.txt";
-	private static final Path filetestpath = Paths.get(fileTestPath+fileTestName);
+	private static final String fileTestName = "test";
+	private static final Path filetestpath = Paths.get(fileTestPath+fileTestName+".txt");
 	private IPrinter printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	
 	private final static String contentFront = "<div class=\"front\"> this is the front</div>";
