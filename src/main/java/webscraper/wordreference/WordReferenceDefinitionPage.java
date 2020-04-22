@@ -21,7 +21,7 @@ public class WordReferenceDefinitionPage extends AbstractWebScraper {
     private Document definitionPage;
 
     @Override
-    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
+    public void scrapePageWithWord(String word) {
         this.definitionPage = scrapePage(WORD_REFERENCE_ESP_DEFINITION_PAGE_URL, word);
     }
 

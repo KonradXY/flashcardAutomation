@@ -20,7 +20,7 @@ public class WordReferenceSynonimsPage extends AbstractWebScraper {
     private Document synonimsPage;
 
     @Override
-    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
+    public void scrapePageWithWord(String word) {
         this.synonimsPage = scrapePage(WORD_REFERENCE_ESP_SINONYMS_PAGE_URL, word);
     }
 

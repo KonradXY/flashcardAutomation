@@ -8,7 +8,6 @@ import static main.java.card_decorators.AbstractCardDecorator.getNewLineTag;
 import static main.java.card_decorators.AbstractCardDecorator.getUnorderedListTag;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -40,14 +39,15 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        definitionPageWR.scrapePageWithWord(Collections.emptyList(), word);
-        synonimsPageWR.scrapePageWithWord(Collections.emptyList(), word);
+        definitionPageWR.scrapePageWithWord(word);
+        synonimsPageWR.scrapePageWithWord(word);
 
         Map<String, String> definizioniMap = definitionPageWR.getWordDefinition();
         List<String> synonims = synonimsPageWR.getSynonimsFromWord();
 
         List<IAnkiCard> cards = new ArrayList<>();
-        reversoCrawler.scrapePageWithWord(cards, word);
+        reversoCrawler.scrapePageWithWord(word);
+        cards = reversoCrawler.createAnkiCardsFromContent(word);
 
         for (IAnkiCard card : cards) {
             addDefinizioneToBack(card, definizioniMap);

@@ -14,37 +14,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WordReferenceCrawlerTest {
 
-	// TODO - rivedere meglio questa classe di test (forse alla fine la levero')
-	
-    private static final String htmlTestFile = "./test/main/resources/webcrawler/word_reference_single_definition_test_example.html";
-    private static final String SPANISH_TEST_WORD = "aceite";
+	private static final String htmlTestFile = "./test/main/resources/webcrawler/word_reference_single_definition_test_example.html";
+	private static final WordReferenceTranslationPage wordReferenceCrawler = new WordReferenceTranslationPage();
 
-    private static final WordReferenceTranslationPage wordReferenceCrawler = new WordReferenceTranslationPage();
+	private static Map<String, String> expectedMap;
 
-    @BeforeAll
-    public static void setup() throws Exception {
-        wordReferenceCrawler.setTraduzioniEspItaPage(Jsoup.parse(new File(htmlTestFile), "UTF-8"));
-    }
+	@BeforeAll
+	public static void setup() throws Exception {
+		wordReferenceCrawler.setTraduzioniEspItaPage(Jsoup.parse(new File(htmlTestFile), "UTF-8"));
+		loadExpectedMap();
+	}
 
-    @Test
-    void getWordTranslationsWorksCorrecty() {
-        Map<String, String> traduzioni  = wordReferenceCrawler.getWordTranslation(SPANISH_TEST_WORD);
+	@Test
+	void getWordTranslationsWorksCorrecty() {
+		Map<String, String> traduzioni  = wordReferenceCrawler.getWordTranslation();
 
-        Map<String, String> test_map = new HashMap<>();
-        test_map.put("aceite", "olio");
-        test_map.put("aceitar", "(Tec) oliare; (Culin) condire con olio");
 
-        assertEquals(2, traduzioni.size());
-        assertEquals(test_map, traduzioni);
 
-    }
+		assertEquals(2, traduzioni.size());
+		assertEquals(expectedMap, traduzioni);
+	}
 
-    @Test
-    void getTipsWorksCorrectly() {
-        Optional<Element> tip = wordReferenceCrawler.getWordTips(SPANISH_TEST_WORD);
-        final String tip_test = "<span class=\"infoblock\"><b>aceite</b> no se traduce nunca por la palabra italiana <i>aceto</i>.</span>";
+	@Test
+	void getTipsWorksCorrectly() {
+		Optional<Element> tip = wordReferenceCrawler.getWordTips();
+		final String tip_test = "<span class=\"infoblock\"><b>aceite</b> no se traduce nunca por la palabra italiana <i>aceto</i>.</span>";
 
-        assertTrue(tip.isPresent());
-        assertEquals(tip_test, tip.get().toString());
-    }
+		assertTrue(tip.isPresent());
+		assertEquals(tip_test, tip.get().toString());
+	}
+
+
+	private static void loadExpectedMap() {
+		expectedMap = new HashMap<>();
+		expectedMap.put("aceite", "olio");
+		expectedMap.put("aceitar", "(Tec) oliare; (Culin) condire con olio");
+	}
 }

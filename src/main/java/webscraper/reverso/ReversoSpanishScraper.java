@@ -37,15 +37,17 @@ public class ReversoSpanishScraper extends AbstractWebScraper {
     private Document reversoPage;
 
     @Override
-    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
+    public void scrapePageWithWord(String word) {
         reversoPage = scrapePage(REVERSO_ESP_ITA_TRANSLATION_PAGE_URL, word);
-        cardList = createAnkiCardsFromContent(reversoPage, word);
     }
 
-    public List<IAnkiCard> createAnkiCardsFromContent(Document doc, String word) {
-        List<IAnkiCard> cardList = new ArrayList<>();
+    public List<IAnkiCard> createAnkiCardsFromContent(String word) {
 
-        Element elements = doc.getElementById(EXAMPLES_ID);
+    	if (reversoPage == null) 
+    		throw new IllegalStateException("reversoPage cannot be null while creating cards !");
+    	
+    	List<IAnkiCard> cardList = new ArrayList<>();
+        Element elements = reversoPage.getElementById(EXAMPLES_ID);
         elements.getElementsByClass(EXAMPLE_CLASS).stream()
                 .limit(MAX_NUM_EXAMPLES_PER_WORD)
                 .forEach(example -> {

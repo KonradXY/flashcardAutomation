@@ -1,16 +1,15 @@
 package main.java.webscraper;
 
-import main.java.contracts.IAnkiCard;
-import main.java.webscraper.reverso.ReversoSpanishScraper;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.io.File;
+import java.io.IOException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.fail;
+import main.java.webscraper.reverso.ReversoSpanishScraper;
 
 class ReversoSpanishCrawlerTest {
 
@@ -23,7 +22,6 @@ class ReversoSpanishCrawlerTest {
     @Test
     void cardsAreCreatedCorrectly() throws IOException {
         Document scrapedPage = Jsoup.parse(new File(htmlTestFile), "UTF-8");
-        List<IAnkiCard> cardList = reversoSpanishCrawler.createAnkiCardsFromContent(scrapedPage, SPANISH_TEST_WORD);
         fail("Not implemented yet");
     }
 

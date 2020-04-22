@@ -3,6 +3,8 @@ package main.java.webscraper.wordreference;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +21,9 @@ class WordReferenceDefinitionPageTest {
     
     @BeforeAll
     public static void setup() throws Exception {
+    	if (!Files.exists(Paths.get(definitionPageHtml)))
+    		throw new IllegalStateException("File must exist !");
+    	
         wordReferenceCrawler.setDefinitionPage(Jsoup.parse(new File(definitionPageHtml), "UTF-8"));
         loadExpectedMap();
     }

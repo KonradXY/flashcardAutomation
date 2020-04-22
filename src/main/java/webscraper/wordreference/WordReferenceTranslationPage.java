@@ -1,7 +1,6 @@
 package main.java.webscraper.wordreference;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -12,7 +11,6 @@ import org.jsoup.select.Elements;
 
 import com.google.inject.Singleton;
 
-import main.java.contracts.IAnkiCard;
 import main.java.webscraper.AbstractWebScraper;
 
 @Singleton
@@ -28,7 +26,7 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
     }
 
     @Override
-    public void scrapePageWithWord(List<IAnkiCard> cardList, String word) {
+    public void scrapePageWithWord(String word) {
         this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word);
         checkTranslationIsFound(word);
     }
@@ -43,7 +41,7 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
         return true;
     }
 
-    public Map<String, String> getWordTranslation(String word) {
+    public Map<String, String> getWordTranslation() {
 
         Map<String, String> traduzioniMap = new LinkedHashMap<>();
         Element article = this.traduzioneEspItaPage.getElementById("article");
@@ -60,7 +58,7 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
 
     }
 
-    public Optional<Element> getWordTips(String word) {
+    public Optional<Element> getWordTips() {
         Element article = this.traduzioneEspItaPage.getElementById("article");
         Elements tips = article.getElementsByClass("infoblock");
 

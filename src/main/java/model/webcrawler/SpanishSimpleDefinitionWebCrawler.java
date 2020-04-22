@@ -6,7 +6,6 @@ import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTa
 import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -36,7 +35,7 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        translationPageWR.scrapePageWithWord(Collections.emptyList(), word);
+        translationPageWR.scrapePageWithWord(word);
         List<IAnkiCard> cardList = new ArrayList<>();
         cardList.add(createSimpleDefinitionCard(word));
         cardList.add(createReverseDefinitionCard(word));
@@ -44,7 +43,7 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
     }
 
     private IAnkiCard createSimpleDefinitionCard(String word) {
-        Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
+        Map<String, String> traduzioni = translationPageWR.getWordTranslation();
 
         IAnkiCard card = new AnkiCard();
         addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
@@ -53,7 +52,7 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
             addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass(TRADUZIONE_CLASS));
         }
 
-        Optional<Element> tip = translationPageWR.getWordTips(word);
+        Optional<Element> tip = translationPageWR.getWordTips();
         if (tip.isPresent()) {
             addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
         }
@@ -63,7 +62,7 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
 
     private IAnkiCard createReverseDefinitionCard(String word) {
         IAnkiCard card = new AnkiCard();
-        Map<String, String> traduzioni = translationPageWR.getWordTranslation(word);
+        Map<String, String> traduzioni = translationPageWR.getWordTranslation();
         if (!traduzioni.isEmpty()) {
 
             addContentToFront(card, traduzioni.values().iterator().next(), getParagraphTag().addClass(TRADUZIONE_CLASS));
