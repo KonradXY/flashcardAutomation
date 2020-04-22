@@ -1,9 +1,6 @@
 package main.java.strategy;
 
 
-import static main.java.contracts.IParser.*;
-
-import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
 import main.java.model.AnkiDeck;
@@ -17,6 +14,13 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+
+import static main.java.contracts.IParser.DOMANDE_INDEX;
+import static main.java.contracts.IParser.NUM_EX_PATTERN;
+import static main.java.contracts.IParser.PIPE_SEPARATOR;
+import static main.java.contracts.IParser.QA_SEPARATOR;
+import static main.java.contracts.IParser.RISPOSTE_INDEX;
+import static main.java.contracts.IParser.SINGLE_EX_PATTERN;
 
 public enum TextParsingStrategy {
 
@@ -54,22 +58,19 @@ public enum TextParsingStrategy {
                         splittedText[i + SECOND_FIELD]));
             }
         }
-    }
-
-    ;
-
-    public abstract void parseFile(AnkiDeck deck, String inputFile);
-
-
-    // ======== class starts here !!!
-
-    public static int FIRST_FIELD = 0;
-    public static int SECOND_FIELD = 1;
+    };
 
     private final static Logger log = Logger.getLogger(TextParsingStrategy.class);
 
+
+    // ======== class starts here !!!
+    public static int FIRST_FIELD = 0;
+    public static int SECOND_FIELD = 1;
+
+    public abstract void parseFile(AnkiDeck deck, String inputFile);
+
     boolean entriesAreEven(String[] entries) {
-        return entries.length%2 == 0;
+        return entries.length % 2 == 0;
     }
 
     // TODO - che e' sto generic ?
