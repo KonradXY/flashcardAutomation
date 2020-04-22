@@ -41,7 +41,9 @@ public class AnkiDeck {
     
     // GETTERs and SETTERs
 	public List<IAnkiCard> getCards() {
-		return cards;
+		if (cards == null)
+			cards = new ArrayList<>();
+    	return cards;
 	}
 
 	public void setDeck(List<IAnkiCard> cards) {

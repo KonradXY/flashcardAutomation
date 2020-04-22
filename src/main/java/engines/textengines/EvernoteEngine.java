@@ -15,7 +15,7 @@ public class EvernoteEngine extends TextEngine {
 	@Override
 	public void buildEngine() {
 		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
-		parser = new EvernoteParser(new ParserUtil(), getOutputAsPath());
+		parser = new EvernoteParser(new ParserUtil());
 		printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	}
 }

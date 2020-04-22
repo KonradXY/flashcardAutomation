@@ -33,6 +33,6 @@ public interface IParser {
 	default String getParsedFileName(Path inputFile) {
 		String textName = new File(inputFile.toString()).getName();
 		String extension = textName.substring(textName.lastIndexOf("."));
-		return textName.replace(extension, "_parsed" + extension);
+		return textName.replace(extension, "_parsed.txt");
 	}
 }

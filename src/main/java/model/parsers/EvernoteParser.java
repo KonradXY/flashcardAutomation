@@ -34,13 +34,11 @@ public class EvernoteParser implements IParser {
 	private static final Logger log = Logger.getLogger(EvernoteParser.class);
 
 	private ParserUtil parserUtil;
-	private Path outputContent;
 
 	public EvernoteParser() { }
 
-	public EvernoteParser(ParserUtil parserUtil, Path outputContent) {
+	public EvernoteParser(ParserUtil parserUtil) {
 		this.parserUtil = parserUtil;
-		this.outputContent = outputContent;
 	}
 
 
@@ -50,7 +48,7 @@ public class EvernoteParser implements IParser {
 				.withDestFolder(destFolder)
 				.withTitle(getParsedFileName(filename))
 				.build();
-		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, outputContent));
+		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, Paths.get(destFolder)));
 		return Arrays.asList(deck);
 	}
 	
