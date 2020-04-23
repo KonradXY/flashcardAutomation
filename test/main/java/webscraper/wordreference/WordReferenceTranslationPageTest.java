@@ -31,12 +31,5 @@ class WordReferenceTranslationPageTest {
 		Map<String, String> map = wordReferenceCrawler.getWordTranslation();
 		System.out.println(map);
 	}
-	
-	
-	@Test
-	void checkWordTipsAreParsedCorrectly() {
-		Optional<Element> tip = wordReferenceCrawler.getWordTips();
-		System.out.println(tip);
-	}
 
 }

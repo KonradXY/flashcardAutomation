@@ -1,30 +1,23 @@
 package main.java.model.webcrawler;
 
-import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
-import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
-import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
-import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.apache.log4j.Logger;
-import org.jsoup.nodes.Element;
-
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
 import main.java.model.AnkiCard;
 import main.java.webscraper.wordreference.WordReferenceTranslationPage;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
+import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
+
 @Singleton
 public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
-
-    private static final Logger log = Logger.getLogger(SpanishSimpleDefinitionWebCrawler.class);
 
     private final WordReferenceTranslationPage translationPageWR;
 
@@ -38,7 +31,7 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
         translationPageWR.scrapePageWithWord(word);
         List<IAnkiCard> cardList = new ArrayList<>();
         cardList.add(createSimpleDefinitionCard(word));
-        cardList.add(createReverseDefinitionCard(word));
+        cardList.add(createReverseDefinitionCard());
         return cardList;
     }
 
@@ -52,15 +45,10 @@ public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
             addContentToBack(card, entry.getKey() + " - " + entry.getValue(), getParagraphTag().addClass(TRADUZIONE_CLASS));
         }
 
-        Optional<Element> tip = translationPageWR.getWordTips();
-        if (tip.isPresent()) {
-            addContentToBack(card, tip.get().text(), getParagraphTag().addClass("tip"));
-        }
-
         return card;
     }
 
-    private IAnkiCard createReverseDefinitionCard(String word) {
+    private IAnkiCard createReverseDefinitionCard() {
         IAnkiCard card = new AnkiCard();
         Map<String, String> traduzioni = translationPageWR.getWordTranslation();
         if (!traduzioni.isEmpty()) {

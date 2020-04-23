@@ -35,16 +35,6 @@ class WordReferenceCrawlerTest {
 		assertEquals(expectedMap, traduzioni);
 	}
 
-	@Test
-	void getTipsWorksCorrectly() {
-		Optional<Element> tip = wordReferenceCrawler.getWordTips();
-		final String tip_test = "<span class=\"infoblock\"><b>aceite</b> no se traduce nunca por la palabra italiana <i>aceto</i>.</span>";
-
-		assertTrue(tip.isPresent());
-		assertEquals(tip_test, tip.get().toString());
-	}
-
-
 	private static void loadExpectedMap() {
 		expectedMap = new HashMap<>();
 		expectedMap.put("aceite", "olio");
