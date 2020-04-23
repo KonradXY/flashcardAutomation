@@ -32,6 +32,10 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
     }
 
     private boolean checkTranslationIsFound(String word) {
+
+        if (this.traduzioneEspItaPage == null)
+            throw new IllegalStateException("the page cannot be null !");
+
         Element noEntryFound = this.traduzioneEspItaPage.getElementById("noEntryFound");
         if (noEntryFound != null) {
             logDiscardedWord(word);

@@ -25,6 +25,10 @@ public class WordReferenceSynonimsPage extends AbstractWebScraper {
     }
 
     public List<String> getSynonimsFromWord() {
+
+        if (this.synonimsPage == null)
+            throw new IllegalStateException("the page cannot be null !");
+
         Element article = synonimsPage.getElementById("article");
         Elements synonims = article.getElementsByTag("li");
         return synonims.stream().map(Element::text).collect(Collectors.toList());

@@ -18,7 +18,7 @@ import com.google.inject.Singleton;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
-import main.java.webscraper.reverso.ReversoSpanishScraper;
+import main.java.webscraper.reverso.ReversoDefinitionPage;
 import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
 
@@ -26,12 +26,12 @@ import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
 public class SpanishGeneralWebCrawler implements IWebCrawler {
 
 
-    private final ReversoSpanishScraper reversoCrawler;
+    private final ReversoDefinitionPage reversoCrawler;
     private final WordReferenceDefinitionPage definitionPageWR;
     private final WordReferenceSynonimsPage synonimsPageWR;
 
     @Inject
-    public SpanishGeneralWebCrawler(ReversoSpanishScraper reversoCrawler, WordReferenceDefinitionPage wordReferenceDefinitionPage, WordReferenceSynonimsPage wordReferenceSynonimsPage) {
+    public SpanishGeneralWebCrawler(ReversoDefinitionPage reversoCrawler, WordReferenceDefinitionPage wordReferenceDefinitionPage, WordReferenceSynonimsPage wordReferenceSynonimsPage) {
         this.reversoCrawler = reversoCrawler;
         this.definitionPageWR = wordReferenceDefinitionPage;
         this.synonimsPageWR = wordReferenceSynonimsPage;

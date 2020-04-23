@@ -26,6 +26,10 @@ public class WordReferenceDefinitionPage extends AbstractWebScraper {
     }
 
     public Map<String, String> getWordDefinition() {
+
+        if (this.definitionPage == null)
+            throw new IllegalStateException("the page cannot be null !");
+
         Element article = definitionPage.getElementById("article");        
         Elements li = article.getElementsByTag("li");
         Map<String, String> defMap = new LinkedHashMap<>();

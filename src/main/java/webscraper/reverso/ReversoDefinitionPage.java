@@ -21,11 +21,10 @@ import main.java.model.AnkiCard;
 import main.java.webscraper.AbstractWebScraper;
 
 @Singleton
-public class ReversoSpanishScraper extends AbstractWebScraper {
+public class ReversoDefinitionPage extends AbstractWebScraper {
 
     public final static String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = "http://context.reverso.net/traduzione/spagnolo-italiano/";
 
-    private final static Logger log = Logger.getLogger(ReversoSpanishScraper.class);
     private static final String EXAMPLES_ID = "examples-content";
     private static final String TRANSLATION_CONTENT_ID = "translations-content";
     private static final String EXAMPLE_CLASS = "example";
@@ -59,6 +58,7 @@ public class ReversoSpanishScraper extends AbstractWebScraper {
                     addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
                     cardList.add(card);
                 });
+
         return cardList;
     }
 
@@ -89,11 +89,15 @@ public class ReversoSpanishScraper extends AbstractWebScraper {
     private Element getContents(Element example, String cssClass) {
         Elements content = example.getElementsByClass(cssClass);
         if (content.isEmpty())
-            throw new RuntimeException("Content not found for elements: " + example);
+            throw new IllegalStateException("Content not found for elements: " + example);
         if (content.size() > 1)
-            throw new RuntimeException("Esistono piu' versioni per l'esempio: " + example);
+            throw new IllegalStateException("Esistono piu' versioni per l'esempio: " + example);
 
         return content.get(0);
+    }
+
+    void setDefinitionPage(Document doc) {
+        this.reversoPage = doc;
     }
 
 
