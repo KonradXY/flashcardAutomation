@@ -46,15 +46,27 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
         Map<String, String> traduzioniMap = new LinkedHashMap<>();
         Element article = this.traduzioneEspItaPage.getElementById("article");
 
-        Elements entries = article.getElementsByClass("entry").get(0).getElementsByTag("li");
+        Elements entries = article.getElementsByClass("superentry");
         for (Element entry : entries) {
-            String traduzione = entry.getElementsByTag("span").text();
-            String significato = entry.text().replace(traduzione, "");
-            traduzioniMap.put(significato, traduzione);
+            String parola = entry.getElementsByClass("hwblk").get(0).getElementsByTag("hw").get(0).text();
+            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; \\n"));
+
+            traduzioniMap.put(parola, traduzione);
         }
 
         return traduzioniMap;
 
     }
 
+    public Optional<Element> getWordTips() {
+        Element article = this.traduzioneEspItaPage.getElementById("article");
+        Elements tips = article.getElementsByClass("infoblock");
+
+        for (Element tip : tips) {
+            if (!tips.isEmpty())
+                return Optional.of(tip);
+        }
+
+        return Optional.empty();
+    }
 }
