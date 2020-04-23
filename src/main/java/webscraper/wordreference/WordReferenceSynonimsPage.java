@@ -15,7 +15,7 @@ import main.java.webscraper.AbstractWebScraper;
 @Singleton
 public class WordReferenceSynonimsPage extends AbstractWebScraper {
 
-    public final static String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = "https://www.wordreference.com/sinonimos/";
+    private static final String WORD_REFERENCE_ESP_SINONYMS_PAGE_URL = "https://www.wordreference.com/sinonimos/";
 
     private Document synonimsPage;
 

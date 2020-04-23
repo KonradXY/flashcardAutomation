@@ -3,6 +3,7 @@ package main.java.webscraper.wordreference;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ class WordReferenceSynonimsPageTest {
 
 	
 	private static final String synonimsPage = "./test/main/resources/webcrawler/wordreference/tirar - sinonimi.html";
-    private static final WordReferenceSynonimsPage wordReferenceCrawler = new WordReferenceSynonimsPage();
+    private static final WordReferenceSynonimsPage wrPage = new WordReferenceSynonimsPage();
     
     private static List<String> expectedList;
 
@@ -25,14 +26,24 @@ class WordReferenceSynonimsPageTest {
     	if (!Files.exists(Paths.get(synonimsPage)))
     		throw new IllegalStateException("File must exist !");
     	
-    	wordReferenceCrawler.setSynonimsPage(Jsoup.parse(new File(synonimsPage), "UTF-8"));
+
         loadExpectedList();
     }
 	
 	@Test
-	void test() {
-		List<String> synonimsList = wordReferenceCrawler.getSynonimsFromWord();
+	void parseIsDoneCorrecltyOffline() throws IOException {
+		wrPage.setSynonimsPage(Jsoup.parse(new File(synonimsPage), "UTF-8"));
+		List<String> synonimsList = wrPage.getSynonimsFromWord();
 		
+		assertEquals(10, synonimsList.size());
+		assertEquals(expectedList, synonimsList);
+	}
+
+	@Test
+	void parseIsDoneCorrecltyOnline() {
+		wrPage.scrapePageWithWord("tirar");
+		List<String> synonimsList = wrPage.getSynonimsFromWord();
+
 		assertEquals(10, synonimsList.size());
 		assertEquals(expectedList, synonimsList);
 	}

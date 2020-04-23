@@ -1,16 +1,20 @@
 package main.java.model.webcrawler;
 
+import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
+import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
 import static main.java.card_decorators.AbstractCardDecorator.applyLeftFormatRecursively;
 import static main.java.card_decorators.AbstractCardDecorator.createSingleDefinizione;
 import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getListItemTag;
 import static main.java.card_decorators.AbstractCardDecorator.getNewLineTag;
+import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getUnorderedListTag;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import main.java.model.AnkiCard;
 import org.jsoup.nodes.Element;
 
 import com.google.inject.Inject;
@@ -41,20 +45,28 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
     public List<IAnkiCard> createFlashcards(String word) {
         definitionPageWR.scrapePageWithWord(word);
         synonimsPageWR.scrapePageWithWord(word);
-
-        Map<String, String> definizioniMap = definitionPageWR.getWordDefinition();
-        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
-
-        List<IAnkiCard> cards = new ArrayList<>();
         reversoCrawler.scrapePageWithWord(word);
-        cards = reversoCrawler.createAnkiCardsFromContent(word);
 
-        for (IAnkiCard card : cards) {
-            addDefinizioneToBack(card, definizioniMap);
+        Map<String, String> definizioniWR = definitionPageWR.getWordDefinition();
+        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
+        Map<String, String> definizioniReverso = reversoCrawler.getTraduzioni();
+
+
+        List<IAnkiCard> cardList = new ArrayList<>();
+        for (Map.Entry<String, String>  entry  : definizioniReverso.entrySet()) {
+            IAnkiCard card = new AnkiCard();
+            String traduzione = entry.getKey();
+            String contenuto = entry.getValue();
+            addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
+            addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
+            addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+            addDefinizioneToBack(card, definizioniWR);
             addSinonimiToBack(card, synonims);
+
+            cardList.add(card);
         }
 
-        return cards;
+        return cardList;
     }
 
 

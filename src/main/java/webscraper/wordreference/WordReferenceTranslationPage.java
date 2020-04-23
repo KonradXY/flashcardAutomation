@@ -16,7 +16,7 @@ import main.java.webscraper.AbstractWebScraper;
 @Singleton
 public class WordReferenceTranslationPage extends AbstractWebScraper {
 
-    public final static String WORD_REFERENCE_ESP_ITA_PAGE_URL = "https://www.wordreference.com/esit/";
+    private static final String WORD_REFERENCE_ESP_ITA_PAGE_URL = "https://www.wordreference.com/esit/";
 
     private Document traduzioneEspItaPage;
 

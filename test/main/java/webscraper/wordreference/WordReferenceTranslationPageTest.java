@@ -3,6 +3,7 @@ package main.java.webscraper.wordreference;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ import org.junit.jupiter.api.Test;
 class WordReferenceTranslationPageTest {
 
 	private static final String translationPage = "./test/main/resources/webcrawler/wordreference/tirar - traduzione.html";
-    private static final WordReferenceTranslationPage wordReferenceCrawler = new WordReferenceTranslationPage();
+    private static final WordReferenceTranslationPage wrPage = new WordReferenceTranslationPage();
 
     private static Map<String, String> expectedTranslationMap;
 
@@ -28,19 +29,29 @@ class WordReferenceTranslationPageTest {
 
     	loadExpectedTranslationMap();
 
-        wordReferenceCrawler.setTraduzioniEspItaPage(Jsoup.parse(new File(translationPage), "UTF-8"));
+
     }
 
 	@Test
-	void checkWordTranslationsAreParsedCorrectly() {
-		Map<String, String> map = wordReferenceCrawler.getWordTranslation();
+	void checkWordTranslationsAreParsedCorrectlyOffline() throws IOException {
+		wrPage.setTraduzioniEspItaPage(Jsoup.parse(new File(translationPage), "UTF-8"));
+		Map<String, String> map = wrPage.getWordTranslation();
+		assertEquals(expectedTranslationMap, map);
+	}
+
+	@Test
+	void checkWordTranslationsAreParsedCorrectlyOnline() throws IOException {
+		wrPage.scrapePageWithWord("tirar");
+		Map<String, String> map = wrPage.getWordTranslation();
 		assertEquals(expectedTranslationMap, map);
 	}
 
 
 	@Test
-	void checkWordTipsAreParsedCorrectly() {
-		Optional<Element> tip = wordReferenceCrawler.getWordTips();
+	void checkWordTipsAreParsedCorrectly() throws IOException {
+    	fail("questo test nn funziona perche' nn e' presente nessun tip");
+		wrPage.setTraduzioniEspItaPage(Jsoup.parse(new File(translationPage), "UTF-8"));
+		Optional<Element> tip = wrPage.getWordTips();
 		System.out.println(tip);
 	}
 

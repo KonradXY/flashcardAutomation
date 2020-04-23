@@ -3,6 +3,7 @@ package main.java.webscraper.wordreference;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import org.junit.jupiter.api.Test;
 class WordReferenceDefinitionPageTest {
 
 	private static final String definitionPageHtml = "./test/main/resources/webcrawler/wordreference/tirar - definizione.html";
-    private static final WordReferenceDefinitionPage wordReferenceCrawler = new WordReferenceDefinitionPage();
+    private static final WordReferenceDefinitionPage wrPage = new WordReferenceDefinitionPage();
 
     private static Map<String, String> expectedMap;
     
@@ -24,17 +25,28 @@ class WordReferenceDefinitionPageTest {
     	if (!Files.exists(Paths.get(definitionPageHtml)))
     		throw new IllegalStateException("File must exist !");
     	
-        wordReferenceCrawler.setDefinitionPage(Jsoup.parse(new File(definitionPageHtml), "UTF-8"));
         loadExpectedMap();
     }
 
     
 	@Test
-	void checkDefinitionAreCrawledCorrectly() {
-		Map<String, String> definitionMap = wordReferenceCrawler.getWordDefinition();
-		for (Map.Entry<String, String> entry : definitionMap.entrySet()) {
-			assertTrue(expectedMap.containsKey(entry.getKey()));
-			assertEquals(expectedMap.get(entry.getKey()), entry.getValue());
+	void checkDefinitionIsParsedCorrectlyOffline() throws IOException {
+		wrPage.setDefinitionPage(Jsoup.parse(new File(definitionPageHtml), "UTF-8"));
+		Map<String, String> definitionMap = wrPage.getWordDefinition();
+		for (Map.Entry<String, String> entry : expectedMap.entrySet()) {
+			assertTrue(definitionMap.containsKey(entry.getKey()));
+			assertEquals(definitionMap.get(entry.getKey()), entry.getValue());
+		}
+	}
+
+	@Test
+	void checkDefinitionIsParsedCorrectlyOnline(){
+    	fail("questo test non funziona correttamente. Da rivedere");
+		wrPage.scrapePageWithWord("tirar");
+		Map<String, String> definitionMap = wrPage.getWordDefinition();
+		for (Map.Entry<String, String> entry : expectedMap.entrySet()) {
+			assertTrue(definitionMap.containsKey(entry.getKey()));
+			assertEquals(definitionMap.get(entry.getKey()), entry.getValue());
 		}
 	}
 	

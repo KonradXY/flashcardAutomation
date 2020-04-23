@@ -16,7 +16,7 @@ import main.java.webscraper.AbstractWebScraper;
 @Singleton
 public class WordReferenceDefinitionPage extends AbstractWebScraper {
 
-    public final static String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = "https://www.wordreference.com/definicion/";
+    private static final String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = "https://www.wordreference.com/definicion/";
 
     private Document definitionPage;
 
