@@ -10,9 +10,9 @@ public class WebParsedCardDecorator extends StandardCardDecorator {
 
 	private IAnkiCard createWebParsedCard(String word, String traduzione, String contenuto) {
         this.card.create();
-        addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-        addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
-        addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+        addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
+        addContentToFront(traduzione, getParagraphTag().addClass("traduzione"));
+        addContentToBack(contenuto, getParagraphTag().addClass("contenuto"));
         return this.card;
     }
 

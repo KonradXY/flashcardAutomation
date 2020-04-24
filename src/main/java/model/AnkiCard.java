@@ -61,6 +61,16 @@ public class AnkiCard implements IAnkiCard  {
 	public void setBackHtml(Element backHtml) 	{ this.back = backHtml; }
 	public void setFrontHtml(Element frontHtml) { this.front = frontHtml; }
 
+	@Override
+    public void addContentToFront(String content, Element contentDiv) {
+        contentDiv.text(content);
+        this.getFront().appendChild(contentDiv);
+    }
+
+    public void addContentToBack(String content, Element contentDiv) {
+        contentDiv.text(content);
+        this.getBack().appendChild(contentDiv);
+    }
 
 	public boolean isCardEmpty() {
 		return (front.text()+back.text()).trim().equals("");

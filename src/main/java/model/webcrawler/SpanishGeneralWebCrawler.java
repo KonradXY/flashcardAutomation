@@ -1,7 +1,5 @@
 package main.java.model.webcrawler;
 
-import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
-import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
 import static main.java.card_decorators.AbstractCardDecorator.applyLeftFormatRecursively;
 import static main.java.card_decorators.AbstractCardDecorator.createSingleDefinizione;
 import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
@@ -14,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import main.java.model.AnkiCard;
 import org.jsoup.nodes.Element;
 
 import com.google.inject.Inject;
@@ -22,6 +19,7 @@ import com.google.inject.Singleton;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
+import main.java.model.AnkiCard;
 import main.java.webscraper.reverso.ReversoDefinitionPage;
 import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
 import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
@@ -57,9 +55,9 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
             IAnkiCard card = new AnkiCard();
             String traduzione = entry.getKey();
             String contenuto = entry.getValue();
-            addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-            addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
-            addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
+            card.addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
+            card.addContentToFront(traduzione, getParagraphTag().addClass("traduzione"));
+            card.addContentToBack(contenuto, getParagraphTag().addClass("contenuto"));
             addDefinizioneToBack(card, definizioniWR);
             addSinonimiToBack(card, synonims);
 
