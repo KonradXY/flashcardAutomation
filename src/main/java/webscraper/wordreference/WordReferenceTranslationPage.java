@@ -53,7 +53,7 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
         Elements entries = article.getElementsByClass("superentry");
         for (Element entry : entries) {
             String parola = entry.getElementsByClass("hwblk").get(0).getElementsByTag("hw").get(0).text();
-            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; <br>"));
+            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; "));
 
             traduzioniMap.put(parola, traduzione);
         }

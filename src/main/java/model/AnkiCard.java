@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 
 import main.java.contracts.IAnkiCard;
 
-public class AnkiCard implements IAnkiCard  {
+public class AnkiCard implements IAnkiCard {
 
 	protected Element front;
 	protected Element back;
@@ -23,13 +23,13 @@ public class AnkiCard implements IAnkiCard  {
 		this.addTextContentToFront(front);
 		this.addTextContentToBack(back);
 	}
-	
+
 	public AnkiCard(Element front, Element back) {
 		this();
 		this.addElementToFront(front);
 		this.addElementToBack(back);
 	}
-	
+
 	public AnkiCard(Elements front, Elements back) {
 		this();
 		front.forEach(this::addElementToFront);
@@ -40,40 +40,61 @@ public class AnkiCard implements IAnkiCard  {
 	public IAnkiCard create() {
 		return new AnkiCard();
 	}
+
 	@Override
 	public IAnkiCard create(String front, String back) {
 		return new AnkiCard(front, back);
 	}
+
 	@Override
 	public IAnkiCard create(Element front, Element back) {
 		return new AnkiCard(front, back);
 	}
-	
-	@Override
-	public Element getFront() { return front.getElementsByClass(FRONT_TAG).get(0); }
-	@Override
-	public Element getBack()  { return back.getElementsByClass(BACK_TAG).get(0); }
-
-	public void setKey(Element key) 		{ this.front = key ; }
-	public void setKey(String key)  		{ this.front.appendText(key); }
-	public Element setValue(String value) 	{ this.back.appendText(value); return this.back; }
-
-	public void setBackHtml(Element backHtml) 	{ this.back = backHtml; }
-	public void setFrontHtml(Element frontHtml) { this.front = frontHtml; }
 
 	@Override
-    public void addContentToFront(String content, Element contentDiv) {
-        contentDiv.text(content);
-        this.getFront().appendChild(contentDiv);
-    }
+	public Element getFront() {
+		return front.getElementsByClass(FRONT_TAG).get(0);
+	}
 
-    public void addContentToBack(String content, Element contentDiv) {
-        contentDiv.text(content);
-        this.getBack().appendChild(contentDiv);
-    }
+	@Override
+	public Element getBack() {
+		return back.getElementsByClass(BACK_TAG).get(0);
+	}
+
+	public void setKey(Element key) {
+		this.front = key;
+	}
+
+	public void setKey(String key) {
+		this.front.appendText(key);
+	}
+
+	public Element setValue(String value) {
+		this.back.appendText(value);
+		return this.back;
+	}
+
+	public void setBackHtml(Element backHtml) {
+		this.back = backHtml;
+	}
+
+	public void setFrontHtml(Element frontHtml) {
+		this.front = frontHtml;
+	}
+
+	@Override
+	public void addContentToFront(String content, Element contentDiv) {
+		contentDiv.text(content);
+		this.getFront().appendChild(contentDiv);
+	}
+
+	public void addContentToBack(String content, Element contentDiv) {
+		contentDiv.text(content);
+		this.getBack().appendChild(contentDiv);
+	}
 
 	public boolean isCardEmpty() {
-		return (front.text()+back.text()).trim().equals("");
+		return (front.text() + back.text()).trim().equals("");
 	}
 
 	public void addTextContentToFront(String content) {
@@ -94,8 +115,7 @@ public class AnkiCard implements IAnkiCard  {
 
 	@Override
 	public String toString() {
-		return getFront().toString().replace("\n", "") + TAB 
-				+ getBack().toString().replace("\n", "") + NEW_LINE;
+		return getFront().toString().replace("\n", "") + TAB + getBack().toString().replace("\n", "") + NEW_LINE;
 	}
 
 }
