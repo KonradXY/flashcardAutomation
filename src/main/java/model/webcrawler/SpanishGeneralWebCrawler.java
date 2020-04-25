@@ -42,30 +42,33 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        definitionPageWR.scrapePageWithWord(word);
-        synonimsPageWR.scrapePageWithWord(word);
-        reversoCrawler.scrapePageWithWord(word);
-
-        Map<String, String> definizioniWR = definitionPageWR.getWordDefinition();
-        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
-        Map<String, String> definizioniReverso = reversoCrawler.getTraduzioni();
-
-
-        List<IAnkiCard> cardList = new ArrayList<>();
-        for (Map.Entry<String, String>  entry  : definizioniReverso.entrySet()) {
-            IAnkiCard card = new AnkiCard();
-            String traduzione = entry.getKey();
-            String contenuto = entry.getValue();
-            card.addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
-            card.addContentToFront(traduzione, getParagraphTag().addClass("traduzione"));
-            card.addContentToBack(contenuto, getParagraphTag().addClass("contenuto"));
-            addDefinizioneToBack(card, definizioniWR);
-            addSinonimiToBack(card, synonims);
-
-            cardList.add(card);
-        }
-
-        return cardList;
+    	
+    	throw new UnsupportedOperationException("Questo generatore e' da rifare !");
+    	
+//        definitionPageWR.scrapePageWithWord(word);
+//        synonimsPageWR.scrapePageWithWord(word);
+//        reversoCrawler.scrapePageWithWord(word);
+//
+//        Map<String, String> definizioniWR = definitionPageWR.getWordDefinitions();
+//        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
+//        Map<String, String> definizioniReverso = reversoCrawler.getTraduzioni();
+//
+//
+//        List<IAnkiCard> cardList = new ArrayList<>();
+//        for (Map.Entry<String, String>  entry  : definizioniReverso.entrySet()) {
+//            IAnkiCard card = new AnkiCard();
+//            String traduzione = entry.getKey();
+//            String contenuto = entry.getValue();
+//            card.addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
+//            card.addContentToFront(traduzione, getParagraphTag().addClass("traduzione"));
+//            card.addContentToBack(contenuto, getParagraphTag().addClass("contenuto"));
+//            addDefinizioneToBack(card, definizioniWR);
+//            addSinonimiToBack(card, synonims);
+//
+//            cardList.add(card);
+//        }
+//
+//        return cardList;
     }
 
 

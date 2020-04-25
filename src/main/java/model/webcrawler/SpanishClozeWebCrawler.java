@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.jsoup.nodes.Element;
+
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -29,15 +31,18 @@ public class SpanishClozeWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        Map<String, String> originalMap = definitionPage.getWordDefinition();
-        Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
-        IAnkiCard card = null;
-
-        for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
-            card = clozedCardDecorator.create(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey());
-        }
-
-        return Arrays.asList(card);
+    	
+    	throw new UnsupportedOperationException("Il cloze engine e' da rifare !");
+    	
+//        Element originalMap = definitionPage.getWordDefinitions();
+//        Map<String, String> clozeMap = clozeEngine.createClozeMap(originalMap, word);
+//        IAnkiCard card = null;
+//
+//        for (Map.Entry<String, String> cloze : clozeMap.entrySet()) {
+//            card = clozedCardDecorator.create(cloze.getValue(), word, originalMap.get(cloze.getKey()), cloze.getKey());
+//        }
+//
+//        return Arrays.asList(card);
     }
 
 }

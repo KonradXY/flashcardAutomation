@@ -2,11 +2,11 @@ package main.java.enums;
 
 public enum CssClass {
 
-	TRADUZIONE_CLASS("traduzione"),
-    TRADUZIONI_LIST_CLASS("traduzioni_list"),
-    DEFINIZIONI_CLASS("definizioni"),
-    SINONIMI_CLASS("sinonimi"),
-    WORD_LEARNED("word learned");
+	TRADUZIONE_CLASS("Traduzione"),
+    TRADUZIONI_LIST_CLASS("Traduzioni"),
+    DEFINIZIONI_CLASS("Definizioni"),
+    SINONIMI_CLASS("Sinonimi"),
+    WORD_LEARNED("Word Learned");
 	
 	private String value;
 	
