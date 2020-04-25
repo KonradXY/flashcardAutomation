@@ -3,7 +3,6 @@ package main.java.model.webcrawler;
 import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

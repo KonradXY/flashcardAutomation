@@ -18,8 +18,6 @@ import main.java.model.KindleAnkiCard;
 public enum PrinterStrategy {
 
 	NO_STRATEGY {
-		@Override public Path createNameOutputFile(Path outputFile) { return  outputFile; }
-
 		@Override public void printCards(AnkiDeck deck) {
 			try {
 				Files.write(deck.getPathDest(), (Iterable<String>) deck.getCards().stream().map(it -> it.toString())::iterator);
@@ -31,11 +29,6 @@ public enum PrinterStrategy {
 	},
 
 	KINDLE_STRATEGY {
-		@Override public Path createNameOutputFile(Path outputFile) { 
-			return createFileName(outputFile.toString()); 
-		}
-
-
 		@Override
 		public void printCards(AnkiDeck deck) {
 			int cardIndex = 0;
@@ -53,12 +46,11 @@ public enum PrinterStrategy {
 
 	};
 
-	public abstract Path createNameOutputFile(Path outputFile);
 	public abstract void  printCards(AnkiDeck cards);
 
 	private final static Logger log = Logger.getLogger(PrinterStrategy.class);
 
-
+	// TODO - probabilmente da cancellare - verificare questa cosa 
 	private static Path createFileName(String filePath) {
 		// log.info("filePath: " + filePath);
 

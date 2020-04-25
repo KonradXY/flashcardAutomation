@@ -1,10 +1,6 @@
 package main.java.model.webcrawler;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-
-import org.jsoup.nodes.Element;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;

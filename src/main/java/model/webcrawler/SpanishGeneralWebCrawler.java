@@ -5,10 +5,8 @@ import static main.java.card_decorators.AbstractCardDecorator.createSingleDefini
 import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getListItemTag;
 import static main.java.card_decorators.AbstractCardDecorator.getNewLineTag;
-import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getUnorderedListTag;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +18,6 @@ import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
 import main.java.enums.CssClass;
-import main.java.model.AnkiCard;
 import main.java.webpages.reverso.ReversoDefinitionPage;
 import main.java.webpages.wordreference.WordReferenceDefinitionPage;
 import main.java.webpages.wordreference.WordReferenceSynonimsPage;
