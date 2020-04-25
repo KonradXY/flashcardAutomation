@@ -12,9 +12,4 @@ public class AbstractPageTest {
 		return e1.text().equals(e2.text());
 	}
 	
-	public <K,V> V getFirstObjectFromMap(Map<K, V> map) {
-		if (map == null || map.size() <= 0) 
-			throw new IllegalArgumentException("Error ! Map should contain at least one value. Map: " + map);
-		return map.values().iterator().next();
-	}
 }

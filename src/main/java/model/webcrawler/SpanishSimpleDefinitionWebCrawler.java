@@ -4,6 +4,8 @@ import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTa
 import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -14,52 +16,47 @@ import com.google.inject.Singleton;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
+import main.java.enums.CssClass;
 import main.java.model.AnkiCard;
 import main.java.webpages.wordreference.WordReferenceTranslationPage;
 
 @Singleton
 public class SpanishSimpleDefinitionWebCrawler implements IWebCrawler {
 
-    private final WordReferenceTranslationPage translationPageWR;
+	private final WordReferenceTranslationPage translationPageWR;
+	private Map<String, Element> traduzioni;
 
-    @Inject
-    public SpanishSimpleDefinitionWebCrawler(WordReferenceTranslationPage translationPageWR) {
-        this.translationPageWR = translationPageWR;
-    }
+	@Inject
+	public SpanishSimpleDefinitionWebCrawler(WordReferenceTranslationPage translationPageWR) {
+		this.translationPageWR = translationPageWR;
+	}
 
-    @Override
-    public List<IAnkiCard> createFlashcards(String word) {
-        translationPageWR.scrapePageWithWord(word);
-        List<IAnkiCard> cardList = new ArrayList<>();
-        cardList.add(createSimpleDefinitionCard(word));
-        cardList.add(createReverseDefinitionCard());
-        return cardList;
-    }
+	@Override
+	public List<IAnkiCard> createFlashcards(String word) {
+		translationPageWR.scrapePageWithWord(word);
+		traduzioni = translationPageWR.getWordTranslation(); 
 
-    private IAnkiCard createSimpleDefinitionCard(String word) {
-        Map<String, Element> traduzioni = translationPageWR.getWordTranslation();
+		if (traduzioni.isEmpty())
+			return Collections.emptyList();
 
-        IAnkiCard card = new AnkiCard();
-        card.addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
+		return Arrays.asList(createSimpleDefinitionCard(word), createReverseDefinitionCard());
 
-        for (Map.Entry<String, Element> entry : traduzioni.entrySet()) {
-            card.addContentToBack(entry.getValue());
-        }
+	}
 
-        return card;
-    }
+	private IAnkiCard createSimpleDefinitionCard(String word) {
+		IAnkiCard card = new AnkiCard();
+		card.addContentToFront(word, getBoldParagraphTag().addClass(CssClass.WORD_LEARNED.getValue()));
+		card.addContentToBack(translationPageWR.getFirstValueFromMap(traduzioni));
+		return card;
+	}
 
-    private IAnkiCard createReverseDefinitionCard() {
-        Map<String, Element> traduzioni = translationPageWR.getWordTranslation();
-        
-        IAnkiCard card = new AnkiCard();
-        if (!traduzioni.isEmpty()) {
-            card.addContentToFront(traduzioni.values().iterator().next());
+	private IAnkiCard createReverseDefinitionCard() {
+		IAnkiCard card = new AnkiCard();
+		card.addContentToFront(translationPageWR.getFirstTranslationFromList(translationPageWR.getFirstValueFromMap(traduzioni)).addClass(CssClass.TRADUZIONE_CLASS.getValue()));
+		card.addContentToBack(translationPageWR.getFirstKeyFromMap(traduzioni), getParagraphTag().addClass(CssClass.WORD_LEARNED.getValue()));
+		return card;
+	}
 
-            for (Map.Entry<String, Element> entry : traduzioni.entrySet()) {
-                card.addContentToBack(entry.getValue().html(), getParagraphTag().addClass(TRADUZIONE_CLASS));
-            }
-        }
-        return card;
-    }
+
+
 }

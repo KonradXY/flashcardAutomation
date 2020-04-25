@@ -54,7 +54,7 @@ public class WordReferenceTranslationPage extends AbstractPage {
 		
 		for (Element entry : entries) {
 			String parola = entry.getElementsByClass("hwblk").get(0).getElementsByTag("hw").get(0).text();
-			Element traduzioniOrderedList = getOrderedListElement();
+			Element traduzioniOrderedList = getUnorderedListElement();
 			entry.getElementsByTag("li").forEach(it -> traduzioniOrderedList.child(0).appendChild(getListItemWithText(it.text())));
 			traduzioniMap.put(parola, traduzioniOrderedList);
 		}
@@ -75,14 +75,19 @@ public class WordReferenceTranslationPage extends AbstractPage {
 		return Optional.empty();
 	}
 	
+	public Element getFirstTranslationFromList(Element orderedList) {
+		return new Element(Tag.valueOf("p"), "").appendText(orderedList.getElementsByTag("li").get(0).text());
+	}
+
 	// TODO -- nn sono sicuro del fatto che debba aprire anche un tag div per fare sta cosa
-	private Element getOrderedListElement() {
-		return new Element(Tag.valueOf("div"), "").appendChild(new Element(Tag.valueOf("ol"), ""));
+	private Element getUnorderedListElement() {
+		return new Element(Tag.valueOf("div"), "").appendChild(new Element(Tag.valueOf("ul"), "")).addClass("traduzioni_list");
 	}
 	
 	private Element getListItemWithText(String text) {
 		return new Element(Tag.valueOf("li"), "").appendText(text);
 	}
+	
 
 
 }

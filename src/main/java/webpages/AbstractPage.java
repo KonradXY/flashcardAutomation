@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.jsoup.HttpStatusException;
@@ -76,5 +77,18 @@ public abstract class AbstractPage implements IWebScraper {
 
     private String formatWordsForUrl(String words) {
         return words.trim().replace(" ", "+");
+    }
+    
+    // utility methods	// TODO - questi metodi nn mi piacciono per niente qui
+    public <K,V> V getFirstValueFromMap(Map<K, V> map) {
+		if (map == null || map.size() == 0) 
+			throw new IllegalArgumentException("Error ! Map should contain at least one value. Map: " + map);
+		return map.values().iterator().next();
+	}
+    
+    public <K,V> K getFirstKeyFromMap(Map<K, V> map) {
+    	if (map == null || map.size() == 0) 
+			throw new IllegalArgumentException("Error ! Map should contain at least one value. Map: " + map);
+    	return map.keySet().iterator().next();
     }
 }

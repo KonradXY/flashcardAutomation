@@ -19,6 +19,7 @@ import com.google.inject.Singleton;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
+import main.java.enums.CssClass;
 import main.java.model.AnkiCard;
 import main.java.webpages.reverso.ReversoDefinitionPage;
 import main.java.webpages.wordreference.WordReferenceDefinitionPage;
@@ -72,7 +73,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (definizioni.isEmpty())
             return;
 
-        Element definizioniList = getUnorderedListTag().addClass(DEFINIZIONI_CLASS);
+        Element definizioniList = getUnorderedListTag().addClass(CssClass.DEFINIZIONI_CLASS.getValue());
         for (Map.Entry<String, String> entry : definizioni.entrySet()) {
             Element listItem = createSingleDefinizione(entry);
             definizioniList.appendChild(listItem);
@@ -80,7 +81,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         applyLeftFormatRecursively(definizioniList);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text(DEFINIZIONI_CLASS));
+        card.getBack().appendChild(getBoldParagraphTag().text(CssClass.DEFINIZIONI_CLASS.getValue()));
         card.getBack().appendChild(definizioniList);
 
     }
@@ -89,14 +90,14 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (sinonimi.isEmpty())
             return;
 
-        Element listaSinonimi = getUnorderedListTag().addClass(SINONIMI_CLASS);
+        Element listaSinonimi = getUnorderedListTag().addClass(CssClass.SINONIMI_CLASS.getValue());
         for (String str : sinonimi) {
             listaSinonimi.appendChild(getListItemTag().text(str));
         }
         applyLeftFormatRecursively(listaSinonimi);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text(SINONIMI_CLASS));
+        card.getBack().appendChild(getBoldParagraphTag().text(CssClass.SINONIMI_CLASS.getValue()));
         card.getBack().appendChild(listaSinonimi);
 
     }
