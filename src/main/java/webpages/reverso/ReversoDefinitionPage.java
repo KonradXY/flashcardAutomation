@@ -1,16 +1,15 @@
-package main.java.webscraper.reverso;
-
-import com.google.inject.Singleton;
-import main.java.webscraper.AbstractWebScraper;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+package main.java.webpages.reverso;
 
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Singleton
-public class ReversoDefinitionPage extends AbstractWebScraper {
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import main.java.webpages.AbstractPage;
+
+public class ReversoDefinitionPage extends AbstractPage {
 
     private static final String REVERSO_ESP_ITA_TRANSLATION_PAGE_URL = "http://context.reverso.net/traduzione/spagnolo-italiano/";
 

@@ -26,14 +26,14 @@ public class AnkiCard implements IAnkiCard {
 
 	public AnkiCard(Element front, Element back) {
 		this();
-		this.addElementToFront(front);
-		this.addElementToBack(back);
+		this.addContentToFront(front);
+		this.addContentToBack(back);
 	}
 
 	public AnkiCard(Elements front, Elements back) {
 		this();
-		front.forEach(this::addElementToFront);
-		back.forEach(this::addElementToBack);
+		front.forEach(this::addContentToFront);
+		back.forEach(this::addContentToBack);
 	}
 
 	@Override
@@ -105,11 +105,13 @@ public class AnkiCard implements IAnkiCard {
 		this.getBack().appendText(content);
 	}
 
-	public void addElementToFront(Element elem) {
+	@Override
+	public void addContentToFront(Element elem) {
 		this.getFront().appendChild(elem.clone());
 	}
 
-	public void addElementToBack(Element elem) {
+	@Override
+	public void addContentToBack(Element elem) {
 		this.getBack().appendChild(elem.clone());
 	}
 
@@ -117,5 +119,7 @@ public class AnkiCard implements IAnkiCard {
 	public String toString() {
 		return getFront().toString().replace("\n", "") + TAB + getBack().toString().replace("\n", "") + NEW_LINE;
 	}
+
+	
 
 }

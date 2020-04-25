@@ -1,4 +1,4 @@
-package main.java.webscraper;
+package main.java.webpages;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -17,9 +17,9 @@ import main.exceptions.WebCrawlerException;
 import main.java.contracts.IWebScraper;
 
 
-public abstract class AbstractWebScraper implements IWebScraper {
+public abstract class AbstractPage implements IWebScraper {
 
-    private static final Logger log = Logger.getLogger(AbstractWebScraper.class);
+    private static final Logger log = Logger.getLogger(AbstractPage.class);
 
     public static final int TIME_SLEEP 		= 1;
     public static final int MAX_NUM_EXAMPLES_PER_WORD = 2;

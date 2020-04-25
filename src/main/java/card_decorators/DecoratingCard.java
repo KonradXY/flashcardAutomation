@@ -60,6 +60,16 @@ public interface DecoratingCard extends IAnkiCard {
 				addClass.text(text);
 				this.getBack().appendChild(addClass);
 			}
+			
+			@Override
+			public void addContentToFront(Element elem) {
+				this.getFront().appendChild(elem.clone());
+			}
+
+			@Override
+			public void addContentToBack(Element elem) {
+				this.getBack().appendChild(elem.clone());
+			}
 		};
 	}
 

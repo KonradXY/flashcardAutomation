@@ -20,5 +20,7 @@ public interface IAnkiCard {
 	
 	void addContentToFront(String word, Element addClass);
 	void addContentToBack(String word, Element addClass);
+	void addContentToFront(Element elem);
+	void addContentToBack(Element elem);
 
 }

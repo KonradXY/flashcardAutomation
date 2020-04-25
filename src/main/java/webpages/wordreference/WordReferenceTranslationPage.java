@@ -1,4 +1,4 @@
-package main.java.webscraper.wordreference;
+package main.java.webpages.wordreference;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,14 +7,12 @@ import java.util.stream.Collectors;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 
-import com.google.inject.Singleton;
+import main.java.webpages.AbstractPage;
 
-import main.java.webscraper.AbstractWebScraper;
-
-@Singleton
-public class WordReferenceTranslationPage extends AbstractWebScraper {
+public class WordReferenceTranslationPage extends AbstractPage {
 
     private static final String WORD_REFERENCE_ESP_ITA_PAGE_URL = "https://www.wordreference.com/esit/";
 
@@ -25,7 +23,6 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
         this.traduzioneEspItaPage = doc;
     }
 
-    @Override
     public void scrapePageWithWord(String word) {
         this.traduzioneEspItaPage = scrapePage(WORD_REFERENCE_ESP_ITA_PAGE_URL, word);
         checkTranslationIsFound(word);
@@ -45,17 +42,23 @@ public class WordReferenceTranslationPage extends AbstractWebScraper {
         return true;
     }
 
-    public Map<String, String> getWordTranslation() {
+    public Map<String, Element> getWordTranslation() {
+    	
+    	if (this.traduzioneEspItaPage == null)
+            throw new IllegalStateException("the page cannot be null !");
 
-        Map<String, String> traduzioniMap = new LinkedHashMap<>();
+        Map<String, Element> traduzioniMap = new LinkedHashMap<>();
         Element article = this.traduzioneEspItaPage.getElementById("article");
 
         Elements entries = article.getElementsByClass("superentry");
         for (Element entry : entries) {
             String parola = entry.getElementsByClass("hwblk").get(0).getElementsByTag("hw").get(0).text();
-            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; "));
-
-            traduzioniMap.put(parola, traduzione);
+//            String traduzione = entry.getElementsByTag("li").stream().map(Element::text).collect(Collectors.joining("; "));
+            
+            Element orderedList = new Element(Tag.valueOf("div"), "").appendChild(new Element(Tag.valueOf("ol"), "").addClass("ordered_list"));
+            entry.getElementsByTag("li").forEach(it -> it.appendTo(orderedList));
+            
+            traduzioniMap.put(parola, orderedList);
         }
 
         return traduzioniMap;

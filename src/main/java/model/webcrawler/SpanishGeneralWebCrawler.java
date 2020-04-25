@@ -20,9 +20,9 @@ import com.google.inject.Singleton;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
 import main.java.model.AnkiCard;
-import main.java.webscraper.reverso.ReversoDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
+import main.java.webpages.reverso.ReversoDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceSynonimsPage;
 
 @Singleton
 public class SpanishGeneralWebCrawler implements IWebCrawler {

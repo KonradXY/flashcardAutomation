@@ -1,8 +1,10 @@
-package main.java.webscraper.reverso;
+package main.java.webpages.reverso;
 
 import org.jsoup.Jsoup;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import main.java.webpages.reverso.ReversoDefinitionPage;
 
 import java.io.File;
 import java.io.IOException;

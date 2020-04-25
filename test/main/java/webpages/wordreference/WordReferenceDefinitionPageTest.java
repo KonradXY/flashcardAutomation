@@ -1,4 +1,4 @@
-package main.java.webscraper.wordreference;
+package main.java.webpages.wordreference;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +12,8 @@ import java.util.Map;
 import org.jsoup.Jsoup;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import main.java.webpages.wordreference.WordReferenceDefinitionPage;
 
 class WordReferenceDefinitionPageTest {
 

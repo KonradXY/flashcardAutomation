@@ -5,7 +5,7 @@ import com.google.inject.Singleton;
 import main.java.engines.WebCrawlerEngine;
 import main.java.model.readers.TextListFileReader;
 import main.java.model.webcrawler.SpanishSimpleDefinitionWebCrawler;
-import main.java.webscraper.wordreference.WordReferenceTranslationPage;
+import main.java.webpages.wordreference.WordReferenceTranslationPage;
 
 @Singleton
 public class SpanishDefinitionEngine extends WebCrawlerEngine  {

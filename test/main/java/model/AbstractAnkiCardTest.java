@@ -53,8 +53,8 @@ class AbstractAnkiCardTest {
 		Element elem = new Element(tag, "").addClass("inner-content");
 		elem.appendText(content);
 		
-		card.addElementToFront(elem);
-		card.addElementToBack(elem);
+		card.addContentToFront(elem);
+		card.addContentToBack(elem);
 		
 		
 		assertEquals("<div class=\"front\"> <div class=\"inner-content\">  this is my content </div></div>"

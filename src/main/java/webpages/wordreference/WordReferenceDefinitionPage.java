@@ -1,20 +1,15 @@
-package main.java.webscraper.wordreference;
+package main.java.webpages.wordreference;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.google.inject.Singleton;
+import main.java.webpages.AbstractPage;
 
-import main.java.contracts.IAnkiCard;
-import main.java.webscraper.AbstractWebScraper;
-
-@Singleton
-public class WordReferenceDefinitionPage extends AbstractWebScraper {
+public class WordReferenceDefinitionPage extends AbstractPage {
 
     private static final String WORD_REFERENCE_ESP_DEFINITION_PAGE_URL = "https://www.wordreference.com/definicion/";
 

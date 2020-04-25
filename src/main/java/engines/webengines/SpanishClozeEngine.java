@@ -5,7 +5,7 @@ import main.java.engines.WebCrawlerEngine;
 import main.java.model.readers.TextListFileReader;
 import main.java.model.webcrawler.SpanishClozeWebCrawler;
 import main.java.utils.ClozeEngine;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceDefinitionPage;
 
 public class SpanishClozeEngine extends WebCrawlerEngine {
 
