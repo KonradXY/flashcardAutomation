@@ -74,8 +74,7 @@ public enum TextParsingStrategy {
         return entries.length % 2 == 0;
     }
 
-    // TODO - che e' sto generic ?
-    <T> void addParsedCard(AnkiDeck deck, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
+    void addParsedCard(AnkiDeck deck, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
 
         String qa[] = parseDomandeRisposte(input);
 
