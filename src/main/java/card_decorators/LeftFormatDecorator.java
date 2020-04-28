@@ -7,13 +7,13 @@ import org.jsoup.select.Elements;
 import main.java.contracts.IAnkiCard;
 import main.java.model.AnkiCard;
 
-public class StandardCardDecorator extends AbstractCardDecorator {
+public class LeftFormatDecorator extends AbstractCardDecorator {
 
 	public IAnkiCard create(Elements front, Elements back) {
-		return this.createStandardFormatCard(front, back);
+		return this.createDecoratedCard(front, back);
 	}
 
-	private IAnkiCard createStandardFormatCard(Elements front, Elements back) {
+	private IAnkiCard createDecoratedCard(Elements front, Elements back) {
 		return DecoratingCard.from(new AnkiCard(front, back)).decorateWith(leftFormatDecoration);
 	}
 
@@ -23,7 +23,7 @@ public class StandardCardDecorator extends AbstractCardDecorator {
 		return it;
 	};
 
-	// NB: decorator implementati a mano (non so fino a che punto uesto possa essere corretto. Rivedere con l'esempio)
+	// NB: decorator implementati a mano (non so fino a che punto questo possa essere corretto. Rivedere con l'esempio)
 	public static DecoratingCard decorateWithLeftFormat(IAnkiCard card) {
 		return DecoratingCard.from(card).decorateWith(leftFormatDecoration);
 	}

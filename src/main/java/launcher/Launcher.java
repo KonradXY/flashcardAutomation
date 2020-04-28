@@ -28,11 +28,14 @@ public class Launcher {
      *          evernote                        <<<=== evernote engine
      *          kindle                          <<<=== kindle engine
      *          languageLearning                <<<=== languageLearning engine
+     *          generateIndex					<<<=== generate index engine
      *          webcrawler general              <<<=== spanish general flashcard (spanishWebCrawlerService)
      *          wencrawler simple               <<<=== spanish simple flashcard (just definition x2 ita/esp && esp&ita)
      *          webcrawler cloze                <<<=== spanish cloze flashcard
      */
 
+    // NB: per aggiungere dell'html all'interno di un element devo usare il metodo append ! (almeno cosi' sembra dalle prove che sto facendo)
+    
 
     public static void main(String[] args) {
         try {

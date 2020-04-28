@@ -8,7 +8,7 @@ import main.java.contracts.IParser;
 import main.java.model.AnkiDeck;
 import main.java.strategy.TextParsingStrategy;
 
-public class DefaultParser implements IParser {
+public class GenerateIndexParser implements IParser {
 
     @Override
     public List<AnkiDeck> parse(Path fileName, String input, String destFolder) {
@@ -16,8 +16,8 @@ public class DefaultParser implements IParser {
         		.withTitle(getParsedFileName(fileName))
         		.withDestFolder(destFolder)
         		.build();
-        TextParsingStrategy.Q_A_PARSER.parseFile(deck, input);
+        TextParsingStrategy.GENERATED_INDEX.parseFile(deck, input);
         return Arrays.asList(deck);
     }
-    
+
 }

@@ -1,0 +1,1 @@
+regex for selecting all entries: ([0-9]+)\_ [^\|]*

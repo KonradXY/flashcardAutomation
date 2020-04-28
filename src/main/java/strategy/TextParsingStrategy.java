@@ -7,9 +7,11 @@ import static main.java.contracts.IParser.PIPE_SEPARATOR;
 import static main.java.contracts.IParser.QA_SEPARATOR;
 import static main.java.contracts.IParser.RISPOSTE_INDEX;
 import static main.java.contracts.IParser.SINGLE_EX_PATTERN;
+import static main.java.contracts.IParser.SINGLE_EX_PATTERN_WITH_UNDERSCORE;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -17,7 +19,10 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
+import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
 
+import main.java.card_decorators.LeftFormatDecorator;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
 import main.java.model.AnkiDeck;
@@ -47,18 +52,24 @@ public enum TextParsingStrategy {
         }
     },
 
-    SIMPLE_PARSER {
+    Q_A_PARSER {
         public void parseFile(AnkiDeck deck, String inputFile) {
             String[] splittedText = inputFile.split(PIPE_SEPARATOR);
 
             if (!entriesAreEven(splittedText))
-                throw new RuntimeException("Le entry non sono pari ! Controllare che ogni carta abbia due facce !");
+                throw new RuntimeException("Le entry non sono pari ! Controllare che ogni entry abbia una domanda e una risposta !");
 
             for (int i = 0; i < splittedText.length; i += 2) {
                 deck.addCard(new AnkiCard(splittedText[i + FIRST_FIELD],
                         splittedText[i + SECOND_FIELD]));
             }
         }
+    },
+    
+    GENERATED_INDEX {
+    	public void parseFile(AnkiDeck deck, String inputFile) {
+    		addParsedCardWhileGeneratingIndex(deck, inputFile);
+    	}
     };
 
     private final static Logger log = Logger.getLogger(TextParsingStrategy.class);
@@ -67,12 +78,75 @@ public enum TextParsingStrategy {
     // ======== class starts here !!!
     public static int FIRST_FIELD = 0;
     public static int SECOND_FIELD = 1;
+    
+    public static int generatedIndex = 0;
 
     public abstract void parseFile(AnkiDeck deck, String inputFile);
 
     boolean entriesAreEven(String[] entries) {
         return entries.length % 2 == 0;
     }
+    
+    void addParsedCardWhileGeneratingIndex(AnkiDeck deck, String input) {
+
+        String qa[] = parseDomandeRisposte(input);
+
+        Map<String, String> domandeMap = new LinkedHashMap<>();
+        generatedIndex = 0;
+        Stream.of(qa[DOMANDE_INDEX].split(IParser.PIPE_SEPARATOR)).forEach(
+                it -> addExcerciseAndGenerateIndex(it, domandeMap));
+
+        generatedIndex = 0;
+        Map<String, String> risposteMap = new LinkedHashMap<>();
+        Stream.of(qa[RISPOSTE_INDEX].split(IParser.PIPE_SEPARATOR)).forEach(
+                it -> addExcerciseAndGenerateIndex(it, risposteMap));
+
+        boolean allKeysAremMatched = true;
+        for (String domKey : domandeMap.keySet()) {
+            allKeysAremMatched &= checkKeyMap(domKey, risposteMap);
+        }
+
+        if (!allKeysAremMatched) {
+            throw new RuntimeException("Mancano delle chiavi all'interno degli esercizi ");
+        }
+
+        for (String domKey : domandeMap.keySet()) {
+            deck.addCard(
+            		LeftFormatDecorator.decorateWithLeftFormat(
+            				new AnkiCard(createFrontContent(domandeMap.get(domKey)),
+            							 createBackContent(risposteMap.get(domKey)))
+            ));
+        }
+
+    }
+    
+    
+    private Element createFrontContent(String content) {
+    	Element e = new Element(Tag.valueOf("p"), "");
+    	e.append(content.replace("\n", "<br>"));
+    	
+    	return e;
+    }
+    
+    private Element createBackContent(String content) {
+    	return new Element(Tag.valueOf("p"), "").appendText(content);
+    }
+    
+    void addExcerciseAndGenerateIndex(String str, Map<String, String> map) {
+    	Matcher matcher = SINGLE_EX_PATTERN_WITH_UNDERSCORE.matcher(str);
+    	
+    	String newKey = "";
+        while (matcher.find()) {
+            String key = matcher.group(0);
+            
+            if (key.contentEquals("1_")) {
+            	generatedIndex++;
+            }
+            newKey = generatedIndex+"."+key;
+            map.put(newKey, str.replaceAll(key, ""));
+        }
+    }
+
 
     void addParsedCard(AnkiDeck deck, String input, LanguageLearningAnkiCard.PracticeMakesPerfectEnum cardKind) {
 
@@ -146,6 +220,8 @@ public enum TextParsingStrategy {
     void addExcercise(String str, Map<String, String> map) {
         addToMapWithRegexChecking(str, map, NUM_EX_PATTERN);
     }
+    
+   
 
     Map<String, String> addToMapWithRegexChecking(String str, Map<String, String> map, Pattern regex) {
         Matcher matcher = regex.matcher(str);

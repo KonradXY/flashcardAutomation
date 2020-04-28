@@ -33,7 +33,7 @@ public class LanguageLearningParser implements IParser {
 			TextParsingStrategy.PRACTICE_MAKES_PERFECT_TRADUZIONI.parseFile(deck, file);
 
 		else if (fileName.endsWith("parole.txt"))
-			TextParsingStrategy.SIMPLE_PARSER.parseFile(deck, file);
+			TextParsingStrategy.Q_A_PARSER.parseFile(deck, file);
 
 		else {
 			log.info("Trovato file non contemplato per il parser LanguageLearning: " + path
