@@ -24,8 +24,8 @@ class AbstractAnkiCardTest {
 		assertEquals(emptyBack, card.getBack().toString());
 		assertEquals(emptyCard, card.toString());
 		
-		assertEquals(card.getFront().html(), "");
-		assertEquals(card.getBack().html(), "");
+		assertEquals("", card.getFront().html());
+		assertEquals("", card.getBack().html());
 		
 		assertTrue(card.isCardEmpty());
 

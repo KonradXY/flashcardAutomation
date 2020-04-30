@@ -89,8 +89,8 @@ public class EvernoteParser implements IParser {
 				Path imgName = imgPath.getFileName();
 				Files.copy(imgPath, Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName), StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
-				e.printStackTrace();
-				throw new RuntimeException(e);
+				log.error(e);
+				throw new IllegalStateException(e);
 			}
 		});
 		

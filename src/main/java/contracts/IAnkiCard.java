@@ -5,6 +5,7 @@ import org.jsoup.parser.Tag;
 
 public interface IAnkiCard {
 
+	// TODO - create enum class
 	String FRONT_TAG = "front";
 	String BACK_TAG = "back";
 	Tag divTag = Tag.valueOf("div");

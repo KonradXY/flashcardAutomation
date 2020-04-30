@@ -17,7 +17,7 @@ public interface IPrinter {
 			if (!filePath.toFile().exists() || !filePath.toFile().isDirectory())
 				Files.createDirectories(folderPath);
 		} catch (IOException ex) {
-			throw new RuntimeException(ex);
+			throw new IllegalStateException(ex);
 		}
 	}
 
