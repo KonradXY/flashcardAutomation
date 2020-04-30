@@ -28,8 +28,6 @@ class WordReferenceTranslationPageTest {
     		throw new IllegalStateException("File must exist !");
 
     	loadExpectedTranslationMap();
-
-
     }
 
 	@Test
