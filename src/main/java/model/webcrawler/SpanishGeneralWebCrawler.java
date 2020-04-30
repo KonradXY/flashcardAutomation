@@ -1,20 +1,15 @@
 package main.java.model.webcrawler;
 
-import static main.java.card_decorators.AbstractCardDecorator.addContentToBack;
-import static main.java.card_decorators.AbstractCardDecorator.addContentToFront;
 import static main.java.card_decorators.AbstractCardDecorator.applyLeftFormatRecursively;
 import static main.java.card_decorators.AbstractCardDecorator.createSingleDefinizione;
 import static main.java.card_decorators.AbstractCardDecorator.getBoldParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getListItemTag;
 import static main.java.card_decorators.AbstractCardDecorator.getNewLineTag;
-import static main.java.card_decorators.AbstractCardDecorator.getParagraphTag;
 import static main.java.card_decorators.AbstractCardDecorator.getUnorderedListTag;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import main.java.model.AnkiCard;
 import org.jsoup.nodes.Element;
 
 import com.google.inject.Inject;
@@ -22,9 +17,10 @@ import com.google.inject.Singleton;
 
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IWebCrawler;
-import main.java.webscraper.reverso.ReversoDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
+import main.java.enums.CssClass;
+import main.java.webpages.reverso.ReversoDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceSynonimsPage;
 
 @Singleton
 public class SpanishGeneralWebCrawler implements IWebCrawler {
@@ -43,30 +39,33 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
 
     @Override
     public List<IAnkiCard> createFlashcards(String word) {
-        definitionPageWR.scrapePageWithWord(word);
-        synonimsPageWR.scrapePageWithWord(word);
-        reversoCrawler.scrapePageWithWord(word);
-
-        Map<String, String> definizioniWR = definitionPageWR.getWordDefinition();
-        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
-        Map<String, String> definizioniReverso = reversoCrawler.getTraduzioni();
-
-
-        List<IAnkiCard> cardList = new ArrayList<>();
-        for (Map.Entry<String, String>  entry  : definizioniReverso.entrySet()) {
-            IAnkiCard card = new AnkiCard();
-            String traduzione = entry.getKey();
-            String contenuto = entry.getValue();
-            addContentToFront(card, word, getBoldParagraphTag().addClass("wordLearned"));
-            addContentToFront(card, traduzione, getParagraphTag().addClass("traduzione"));
-            addContentToBack(card, contenuto, getParagraphTag().addClass("contenuto"));
-            addDefinizioneToBack(card, definizioniWR);
-            addSinonimiToBack(card, synonims);
-
-            cardList.add(card);
-        }
-
-        return cardList;
+    	
+    	throw new UnsupportedOperationException("Questo generatore e' da rifare !");
+    	
+//        definitionPageWR.scrapePageWithWord(word);
+//        synonimsPageWR.scrapePageWithWord(word);
+//        reversoCrawler.scrapePageWithWord(word);
+//
+//        Map<String, String> definizioniWR = definitionPageWR.getWordDefinitions();
+//        List<String> synonims = synonimsPageWR.getSynonimsFromWord();
+//        Map<String, String> definizioniReverso = reversoCrawler.getTraduzioni();
+//
+//
+//        List<IAnkiCard> cardList = new ArrayList<>();
+//        for (Map.Entry<String, String>  entry  : definizioniReverso.entrySet()) {
+//            IAnkiCard card = new AnkiCard();
+//            String traduzione = entry.getKey();
+//            String contenuto = entry.getValue();
+//            card.addContentToFront(word, getBoldParagraphTag().addClass("wordLearned"));
+//            card.addContentToFront(traduzione, getParagraphTag().addClass("traduzione"));
+//            card.addContentToBack(contenuto, getParagraphTag().addClass("contenuto"));
+//            addDefinizioneToBack(card, definizioniWR);
+//            addSinonimiToBack(card, synonims);
+//
+//            cardList.add(card);
+//        }
+//
+//        return cardList;
     }
 
 
@@ -74,7 +73,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (definizioni.isEmpty())
             return;
 
-        Element definizioniList = getUnorderedListTag().addClass(DEFINIZIONI_CLASS);
+        Element definizioniList = getUnorderedListTag().addClass(CssClass.DEFINIZIONI_CLASS.getValue());
         for (Map.Entry<String, String> entry : definizioni.entrySet()) {
             Element listItem = createSingleDefinizione(entry);
             definizioniList.appendChild(listItem);
@@ -82,7 +81,7 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         applyLeftFormatRecursively(definizioniList);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text(DEFINIZIONI_CLASS));
+        card.getBack().appendChild(getBoldParagraphTag().text(CssClass.DEFINIZIONI_CLASS.getValue()));
         card.getBack().appendChild(definizioniList);
 
     }
@@ -91,14 +90,14 @@ public class SpanishGeneralWebCrawler implements IWebCrawler {
         if (sinonimi.isEmpty())
             return;
 
-        Element listaSinonimi = getUnorderedListTag().addClass(SINONIMI_CLASS);
+        Element listaSinonimi = getUnorderedListTag().addClass(CssClass.SINONIMI_CLASS.getValue());
         for (String str : sinonimi) {
             listaSinonimi.appendChild(getListItemTag().text(str));
         }
         applyLeftFormatRecursively(listaSinonimi);
 
         card.getBack().appendChild(getNewLineTag()).appendChild(getNewLineTag());
-        card.getBack().appendChild(getBoldParagraphTag().text(SINONIMI_CLASS));
+        card.getBack().appendChild(getBoldParagraphTag().text(CssClass.SINONIMI_CLASS.getValue()));
         card.getBack().appendChild(listaSinonimi);
 
     }

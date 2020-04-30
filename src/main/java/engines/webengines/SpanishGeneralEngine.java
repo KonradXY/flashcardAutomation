@@ -5,9 +5,9 @@ import com.google.inject.Singleton;
 import main.java.engines.WebCrawlerEngine;
 import main.java.model.readers.TextListFileReader;
 import main.java.model.webcrawler.SpanishGeneralWebCrawler;
-import main.java.webscraper.reverso.ReversoDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceDefinitionPage;
-import main.java.webscraper.wordreference.WordReferenceSynonimsPage;
+import main.java.webpages.reverso.ReversoDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceDefinitionPage;
+import main.java.webpages.wordreference.WordReferenceSynonimsPage;
 
 
 @Singleton

@@ -1,0 +1,234 @@
+el accesso
+el alumno
+el análisis
+la antropologia
+el aprobado
+los apuntes
+el archivador
+el fichero
+el archivero
+la artimética
+la arqueologia
+la arquitectura
+el arquitecturala asignatura
+la asistencia
+la astrologia
+la astronomia
+el arquitecturalael bachillerato
+la beca
+el becario
+la biblioteca
+el bibliotecario
+la biologia
+el boligrafo
+la birome
+la pluma
+la botánica
+la carpeta
+la carrera
+la cartera
+el catedrático
+el portafolio
+el certificado
+las ciencias ambientales
+las ciencas de la educacion
+las ciencias económicas y epresariales
+las ciencias exactas
+las ciencias fisicas
+las ciencias naturales
+las ciencias politicas
+las ciencias quimicas
+las ciencias sociales
+el colegio
+el colegio maor
+el compañero
+el conocimiento
+la convocatoria
+el cuaderno
+el curriculum vitae
+el curso
+el dato
+los deberes
+la tarea
+la definición
+el delegato
+el derecho
+la diapositiva
+el dibujo
+el diccionario
+el diplomado
+la diplomatura
+el diseño
+el doctorado
+la economia
+la educación fisica
+la educación infantil
+la educacion primaria
+la educacion secundaria
+la escuela
+la escultura
+la especialidad
+el estuche
+la evaluación
+el examen
+la facultad
+la filología
+la filosofia
+la fisicasel portafoliola hoja
+la formacion profesional
+la geografia
+la geologia
+el gimnasio
+la goma
+el grado
+la gramatica
+la guarderia
+la historia
+el horario
+el idioma
+la informatica
+la ingenieria
+el instituto
+el interes
+el internado
+la investigacion
+el laboratorio
+la lengua
+el lapiz
+el libro
+la licenciatura
+la linguistica
+la literatura
+el maestro
+el mapa
+el master
+las matematicas
+la matricula
+la matricula de honor
+la medicina
+los medios audiovisuales
+el metodo
+la motivacion
+el notable
+las notas
+el observatorio
+la pedagogia
+el periodismo
+la pintura
+la pizatta
+el pizarron
+el posgrado
+las practicas
+el profesor
+el profesor interino
+la prueba
+la psicologia
+el profesor titular
+la psicologia
+la publicidad
+la quimica
+el recreo
+la regla
+el rotulador
+la fibra
+el sacapuntas
+la secretaria
+el sector
+la selectividad
+el sobresaliente
+la sociologia
+el suspenso
+el aplazo
+el aplazado
+la tesina
+la tesis
+el texto
+el titularla tiza
+el gris
+el trabajo
+el tutor
+la universidad
+adicional
+artistico
+cientifico
+continuo
+correcto
+culto
+diferenciador
+dificil
+escrito
+facil
+final
+historico
+humanistico
+imparcial
+incorrecto
+internacional
+invariable
+literario
+obligatorio
+optativo
+portafolio
+parcial
+practico
+profesional
+responsable
+superior
+suplente
+tecnico
+tecnologico
+teorico
+titular
+analizar
+aprender
+aprobar
+asistir
+borrar
+calcular
+certificar
+comentar
+conocer
+consultar
+continuar
+copiar
+corregir
+cursar
+debatir
+deducir
+demostrar
+educar
+enseñar
+escribir
+estudiar
+evaluar
+examinar
+explicar
+exponer
+formarse
+hacer un curso
+investigar
+licensiar
+matricular
+memorizar
+observatorio
+obtener
+olvidar
+pasar de curso
+plantear
+preguntar
+presentarse
+pronunciar
+recordar
+redactar
+reflexionar
+relacionar
+repasar
+repetir
+resolver
+resumir
+saber
+sacar
+señalar
+subrayar
+suspender
+tomar apuntes

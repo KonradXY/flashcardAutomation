@@ -17,6 +17,7 @@ import main.java.engines.AbstractEngine;
 import main.java.engines.TextEngine;
 import main.java.engines.textengines.DefaultAnkiEngine;
 import main.java.engines.textengines.EvernoteEngine;
+import main.java.engines.textengines.GenerateIndexEngine;
 import main.java.engines.textengines.KindleEngine;
 import main.java.engines.textengines.LanguageLearningEngine;
 
@@ -37,6 +38,7 @@ public class TextEngineFactory extends AbstractEngineFactory {
 			case "evernote": 			textEngine = new EvernoteEngine(INPUT_DIR + EVERNOTE_PATH, OUTPUT_DIR + EVERNOTE_PATH); break;
 			case "kindle": 	 			textEngine = new KindleEngine(INPUT_DIR + KINDLE_PATH, OUTPUT_DIR + KINDLE_PATH);   break;
 			case "languageLearning": 	textEngine = new LanguageLearningEngine(INPUT_DIR + LANGUAGE_LEARNING_PATH, OUTPUT_DIR +  LANGUAGE_LEARNING_PATH); break;
+			case "generateIndex":		textEngine = new GenerateIndexEngine(INPUT_DIR + GENERIC_PATH, OUTPUT_DIR + GENERIC_PATH); break;
 			default : 					textEngine = new DefaultAnkiEngine(INPUT_DIR + GENERIC_PATH, OUTPUT_DIR + GENERIC_PATH); break;
 		}
 		

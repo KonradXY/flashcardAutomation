@@ -18,7 +18,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.java.card_decorators.StandardCardDecorator;
+import main.java.card_decorators.LeftFormatDecorator;
 import main.java.contracts.IAnkiCard;
 import main.java.contracts.IParser;
 import main.java.model.AnkiCard;
@@ -64,7 +64,7 @@ public class EvernoteParser implements IParser {
 		return htmlDoc.getElementsByTag("tbody").stream()
 				.map(this::parseCardFromTBody)
 				.filter(card -> !parserUtil.cardExceedMaxSize(card))
-				.map(StandardCardDecorator::decorateWithLeftFormat)
+				.map(LeftFormatDecorator::decorateWithLeftFormat)
 				.collect(Collectors.toList());
 	}
 

@@ -1,10 +1,10 @@
 
 package main.java.engines;
 
-import static main.java.webscraper.AbstractWebScraper.DISCARDED_WORD_PATH;
-import static main.java.webscraper.AbstractWebScraper.LOG_COUNTER;
-import static main.java.webscraper.AbstractWebScraper.MAX_NUM_EXAMPLES_PER_WORD;
-import static main.java.webscraper.AbstractWebScraper.TIME_SLEEP;
+import static main.java.webpages.AbstractPage.DISCARDED_WORD_PATH;
+import static main.java.webpages.AbstractPage.LOG_COUNTER;
+import static main.java.webpages.AbstractPage.MAX_NUM_EXAMPLES_PER_WORD;
+import static main.java.webpages.AbstractPage.TIME_SLEEP;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;

@@ -67,16 +67,7 @@ public class AbstractCardDecorator implements DecoratingCard {
         return new Element(UL_TAG, "");
     }
 
-    // TODO - direi che ste funzioni vanno messe all'interno di IAnkiCard come default o all'interno di un ankicard.builder 
-    public static void addContentToFront(IAnkiCard card, String content, Element contentDiv) {
-        contentDiv.text(content);
-        card.getFront().appendChild(contentDiv);
-    }
 
-    public static void addContentToBack(IAnkiCard card, String content, Element contentDiv) {
-        contentDiv.text(content);
-        card.getBack().appendChild(contentDiv);
-    }
 
     public static Element createSingleDefinizione(Map.Entry<String, String> entry) {
         Element elem = getListItemTag();
@@ -160,5 +151,27 @@ public class AbstractCardDecorator implements DecoratingCard {
     public String toString() {
         return card.toString();
     }
+    
+	@Override
+	public void addContentToFront(String text, Element addClass) {
+		addClass.text(text);
+		this.getFront().appendChild(addClass);
+	}
+
+	@Override
+	public void addContentToBack(String text, Element addClass) {
+		addClass.text(text);
+		this.getBack().appendChild(addClass);
+	}
+	
+	@Override
+	public void addContentToFront(Element elem) {
+		this.getFront().appendChild(elem.clone());
+	}
+
+	@Override
+	public void addContentToBack(Element elem) {
+		this.getBack().appendChild(elem.clone());
+	}
 
 }

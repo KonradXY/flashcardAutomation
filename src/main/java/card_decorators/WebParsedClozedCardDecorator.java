@@ -13,11 +13,11 @@ public class WebParsedClozedCardDecorator extends WebParsedCardDecorator {
 
 	private IAnkiCard createClozeAnkiCard(String clozeText, String word, String originalValue, String wordDefinition) {
 		this.card.create();
-		addContentToFront(card, clozeText, getParagraphTag().addClass("traduzione"));
+		addContentToFront(clozeText, getParagraphTag().addClass("traduzione"));
 
-		addContentToBack(card, word, getParagraphTag().addClass("word"));
-		addContentToBack(card, originalValue, getParagraphTag().addClass("contenuto"));
-		addContentToBack(card, wordDefinition, getParagraphTag().addClass("wordDefinition"));
+		addContentToBack(word, getParagraphTag().addClass("word"));
+		addContentToBack(originalValue, getParagraphTag().addClass("contenuto"));
+		addContentToBack(wordDefinition, getParagraphTag().addClass("wordDefinition"));
 
 		return card;
 	}

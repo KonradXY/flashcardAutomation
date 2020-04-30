@@ -19,6 +19,8 @@ public interface IParser {
 
 	Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\.[0-9]");
 	Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
+//	Pattern SINGLE_EX_PATTERN_WITH_UNDERSCORE = Pattern.compile("[0-9]+\\_(.*?)[0-9]+\\|");
+	Pattern SINGLE_EX_PATTERN_WITH_UNDERSCORE = Pattern.compile("[0-9]+\\_");
 	String QA_SEPARATOR = "RISPOSTE";
 
 	List<AnkiDeck> parse(Path path, String input, String destFolder);
