@@ -7,6 +7,7 @@ import static main.java.utils.Property.WEB_CRAWLER_PATH;
 import java.security.InvalidParameterException;
 import java.util.List;
 
+import main.java.engines.webengines.LeetCodeEngine;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
@@ -36,6 +37,9 @@ public class WebCrawlerEngineFactory extends AbstractEngineFactory {
         } else if (inputParam.contains("cloze")) {
             log.info(" ====>>> launching clozeCrawling mode");
             webEngine = new SpanishClozeEngine();
+        } else if (inputParam.contains("leetCode")) {
+            log.info(" ====>>> launching LeetCode Web Parsing");
+            webEngine = new LeetCodeEngine();
         }
         else {
             throw new InvalidParameterException("The webengine called is not supported or malformed: " + inputParam);

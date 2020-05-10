@@ -7,13 +7,13 @@ import java.util.function.Predicate;
 
 public interface IReader {
 	
-	public <T> Map<Path, T> readFile(Path... pathFiles) throws IOException;
+	<T> Map<Path, T> readFile(Path... pathFiles) throws IOException;
 
-	public static Predicate<Path> isParseable = (IReader::checkParsability);
+	Predicate<Path> isParseable = (IReader::checkParsability);
 	
-	public static boolean filterParsable(Path p) { return checkParsability(p); }
+	static boolean filterParsable(Path p) { return checkParsability(p); }
 	
-	public static boolean checkParsability(Path p) {
+	static boolean checkParsability(Path p) {
 		String path = p.toString().trim();
 		return (path.endsWith(".html") || path.endsWith(".txt"));
 	}

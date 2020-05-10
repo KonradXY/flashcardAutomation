@@ -18,8 +18,11 @@ import org.apache.log4j.Logger;
 
 public class CertificateManager {
 
-    private final static Logger log = Logger.getLogger(CertificateManager.class);
+    private static final Logger log = Logger.getLogger(CertificateManager.class);
 
+    private CertificateManager() {
+
+    }
     // trusting all certificate
     public static void doTrustToCertificates() throws NoSuchAlgorithmException, KeyManagementException {
 
@@ -42,7 +45,7 @@ public class CertificateManager {
         HostnameVerifier hv = new HostnameVerifier() {
             public boolean verify(String urlHostName, SSLSession session) {
                 if (!urlHostName.equalsIgnoreCase(session.getPeerHost())) {
-                    System.out.println("Warning: URL host '" + urlHostName + "' is different to SSLSession host '" + session.getPeerHost() + "'.");
+                    log.info("Warning: URL host '" + urlHostName + "' is different to SSLSession host '" + session.getPeerHost() + "'.");
                 }
                 return true;
             }

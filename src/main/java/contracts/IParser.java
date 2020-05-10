@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 import main.java.model.AnkiDeck;
 
 public interface IParser {
-	
+
+	// TODO - create enum constant
 	String REGULAR_PIPE = "|";
 	String PIPE_SEPARATOR = "\\|";
 	String TAB = "\t";
@@ -19,7 +20,6 @@ public interface IParser {
 
 	Pattern NUM_EX_PATTERN = Pattern.compile("[0-9]+\\.[0-9]");
 	Pattern SINGLE_EX_PATTERN = Pattern.compile("[0-9]+\\.");
-//	Pattern SINGLE_EX_PATTERN_WITH_UNDERSCORE = Pattern.compile("[0-9]+\\_(.*?)[0-9]+\\|");
 	Pattern SINGLE_EX_PATTERN_WITH_UNDERSCORE = Pattern.compile("[0-9]+\\_");
 	String QA_SEPARATOR = "RISPOSTE";
 
@@ -30,7 +30,7 @@ public interface IParser {
 	
 	default String getParsedFileName(Path inputFile) {
 		String textName = new File(inputFile.toString()).getName();
-		String extension = textName.substring(textName.lastIndexOf("."));
+		String extension = textName.substring(textName.lastIndexOf('.'));
 		return textName.replace(extension, "_parsed");
 	}
 }
