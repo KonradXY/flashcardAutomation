@@ -1,0 +1,159 @@
+abono
+acciones
+ahorro
+amorticzaciòn
+apertura
+autorizaciòn
+aval
+balance
+banca electronica
+beneficio
+bienes
+billete
+bono
+caja
+caja de ahorros
+cajero
+cajero automatico
+cambio
+capital
+cargo
+cartilla de ahorros
+la libreta de ahorros
+cheque
+talon
+cheque de viajes
+clave
+cliente
+cobro
+codigo
+comision
+concesion
+contraseña
+credito
+cuenta corriente
+cuenta de resultados
+demanda
+deposito
+desembolso
+deuda
+devaluacion
+devolucion
+disponibilidad
+dividendos
+divisa
+domiciliacion
+extracto
+finanza
+firma
+fondo de pensiones
+ganancia
+garantia
+gasto
+giro
+hipoteca
+importe
+imposicion
+impreso
+impuesto
+ingreso
+interes
+inversion
+letra
+pagarè
+liquidacion
+liquidez
+moneda
+nomina
+oferta
+operacion
+presupuesto
+pago
+perdidas
+precio
+prestamo
+provision
+recibo
+reintegro
+renta
+resguardo
+resultado
+revalorizacion
+saldo
+solicitud
+sucursal
+sueldo
+talon
+talonario
+tanto por ciento
+tarjeta de credito
+tipo de interes
+trasnerencia
+valor
+valoracion
+vencimiento
+ventanilla
+arriesgado
+bancario
+benefico
+decimal
+electronico
+en metalico
+en efectivo
+equivalente
+extractoextranjero
+falso
+fijo
+financiero
+ilegal
+intrasferible
+legal
+maximo
+minimo
+nacional
+potencial
+rentable
+seguro
+transferible
+variable
+ahorrar
+abrir una cuenta
+abonar
+autorizar
+cambiar
+cancelar
+cargar
+cerrar
+circular
+cobrar
+contar
+contratar
+cotizar
+deducir
+derrochar
+disponer
+domiciliar
+emitir
+equivaler
+estar en numeros rojos
+falsificar
+financiar
+gastar
+hipotecar
+imponer
+ingresar
+invertir
+oscilar
+pagar
+pagar al contado
+pagar con tarjeta
+pagar en metalico
+pagar en efectivo
+prestar
+recibir
+sacar
+sumar
+tener un descubierto
+transferir
+traspasar
+valer
