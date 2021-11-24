@@ -2,7 +2,7 @@ package main.java.model.readers;
 
 import main.java.model.parsers.IParser;
 
-public enum ReadingFormatStrategy {
+public enum ReadStrategy {
 
 	ADD_PIPE {
 		@Override
@@ -12,18 +12,21 @@ public enum ReadingFormatStrategy {
 			return input + IParser.REGULAR_PIPE;
 		}
 	},
+
 	REPLACE_NEW_LINES {
 		@Override
 		public String formatLine(String input) {
 			return IParser.replaceNewLines(input);
 		}
 	},
+
 	ADD_NEW_LINE { // TODO - questo e' il pezzo che prima mi faceva il br. aggiustare sta roba. Verificare se l'errore persiste ancora
 		@Override
 		public String formatLine(String input) {
 			return input + IParser.NEW_LINE;
 		}
 	},
+	
 	NO_FORMAT {
 		@Override
 		public String formatLine(String input) {

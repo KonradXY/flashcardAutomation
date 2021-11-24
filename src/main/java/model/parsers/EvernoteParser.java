@@ -40,14 +40,18 @@ public class EvernoteParser implements IParser {
 
 	@Override
 	public List<AnkiDeck> parse(Path filename, String input, String destFolder) {
-		AnkiDeck deck = new AnkiDeck.Builder()
-				.withDestFolder(destFolder)
-				.withTitle(getParsedFileName(filename))
-				.build();
+		AnkiDeck deck = createDeck(filename, destFolder);
 		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, Paths.get(destFolder)));
 		return Arrays.asList(deck);
 	}
-	
+
+	private AnkiDeck createDeck(Path filename, String destFolder) {
+		return new AnkiDeck.Builder()
+				.withDestFolder(destFolder)
+				.withTitle(getParsedFileName(filename))
+				.build();
+	}
+
 
 	private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
 		Document htmlDoc = Jsoup.parse(htmlContent);

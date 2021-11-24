@@ -5,7 +5,7 @@ import main.java.model.parsers.DefaultParser;
 import main.java.model.printers.TextFilePrinter;
 import main.java.model.readers.TextFileReader;
 import main.java.model.printers.PrinterStrategy;
-import main.java.model.readers.ReadingFormatStrategy;
+import main.java.model.readers.ReadStrategy;
 
 public class DefaultAnkiEngine extends TextEngine {
 
@@ -13,7 +13,7 @@ public class DefaultAnkiEngine extends TextEngine {
 	
 	@Override
 	public void buildEngine() {
-		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
+		reader = new TextFileReader(ReadStrategy.ADD_PIPE);
 		parser = new DefaultParser();
 		printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
 	}

@@ -5,7 +5,7 @@ import main.java.model.parsers.KindleParser;
 import main.java.model.printers.TextFilePrinter;
 import main.java.model.readers.TextFileReader;
 import main.java.model.printers.PrinterStrategy;
-import main.java.model.readers.ReadingFormatStrategy;
+import main.java.model.readers.ReadStrategy;
 
 public class KindleEngine extends TextEngine {
 
@@ -13,7 +13,7 @@ public class KindleEngine extends TextEngine {
 	
 	@Override
 	public void buildEngine() {
-		reader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
+		reader = new TextFileReader(ReadStrategy.REPLACE_NEW_LINES);
 		parser = new KindleParser();
 		printer = new TextFilePrinter(PrinterStrategy.KINDLE_STRATEGY);
 	}

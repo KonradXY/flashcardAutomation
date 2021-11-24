@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-import main.java.model.readers.ReadingFormatStrategy;
+import main.java.model.readers.ReadStrategy;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import main.java.model.readers.IReader;
 import main.java.model.readers.TextFileReader;
 
 
-class ReadingFormatStrategyTest {
+class ReadStrategyTest {
 
 	private final static String filename = "tempfile.txt";
 	private final static Path filepath = Paths.get(filename);
@@ -33,7 +33,7 @@ class ReadingFormatStrategyTest {
 	@Test
 	void testAddPipeReadingStrategy() throws IOException {
 		String check = content.replaceAll("\n", "\n|");
-		reader = new TextFileReader(ReadingFormatStrategy.ADD_PIPE);
+		reader = new TextFileReader(ReadStrategy.ADD_PIPE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals(check, contentRead.get(filepath));
 	}
@@ -41,7 +41,7 @@ class ReadingFormatStrategyTest {
 	@Test
 	void testNoFormatStrategy() throws IOException {
 		String check = content;
-		reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
+		reader = new TextFileReader(ReadStrategy.NO_FORMAT);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals(check, contentRead.get(filepath));
 	}
@@ -49,7 +49,7 @@ class ReadingFormatStrategyTest {
 	@Test
 	void testReplaceNewLinesFormatStrategy() throws IOException {
 		String check = content.replaceAll("\n", "");
-		reader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
+		reader = new TextFileReader(ReadStrategy.REPLACE_NEW_LINES);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals(check, contentRead.get(filepath));
 	}
@@ -57,7 +57,7 @@ class ReadingFormatStrategyTest {
 	@Test
 	void testAddNewLineFormatStrategy() throws IOException {
 		String check = content.replace("\n", "\n\n");
-		reader = new TextFileReader(ReadingFormatStrategy.ADD_NEW_LINE);
+		reader = new TextFileReader(ReadStrategy.ADD_NEW_LINE);
 		Map<Path, String> contentRead = reader.readFile(filepath);
 		assertEquals(check, contentRead.get(filepath));
 	}

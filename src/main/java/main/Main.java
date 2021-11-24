@@ -1,23 +1,16 @@
-package main.java.launcher;
+package main.java.main;
 
 import java.util.Arrays;
 import java.util.List;
-
-import org.apache.log4j.Logger;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import main.java.config.AnkiApplicationModule;
-import main.java.facade.TextFileFacade;
 
-public class Launcher {
-
-    private final static Logger log = Logger.getLogger(Launcher.class);
+public class Main {
 
     private static final String DEFAULT_ENGINE = "evernote";
-
-    private static TextFileFacade textFileFacade;
 
     /**
      * @param args I valori che i parametri possono assumere sono i seguenti:
@@ -33,20 +26,15 @@ public class Launcher {
      */
 
     public static void main(String[] args) {
-            long timeSpent = System.currentTimeMillis();
-            log.info("... Inizio creazione flashcard ...");
+        Injector injector = Guice.createInjector(new AnkiApplicationModule());
 
-            Injector injector = Guice.createInjector(new AnkiApplicationModule());
-            textFileFacade = injector.getInstance(TextFileFacade.class);
+        if (args.length == 0) args = new String[]{DEFAULT_ENGINE};
+        List<String> inputArg = Arrays.asList(args);
 
-            if (args.length == 0) args = new String[]{DEFAULT_ENGINE};
-            List<String> inputArg = Arrays.asList(args);
-
-            log.info(" ====>>> launching parsing from file ");
-            textFileFacade.buildFlashcardsFromTextFile(inputArg);
-
-            log.info("Creazione flashcard completata ! - Tempo impiegato: " + (System.currentTimeMillis() - timeSpent) / 1000 + " sec");
+        injector.getInstance(Launcher.class).buildFlashcards(inputArg);
     }
+
+
 
 
 }

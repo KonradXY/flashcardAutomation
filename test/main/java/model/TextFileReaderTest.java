@@ -15,7 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import main.java.model.readers.IReader;
-import main.java.model.readers.ReadingFormatStrategy;
+import main.java.model.readers.ReadStrategy;
 
 class TextFileReaderTest {
 
@@ -37,7 +37,7 @@ class TextFileReaderTest {
 	
 	private final static String content = "This is \n the content \n";
 
-	private IReader reader = new TextFileReader(ReadingFormatStrategy.NO_FORMAT);
+	private IReader reader = new TextFileReader(ReadStrategy.NO_FORMAT);
 
 	@BeforeAll
 	public static void setup() throws IOException {

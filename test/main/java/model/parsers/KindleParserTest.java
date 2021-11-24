@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import main.java.model.readers.IReader;
 import main.java.model.deck.AnkiDeck;
 import main.java.model.readers.TextFileReader;
-import main.java.model.readers.ReadingFormatStrategy;
+import main.java.model.readers.ReadStrategy;
 
 class KindleParserTest {
 	
@@ -30,7 +30,7 @@ class KindleParserTest {
 
 	@BeforeAll
 	public static void setup() throws IOException {
-		kindleReader = new TextFileReader(ReadingFormatStrategy.REPLACE_NEW_LINES);
+		kindleReader = new TextFileReader(ReadStrategy.REPLACE_NEW_LINES);
 		inputContent = kindleReader.readFile(Paths.get(testFileDir));
 		kindleParser = new KindleParser();
 	}
