@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Singleton;
 
-import main.java.engines.AbstractEngine;
+import main.java.engines.AnkiEngine;
 import main.java.engines.TextEngine;
 import main.java.engines.textengines.DefaultAnkiEngine;
 import main.java.engines.textengines.EvernoteEngine;
@@ -27,7 +27,7 @@ public class TextEngineFactory extends AbstractEngineFactory {
 	private static final Logger log = Logger.getLogger(TextEngineFactory.class);
 
 	@Override
-	public AbstractEngine createEngine(List<String> inputParam) {
+	public AnkiEngine createEngine(List<String> inputParam) {
 
 		if (inputParam == null) throw new RuntimeException("Inserire parametro !");
 

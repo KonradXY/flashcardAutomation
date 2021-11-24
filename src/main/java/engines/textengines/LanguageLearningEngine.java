@@ -8,8 +8,7 @@ import main.java.strategy.PrinterStrategy;
 import main.java.strategy.ReadingFormatStrategy;
 
 public class LanguageLearningEngine extends TextEngine {
-	
-	public LanguageLearningEngine() { super(); }
+
 	public LanguageLearningEngine(String input, String output) {super(input, output); }
 	
 	@Override

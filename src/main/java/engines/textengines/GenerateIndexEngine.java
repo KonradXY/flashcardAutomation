@@ -9,10 +9,6 @@ import main.java.strategy.ReadingFormatStrategy;
 
 public class GenerateIndexEngine extends TextEngine {
 
-    public GenerateIndexEngine() {
-        super();
-    }
-
     public GenerateIndexEngine(String input, String output) {
         super(input, output);
     }

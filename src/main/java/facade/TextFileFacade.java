@@ -4,21 +4,23 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
-import main.java.engines.TextEngine;
+import com.google.inject.Singleton;
+import main.java.engines.AnkiEngine;
 import main.java.engines.factories.TextEngineFactory;
 
+@Singleton
 public class TextFileFacade {
 	
-	private final TextEngineFactory engineBuilder;
+	private final TextEngineFactory textEngineFactory;
 
 	@Inject
-	public TextFileFacade(TextEngineFactory engineBuilder) {
-		this.engineBuilder = engineBuilder;
+	public TextFileFacade(TextEngineFactory textEngineFactory) {
+		this.textEngineFactory = textEngineFactory;
 	}
 
 	public void buildFlashcardsFromTextFile(List<String> args) {
-		TextEngine ankiModel = (TextEngine)engineBuilder.createEngine(args);
-		ankiModel.createFlashcards();
+		AnkiEngine ankiEngine = textEngineFactory.createEngine(args);
+		ankiEngine.createFlashcards();
 	}
 
 }

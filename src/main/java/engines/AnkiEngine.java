@@ -1,23 +1,14 @@
 package main.java.engines;
 
-import static main.java.utils.Property.INPUT_DIR;
-import static main.java.utils.Property.OUTPUT_DIR;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public abstract class AbstractEngine {
+public abstract class AnkiEngine {
 
     protected String inputDir;
     protected String outputDir;
 
-    AbstractEngine() {
-        this.inputDir = INPUT_DIR;
-        this.outputDir = OUTPUT_DIR;
-    }
-
-    AbstractEngine(String inputDir, String outputDir) {
-        this();
+    AnkiEngine(String inputDir, String outputDir) {
         this.inputDir = inputDir;
         this.outputDir = outputDir;
     }

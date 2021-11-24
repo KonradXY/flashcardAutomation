@@ -8,8 +8,7 @@ import main.java.strategy.PrinterStrategy;
 import main.java.strategy.ReadingFormatStrategy;
 
 public class DefaultAnkiEngine extends TextEngine {
-	
-	public DefaultAnkiEngine() {super();}
+
 	public DefaultAnkiEngine(String input, String output) {super(input,output); }
 	
 	@Override

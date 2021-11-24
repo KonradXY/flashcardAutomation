@@ -1,6 +1,5 @@
 package main.java.engines;
 
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ import main.java.contracts.IPrinter;
 import main.java.contracts.IReader;
 import main.java.model.AnkiDeck;
 
-public abstract class TextEngine extends AbstractEngine {
+public abstract class TextEngine extends AnkiEngine {
 
 	private final static Logger log = Logger.getLogger(TextEngine.class);
 
@@ -22,7 +21,6 @@ public abstract class TextEngine extends AbstractEngine {
 	protected IParser parser;
 	protected IPrinter printer;
 
-	protected TextEngine() { super(); }
 	protected TextEngine(String input, String output) { super(input, output); }
 
 	public IReader getReader() 						{ return reader; }

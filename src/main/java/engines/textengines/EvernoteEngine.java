@@ -8,8 +8,7 @@ import main.java.strategy.ReadingFormatStrategy;
 import main.java.utils.ParserUtil;
 
 public class EvernoteEngine extends TextEngine {
-	
-	public EvernoteEngine() { super(); }
+
 	public EvernoteEngine(String input, String output) { super(input, output); }
 	
 	@Override

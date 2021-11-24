@@ -8,8 +8,7 @@ import main.java.strategy.PrinterStrategy;
 import main.java.strategy.ReadingFormatStrategy;
 
 public class KindleEngine extends TextEngine {
-	
-	public KindleEngine() { super(); }
+
 	public KindleEngine(String input, String output) { super(input, output); }
 	
 	@Override

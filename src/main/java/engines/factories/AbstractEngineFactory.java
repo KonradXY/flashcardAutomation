@@ -2,9 +2,9 @@ package main.java.engines.factories;
 
 import java.util.List;
 
-import main.java.engines.AbstractEngine;
+import main.java.engines.AnkiEngine;
 
 public abstract class AbstractEngineFactory {
 
-    protected abstract AbstractEngine createEngine(List<String> inputParam);
+    protected abstract AnkiEngine createEngine(List<String> inputParam);
 }
