@@ -1,4 +1,4 @@
-package main.java.contracts;
+package main.java.model.card;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;

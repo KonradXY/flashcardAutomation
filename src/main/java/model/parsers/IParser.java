@@ -1,11 +1,11 @@
-package main.java.contracts;
+package main.java.model.parsers;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import main.java.model.AnkiDeck;
+import main.java.model.deck.AnkiDeck;
 
 public interface IParser {
 

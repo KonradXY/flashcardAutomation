@@ -14,8 +14,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import main.java.contracts.IReader;
-import main.java.strategy.ReadingFormatStrategy;
+import main.java.model.readers.IReader;
+import main.java.model.readers.ReadingFormatStrategy;
 
 class TextFileReaderTest {
 

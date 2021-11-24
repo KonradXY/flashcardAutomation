@@ -1,12 +1,10 @@
-package main.java.model;
+package main.java.model.card;
 
-import static main.java.contracts.IParser.NEW_LINE;
-import static main.java.contracts.IParser.TAB;
+import static main.java.model.parsers.IParser.NEW_LINE;
+import static main.java.model.parsers.IParser.TAB;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import main.java.contracts.IAnkiCard;
 
 public class AnkiCard implements IAnkiCard {
 

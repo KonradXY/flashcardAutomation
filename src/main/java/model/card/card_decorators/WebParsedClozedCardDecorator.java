@@ -1,8 +1,8 @@
-package main.java.card_decorators;
+package main.java.model.card.card_decorators;
 
 import com.google.inject.Singleton;
 
-import main.java.contracts.IAnkiCard;
+import main.java.model.card.IAnkiCard;
 
 @Singleton
 public class WebParsedClozedCardDecorator extends WebParsedCardDecorator {

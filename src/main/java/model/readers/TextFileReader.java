@@ -13,9 +13,6 @@ import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 
-import main.java.contracts.IReader;
-import main.java.strategy.ReadingFormatStrategy;
-
 public class TextFileReader implements IReader {
 
 	private static final Logger log = Logger.getLogger(TextFileReader.class);

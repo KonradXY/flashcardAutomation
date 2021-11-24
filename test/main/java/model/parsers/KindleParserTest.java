@@ -12,11 +12,10 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import main.java.contracts.IParser;
-import main.java.contracts.IReader;
-import main.java.model.AnkiDeck;
+import main.java.model.readers.IReader;
+import main.java.model.deck.AnkiDeck;
 import main.java.model.readers.TextFileReader;
-import main.java.strategy.ReadingFormatStrategy;
+import main.java.model.readers.ReadingFormatStrategy;
 
 class KindleParserTest {
 	

@@ -1,10 +1,10 @@
-package main.java.card_decorators;
+package main.java.model.card.card_decorators;
 
 import java.util.function.Function;
 
 import org.jsoup.nodes.Element;
 
-import main.java.contracts.IAnkiCard;
+import main.java.model.card.IAnkiCard;
 
 public interface DecoratingCard extends IAnkiCard {
 

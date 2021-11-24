@@ -11,8 +11,8 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
+import main.java.model.card.IAnkiCard;
+import main.java.model.parsers.IParser;
 
 public class ParserUtil {
 

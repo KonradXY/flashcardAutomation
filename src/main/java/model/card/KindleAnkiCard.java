@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.model.card;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

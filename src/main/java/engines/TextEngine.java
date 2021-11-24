@@ -8,10 +8,10 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import main.java.contracts.IParser;
-import main.java.contracts.IPrinter;
-import main.java.contracts.IReader;
-import main.java.model.AnkiDeck;
+import main.java.model.parsers.IParser;
+import main.java.model.printers.IPrinter;
+import main.java.model.readers.IReader;
+import main.java.model.deck.AnkiDeck;
 
 public abstract class TextEngine extends AnkiEngine {
 

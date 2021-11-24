@@ -8,9 +8,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import main.java.contracts.IParser;
-import main.java.model.AnkiDeck;
-import main.java.model.KindleAnkiCard;
+import main.java.model.deck.AnkiDeck;
+import main.java.model.card.KindleAnkiCard;
 
 public class KindleParser implements IParser {
 

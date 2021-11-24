@@ -1,4 +1,4 @@
-package main.java.strategy;
+package main.java.model.printers;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
-import main.java.model.AnkiDeck;
-import main.java.model.KindleAnkiCard;
+import main.java.model.deck.AnkiDeck;
+import main.java.model.card.KindleAnkiCard;
 
 public enum PrinterStrategy {
 

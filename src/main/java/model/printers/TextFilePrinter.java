@@ -2,9 +2,7 @@ package main.java.model.printers;
 
 import org.apache.log4j.Logger;
 
-import main.java.contracts.IPrinter;
-import main.java.model.AnkiDeck;
-import main.java.strategy.PrinterStrategy;
+import main.java.model.deck.AnkiDeck;
 
 public class TextFilePrinter implements IPrinter {
 

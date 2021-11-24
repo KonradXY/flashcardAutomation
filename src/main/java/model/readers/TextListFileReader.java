@@ -14,8 +14,6 @@ import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 
-import main.java.contracts.IReader;
-
 public class TextListFileReader implements IReader {
 
 	private int fileCounter = 0;

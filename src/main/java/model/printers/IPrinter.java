@@ -1,10 +1,10 @@
-package main.java.contracts;
+package main.java.model.printers;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import main.java.model.AnkiDeck;
+import main.java.model.deck.AnkiDeck;
 
 public interface IPrinter {
 

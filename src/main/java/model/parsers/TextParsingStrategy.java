@@ -1,13 +1,13 @@
-package main.java.strategy;
+package main.java.model.parsers;
 
 
-import static main.java.contracts.IParser.DOMANDE_INDEX;
-import static main.java.contracts.IParser.NUM_EX_PATTERN;
-import static main.java.contracts.IParser.PIPE_SEPARATOR;
-import static main.java.contracts.IParser.QA_SEPARATOR;
-import static main.java.contracts.IParser.RISPOSTE_INDEX;
-import static main.java.contracts.IParser.SINGLE_EX_PATTERN;
-import static main.java.contracts.IParser.SINGLE_EX_PATTERN_WITH_UNDERSCORE;
+import static main.java.model.parsers.IParser.DOMANDE_INDEX;
+import static main.java.model.parsers.IParser.NUM_EX_PATTERN;
+import static main.java.model.parsers.IParser.PIPE_SEPARATOR;
+import static main.java.model.parsers.IParser.QA_SEPARATOR;
+import static main.java.model.parsers.IParser.RISPOSTE_INDEX;
+import static main.java.model.parsers.IParser.SINGLE_EX_PATTERN;
+import static main.java.model.parsers.IParser.SINGLE_EX_PATTERN_WITH_UNDERSCORE;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,11 +22,10 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 
-import main.java.card_decorators.LeftFormatDecorator;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.model.AnkiDeck;
-import main.java.model.LanguageLearningAnkiCard;
+import main.java.model.card.card_decorators.LeftFormatDecorator;
+import main.java.model.card.AnkiCard;
+import main.java.model.deck.AnkiDeck;
+import main.java.model.card.LanguageLearningAnkiCard;
 
 public enum TextParsingStrategy {
 

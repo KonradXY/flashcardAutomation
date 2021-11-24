@@ -19,11 +19,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.java.card_decorators.LeftFormatDecorator;
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IParser;
-import main.java.model.AnkiCard;
-import main.java.model.AnkiDeck;
+import main.java.model.card.card_decorators.LeftFormatDecorator;
+import main.java.model.card.IAnkiCard;
+import main.java.model.card.AnkiCard;
+import main.java.model.deck.AnkiDeck;
 import main.java.utils.ParserUtil;
 
 public class EvernoteParser implements IParser {

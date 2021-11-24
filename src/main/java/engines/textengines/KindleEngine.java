@@ -4,8 +4,8 @@ import main.java.engines.TextEngine;
 import main.java.model.parsers.KindleParser;
 import main.java.model.printers.TextFilePrinter;
 import main.java.model.readers.TextFileReader;
-import main.java.strategy.PrinterStrategy;
-import main.java.strategy.ReadingFormatStrategy;
+import main.java.model.printers.PrinterStrategy;
+import main.java.model.readers.ReadingFormatStrategy;
 
 public class KindleEngine extends TextEngine {
 

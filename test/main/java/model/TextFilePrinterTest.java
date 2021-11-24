@@ -12,13 +12,17 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+import main.java.model.card.AnkiCard;
+import main.java.model.card.KindleAnkiCard;
+import main.java.model.card.LanguageLearningAnkiCard;
+import main.java.model.deck.AnkiDeck;
 import main.java.model.printers.TextFilePrinter;
-import main.java.strategy.PrinterStrategy;
+import main.java.model.printers.PrinterStrategy;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
-import main.java.contracts.IAnkiCard;
-import main.java.contracts.IPrinter;
+import main.java.model.card.IAnkiCard;
+import main.java.model.printers.IPrinter;
 
 class TextFilePrinterTest {
 

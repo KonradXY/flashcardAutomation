@@ -1,11 +1,11 @@
-package main.java.card_decorators;
+package main.java.model.card.card_decorators;
 
 import java.util.function.UnaryOperator;
 
 import org.jsoup.select.Elements;
 
-import main.java.contracts.IAnkiCard;
-import main.java.model.AnkiCard;
+import main.java.model.card.IAnkiCard;
+import main.java.model.card.AnkiCard;
 
 public class LeftFormatDecorator extends AbstractCardDecorator {
 

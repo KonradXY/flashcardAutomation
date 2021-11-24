@@ -1,4 +1,4 @@
-package main.java.contracts;
+package main.java.model.readers;
 
 import java.io.IOException;
 import java.nio.file.Path;

@@ -1,6 +1,6 @@
-package main.java.strategy;
+package main.java.model.readers;
 
-import main.java.contracts.IParser;
+import main.java.model.parsers.IParser;
 
 public enum ReadingFormatStrategy {
 

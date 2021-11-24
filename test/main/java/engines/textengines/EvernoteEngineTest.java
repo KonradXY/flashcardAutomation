@@ -1,9 +1,8 @@
 package main.java.engines.textengines;
 
-import main.java.contracts.IAnkiCard;
+import main.java.model.card.IAnkiCard;
 import main.java.engines.TextEngine;
-import main.java.engines.textengines.EvernoteEngine;
-import main.java.model.AnkiDeck;
+import main.java.model.deck.AnkiDeck;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

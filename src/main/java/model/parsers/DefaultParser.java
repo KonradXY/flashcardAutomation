@@ -4,9 +4,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
-import main.java.contracts.IParser;
-import main.java.model.AnkiDeck;
-import main.java.strategy.TextParsingStrategy;
+import main.java.model.deck.AnkiDeck;
 
 public class DefaultParser implements IParser {
 
