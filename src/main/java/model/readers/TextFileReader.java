@@ -32,8 +32,8 @@ public class TextFileReader implements IReader {
 	@Override
 	public Map<Path, String> readFile(Path... pathFiles) throws IOException {
 		Map<Path, String> map = new HashMap<>();
-		for (int i = 0; i < pathFiles.length; i++) {
-			readContent(map, pathFiles[i]);
+		for (Path pathFile : pathFiles) {
+			readContent(map, pathFile);
 		}
 		
 		log.info("************* Fine Lettura ************* Numero di file letti: " + fileCounter + "\n");

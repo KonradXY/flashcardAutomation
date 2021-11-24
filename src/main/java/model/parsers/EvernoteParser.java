@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.google.inject.Inject;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,10 +31,9 @@ public class EvernoteParser implements IParser {
 
 	private static final Logger log = Logger.getLogger(EvernoteParser.class);
 
-	private ParserUtil parserUtil;
+	private final ParserUtil parserUtil;
 
-	public EvernoteParser() { }
-
+	@Inject
 	public EvernoteParser(ParserUtil parserUtil) {
 		this.parserUtil = parserUtil;
 	}

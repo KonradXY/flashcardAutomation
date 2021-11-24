@@ -1,4 +1,4 @@
-package main.study.algorithms._1_string_and_list;
+package main._study.algorithms._1_string_and_list;
 
 import org.apache.commons.lang3.StringUtils;
 

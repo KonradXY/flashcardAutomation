@@ -1,4 +1,4 @@
-package main.study.algorithms._1_string_and_list;
+package main._study.algorithms._1_string_and_list;
 
 import java.util.Arrays;
 import java.util.HashSet;
