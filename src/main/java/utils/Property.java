@@ -1,5 +1,7 @@
 package main.java.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +29,9 @@ public class Property {
 		return getProperties().getProperty("output.dir");
 	}
 	private static String getAnkiMediaCollectionDir() {
-		return getProperties().getProperty("anki.mediadir");
+		String mediaFolder = getProperties().getProperty("anki.mediadir");
+		if (StringUtils.isEmpty(mediaFolder)) throw new IllegalStateException("Anki media folder property non puo essere empty. anki.mediadir: " + mediaFolder);
+		return mediaFolder;
 	}
 
 

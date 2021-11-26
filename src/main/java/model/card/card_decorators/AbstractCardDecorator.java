@@ -1,7 +1,6 @@
 package main.java.model.card.card_decorators;
 
 import java.util.Arrays;
-import java.util.Map;
 import java.util.function.Consumer;
 
 import org.jsoup.nodes.Element;
@@ -23,7 +22,6 @@ public class AbstractCardDecorator implements DecoratingCard {
 
     static final Tag P_TAG = Tag.valueOf("p");
     static final Tag B_TAG = Tag.valueOf("b");
-    static final Tag I_TAG = Tag.valueOf("i");
     static final Tag DIV_TAG = Tag.valueOf("div");
     static final Tag UL_TAG = Tag.valueOf("ul");
     static final Tag LI_TAG = Tag.valueOf("li");
@@ -43,42 +41,18 @@ public class AbstractCardDecorator implements DecoratingCard {
         return new Element(B_TAG, "");
     }
 
-    public static Element getItalicParagraphTag() {
-        return new Element(I_TAG, "");
-    }
-
     public static Element getDivTag() {
         return new Element(DIV_TAG, "");
-    }
-
-    public static Element getListItemTag() {
-        return new Element(LI_TAG, "");
     }
 
     public static Element getNewLineTag() {
         return new Element(NEW_LINE_TAG, "");
     }
 
-    public static Element getSpanTag() {
-        return new Element(SPAN_TAG, "");
-    }
-
     public static Element getUnorderedListTag() {
         return new Element(UL_TAG, "");
     }
 
-
-
-    public static Element createSingleDefinizione(Map.Entry<String, String> entry) {
-        Element elem = getListItemTag();
-        Element definition = getParagraphTag().text(entry.getKey() + ": ");
-
-        Element example = getItalicParagraphTag().text(entry.getValue());
-        Element span = getSpanTag().appendChild(example);
-        definition.appendChild(span);
-        elem.appendChild(definition);
-        return elem;
-    }
 
     /**
      * **********  Formattazione delle classi css ***********

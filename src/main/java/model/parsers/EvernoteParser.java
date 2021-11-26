@@ -1,109 +1,77 @@
 package main.java.model.parsers;
 
-import static main.java.utils.Property.ANKI_MEDIA_COLLECTION_DIR;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
-import com.google.inject.Inject;
+import main.java.model.card.AnkiCard;
+import main.java.model.card.IAnkiCard;
+import main.java.model.card.card_decorators.LeftFormatDecorator;
+import main.java.model.deck.AnkiDeck;
+import main.java.utils.EvernoteImageParser;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.java.model.card.card_decorators.LeftFormatDecorator;
-import main.java.model.card.IAnkiCard;
-import main.java.model.card.AnkiCard;
-import main.java.model.deck.AnkiDeck;
-import main.java.utils.ParserUtil;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class EvernoteParser implements IParser {
 
+    private static final int MAX_SIZE_CARD = 131072;
+    private static final Logger log = Logger.getLogger(EvernoteParser.class);
 
-	private static final Logger log = Logger.getLogger(EvernoteParser.class);
+    private final EvernoteImageParser evernoteImageParser;
 
-	private final ParserUtil parserUtil;
-
-	@Inject
-	public EvernoteParser(ParserUtil parserUtil) {
-		this.parserUtil = parserUtil;
-	}
-
-
-	@Override
-	public List<AnkiDeck> parse(Path filename, String input, String destFolder) {
-		AnkiDeck deck = createDeck(filename, destFolder);
-		deck.getCards().addAll(parseEvernoteFlashCards(filename, input, Paths.get(destFolder)));
-		return Arrays.asList(deck);
-	}
-
-	private AnkiDeck createDeck(Path filename, String destFolder) {
-		return new AnkiDeck.Builder()
-				.withDestFolder(destFolder)
-				.withTitle(getParsedFileName(filename))
-				.build();
-	}
+    public EvernoteParser() {
+        this.evernoteImageParser = new EvernoteImageParser();
+    }
 
 
-	private List<IAnkiCard> parseEvernoteFlashCards(Path fileName, String htmlContent, Path outputContent) {
-		Document htmlDoc = Jsoup.parse(htmlContent);
+    @Override
+    public List<AnkiDeck> parse(Path fileName, String input, String destFolder) {
+        AnkiDeck deck = new AnkiDeck.Builder()
+                .withDestFolder(destFolder)
+                .withTitle(getParsedFileName(fileName))
+                .withCards(parseFlashCards(fileName, input, Paths.get(destFolder)))
+                .build();
+        return Collections.singletonList(deck);
+    }
 
-		parserUtil.createImagesForFlashcard(htmlDoc, outputContent, fileName);
-		
-		try {
-			copyImagesToMediaCollection(outputContent);
-		} catch (IOException ex) {
-			log.error("Errore nella copia delle immagini nel media collector.", ex);
-		}
+    private List<IAnkiCard> parseFlashCards(Path fileName, String htmlContent, Path outputContent) {
+        Document htmlDoc = Jsoup.parse(htmlContent);
+        createImagesForFlashCards(fileName, outputContent, htmlDoc);
+        return htmlDoc.getElementsByTag("tbody").stream()
+                .map(this::parseCard)
+                .filter(this::doesNotExceedMaxSize)
+                .map(LeftFormatDecorator::decorateWithLeftFormat)
+                .collect(Collectors.toList());
+    }
 
-		return htmlDoc.getElementsByTag("tbody").stream()
-				.map(this::parseCardFromTBody)
-				.filter(card -> !parserUtil.cardExceedMaxSize(card))
-				.map(LeftFormatDecorator::decorateWithLeftFormat)
-				.collect(Collectors.toList());
-	}
+    private IAnkiCard parseCard(Element tbody) {
+        Elements content = tbody.getElementsByTag("tr");
+        Elements frontElements = content.get(0).getElementsByTag("div");
+        Elements backElements = content.get(1).getElementsByTag("div");
+        return new AnkiCard(frontElements, backElements);
+    }
 
-	private IAnkiCard parseCardFromTBody(Element tbody) {
-		Elements content = tbody.getElementsByTag("tr");
-		Elements frontElements = content.get(0).getElementsByTag("div");
-		Elements backElements = content.get(1).getElementsByTag("div");
-		return new AnkiCard(frontElements, backElements);
-	}
+    private boolean doesNotExceedMaxSize(IAnkiCard card) {
+        boolean check = card.getBack().text().length() <= MAX_SIZE_CARD && card.getFront().text().length() <= MAX_SIZE_CARD;
+        if (!check) {
+            log.info("Card exceded max size ! Card title: " + card.getFront().text());
+        }
+        return check;
+    }
 
-	private void copyImagesToMediaCollection(Path outputContent) throws IOException {
-
-		if (Objects.isNull(ANKI_MEDIA_COLLECTION_DIR) || ANKI_MEDIA_COLLECTION_DIR.equals("")) {
-			log.info("Attenzione: la cartella mediaCollection di anki non e' presente ! I file multimediali non verranno copiati");
-			return;
-		}
-
-		Path mediaFolder = parserUtil.buildMediaFolder(outputContent);
-		
-		Files.walk(mediaFolder).filter(this::isNotDirectory).forEach(imgPath ->{
-			try {
-				Path imgName = imgPath.getFileName();
-				Files.copy(imgPath, Paths.get(ANKI_MEDIA_COLLECTION_DIR).resolve(imgName), StandardCopyOption.REPLACE_EXISTING);
-			} catch (IOException e) {
-				log.error(e);
-				throw new IllegalStateException(e);
-			}
-		});
-		
-		log.info("Anki media files copied inside folder: " + ANKI_MEDIA_COLLECTION_DIR);
-	}
-	
-	private boolean isNotDirectory(Path path) {
-		return !Files.isDirectory(path);
-	}
-
+    private void createImagesForFlashCards(Path fileName, Path outputContent, Document htmlDoc) {
+        try {
+            evernoteImageParser.parseImages(htmlDoc, outputContent, fileName);
+        } catch (IOException ex) {
+            log.error("Errore nella copia delle immagini nel media collector.", ex);
+        }
+    }
 
 
 }

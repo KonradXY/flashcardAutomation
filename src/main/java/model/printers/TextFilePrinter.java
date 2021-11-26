@@ -8,17 +8,21 @@ public class TextFilePrinter implements IPrinter {
 
 	private static final Logger log = Logger.getLogger(TextFilePrinter.class);
 
-	private PrinterStrategy printerStrategy;
+	private final PrintStrategy printStrategy;
 
-	public TextFilePrinter(PrinterStrategy printerStrategy) {
-		this.printerStrategy = printerStrategy;
+	public  TextFilePrinter() {
+		this.printStrategy = PrintStrategy.NO_STRATEGY;
+	}
+
+	public TextFilePrinter(PrintStrategy printStrategy) {
+		this.printStrategy = printStrategy;
 	}
 	
 	@Override
 	public void printFile(AnkiDeck deck) {
 		try {
 			checkOutputFolder(deck.getPathDest());
-			printerStrategy.printCards(deck);
+			printStrategy.printCards(deck);
 		} catch (Exception ex) {
 			log.error("Errore nella scrittura su disco", ex);
 		}

@@ -9,7 +9,6 @@ import main.java.model.deck.AnkiDeck;
 
 public interface IParser {
 
-	// TODO - create enum constant
 	String REGULAR_PIPE = "|";
 	String PIPE_SEPARATOR = "\\|";
 	String TAB = "\t";

@@ -37,7 +37,7 @@ class TextFileReaderTest {
 	
 	private final static String content = "This is \n the content \n";
 
-	private IReader reader = new TextFileReader(ReadStrategy.NO_FORMAT);
+	private final IReader reader = new TextFileReader();
 
 	@BeforeAll
 	public static void setup() throws IOException {

@@ -40,10 +40,9 @@ class ReadStrategyTest {
 	
 	@Test
 	void testNoFormatStrategy() throws IOException {
-		String check = content;
-		reader = new TextFileReader(ReadStrategy.NO_FORMAT);
+		reader = new TextFileReader();
 		Map<Path, String> contentRead = reader.readFile(filepath);
-		assertEquals(check, contentRead.get(filepath));
+		assertEquals(content, contentRead.get(filepath));
 	}
 	
 	@Test

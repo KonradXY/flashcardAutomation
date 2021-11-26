@@ -19,6 +19,10 @@ public class TextFileReader implements IReader {
 
     private int fileCounter = 0;
 
+    public TextFileReader() {
+        this.reader = ReadStrategy.NO_FORMAT;
+    }
+
     public TextFileReader(ReadStrategy strategy) {
         this.reader = strategy;
     }

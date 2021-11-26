@@ -17,7 +17,7 @@ import main.java.model.card.KindleAnkiCard;
 import main.java.model.card.LanguageLearningAnkiCard;
 import main.java.model.deck.AnkiDeck;
 import main.java.model.printers.TextFilePrinter;
-import main.java.model.printers.PrinterStrategy;
+import main.java.model.printers.PrintStrategy;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +30,7 @@ class TextFilePrinterTest {
 	private static final String fileTestPath = "./";
 	private static final String fileTestName = "test";
 	private static final Path filetestpath = Paths.get(fileTestPath+fileTestName+".txt");
-	private IPrinter printer = new TextFilePrinter(PrinterStrategy.NO_STRATEGY);
+	private IPrinter printer = new TextFilePrinter(PrintStrategy.NO_STRATEGY);
 	
 	private final static String contentFront = "<div class=\"front\"> this is the front</div>";
 	private final static String contentBack = "<div class=\"back\"> this is the back</div>";

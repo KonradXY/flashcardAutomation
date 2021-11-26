@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class ParserUtilTest {
+class EvernoteImageParserTest {
 	
-	private static final ParserUtil parserUtil = new ParserUtil();
+	private static final EvernoteImageParser EVERNOTE_IMAGE_PARSER = new EvernoteImageParser();
 	
 	@Test
 	void checkCopyFileOK() {

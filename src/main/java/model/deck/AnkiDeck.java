@@ -27,9 +27,11 @@ public class AnkiDeck {
     }
 
     public void addCard(IAnkiCard card) {
-        if (this.cards == null)
-            cards = new ArrayList<>();
         cards.add(card);
+    }
+
+    public void addCards(List<IAnkiCard> cards) {
+        this.cards.addAll(cards);
     }
 
 
@@ -42,10 +44,7 @@ public class AnkiDeck {
     }
 
 
-    // GETTERs and SETTERs
     public List<IAnkiCard> getCards() {
-        if (cards == null)
-            cards = new ArrayList<>();
         return cards;
     }
 
@@ -126,6 +125,7 @@ public class AnkiDeck {
         }
 
         public AnkiDeck build() {
+            if (this.cards == null) this.cards = new ArrayList<>();
             return new AnkiDeck(this);
         }
     }
