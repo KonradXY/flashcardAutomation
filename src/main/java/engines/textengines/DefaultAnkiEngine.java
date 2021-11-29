@@ -15,7 +15,7 @@ public class DefaultAnkiEngine extends TextEngine {
 	public void buildEngine() {
 		reader = new TextFileReader(ReadStrategy.ADD_PIPE);
 		parser = new DefaultParser();
-		printer = new TextFilePrinter(PrintStrategy.NO_STRATEGY);
+		printer = new TextFilePrinter();
 	}
 	
 }

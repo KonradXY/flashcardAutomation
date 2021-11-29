@@ -11,14 +11,10 @@ public interface IPrinter {
 
 	void printFile(AnkiDeck deck) throws IOException;
 
-	default void checkOutputFolder(Path filePath) {
-		try {
+	default void checkOutputFolder(Path filePath) throws IOException {
 			Path folderPath = filePath.getParent();
 			if (!filePath.toFile().exists() || !filePath.toFile().isDirectory())
 				Files.createDirectories(folderPath);
-		} catch (IOException ex) {
-			throw new IllegalStateException(ex);
-		}
 	}
 
 

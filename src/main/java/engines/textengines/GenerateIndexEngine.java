@@ -17,7 +17,7 @@ public class GenerateIndexEngine extends TextEngine {
     public void buildEngine() {
         reader = new TextFileReader(ReadStrategy.ADD_NEW_LINE);
         parser = new GenerateIndexParser();
-        printer = new TextFilePrinter(PrintStrategy.NO_STRATEGY);
+        printer = new TextFilePrinter();
     }
 
 }

@@ -24,7 +24,7 @@ public class TextFilePrinter implements IPrinter {
 			checkOutputFolder(deck.getPathDest());
 			printStrategy.printCards(deck);
 		} catch (Exception ex) {
-			log.error("Errore nella scrittura su disco", ex);
+			log.error("Errore per la funzione printFile", ex);
 		}
 
 	}

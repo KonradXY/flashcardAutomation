@@ -15,6 +15,6 @@ public class LanguageLearningEngine extends TextEngine {
 	public void buildEngine() {
 		reader = new TextFileReader(ReadStrategy.ADD_NEW_LINE);
 		parser = new LanguageLearningParser();
-		printer = new TextFilePrinter(PrintStrategy.NO_STRATEGY);
+		printer = new TextFilePrinter();
 	}
 }
