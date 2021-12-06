@@ -2,6 +2,7 @@ package main.java.main;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeMap;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -15,14 +16,11 @@ public class Main {
     /**
      * @param args I valori che i parametri possono assumere sono i seguenti:
      *             <p>
-     *             null - campo vuoto - "default"  <<<===  default engine
+     *             null - campo vuoto - "default"  <<<=== default engine
      *             evernote                        <<<=== evernote engine
      *             kindle                          <<<=== kindle engine
      *             languageLearning                <<<=== languageLearning engine
      *             generateIndex				   <<<=== generate index engine
-     *             webcrawler general              <<<=== spanish general flashcard (spanishWebCrawlerService)
-     *             wencrawler simple               <<<=== spanish simple flashcard (just definition x2 ita/esp && esp&ita)
-     *             webcrawler cloze                <<<=== spanish cloze flashcard
      */
 
     public static void main(String[] args) {

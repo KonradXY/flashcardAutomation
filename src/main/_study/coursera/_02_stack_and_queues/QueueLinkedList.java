@@ -6,23 +6,25 @@ public class QueueLinkedList<T> {
     Node<T> last;
 
     public boolean isEmpty() {
-        return last.next == null;
+        return first == null;
     }
 
     public void enqueue(T t) {
         Node<T> oldLast = last;
+        last = new Node<>();
         last.element = t;
-        last.next = null;
-        if (isEmpty()) first = last;    // Rivedere bene questi due passaggi
-        oldLast.next = last;
+        last.next = oldLast;
+        if (isEmpty())
+            first = last;
+        else oldLast.next = last;
 
     }
 
     public T dequeue() {
-        T item = first.element;
+        T element = first.element;
         first = first.next;
         if (isEmpty()) last = null;
-        return item;
+        return element;
     }
 
     private static class Node<T> {
