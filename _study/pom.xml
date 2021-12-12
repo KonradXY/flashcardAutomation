@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>study</artifactId>
+    <artifactId>_study</artifactId>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
@@ -39,7 +39,7 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main</sourceDirectory>
+        <sourceDirectory>src/main/</sourceDirectory>
         <testSourceDirectory>src/test/</testSourceDirectory>
         <plugins>
             <plugin>
