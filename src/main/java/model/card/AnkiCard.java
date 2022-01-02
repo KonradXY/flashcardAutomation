@@ -118,6 +118,5 @@ public class AnkiCard implements IAnkiCard {
 		return getFront().toString().replace("\n", "") + TAB + getBack().toString().replace("\n", "") + NEW_LINE;
 	}
 
-	
 
 }
